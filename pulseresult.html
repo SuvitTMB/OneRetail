@@ -1,0 +1,197 @@
+<!-- https://guru.sanook.com/4405/ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>One Retail Academy</title>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','G-6FZQ6JQL2P');</script>
+  <link href="assets/img/favicom.ico" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/css.css" rel="stylesheet">
+  <link href="assets/css/w3.css" rel="stylesheet">
+  <link href="assets/css/button.css" rel="stylesheet">
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+  <style>
+      table {
+        width:100%;
+        border:1px solid #b3adad;
+        border-collapse:collapse;
+        padding:4px; border-radius: 10px;
+      }
+      table th {
+        border:1px solid #b3adad;
+        padding:8px;
+        background: #cf7f2e;
+        color: #fff;
+      }
+      table td {
+        border:1px solid #b3adad;
+        text-align:left;
+        padding:4px;
+        background: #f3f3cd;
+        vertical-align: text-top;
+      }
+    </style>
+</head>
+
+<!--<body style="background: url(./img/bg.jpg) fixed; background-size: cover;background-position: center;">#427eec-->
+<body class="body" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #fff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-6FZQ6JQL2P"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo mr-auto"><a href="index.html"><span>One Retail</span> Academy</a></h1>
+      <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
+        <i class="icofont-navigation-menu"></i>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container" style="text-align: center;">
+      <div id="loading" style="margin-top:250px;">
+        <img src="img/learning-logo.png" style="width:180px;"><br><br><br>
+        <img src="./img/loading1.gif" style="width:50px;">
+      </div>
+      <div class="clr"></div>
+      <div id="DisplayMyPoint" style="margin-top:90px; margin-bottom: 5px;"></div>
+      <div class="clr" style="height: 30px;"></div>
+      <div class="text-header">บันทึกรายการล่าสุดของคุณ</div>
+      <div class="clr" style="height: 10px;"></div>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>วันที่</th>
+        <th>รายละเอียด</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center;">20/03/2024<br>Rating : 3</td>
+        <td>ปกติแล้วเราอาจใช้ Google Lens หรือฟีเจอร์กล้องใน Google Translate แปลภาษาสิ่งต่างๆ ที่อยู่ในชีวิตจริงรอบตัว แต่หากเราต้องการแปลหน้าเว็บหรือรูปภาพที่แสดงผลบนหน้าจออาจทำได้ลำบาก (ต้องแคปหน้าจอก่อนแล้วค่อยเข้า Google Translate อีกที)</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">19/03/2024<br>Rating : 1</td>
+        <td>ฟีเจอร์ Circle to Search ออกแบบมาเพื่อแก้ปัญหานี้ ตัวอย่างการใช้งานคือเข้าหน้าเว็บร้านอาหาร ที่มีภาพเมนูในภาษาต่างประเทศ</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">18/03/2024<br>Rating : 2</td>
+        <td>สิ่งที่ต้องทำมีเพียงกดปุ่ม Home ค้างเพื่อเรียก Google to Search ขึ้นมา มีปุ่มแปลภาษาเข้ามาใหม่ด้านล่าง กดแล้วแปลสิ่งที่อยู่บนจอได้ทันที</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">19/03/2024<br>Rating : 1</td>
+        <td>ฟีเจอร์ Circle to Search ออกแบบมาเพื่อแก้ปัญหานี้ ตัวอย่างการใช้งานคือเข้าหน้าเว็บร้านอาหาร ที่มีภาพเมนูในภาษาต่างประเทศ</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="clr" style="height: 50px;"></div>
+
+
+
+<!--
+      <div id="PleaseWait" style="display: none; margin-top:130px;">
+        <div><img src="img/waitting.png" style="width:230px;"></div>
+        <div class="btn-t8" style="color:#fff; margin-top:20px;">ความปลอดภัยเป็นสิ่งที่เรา<br>ต้องให้ความสำคัญเป็นอันดับแรก<br><br>เรากำลังตรวจสอบข้อมูลของคุณ<br>โปรดรอคอยการอนุมัติ</div>
+        <div class="btn-grey" onclick="OneStory()" style="margin-top:30px;">เกี่ยวกับระบบงาน</div>
+        <div class="btn-red" onclick="window.location.href='mailto:suvit.cha@ttbbank.com';" style="margin-top:30px;">จำเป็นเร่งด่วน คลิก</div>
+      </div>
+      <div id="NoService" style="display: none; margin-top:130px;">
+        <div><img src="img/stop.png" style="width:230px;"></div>
+        <div class="btn-t8" style="color:#fff; margin-top:20px;">คุณไม่ได้รับสิทธิ์ในการเข้าถึงข้อมูลนี้<br>กรุณาบอกเราว่าคุณมีความจำเป็นอย่างไร<br>
+        <div class="btn-red" onclick="window.location.href='mailto:suvit.cha@ttbbank.com';" style="margin-top:30px;">แจ้งเหตุผลเข้าใช้ระบบงาน</div>
+        </div>
+      </div>
+
+
+      <div id="NewMember" style="display: none; margin-top:110px;">
+        <div id="MyProfile-start"></div>
+        <div style="margin-top:10px;">
+          <img src="img/register.png" style="width:250px;padding-top:4px; padding-bottom: 15px;">
+        </div>
+        <div class="btn-t8" style="color:#fff;">เราเชื่อว่าการเรียนรู้ของเราทุก ๆ คน<br>จะเริ่มต้นในทุก ๆ วัน<br><br><b>One Retail Academy</b><br>ขอร่วมเป็นส่วนหนึ่งในการเรียนรู้ของคุณ</div>
+        <div class="btn-grey" onclick="OneStory()" style="margin-top:30px;">เกี่ยวกับระบบงาน</div>
+        <div class="btn-blue" onclick="window.location.href='registerpage.html';" style="margin-top:30px;">ลงทะเบียนเข้าใช้งาน</div>
+      </div>
+-->
+    </div>
+  </main>
+
+  <div id="menu" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4 bg-menu">
+      <div class="w3-container container-min">
+        <div id="MenuSociety"></div>
+      </div>
+    </div>
+    <div class="clr" style="height:40px;"></div>
+  </div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+
+<!--
+  <div id="id01" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #0056ff;">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <div id="BoxTimeGetPoint"></div>
+      </div>
+    </div>
+    <div style="height:20px;"></div>
+  </div>
+
+  <div id="id02" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #0056ff;">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <div>เกี่ยวกับ One Retail Academy</div>
+        <div class="btn-grey" onclick="CloseAll()" style="margin-top:30px;">ปิดหน้าต่างนี้</div>
+      </div>
+    </div>
+    <div style="height:20px;"></div>
+  </div>
+
+  <div id="id03" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #f68b1f;">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <div class="text-header" style="margin-top:14px;">บันทึกการเข้าใช้งานของคุณ</div>
+        <div style="height: 240px;"></div>
+        <div id="BoxTimeLine"></div>
+        <div class="clr"></div>
+        <div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>
+      </div>
+    </div>
+    <div style="height:20px;"></div>
+  </div>
+
+  <div id="id04" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #7b95ac;">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <div class="text-header" style="margin-top:14px;">คุณได้รับเหรียญรางวัล</div>
+        <div id="BoxTimeNewPoint"></div>
+        <div class="clr"></div>
+        <div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>
+      </div>
+    </div>
+    <div style="height:20px;"></div>
+  </div>
+-->
+
+  <script src="js/connect.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/pulseresult.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!--
+https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee-satisfaction-and-workplace-culture-th/  
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>One Retail Academy</title>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+  <link href="assets/img/favicom.ico" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/css.css" rel="stylesheet">
+  <link href="assets/css/w3.css" rel="stylesheet">
+  <link href="assets/css/form.css" rel="stylesheet">
+  <link href="assets/css/button.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+  <style type="text/css">
+    ::-ms-input-placeholder { /* Edge 12 -18 */
+      color: red;
+    }  
+  </style>
+</head>
+
+<body class="body">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <div id="isLoggedIn" style="color:#fff;"></div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo mr-auto"><a href="index.html"><span>One Retail</span> Academy</a></h1>
+    </div>
+  </header>
+
+
+  <main>
+    <div class="container" id="StartPage">
+      <div style="margin-top:90px; text-align: center; color:#fff;">
+        <div class="text-header">แบบสำรวจวัดความสุขในการทำงาน</div>
+        <div style="margin-top:25px;"><img src="img/survey.png" style="height: 320px;"></div>
+        <div style="margin-top:20px;">ในทุก ๆ วันของการทำงาน เราอยากรู้ว่า<br>คุณมีความสุขในการทำงานมากน้อยแค่ไหน<br>
+          <font color="#ffff00">เราสัญญาว่าทุกเรื่องราวจะถูก <b>"เก็บเป็นความลับ"</b></font>
+        </div>
+        <div id="loading" style="margin-top:20px;">
+          <img src="./img/loading1.gif" style="width:50px;">
+        </div>
+        <div id="CheckStart"></div>
+      </div>
+    </div>
+    <div id="SurveyPage" style="display: none;margin-top:90px; text-align: center; color:#fff; max-width:450px; margin:auto;">
+      <div id="Q_PulseSurvey" style="margin-top:100px; text-align: center; color:#fff;">
+        <div id="loading1" style="margin-top:250px;">
+          <img src="img/learning-logo.png" style="width:180px; opacity: .6;"><br><br><br>
+          <img src="./img/loading1.gif" style="width:50px;">
+        </div>
+        <div id="DisplaySurvey"></div>
+      </div>
+      <div id="A_PulseSurvey" style="display:none; text-align: center; color:#fff;">
+        <div class="container" style="margin-top:20px;">
+          <div id="DisplayMemo" style="margin-top:80px;"></div>
+          <div class="row-font">
+            <div class="header-font">เลือกหัวช้อเรื่องราวของคุณ</div>
+            <div class="input-group">
+              <select id="txtGroupQ" style="background: #c8d4eb; color:#000" required/>
+                <option></option>
+                <option value="Group-01">การประเมินผล KPI</option>
+                <option value="Group-02">ค่าตอบแทน</option>
+                <option value="Group-03">ค่าใช้จ่าย</option>
+                <option value="Group-04">ค่ารถยนต์</option>
+                <option value="Group-99">อื่น ๆ</option>
+              </select>
+            </div>
+          </div>          
+          <div class="row-font">
+            <div class="header-font">เขียนเรื่องราวของคุณที่นี่</div>
+            <div class="input-group">
+              <textarea id="txtStory" rows="10" placeholder="" style="height: 120px; background: #c8d4eb; color:#000;"></textarea>
+            </div>
+          </div>
+          <div>
+            <div class="btn-close" onclick="SavePulseDate()" style="margin-top:20px;">ไม่มีเรื่องราวจะเขียน</div>
+            <div class="btn-red" onclick="SavePulseDate()" style="margin-top:20px;">บันทึกเรื่องราวนี้</div>
+          </div>
+        </div>
+      </div>
+      <div id="Q_thankyou" style="display: none; margin-top:90px; text-align: center; color:#fff;">
+        <div class="text-header">แบบสำรวจวัดความสุขในการทำงาน</div>
+        <div style="margin-top:15px;"><img src="img/checkup.png" style="height: 270px;"></div>
+        <div class="btn-click" onclick="window.location.href='pulseresult.html';" style="margin-top:20px;">ดูผลการประเมินอุณหภูมิของคุณ</div>
+        <div style="margin-top:20px;">ขอบคุณสำหรับการเข้าร่วม<br><b>"วัดอุณหภูมิความสุขในการทำงาน"</b><br><br>ในทุก ๆ การให้ข้อมูลของคุณ<br>
+          <font color="#ffff00">เรายังยืนยันว่าทุกเรื่องราวจะถูก <b>"เก็บเป็นความลับ"</b></font><br>
+          และพร้อมที่จะช่วยคุณในการแก้ไขปัญหา
+        </div>
+        <div>
+          <div class="btn-red" onclick="HealthClinic()" style="margin-top:20px;">คลินิกสุขภาพ</div>
+          <div class="btn-grey" onclick="window.location.href='home.html';" style="margin-top:20px;">ไปหน้าแรก</div>
+        </div>
+      </div>
+    </div>    
+    <div class="clr" style="height: 50px;"></div>
+  </main>
+  <script src="js/connect.js"></script>
+  <script src="js/pulsesurvey.js"></script>
+
+
+  <div id="id01" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4 bg-menu">
+      <div class="w3-container container-min">
+        <div style="margin-top:20px;">อ่านรายละเอียดเพิ่มเติม<br><b>Pulse Survey</b></div>
+        <div class="btn-grey" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่าง</div>
+      </div>
+    </div>
+    <div class="clr" style="height:40px;"></div>
+  </div>
+
+
+  <div id="id02" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4 bg-menu" style="max-width: 450px;">
+      <div class="w3-container container-min" style="background: #0056ff;">
+        <div class="text-header"  style="margin-top:25px;">คลินิกสุขภาพ</div>
+        <div style="margin-top:15px;"><img src="img/healthclinic.png" style="width: 95%;"></div>
+        <div style="margin-top:20px; color:#fff;">เราอยากให้ทุก ๆ คนทำงานด้วยความสุข<br>หากคุณมีปัญหาเรื่องงานปรึกษาเราได้ทุกเวลา<br>
+          <font color="#ffff00">เราสัญญาว่าทุกเรื่องราวจะถูก <b>"เก็บเป็นความลับ"</b></font>
+        </div>
+        <div>
+          <div class="btn-red" onclick="window.location.href='clinic.html';" style="margin-top:20px;">บอกเรื่องราวของคุณ</div>
+          <div class="btn-grey" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่างนี้</div>
+        </div>
+        <div class="clr" style="height:30px;"></div>
+      </div>
+      </div>
+    </div>
+    <div class="clr" style="height:40px;"></div>
+  </div>
+
+
+</body>
+
+</html>
