@@ -3,6 +3,7 @@ var gProfile = "";
 var AA = 0;
 
 $(document).ready(function () {
+/*
   sessionStorage.clear(); 
   var str = "";
   var str1 = "";
@@ -20,6 +21,7 @@ $(document).ready(function () {
   gProfile = sLinePicture;
   $("#MyProfile").html(str);  
   $("#MyProfile-start").html(str1);  
+*/
   Connect_DB();
   CheckDoneSurvey();
   CheckData();
@@ -27,7 +29,7 @@ $(document).ready(function () {
 
 
 async function main() {
-  await liff.init({ liffId: "1657509542-mDY67W8w" });
+  await liff.init({ liffId: "1657509542-4Mwmplqj" });
   document.getElementById("isLoggedIn").append(liff.isLoggedIn());
   if(liff.isLoggedIn()) {
     getUserProfile();
