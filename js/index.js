@@ -21,10 +21,12 @@ $(document).ready(function () {
   gProfile = sLinePicture;
   $("#MyProfile").html(str);  
   $("#MyProfile-start").html(str1);  
-*/
   Connect_DB();
   CheckDoneSurvey();
   CheckData();
+*/
+
+  main();
 });
 
 
@@ -49,6 +51,8 @@ async function getUserProfile() {
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
   $("#MyProfile").html(str);  
   Connect_DB();
+  CheckDoneSurvey();
+  CheckData();
 }
 
 
