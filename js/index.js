@@ -43,13 +43,18 @@ async function main() {
 
 async function getUserProfile() {
   var str = "";
+  var str1 = "";
   const profile = await liff.getProfile();
   sessionStorage.setItem("LineID", profile.userId);
   sessionStorage.setItem("LineName", profile.displayName);
   sessionStorage.setItem("LinePicture", profile.pictureUrl);
   str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="add-profile" width="100px"></div>';
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
+  str1 += '<div style="color:#fff; font-size: 13px;">เริ่มต้นการเรียนรู้ของ</div><div class="NameLine" style="margin-top:5px;">'+ sessionStorage.getItem("LineName")+'</div>';
+  xProfile = str;
+  gProfile = sLinePicture;
   $("#MyProfile").html(str);  
+  $("#MyProfile-start").html(str1);  
   Connect_DB();
   CheckDoneSurvey();
   CheckData();
