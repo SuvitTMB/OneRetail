@@ -44,9 +44,11 @@ var aPulseScore = 0;
 var aPulseRatio = 0;
 function CheckQuestionPulse() {
   dbPulseDate.where('PulseDate','==',thistoday)
+  .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
   .limit(1)
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
+      console.log("Found");
       EidPulseDate = doc.id;
       EidPulseRefID = doc.data().PulseRefID;
       aPulseCount = doc.data().PulseCount;
@@ -137,8 +139,6 @@ function SavePulseDate() {
   }
   aPulseScore = (aChoice1*1) + (aChoice2*2) + (aChoice3*3) + (aChoice4*4) + (aChoice5*5);
   aPulseRatio = aPulseScore / (aPulseCount * 5) * 100;
-  //console.log("ข้อที่เลือก = "+xSelectChoice+"=== "+stxtGroupQ+"=== "+stxtStory);
-  //console.log("คะแนนรวม ="+aPulseScore+" คะแนนความสุข ="+aPulseRatio);
   dbPulseDate.doc(EidPulseDate).update({
     PulseCount: parseFloat(aPulseCount),
     Choice1: parseFloat(aChoice1),
@@ -229,7 +229,7 @@ function SavePulseSurvey() {
     });
     cPulseCount = parseFloat(cPulseCount) + 1;
     if(xSelectChoice==1) { 
-      bChoice1 = parseFloat(cChoice1) + 1;
+      cChoice1 = parseFloat(cChoice1) + 1;
     } else if(xSelectChoice==2) { 
       cChoice2 = parseFloat(cChoice2) + 1;
     } else if(xSelectChoice==3) { 
@@ -252,6 +252,58 @@ function SavePulseSurvey() {
       PulseRatio: parseFloat(cPulseRatio).toFixed(2)
     });    
     console.log("Save 3");
+    SavePulseResult();
+  });    
+}
+
+
+var dChoice1 = 0 ;
+var dChoice2 = 0 ;
+var dChoice3 = 0 ;
+var dChoice4 = 0 ;
+var dChoice5 = 0 ;
+var dPulseCount = 0;
+var dPulseScore = 0;
+var dPulseRatio = 0;
+var EidPulseSurvey = "";
+function SavePulseResult() {
+  dbPulseResult.where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
+  .limit(1)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      EidPulseSurvey = doc.id;
+      dPulseCount = doc.data().PulseCount;
+      dChoice1 = doc.data().Choice1;
+      dChoice2 = doc.data().Choice2;
+      dChoice3 = doc.data().Choice3;
+      dChoice4 = doc.data().Choice4;
+      dChoice5 = doc.data().Choice5;
+    });
+    dPulseCount = parseFloat(dPulseCount) + 1;
+    if(xSelectChoice==1) { 
+      dChoice1 = parseFloat(dChoice1) + 1;
+    } else if(xSelectChoice==2) { 
+      dChoice2 = parseFloat(dChoice2) + 1;
+    } else if(xSelectChoice==3) { 
+      dChoice3 = parseFloat(dChoice3) + 1;
+    } else if(xSelectChoice==4) { 
+      dChoice4 = parseFloat(dChoice4) + 1;
+    } else if(xSelectChoice==5) { 
+      dChoice5 = parseFloat(dChoice5) + 1;
+    }
+    dPulseScore = (dChoice1*1) + (dChoice2*2) + (dChoice3*3) + (dChoice4*4) + (dChoice5*5);
+    dPulseRatio = dPulseScore / (dPulseCount * 5) * 100;
+    dbPulseResult.doc(EidPulseSurvey).update({
+      PulseCount: parseFloat(dPulseCount),
+      Choice1: parseFloat(dChoice1),
+      Choice2: parseFloat(dChoice2),
+      Choice3: parseFloat(dChoice3),
+      Choice4: parseFloat(dChoice4),
+      Choice5: parseFloat(dChoice5),
+      PulseScore: parseFloat(dPulseScore),
+      PulseRatio: parseFloat(dPulseRatio).toFixed(2)
+    });    
+    console.log("Save 4");
     SaveUserSurvey();
   });    
 }
@@ -265,7 +317,10 @@ function SaveUserSurvey() {
   stxtStory = document.getElementById("txtStory").value;
   dbUserSurvey.add({
     LineID: sessionStorage.getItem("LineID"),
+    LinePicture: sessionStorage.getItem("LinePicture"),
     EmpID: sessionStorage.getItem("EmpID_Academy"),
+    EmpName: sessionStorage.getItem("EmpName_Academy"),
+    PulseStatus: 0,
     FollowCase: 0,
     PulseChoice: parseFloat(xSelectChoice),
     PulseDate: thistoday,
@@ -275,11 +330,15 @@ function SaveUserSurvey() {
     PulseQus: QuesPulse,
     PulseMemo: MemoPulse,
     PulseStory: stxtStory,
+    PulseRead: 0,
+    PulseLike: 0,
+    PulseComment: 0,
     TimeStamp: TimeStampDate,
     DateSurvey: dateString
   });
   document.getElementById('Q_thankyou').style.display='block';
-  console.log("Save 4");
+  console.log("Save 5");
+  //CheckTapMemo();
 }
 
 

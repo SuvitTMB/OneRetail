@@ -15,7 +15,6 @@ $(document).ready(function () {
   sessionStorage.setItem("LinePicture", sLinePicture);
   str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="show-profile" width="100px"></div>';
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
-  //str += '<div class="NameLine">'+ sessionStorage.getItem("EmpName_Academy")+'</div>';
   str1 += '<div style="color:#fff; font-size: 13px;">เริ่มต้นการเรียนรู้ของ</div><div class="NameLine" style="margin-top:5px;">'+ sessionStorage.getItem("LineName")+'</div>';
   xProfile = str;
   gProfile = sLinePicture;
@@ -24,6 +23,7 @@ $(document).ready(function () {
   Connect_DB();
   CheckDoneSurvey();
   CheckData();
+  //CheckPulseSurvey();
 */
 
   main();
@@ -77,11 +77,10 @@ function CheckData() {
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
       CheckFoundData = 1;
-      //if(doc.data().StatusConfirm==1) {
+      //if(doc.data().StatusConfirm==1) {Admin_Chat
         EidProfile = doc.id;
         //sessionStorage.setItem("EmpID_Academy", doc.data().EmpID);
         CheckUserProfile(doc.data().EmpID);
-
         sessionStorage.setItem("EmpName_Academy", doc.data().EmpName);
         sessionStorage.setItem("EmpRefID_Academy", doc.id);
         sessionStorage.setItem("EmpPhone_Academy", doc.data().EmpPhone);
@@ -92,7 +91,9 @@ function CheckData() {
         sessionStorage.setItem("DM_Point", doc.data().DM_Point);
         sessionStorage.setItem("LastUpdate", doc.data().LogDateTime);
         sessionStorage.setItem("PulseRatio", doc.data().PulseRatio);
-        //AA = parseFloat(doc.data().PulseRatio).toFixed(0);
+        if(doc.data().Admin_Pulse!=0) { 
+          sessionStorage.setItem("Admin_Pulse", doc.data().Admin_Pulse);
+        }
         xDateToDay = doc.data().DateToDay;
         UpdatePorfile();
         if(doc.data().Level_Point==1 && doc.data().XP_Point >= 100) {
@@ -107,21 +108,13 @@ function CheckData() {
         if(doc.data().JoinTime==0) {
           FirstTimeMember();
         }
-/*
-      } else if(doc.data().StatusConfirm==2) {
-        document.getElementById('loading').style.display='none';
-        document.getElementById('PleaseWait').style.display='block';
-      } else if(doc.data().StatusConfirm==9) {
-        document.getElementById('loading').style.display='none';
-        document.getElementById('NoService').style.display='block';
-      }
-*/
     });
     if(CheckFoundData==0) {
       document.getElementById('loading').style.display='none';
       document.getElementById('NoService').style.display='none';
       document.getElementById('NewMember').style.display='block';
     }
+    //CheckPulseSurvey();
   });
 }
 
@@ -145,6 +138,7 @@ function UpdatePorfile() {
     LinePicture : sessionStorage.getItem("LinePicture"),
     EmpID : sessionStorage.getItem("EmpID_Academy"),
     EmpName : sessionStorage.getItem("EmpName_Academy"),
+    xTeamGroup : sessionStorage.getItem("xTeamGroup"),
     LogDate : dateString,
     LogTimeStamp : TimeStampDate
   });
@@ -155,12 +149,17 @@ function UpdatePorfile() {
 var xCheckOut = 0;
 function CheckUserProfile(eid) {
   dbCheckMember.where('xEmpID','==',parseFloat(eid))
-  .where('xChief_eng','in',['CRSG','CRSG'])
+  .where('xChief_eng','in',['CRSG','CRDG','CRLG','CTWPG','CALO'])
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
       xCheckOut = 1;
       sessionStorage.setItem("EmpID_Academy", eid);
-      sessionStorage.setItem("xTeamGroup", doc.data().xTeamGroup);
+      if(doc.data().xChief_eng=="CALO") {
+        sessionStorage.setItem("xTeamGroup", "AL Group");        
+      } else {
+        sessionStorage.setItem("xTeamGroup", "Retail Group");        
+      }
+      //alert("Check="+sessionStorage.getItem("xTeamGroup"));
       sessionStorage.setItem("xBranch", doc.data().xBranch);
       sessionStorage.setItem("xDepartment", doc.data().xDepartment);
       sessionStorage.setItem("xGroup", doc.data().xGroup);
@@ -186,6 +185,7 @@ function CheckUserProfile(eid) {
         //alert("check2"+thistoday+"==="+xDateToDay);
         MyPointMenu();
       }
+      CheckPulseSurvey();
       //MyPointMenu();
     });
     if(xCheckOut==0) {
@@ -226,6 +226,21 @@ function FirstTimeMember() {
     EmpName : sessionStorage.getItem("EmpName_Academy"),
     LogDate : dateString,
     LogTimeStamp : TimeStampDate
+  });
+}
+
+
+function CheckPulseSurvey() {
+  dbPulseDate.where('PulseDate','==',thistoday)
+  .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
+  .limit(1)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      //alert("Found");
+      //alert("Found"+sessionStorage.getItem("xTeamGroup")+"==="+thistoday);
+      CheckDoneSurvey();
+    });
+    //alert("Not Found"+sessionStorage.getItem("xTeamGroup")+"==="+thistoday);
   });
 }
 
@@ -364,7 +379,7 @@ function GetJoinPoint(d,x) {
 
 function CheckDoneSurvey() {
   sessionStorage.setItem("CheckDonePulse", 0);
-  dbUserSurvey.where('PulseDate','==',datetoday)
+  dbUserSurvey.where('PulseDate','==',thistoday)
   .where('LineID','==',sessionStorage.getItem("LineID"))
   .limit(1)
   .get().then((snapshot)=> {

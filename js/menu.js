@@ -1,16 +1,19 @@
-//MenuFooter();
+MenuFooter();
 
 
 function MyPointMenu() {
   //console.log("Menu");
   var xLine = "";
-  var xRatio10 = "10";
+
   var xValue1 = ((parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0)/5)*100);
-  //var xValue1 = parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2);
   var xValue2 = 0;
   var xValue3 = 0;
+  /*
+  //var xValue1 = parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2);
+  var xRatio10 = "10";
+  */
   var xRatio = "100";
-  if(sessionStorage.getItem("Level_Point")!=null) {
+  if(sessionStorage.getItem("LineID")!=null) {
       var xxx = parseFloat(sessionStorage.getItem("XP_Point"));
       //console.log("XP_Point="+(parseFloat(sessionStorage.getItem("XP_Point"))));
       if(sessionStorage.getItem("XP_Point") >= 1000) {
@@ -22,116 +25,40 @@ function MyPointMenu() {
         xValue2 = (parseFloat(sessionStorage.getItem("XP_Point")));
       }
 
-/*
-
-      if(sessionStorage.getItem("Level_Point")==1) {
-        if(sessionStorage.getItem("XP_Point")<=100) {
-          xValue2 = xRatio;
-        }
-      } else if(sessionStorage.getItem("Level_Point")==2 && doc.data().XP_Point >= 300) { 
-        NextLevel(3);
-      } else if(sessionStorage.getItem("Level_Point")==3 && doc.data().XP_Point >= 600) { 
-        NextLevel(4);
-      } else if(sessionStorage.getItem("Level_Point")==4 && doc.data().XP_Point >= 1000) { 
-        NextLevel(5);
-      }
-
-
-      else if(sessionStorage.getItem("XP_Point") <= 100) {
-        xValue2 = (parseFloat(sessionStorage.getItem("XP_Point")));
-      } else if(sessionStorage.getItem("XP_Point") >= 100) {
-      } else if(sessionStorage.getItem("XP_Point") >= 100) {
-      } else if(doc.data().Level_Point==2 && doc.data().XP_Point >= 300) { 
-        NextLevel(3);
-      } else if(doc.data().Level_Point==3 && doc.data().XP_Point >= 600) { 
-        NextLevel(4);
-      } else if(doc.data().Level_Point==4 && doc.data().XP_Point >= 1000) { 
-        NextLevel(5);
-*/
-
     xLine += '<div class="clr" style="height:10px;"></div>';
     xLine += '<div style="color:#fff;">'+ xProfile +'</div>';
-    if(sessionStorage.getItem("Level_Point")!="") {
-      xLine += '<div class="txt-white">'+ sessionStorage.getItem("xBranch") +'';
+    xLine += '<div class="txt-white"><b>'+ sessionStorage.getItem("xTeamGroup") +'</b>';
+    if(sessionStorage.getItem("xBranch")!="") {
+      xLine += '<br>'+ sessionStorage.getItem("xBranch") +'';
       xLine += '<br>'+ sessionStorage.getItem("xDepartment")+'';
     } else {
-      xLine += '<div class="txt-white">'+ sessionStorage.getItem("xDepartment") +'';
+      xLine += '<br>'+ sessionStorage.getItem("xDepartment") +'';
     }
     xLine += '<br>'+ sessionStorage.getItem("xGroup") +'';
     xLine += '<br>'+ sessionStorage.getItem("xChief_th") +' ('+ sessionStorage.getItem("xChief_eng") +')';
-
-    //xLine += '<div class="txt-white">สาขาเชียงใหม่<br>Retail & AL Academy<br>ออกแบบเทคโนโลยีและโซลูชั่นงานขายลูกค้าบุคคล<br>Chief Retail Strategy Group (CRSG)</div>';
-
-/*
-    xPulseRatio = parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2);
-    console.log(xPulseRatio);
-    xLine += '<div class="clr" style="height:15px"></div>';
-    xLine += '<div class="row-header">อุณหภูมิ<br>ของคุณ</div>';
-    xLine += '<div class="row-progress"><progress value="'+ xPulseRatio +'" max="'+ xRatio +'" style="--value: '+ xValue1 +'; --max: '+ xRatio +';"></progress></div>';
-    xLine += '</div>';
-
-    xLine += '<div class="clr" style="height:15px"></div>';
-    xLine += '<div class="row-header">ระดับของ<br>ผู้ใช้งาน</div>';
-    xLine += '<div class="row-progress"><progress value="'+ xValue1 +'" max="'+ xRatio +'" style="--value: '+ xValue1 +'; --max: '+ xRatio +';"></progress></div>';
-    xLine += '<div class="row-header">คะแนน<br>ประสบการณ์</div>';
-    xLine += '<div class="row-progress"><progress value="'+ xValue2 +'" max="'+ xRatio +'" style="--value: '+ xValue2 +'; --max: '+ xRatio +';"></progress></div>';
-    xLine += '<div class="row-header">เหรียญ<br>แลกรางวัล</div>';
-    xLine += '<div class="row-progress"><progress value="78" max="'+ xRatio +'" style="--value: 78; --max: '+ xRatio +';"></progress></div>';
-    xLine += '</div>';
-
-
-*/
-
-    xLine += '';
     xLine += '<div class="half-arc" style="--percentage:'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2) +'%;"><span class="label" style="color:#ffffff; padding-top:30px;">'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2) +'%</span></div>';
     xLine += '<div class="txt-white">ภาพรวมอุณหภูมิความสุขในการทำงานของคุณ</div>';
-    xLine += '<div class="clr" style="height:15px"></div>';
-    xLine += '<div class="row-header">ระดับของ<br>ความสุข</div>';
+    xLine += '<div class="clr" style="height:20px"></div>';
+
+
+
+    xLine += '<div class="row-header">อุณหภูมิรวม<br>ของตัวคุณ</div>';
     xLine += '<div class="row-progress"><progress value="'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(0) +'" max="'+ xRatio +'" style="--value: '+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(0) +'; --max: '+ xRatio +';"></progress></div>';
     xLine += '<div class="row-header">ระดับของ<br>ผู้ใช้งาน</div>';
     xLine += '<div class="row-progress"><progress value="'+ xValue1 +'" max="'+ xRatio +'" style="--value: '+ xValue1 +'; --max: '+ xRatio +';"></progress></div>';
-    xLine += '<div class="row-header">คะแนน<br>ประสบการณ์</div>';
+    xLine += '<div class="row-header">เหรียญแลก<br>ของรางวัล</div>';
     xLine += '<div class="row-progress"><progress value="'+ xValue2 +'" max="'+ xRatio +'" style="--value: '+ xValue2 +'; --max: '+ xRatio +';"></progress></div>';
+
     //xLine += '<div class="row-header">เหรียญ<br>แลกรางวัล</div>';
     //xLine += '<div class="row-progress"><progress value="78" max="'+ xRatio +'" style="--value: 78; --max: '+ xRatio +';"></progress></div>';
     xLine += '</div>';
     if(sessionStorage.getItem("CheckDonePulse")==0) {
       //xLine += '<div class="btn-grey" onclick="PulseDetail()" style="margin-top:20px;margin-right:5px;">เกี่ยวกับวัดอุณหภูมิ</div>';
-      xLine += '<div class="btn-click" onclick="GotoSurvey()" style="margin-top:20px;">ไปวัดอุณหภูมืความสุขของคุณ</div>';
+      xLine += '<div class="btn-click" onclick="GotoSurvey()" style="margin-top:25px;">ไปวัดอุณหภูมิความสุขของคุณ</div>';
     } else {
-      xLine += '<div class="btn-blue" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าแรกของระบบงาน</div>';
-    }
-
-        
-
-        
-/*
-
-    xLine += '<progress value="'+ xValue1 +'" max="'+ xRatio +'" style="--value: '+ xValue1 +'; --max: '+ xRatio +';"></progress>';
-    xLine += '<progress value="25" max="'+ xRatio +'" style="--value: 25; --max: '+ xRatio +';"></progress>';
-    xLine += '<progress value="46" max="'+ xRatio +'" style="--value: 46; --max: '+ xRatio +';"></progress>';
-    xLine += '<progress value="65" max="'+ xRatio +'" style="--value: 65; --max: '+ xRatio +';"></progress>';
-    xLine += '<progress value="94" max="'+ xRatio +'" style="--value: 94; --max: '+ xRatio +';"></progress>';
-
-
-
-
-
-
-    xLine += '<progress value="'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(0) +'" max="100" style="--value: '+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(0) +'; --max: 100; margin:20px auto;"></progress>';
-    xLine += '<div style="margin-top:35px;">';
-    xLine += '<div class="box-point" style="margin-left:6px; margin-right: 10px;"><div class="number1">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div>ระดับ<br>ผู้ใช้งาน</div>';
-    xLine += '<div class="box-point" style="margin-right: 10px;"><div class="number1">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(2) +'</div>คะแนน<br>ประสบการณ์</div>';
-    xLine += '<div class="box-point"><div class="number1">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(2) +'</div>เหรียญ<br>แลกรางวัล</div>';
-*/
-    /*
-    xLine += '<div class="box-reward1"></div>';
-    xLine += '<div class="box-reward"><div class="XPpoint">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div>ระดับ<br>ผู้แข่งขัน</div>';
-    xLine += '<div class="box-reward"><div class="XPpoint">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(2) +'</div>ประสบการณ์<br>การใช้งาน</div>';
-    xLine += '<div class="box-reward"><div class="XPpoint">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(2) +'</div>เหรียญ<br>แลกรางวัล</div>';
-    //xLine += '<div class="box-reward"><div class="XPpoint">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(2) +'<img src="./icon/coin.png" class="coin-img"></div>เหรียญ<br>แลกรางวัล</div>';
-    */
-    xLine += '</div><div class="clr" style="height:3px;"></div>'
+      xLine += '<div class="btn-blue" onclick="GotoHome()" style="margin-top:25px;">ไปหน้าแรกของระบบงาน</div>';
+    }    
+    xLine += '</div><div class="clr" style="height:30px;"></div>'
     $("#DisplayMyPoint").html(xLine); 
     document.getElementById('loading').style.display='none';
   }
@@ -145,7 +72,7 @@ function OpenPopMenu() {
   xLine += '<div style="height: 50px;">';
   xLine += '<div style="height: 55px;background-color: #0056ff; width:100%; padding-top:10px;border-top-left-radius:15px; border-top-right-radius:15px;">';
   xLine += '<div style="height: 50px; margin:auto; width:100%;">';
-  xLine += '<center><div style="color:#fff; font-size:15px;font-weight: 400;padding-top:8px; letter-spacing:2px;">Retail Sales Academy</div></center>';
+  xLine += '<center><div style="color:#fff; font-size:15px;font-weight: 400;padding-top:8px; letter-spacing:2px;">One Retail</div></center>';
   xLine += '</div>';
   xLine += '</div><div class="clr" style="height:3px;"></div>';
   xLine += '<div class="clr"></div>';
@@ -182,25 +109,54 @@ function OpenPopMenu() {
 
 function MenuFooter() {
   var str = "";
-  str += '<div class="footer-top"><div class="container">';
-  str += '<div class="row"><div class="col-lg-4 col-md-6 footer-newsletter">';
-  str += '<div style="margin-top:0px;margin-left:30px;">';
+  str += '<div class="footer-top">';
+  str += '<div class="row" style="padding: 20px; max-width:450px; margin-right:0px; margin-left: 0px;">';
+
+
+  str += '<div style="margin:auto; width:100%;">';
+
   str += '<div class="menu-box1" onclick="window.location.href=\'home.html\';">';
-  str += '<div class="menu-box-img1"><img src="./img/icon-menu1.png" style="width:35px;"></div>';
-  str += '<div class="menu-box-text1">หน้าแรก</div></div>';
-  str += '<div class="menu-box1" onclick="window.location.href=\'timeline.html\';">';
-  str += '<div class="menu-box-img1"><img src="./img/icons-history.png" style="width:35px;"></div>';
-  str += '<div class="menu-box-text1">กำหนดการ</div></div>';
-  str += '<div class="menu-box1" onclick="window.location.href=\'rule.html\';">';
-  str += '<div class="menu-box-img1"><img src="./img/icon-menu3.png" style="width:35px;"></div>';
-  str += '<div class="menu-box-text1">รายละเอียด</div></div>';
-  str += '<div class="menu-box1" onclick="window.location.href=\'rule.html\';">';
-  str += '<div class="menu-box-img1"><img src="./img/icon-menu4.png" style="width:35px;"></div>';
-  str += '<div class="menu-box-text1">บอกต่อเพื่อน</div></div>';
+  str += '<div class="menu-box-img1"><img src="./img/icons-home.png" style="width:35px;"></div>';
+  str += '<div class="menu-box-text1">Home</div></div>';
+
+  str += '<div class="menu-box1" onclick="window.location.href=\'calendar.html\';">';
+  str += '<div class="menu-box-img1"><img src="./img/icons-youtube.png" style="width:35px;"></div>';
+  str += '<div class="menu-box-text1">ปฎิทิน<br>การอบรม</div></div>';
+
+  str += '<div class="menu-box1" onclick="window.location.href=\'calendar.html\';">';
+  str += '<div class="menu-box-img1"><img src="./img/icons-youtube.png" style="width:35px;"></div>';
+  str += '<div class="menu-box-text1">ผลิตภัณฑ์<br>ธนาคาร</div></div>';
+
+  str += '<div class="menu-box1" onclick="window.location.href=\'calendar.html\';">';
+  str += '<div class="menu-box-img1"><img src="./img/icons-youtube.png" style="width:35px;"></div>';
+  str += '<div class="menu-box-text1">การแข่งขัน<br>ตอบคำถาม</div></div>';
+
+  str += '<div class="menu-box1" onclick="window.location.href=\'clipvdo.html\';">';
+  str += '<div class="menu-box-img1"><img src="./img/icons-youtube.png" style="width:35px;"></div>';
+  str += '<div class="menu-box-text1">UPskill<br>Clip VDO</div></div>';
+
+  str += '<div class="menu-box1" onclick="window.location.href=\'successstory.html\';">';
+  str += '<div class="menu-box-img1"><img src="./img/icons-appreciation.png" style="width:35px;"></div>';
+  str += '<div class="menu-box-text1">Success Story</div></div>';
+
+  str += '<div class="menu-box1" onclick="window.location.href=\'pulseresult.html\';">';
+  str += '<div class="menu-box-img1"><img src="./img/icons-scale.png" style="width:35px;"></div>';
+  str += '<div class="menu-box-text1">Pulse<br>Survey</div></div>';
+
+  str += '<div class="menu-box1" onclick="window.location.href=\'oneretailclub.html\';">';
+  str += '<div class="menu-box-img1"><img src="./img/icons-query.png" style="width:35px;"></div>';
+  str += '<div class="menu-box-text1">Retail CLub</div></div>';
+
+
+/*
+*/
+
+
+  str += '</div></div>';
+  str += '<div class="copyright">@One Retail Society</span></div>';
   str += '</div>';
-  str += '</div></div></div></div>';
-  str += '<div class="container d-md-flex py-4"><div class="mr-md-auto text-center text-md-left">';
-  str += '<div class="copyright">@<span>LINE Retail Society</span></div></div></div>';
+  //str += '<div class="container d-md-flex py-4"><div class="mr-md-auto text-center text-md-left">';
+  //str += '<div class="copyright">@<span>LINE Retail Society</span></div></div></div>';
   $("#DisplayFooter").html(str);  
 }
 

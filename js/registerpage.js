@@ -119,6 +119,7 @@ function CheckUserProfile(x) {
         //StatusConfirm : 1,
         //StatusEdit : 1,
         //StatusPass : 0,
+        Admin_Pulse: 0,
         Admin_News: 0,
         Admin_Web: 0,
         Admin_Chat: 0,

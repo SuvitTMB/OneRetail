@@ -3,11 +3,47 @@
 
 $(document).ready(function () {
   if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
-  Connect_DB();
-  CheckUserSurvey();
+
+  $(".content").slice(0, 4).show();
+  $("#loadMore").on("click", function(e){
+    e.preventDefault();
+    $(".content:hidden").slice(0, 4).slideDown();
+    if($(".content:hidden").length == 0) {
+      $("#loadMore").text("No Content").addClass("noContent");
+    }
+  });
+  //Connect_DB();
+  //CheckUserSurvey();
+  document.getElementById('loading').style.display='none';
+  document.getElementById('DisplayClip').style.display='block';
+
 });
 
 
+
+function GroupVDO(x) {
+  document.getElementById('DisplayGroup').style.display='block';
+
+}
+
+
+function ReadVdo(x) {
+  console.log(x);
+}
+
+
+
+function CheckTapMemo(x) {
+  console.log(x);
+}
+
+
+function CloseAll() {
+  document.getElementById('DisplayGroup').style.display='none';
+}
+
+
+/*DisplayMemo
 var CalUserSurvey = 0;
 function CheckUserSurvey() {
   dbUserSurvey.where('PulseDate','==',thistoday)
@@ -273,9 +309,9 @@ function CheckTapAdmin(x) {
   //document.getElementById('DisplayAdmin').style.display='block';
   $("#Tap-"+x).html(str);
 }
-*/
 
 
 function GotoShowMemo(x) {
   location.href = "pulsememo.html?gid="+x;
 }
+*/

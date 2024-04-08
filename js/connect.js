@@ -18,6 +18,10 @@ function Connect_DB() {
   dbCheckMember = firebase.firestore().collection("CheckProfile");
   dbttblog = firebase.firestore().collection("ttblog");
   dbPulseDate = firebase.firestore().collection("PulseDate");
+  dbPulseResult = firebase.firestore().collection("PulseResult");
+
+  dbGetAllMemo = firebase.firestore().collection("GetAllMemo");
+  dbGetAllLike = firebase.firestore().collection("GetAllLike");
 
 
   dbPulseSurvey = firebase.firestore().collection("PulseSurvey");
@@ -29,6 +33,11 @@ function Connect_DB() {
 }
 
 
+function imgError(image) {
+    image.onerror = "";
+    image.src = "./img/box.jpg";
+    return true;
+}
 
 function NewDate() {
   var months = new Array(12);
