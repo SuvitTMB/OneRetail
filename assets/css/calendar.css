@@ -1,0 +1,280 @@
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+.calendar {
+  /* text-align: center; */
+  display: block;
+  /* background: #FFFFFF; */
+  /* width: 330px; */
+  /* border: solid 1px #CCCCCC; */
+  margin: 10px auto;
+  /* box-shadow: 0 0 15px 0 #C0C0C0; */
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px 10px;
+  font-size: 14px;
+  width: 100%;
+  color: #fff;
+}
+.calendar header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  font-size: 1.4rem;
+  display: block;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #00ABEE;
+}
+.calendar header .month-display {
+  align-items: center;
+  height: 50px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background: #0056ff;
+  color: #fff;
+}
+.calendar header .month-label {
+  flex: 1;
+  /* text-align: left; */
+  padding-left: 10px;
+  font-size: 14px;
+}
+.calendar header .arrow {
+  flex-basis: 6%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar .week:first-child {
+  border-top: none;
+}
+.calendar .day-names {
+  color: rgba(189, 195, 199, 0.6);
+  font-weight: bold;
+  cursor: default;
+  font-size: 14px;
+  padding-top:10px;
+}
+.calendar .day-names .day {
+  cursor: default;
+}
+.calendar .day-names .day:hover {
+  background: inherit;
+}
+.calendar .day {
+  /* width: 14%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.2s;
+  /* padding: 6px 8px; */
+}
+.calendar .day:hover {
+  background: #EFEFEF;
+}
+.calendar .day:first-child {
+  border-left: none;
+}
+.calendar .day.today {
+  background: #7aafc4;
+  border-radius: 50%;
+  width: 45px;
+  max-width: 45px;
+  height: 45px;
+}
+.calendar .day.different-month {
+  color: #8e8787;
+}
+.calendar .day.selected {
+  background: #f68b1f;
+  color: #FFFFFF;
+  border-radius: 50%;
+  width: 45px;
+  max-width: 45px;
+  height: 45px;
+}
+
+.roundhead {
+  background: linear-gradient(#ff9900, #ff5050);
+  box-shadow: 0 2px 12px -3px #ff5050;
+}
+.up-plan {
+  list-style: none;
+  margin: 0;
+  padding: 5px 15px;
+}
+li .secondo {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+.upcoming .up-plan {
+  list-style: none;
+  margin: 0;
+  padding: 5px 15px;
+}
+.upcoming .up-plan li .roundhead {
+  width: 25px;
+  height: 25px;
+  float: left;
+  border-radius: 50%;
+  margin-right: 10px;
+  z-index: 100;
+  text-align: center;
+}
+.upcoming {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #8bb9ef;
+  border-radius: 5px;
+  margin: auto;
+  box-shadow: 0px 6px 10px 2px rgba(0, 0, 0, 0.03);
+  padding:10px; margin-top:20px;
+}
+.upcoming .up-plan li:nth-child(1) .roundhead {
+  background: linear-gradient(#ff9900, #ff5050);
+  box-shadow: 0 2px 12px -3px #ff5050;
+}
+.upcoming .up-plan li:nth-child(2) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.upcoming .up-plan li:nth-child(2) .roundhead {
+  background: linear-gradient(#ff66cc, #ff6666);
+  box-shadow: 0 2px 12px -3px #ff6666;
+}
+.upcoming .up-plan li:nth-child(3) .roundhead {
+  background: linear-gradient(#33ccff, #0066ff);
+  box-shadow: 0 2px 12px -3px #0066ff;
+}
+.upcoming .up-plan li .secondo {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #666; padding-bottom: 10px;
+}
+.upcoming .up-plan li:nth-child(1) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.upcoming .up-plan li .up-date {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 7px 0;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.upcoming .up-plan li .up-date .up-priority {
+  display: block;
+  font-weight: 300;
+  font-size: 8px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.upcoming .up-plan li:nth-child(2) .roundhead {
+  background: linear-gradient(#ff66cc, #ff6666);
+  box-shadow: 0 2px 12px -3px #ff6666;
+}
+.material-icons {
+  color: white;
+  line-height: 43px;
+  font-size: 17px;
+}
+.roundhead {
+  width: 25px;
+  height: 25px;
+  float: left;
+  border-radius: 50%;
+  margin-right: 10px;
+  z-index: 100;
+  text-align: center;
+}
+.material-icons {
+  color: white;
+  line-height: 43px;
+  font-size: 17px;
+}
+.roundhead {
+  width: 25px;
+  height: 25px;
+  float: left;
+  border-radius: 50%;
+  margin-right: 10px;
+  z-index: 100;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.upcoming li:nth-child(1) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.upcoming li:nth-child(1) .roundhead {
+  background: linear-gradient(#ff9900, #ff5050);
+  box-shadow: 0 2px 12px -3px #ff5050;
+}
+.upcoming li:nth-child(2) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.upcoming li:nth-child(2) .roundhead {
+  background: linear-gradient(#ff66cc, #ff6666);
+  box-shadow: 0 2px 12px -3px #ff6666;
+}
+.upcoming li:nth-child(3) .roundhead {
+  background: linear-gradient(#33ccff, #0066ff);
+  box-shadow: 0 2px 12px -3px #0066ff;
+}
+.upcoming li .up-date {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 7px 0;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+*/
+
+
+
+
+
+
