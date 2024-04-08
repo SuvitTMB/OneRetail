@@ -16,10 +16,10 @@
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/css.css" rel="stylesheet">
   <link href="assets/css/w3.css" rel="stylesheet">
   <link href="assets/css/tap.css" rel="stylesheet">
   <link href="assets/css/button.css" rel="stylesheet">
-  <link href="assets/css/css.css" rel="stylesheet">
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,13 +27,14 @@
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
 </head>
 
+<!--<body style="background: url(./img/bg.jpg) fixed; background-size: cover;background-position: center;">#427eec-->
 <body class="body" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #fff;">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-6FZQ6JQL2P"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-      <img src="img/logo-bar.png" style="height:26px;" onclick="window.location.href='home.html';">
+      <h1 class="logo mr-auto"><a href="home.html"><span>One Retail Society</span></a></h1>
       <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
         <i class="icofont-navigation-menu"></i>
       </div>
@@ -47,50 +48,75 @@
         <img src="./img/loading1.gif" style="width:50px;">
       </div>
       <div class="clr"></div>
-      <div id="DisplayMyPoint" style="margin-top:90px; margin-bottom: 5px;"></div>
+      <div id="DisplayMemo" style="display: none;">
+        <div id="RefMember" style="margin-top:90px;"></div>
+
+
+        <div class="btn-t33"><i class="icofont-group-students"></i> คุณชอบข่าวสารนี้</div>
+        <div id="DisplayShowLike" style="text-align: left; margin-top:6px;"></div>
+        <div class="clr"></div>
+
+
+        <div class="btn-t33"><i class="icofont-ui-chat"></i> ข้อคิดเห็นจากเพื่อนๆ</div>
+        <div id="DisplayAllMemo"></div>
+        <div class="clr"></div>
+
+        <div class="btn-t33"><i class="icofont-ui-text-chat" ></i> เขียนข้อคิดเห็นของคุณ</div>
+        <div class="input_field" style="width:100% !important;"> 
+          <div>
+          <textarea class="form-control" id="txtDetail" style="font-size: 13px !important; color:#000;height:80px;vertical-align: text-top;padding:8px;margin-top:5px;padding:5px;background-color: #e8f2fc;font-size:13px; line-height: 1.2;" placeholder="เขียนข้อคิดเห็นของคุณที่นี่" required></textarea>
+          </div>
+          <center>
+            <div class="btn-blue" onclick="CheckAllCount()" type="submit" style="margin-top:20px;">ส่งความคิดเห็น</div>
+          </center>
+        </div>
+
+
+
+<!--
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 entries">
+            <article class="entry" style="box-shadow: none;" data-aos="fade-up">
+              <div id="DisplayIMG"></div>
+              <div class="btn-t33"><i class="icofont-read-book-alt"></i> บันทึกการอ่านข่าวสาร</div>
+              <div id="loading" style="margin:20px auto 20px 150px;"><img src="./img/loading1.gif" style="width:30px;"></div>
+              <div id="CountReadNews" style="color:#ff0000;line-height: 1.2;font-weight: 600;display: none;"></div>
+              <div class="clr"></div>
+
+              <div class="btn-t33"><i class="icofont-group-students"></i> คุณชอบข่าวสารนี้</div>
+              <div id="DisplayShowLike"></div>
+              <div class="clr"></div>
+
+              <div class="btn-t33"><i class="icofont-ui-chat"></i> ข้อคิดเห็นจากเพื่อนๆ</div>
+              <div id="DisplayQuestion"></div>
+              <div class="clr"></div>
+              <div class="btn-t33"><i class="icofont-ui-text-chat" ></i> เขียนข้อคิดเห็นของคุณ</div>
+              <div class="input_field" style="width:100% !important;"> 
+                <div>
+                <textarea class="form-control" id="txtDetail" style="font-size: 13px !important; color:#000;height:100px;vertical-align: text-top;padding:8px;margin-top:5px;padding:5px;background-color: #e8f2fc;font-size:13px;" placeholder="เขียนข้อคิดเห็นของคุณที่นี่" required></textarea>
+                </div>
+                <center>
+                  <div class="btn-t2" onclick="ClickSendQ()" type="submit" style="margin-top:20px;">ส่งความคิดเห็น</div>
+                </center>
+              </div>
+              <div class="clr"></div>
+            </article>
+          </div>
+        </div>
+      </div>
+-->
+
+
+      </div>
       <div class="clr" style="height: 50px;"></div>
-      <div id="DisplayHeader" style="display:none;">
-        <div class="btn-memu">บันทึกการเขียนอุณหภูมิ</div>
-        <div class="clr" style="height: 30px;"></div>    
-      </div>
-      <div class="tabset" id="DisplayMemo" style="display:none;">
-        <!-- Tab 1 -->
-        <input onclick="CheckTapMemo(1)" type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
-        <label for="tab1">ร้อนที่สุด</label>
-        <!-- Tab 2 -->
-        <input onclick="CheckTapMemo(2)" type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
-        <label for="tab2">ร้อนมาก</label>
-        <!-- Tab 3 -->
-        <input onclick="CheckTapMemo(3)" type="radio" name="tabset" id="tab3" aria-controls="dunkles">
-        <label for="tab3">ปานกลาง</label>
-        <!-- Tab 4 -->
-        <input onclick="CheckTapMemo(0)" type="radio" name="tabset" id="tab4" aria-controls="drink">
-        <label for="tab4">ติดตาม</label>      
-        <div class="tab-panels">
-          <section id="marzen" class="tab-panel">
-            <div id="Tap-1"></div>
-          </section>
-          <section id="rauchbier" class="tab-panel">
-            <div id="Tap-2"></div>
-          </section>
-          <section id="dunkles" class="tab-panel">
-            <div id="Tap-3"></div>
-          </section>
-          <section id="drink" class="tab-panel">
-            <div id="Tap-0"></div>
-          </section>
-        </div>  
-        <!--
-        <div class="btn-grey" onclick="OpenPopMenu()">ดูเมนู</div>
-        <div class="btn-blue" onclick="window.location.href='home.html';">กลับไปหน้าหลัก</div>
-      -->
-      </div>
-      <div class="clr"></div>
     </div>
-  <footer id="footer" class="container" style="padding-left: 10px; padding-right: 10px;">
-    <div id="DisplayFooter"></div>
-  </footer>
+
+
+
   </main>
+
+
 
   <div id="menu" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4 bg-menu">
@@ -151,6 +177,6 @@
 
   <script src="js/connect.js"></script>
   <script src="js/menu.js"></script>
-  <script src="js/pulseresult.js"></script>
+  <script src="js/pulsememo.js"></script>
 </body>
 </html>

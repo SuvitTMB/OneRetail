@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>One Retail Society</title>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <link href="assets/img/favicom.ico" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/css.css" rel="stylesheet">
+  <link href="assets/css/w3.css" rel="stylesheet">
+  <link href="assets/css/slider.css" rel="stylesheet">
+  <link href="assets/css/button.css" rel="stylesheet">
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+</head>
+
+<body class="body3" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #fff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <img src="img/logo-bar.png" style="height:26px;" onclick="window.location.href='home.html';">
+      <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
+        <i class="icofont-navigation-menu"></i>
+      </div>
+    </div>
+  </header>
+
+
+  <Section id="slider" style="padding: 0; width:100%; overflow: hidden;">
+    <div class="slider-container">
+    <!-- Start Slides -->
+      <div id="slides">
+        <div class="slide">
+          <img src="http://res.cloudinary.com/hurricane10/image/upload/v1499778218/img-26_aw9alb.jpg" alt="slide one">
+          <div class="caption">
+          <p>Michelin Guide ขยายพื้นที่ความอร่อยแห่งใหม่สำหรับนักชิมที่จังหวัดชลบุรี <a href="home.html">Home</a></p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./pic/group2.jpg" alt="slide two">
+        <div class="caption">
+          <p>
+            Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.
+          </p>
+        </div>
+      </div>
+      <div class="slide">
+      <img src="http://res.cloudinary.com/hurricane10/image/upload/v1499778109/img-20_ljchnk.jpg" alt="slide three">
+        <div class="caption">
+        <p>
+          Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.
+        </p>
+        </div>
+      </div>
+    </div>
+<!-- Start Timeline -->
+<span class="timeline"></span>
+<!-- End Timeline -->
+  </section>
+<!-- End Slides -->
+
+
+
+  <section>
+    <div class="container" style="padding-left:5px; padding-right: 5px; max-width: 450px;"> 
+      <div class="section-title">
+        <center>
+          <div class="h3div" style="color:#002d63;margin:5px auto 20px auto;">VDO Training
+            <div style="font-weight: 400; color:#999; font-size: 12px;">คลิกเพื่อเลือกหัวข้อวิดีโอที่ต้องการดูข้อมูล</div>
+            <div><input type="text" placeholder="ค้นหาวิดีโอ" class="vdo-search" onclick="GotoSearch()"></div>
+          </div>
+        </center>
+      </div>
+      <div class="row" style="margin:auto;">
+        <div id="DisplayVDOmain" style="width:100%"></div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+        <div class="content checkbox-tile">dsafdas</div>
+      </div>
+      <div class="clr"></div>
+
+
+    </div>
+  </section>
+  <div class="clr"></div>
+
+
+
+</div>
+</Section>
+<!--
+  <main id="main">
+    <div class="container" style="text-align: center; max-width: 450px;">
+      <div id="loading" style="margin-top:300px;">
+        <img src="img/learning-logo.png" style="width:190px;"><br><br>
+        <img src="./img/loading1.gif" style="width:50px;">
+      </div>
+      <div class="clr"></div>
+      <div id="DisplayMyPoint" style="margin-top:90px; margin-bottom: 5px;"></div>
+      <div class="clr" style="height: 50px;"></div>
+      <div id="DisplayHeader" style="display:none;">
+        <div class="btn-memu">บันทึกการเขียนอุณหภูมิ</div>
+        <div class="clr" style="height: 30px;"></div>    
+      </div>
+      <div class="tabset" id="DisplayMemo" style="display:none;">
+        <input onclick="CheckTapMemo(1)" type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+        <label for="tab1">ร้อนที่สุด</label>
+        <input onclick="CheckTapMemo(2)" type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+        <label for="tab2">ร้อนมาก</label>
+        <input onclick="CheckTapMemo(3)" type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+        <label for="tab3">ปานกลาง</label>
+        <input onclick="CheckTapMemo(0)" type="radio" name="tabset" id="tab4" aria-controls="drink">
+        <label for="tab4">ติดตาม</label>      
+        <div class="tab-panels">
+          <section id="marzen" class="tab-panel">
+            <div id="Tap-1"></div>
+          </section>
+          <section id="rauchbier" class="tab-panel">
+            <div id="Tap-2"></div>
+          </section>
+          <section id="dunkles" class="tab-panel">
+            <div id="Tap-3"></div>
+          </section>
+          <section id="drink" class="tab-panel">
+            <div id="Tap-0"></div>
+          </section>
+        </div>  
+        <div class="btn-grey" onclick="OpenPopMenu()">ดูเมนู</div>
+        <div class="btn-blue" onclick="window.location.href='home.html';">กลับไปหน้าหลัก</div>
+      </div>
+      <div class="clr" style="height: 50px;"></div>
+    </div>
+  </main>
+-->
+
+  <div id="menu" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4 bg-menu">
+      <div class="w3-container container-min">
+        <div id="MenuSociety"></div>
+      </div>
+    </div>
+    <div class="clr" style="height:40px;"></div>
+  </div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+            window.location.hash = hash;
+          });
+        } 
+      });
+      
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+        });
+      });
+    })
+
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        document.getElementById('click1').style.display='none';
+        document.getElementById('click2').style.display='block';
+      } else {
+        x.style.display = "none";
+        document.getElementById('click1').style.display='block';
+        document.getElementById('click2').style.display='none';
+      }
+    }  
+  </script>
+  <script src="js/connect.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/upskill.js"></script>
+
+</body>
+</html>

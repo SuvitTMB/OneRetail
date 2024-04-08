@@ -1,11 +1,10 @@
-<!-- https://guru.sanook.com/4405/ -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>One Retail Academy</title>
+  <title>One Retail Society</title>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -25,7 +24,6 @@
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
 </head>
 
 <!--<body style="background: url(./img/bg.jpg) fixed; background-size: cover;background-position: center;">#427eec-->
@@ -35,33 +33,36 @@
 
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-      <h1 class="logo mr-auto"><a href="index.html"><span>One Retail</span> Academy</a></h1>
+      <!--<h1 class="logo mr-auto"><a href="index.html"><span>One Retail</span> Society</a></h1>-->
+      <img src="img/logo-bar.png" style="height:26px;" onclick="window.location.href='index.html';">
     </div>
   </header>
   <div id="isLoggedIn" style="color:#fff;"></div>
 
 
   <main id="main">
-    <div class="container" style="text-align: center;">
-      <div id="loading" style="margin-top:250px;">
-        <img src="img/learning-logo.png" style="width:180px;"><br><br><br>
+    <div class="container" style="text-align: center; max-width: 450px;">
+      <div id="loading" style="margin-top:300px;">
+        <img src="img/learning-logo.png" style="width:190px;"><br><br>
         <img src="./img/loading1.gif" style="width:50px;">
       </div>
       <div class="clr"></div>
       <div id="DisplayMyPoint" style="margin-top:90px; margin-bottom: 5px;"></div>
+
       <div id="PleaseWait" style="display: none; margin-top:130px;">
         <div><img src="img/waitting.png" style="width:230px;"></div>
-        <div class="btn-t8" style="color:#fff; margin-top:20px;">ความปลอดภัยเป็นสิ่งที่เรา<br>ต้องให้ความสำคัญเป็นอันดับแรก<br><br>เรากำลังตรวจสอบข้อมูลของคุณ<br>โปรดรอคอยการอนุมัติ</div>
+        <div class="btn-t8" style="color:#fff; margin-top:20px;">ความปลอดภัยเป็นสิ่งที่เรา<br>ต้องให้ความสำคัญเป็นอันดับแรก
+          <br><br>เรากำลังตรวจสอบข้อมูลของคุณ<br>โปรดรอคอยการอนุมัติ</div>
         <div class="btn-grey" onclick="OneStory()" style="margin-top:30px;">เกี่ยวกับระบบงาน</div>
         <div class="btn-red" onclick="window.location.href='mailto:suvit.cha@ttbbank.com';" style="margin-top:30px;">จำเป็นเร่งด่วน คลิก</div>
       </div>
+
       <div id="NoService" style="display: none; margin-top:130px;">
         <div><img src="img/stop.png" style="width:230px;"></div>
         <div class="btn-t8" style="color:#fff; margin-top:20px;">คุณไม่ได้รับสิทธิ์ในการเข้าถึงข้อมูลนี้<br>กรุณาบอกเราว่าคุณมีความจำเป็นอย่างไร<br>
         <div class="btn-red" onclick="window.location.href='mailto:suvit.cha@ttbbank.com';" style="margin-top:30px;">แจ้งเหตุผลเข้าใช้ระบบงาน</div>
         </div>
       </div>
-
 
       <div id="NewMember" style="display: none; margin-top:110px;">
         <div id="MyProfile-start"></div>
@@ -87,7 +88,7 @@
   <div id="id02" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4" style="background: #0056ff;">
       <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
-        <div>เกี่ยวกับ One Retail Academy</div>
+        <div>เกี่ยวกับ One Retail</div>
         <div class="btn-grey" onclick="CloseAll()" style="margin-top:30px;">ปิดหน้าต่างนี้</div>
       </div>
     </div>

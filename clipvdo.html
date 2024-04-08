@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>One Retail Society</title>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','G-6FZQ6JQL2P');</script>
+  <link href="assets/img/favicom.ico" rel="icon">
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/css.css" rel="stylesheet">
+  <link href="assets/css/w3.css" rel="stylesheet">
+  <link href="assets/css/tap.css" rel="stylesheet">
+  <link href="assets/css/slider.css" rel="stylesheet">
+  <link href="assets/css/button.css" rel="stylesheet">
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+</head>
+
+<body class="body" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #fff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-6FZQ6JQL2P"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <img src="img/logo-bar.png" style="height:26px;" onclick="window.location.href='home.html';">
+      <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
+        <i class="icofont-navigation-menu"></i>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container" style="text-align: center; max-width: 450px;">
+      <div id="loading" style="margin-top:300px;">
+        <img src="img/learning-logo.png" style="width:190px;"><br><br>
+        <img src="./img/loading1.gif" style="width:50px;">
+      </div>
+      <div class="clr"></div>
+      <div id="DisplayMyPoint" style="margin-top:90px; margin-bottom: 5px;"></div>
+      <div class="tabset" id="DisplayClip" style="display:none;">
+        <!-- Tab 1 -->
+        <input onclick="CheckTapMemo(1)" type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+        <label for="tab1">คลิปล่าสุด</label>
+        <!-- Tab 2 -->
+        <input onclick="CheckTapMemo(2)" type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+        <label for="tab2">หมวดหมู่</label>
+        <!-- Tab 3 -->
+        <input onclick="CheckTapMemo(3)" type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+        <label for="tab3">ส่งคลิป</label>
+        <!-- Tab 4 -->
+        <input onclick="CheckTapMemo(0)" type="radio" name="tabset" id="tab4" aria-controls="drink">
+        <label for="tab4">แนะนำ</label>      
+        <div class="tab-panels">
+          <section id="marzen" class="tab-panel">
+            <!--<div id="Tap-1"></div>-->
+
+            <div style="width:100%; height:100%;"> 
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-6.jpg');" onclick="ReadVdo(4)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-5.jpg');" onclick="ReadVdo(1)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-3.jpg');" onclick="ReadVdo(2)">
+              <div class="text-pic"><b>ฉันคือ CYB</b></div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(3)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(5)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(6)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(7)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(8)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(9)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(10)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(11)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(12)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+            </div>
+<!--
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-4.jpg');" onclick="ReadVdo(1)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-3.jpg');" onclick="ReadVdo(2)">
+              <div class="text-pic"><b>ฉันคือ CYB</b></div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(3)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(4)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(5)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(6)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(7)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(8)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(9)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(10)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-2.jpg');" onclick="ReadVdo(11)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="content checkbox-clip" style="background-image: url('./pic/g-1.jpg');" onclick="ReadVdo(12)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+
+            <dic class="clr" style="height: 30px;"></div>
+            <div class="btn-blue" id="loadMore">Load More</div>
+
+            <dic class="clr" style="height: 30px;margin-top:20px;"></div>
+            <div><a href="#" id="loadMore" class="btn-click">Load More</a></div>
+-->
+          </section>
+          <section id="rauchbier" class="tab-panel">
+            <!--<div id="Tap-2"></div>-->
+            <Section id="slider" style="padding: 0; width:100%; overflow: hidden;">
+              <div class="slider-container">
+              <!-- Start Slides -->
+                <div id="slides">
+                  <div class="slide" style="background-image: url('./pic/product01-00.jpg');">
+                    <div class="caption">
+                    <p style="padding:5px;">Michelin Guide ขยายพื้นที่ความอร่อยแห่งใหม่สำหรับนักชิมที่จังหวัดชลบุรี <a href="home.html">Home</a></p>
+                  </div>
+                </div>
+                <div class="slide" style="background-image: url('./pic/product02-00.jpg');">
+                  <div class="caption">
+                    <p>
+                      Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.
+                    </p>
+                  </div>
+                </div>
+                <div class="slide" style="background-image: url('./pic/product01-00.jpg');">
+                  <div class="caption">
+                  <p>
+                    Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.
+                  </p>
+                  </div>
+                </div>
+                <span class="timeline"></span>
+              </div>
+            </section>
+            <div class="clr" style="height: 30px;">
+              <div class="checkbox-clip" style="background-image: url('./pic/product01-00.jpg');" onclick="GroupVDO(1)">
+              <div class="text-pic"><b>รู้จักกับ CYC</b><br>จำนวน 11 ตอน<br>EP.1 - EP.11</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/product02-00.jpg');" onclick="GroupVDO(2)">
+              <div class="text-pic"><b>สินเชื่อบ้านรีไฟแนนซ์ ทีทีบี</b><br>จำนวน 4 ตอน</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/product01-00.jpg');" onclick="GroupVDO(3)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+
+              <div class="checkbox-clip" style="background-image: url('./pic/product02-00.jpg');" onclick="GroupVDO(4)">
+              <div class="text-pic">ทดสอบข้อมูล</div></div>
+            </div> 
+          </section>
+          <section id="dunkles" class="tab-panel">
+            <div><img src="./img/clip.png" style="width:70%; text-align:center;"></div>
+
+
+      <div class="row-font" style="margin-top:20px;">
+        <div class="header-font">ข้อมูลผู้ขอใช้ระบบงาน</div>
+        <div class="input-group input-group-icon">
+          <input type="number" id="txtEmpID" placeholder="รหัสพนักงาน"/>
+          <div class="input-icon"><i class="fa fa-user-plus"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+          <input type="text" id="txtEmpName" placeholder="ชื่อ-นามสกุล (ภาษาไทย)"/>
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+          <input type="text" id="txtEmpPhone" placeholder="โทรศัพท์"/>
+          <div class="input-icon"><i class="fa fa-phone"></i></div>
+        </div>
+      </div>
+
+      <div class="row-font">
+        <div class="header-font">ข้อมูลที่อยู่สำหรับการจัดส่งของรางวัล (สาขา)</div>
+        <div class="input-group">
+          <textarea id="txtEmpAddress" rows="5" placeholder="ที่อยู่สำหรับการรับรางวัล ..."></textarea>
+        </div>
+      </div>
+            <div id="Tap-3"></div>
+          </section>
+          <section id="drink" class="tab-panel">
+            <div><img src="./img/suggest.png" style="width:70%; text-align:center;"></div>
+            <div id="Tap-0"></div>
+          </section>
+        </div>  
+<!--
+        <div class="btn-grey" onclick="OpenPopMenu()">ดูเมนู</div>
+        <div class="btn-blue" onclick="window.location.href='home.html';">กลับไปหน้าหลัก</div>
+-->
+      </div>
+
+      <div class="clr"></div>
+    </div>
+
+  </main>
+  <footer id="footer" class="container" style="padding-left: 10px; padding-right: 10px;">
+    <div id="DisplayFooter"></div>
+  </footer>
+
+
+
+  <div id="menu" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4 bg-menu">
+      <div class="w3-container container-min">
+        <div id="MenuSociety"></div>
+      </div>
+    </div>
+    <div class="clr" style="height:40px;"></div>
+  </div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+
+  <div id="DisplayGroup" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #0056ff;">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <div id="BoxTimeGetPoint">แสดงหมวด VDO</div>
+        <div class="btn-grey" onclick="CloseAll()" style="margin-top:30px;">ปิดหน้าต่างนี้</div>
+      </div>
+    </div>
+    <div style="height:20px;"></div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+            window.location.hash = hash;
+          });
+        } 
+      });
+      
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+        });
+      });
+    })
+
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        document.getElementById('click1').style.display='none';
+        document.getElementById('click2').style.display='block';
+      } else {
+        x.style.display = "none";
+        document.getElementById('click1').style.display='block';
+        document.getElementById('click2').style.display='none';
+      }
+    }  
+  </script>
+  <script src="js/connect.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/clipvdo.js"></script>
+</body>
+</html>
