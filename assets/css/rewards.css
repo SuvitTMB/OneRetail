@@ -1,0 +1,90 @@
+.box-top-rewards {
+  background: #fff; margin:0px auto 20px auto; height:190px; border-top:1px solid #fff; max-width: 450px;
+  position: relative;
+
+}
+.box-top-user {
+  margin:50px 20px 20px 20px; border-radius: 10px; background: #f1f1f1; padding:10px; text-align: center; color:#002d63;
+  height: 115px;
+}
+.box-user-rewards {
+  width:60px; height: 60px; border-radius: 50%; border:2px solid #ffffff;
+  margin-top:-40px;
+}
+.box-user-left {
+  width:50%; height: 40px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; color:#000; font-weight: 400;
+  background: #dae6ef; text-align: center; font-size: 13px; padding-top:10px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); float: left;
+  cursor: pointer; 
+}
+.box-user-left:hover {
+  background: #0056ff; color:#fff;
+}
+.box-user-select {
+  background: #f68b1f !important;
+  color:#fff !important;
+}
+
+.box-user-right {
+  width:50%; height: 40px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; color:#7c7d99; font-weight: 400;
+  background: #dae6ef; text-align: center; font-size: 13px; padding-top:10px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); float: left;
+  cursor: pointer;
+}
+.box-user-right:hover {
+  background: #0056ff; color:#fff;
+}
+.box-user-text {
+  color:#0056ff; font-weight: 600; text-align: center;
+}
+
+.box-rewards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 47%;
+  /*padding: 10px 15px;*/
+  border:1px solid #ECEFF1;
+  transition: all ease-in-out 0.3s;
+  background: #ECEFF1;
+  border-radius: 10px;
+  height: 250px; overflow: hidden;
+  margin: 5px;
+  float: left;
+
+/*
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 47%;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+  background: #ECEFF1;
+  margin: 5px;
+  float: left;
+  height: 230px; overflow: hidden;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;    
+*/
+}
+.box-rewards-img {
+  background-color: #fff; height: 130px; width:100%; border-top-left-radius: 5px; border-top-right-radius: 5px; padding:8px; text-align: center;
+  overflow: hidden;
+}
+.box-rewards-text {
+  color:#0056ff;font-weight: 600; padding-top:10px; font-size: 13px; text-align: center;
+}
+.box-rewards-value {
+  width:92%; margin:4px auto;
+}
+.box-rewards-in {
+  width:45%; margin:3px; border:1px solid #ccc; height: 50px; float: left; border-radius: 5px; background: #fff;
+  font-size: 10px;
+}
