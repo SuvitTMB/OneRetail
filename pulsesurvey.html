@@ -41,22 +41,36 @@ https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee
   </style>
 </head>
 
-<body class="body">
+<body class="body4">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <div id="isLoggedIn" style="color:#fff;"></div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-      <img src="img/logo-bar.png" style="height:26px;" onclick="window.location.href='index.html';">
-      <!--<h1 class="logo mr-auto"><a href="index.html"><span>One Retail</span></a></h1>-->
+    <div class="container align-items-center" onclick="window.location.href='index.html';">
+      <!--<span class="header1">One Retail</span> <span class="header2">Society</span>-->
+      <span class="header1">แบบสำรวจความสุข</span><span class="header2">ในการทำงาน</span>
     </div>
   </header>
 
+<!--
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <img src="img/logo-bar.png" style="height:26px;" onclick="window.location.href='index.html';">
+    </div>
+  </header>
+-->
 
   <main>
-    <div class="container" id="StartPage">
+
+    <div id="CheckLoading" class="container" style="text-align: center; max-width: 450px;display: none;">
+      <div id="loading2" style="margin-top:300px;">
+        <img src="./img/one-logo.png" style="width:190px;"><br><br>
+        <img src="./img/loading1.gif" style="width:50px;">
+      </div>
+    </div>
+<!--
+    <div class="container" id="CheckLoading" style="display: none;">
       <div style="margin-top:90px; text-align: center; color:#fff;">
         <div class="btn-memu">แบบสำรวจวัดความสุขในการทำงาน</div>
         <div style="margin-top:25px;"><img src="img/survey.png" style="height: 320px;"></div>
@@ -69,10 +83,23 @@ https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee
         <div id="CheckStart"></div>
       </div>
     </div>
+-->
+    <div class="container" id="StartPage">
+      <div style="margin-top:140px; text-align: center; color:#0056ff;">
+        <div><img src="img/survey.png" style="height: 320px;"></div>
+        <div style="margin-top:30px;">ในทุก ๆ วันของการทำงาน เราอยากรู้ว่า<br>คุณมีความสุขในการทำงานมากน้อยแค่ไหน<br>
+          <font color="#ff0000">เราสัญญาว่าทุกเรื่องราวจะถูก <b>"เก็บเป็นความลับ"</b></font>
+        </div>
+        <div id="loading" style="margin-top:20px;">
+          <img src="./img/loading1.gif" style="width:50px;">
+        </div>
+        <div id="CheckStart"></div>
+      </div>
+    </div>
     <div id="SurveyPage" style="display: none;margin-top:90px; text-align: center; color:#fff; max-width:450px; margin:auto;">
       <div id="Q_PulseSurvey" style="margin-top:100px; text-align: center; color:#fff;">
         <div id="loading1" style="margin-top:250px;">
-          <img src="img/learning-logo.png" style="width:180px; opacity: .6;"><br><br><br>
+          <img src="./img/one-logo.png" style="width:190px;"><br><br><br>
           <img src="./img/loading1.gif" style="width:50px;">
         </div>
         <div id="DisplaySurvey"></div>
@@ -105,16 +132,16 @@ https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee
           </div>
         </div>
       </div>
-      <div id="Q_thankyou" style="display: none; margin-top:90px; text-align: center; color:#fff;">
-        <div class="text-header">แบบสำรวจวัดความสุขในการทำงาน</div>
+      <div id="Q_thankyou" style="display: none; margin-top:90px; text-align: center; color:#0056ff;">
+        <!--<div class="textheader">แบบสำรวจวัดความสุขในการทำงาน</div>-->
         <div style="margin-top:15px;"><img src="img/checkup.png" style="height: 270px;"></div>
         <div class="btn-click" onclick="window.location.href='pulseresult.html';" style="margin-top:20px;">ดูผลการประเมินอุณหภูมิของคุณ</div>
         <div style="margin-top:20px;">ขอบคุณสำหรับการเข้าร่วม<br><b>"วัดอุณหภูมิความสุขในการทำงาน"</b><br><br>ในทุก ๆ การให้ข้อมูลของคุณ<br>
-          <font color="#ffff00">เรายังยืนยันว่าทุกเรื่องราวจะถูก <b>"เก็บเป็นความลับ"</b></font><br>
+          <font color="#ff0000">เรายังยืนยันว่าทุกเรื่องราวจะถูก <b>"เก็บเป็นความลับ"</b></font><br>
           และพร้อมที่จะช่วยคุณในการแก้ไขปัญหา
         </div>
         <div>
-          <div class="btn-red" onclick="HealthClinic()" style="margin-top:20px;">คลินิกสุขภาพ</div>
+          <!--<div class="btn-red" onclick="HealthClinic()" style="margin-top:20px;">คลินิกสุขภาพ</div>-->
           <div class="btn-grey" onclick="window.location.href='home.html';" style="margin-top:20px;">ไปหน้าแรก</div>
         </div>
       </div>
@@ -124,38 +151,26 @@ https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee
   <script src="js/connect.js"></script>
   <script src="js/pulsesurvey.js"></script>
 
-
   <div id="id01" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4 bg-menu">
-      <div class="w3-container container-min">
-        <div style="margin-top:20px;">อ่านรายละเอียดเพิ่มเติม<br><b>Pulse Survey</b></div>
+      <div class="w3-container container-min" style="background: #fff;">
+        <div class="textheader" style="margin-top:20px;">แบบสำรวจความสุขคืออะไร</b></div>
         <div class="btn-grey" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่าง</div>
       </div>
     </div>
     <div class="clr" style="height:40px;"></div>
   </div>
 
-<!--
   <div id="id02" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4 bg-menu" style="max-width: 450px;">
-      <div class="w3-container container-min" style="background: #0056ff;">
-        <div class="text-header"  style="margin-top:25px;">คลินิกสุขภาพ</div>
-        <div style="margin-top:15px;"><img src="img/healthclinic.png" style="width: 95%;"></div>
-        <div style="margin-top:20px; color:#fff;">เราอยากให้ทุก ๆ คนทำงานด้วยความสุข<br>หากคุณมีปัญหาเรื่องงานปรึกษาเราได้ทุกเวลา<br>
-          <font color="#ffff00">เราสัญญาว่าทุกเรื่องราวจะถูก <b>"เก็บเป็นความลับ"</b></font>
-        </div>
-        <div>
-          <div class="btn-red" onclick="window.location.href='clinic.html';" style="margin-top:20px;">บอกเรื่องราวของคุณ</div>
-          <div class="btn-grey" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่างนี้</div>
-        </div>
-        <div class="clr" style="height:30px;"></div>
-      </div>
+    <div class="w3-modal-content w3-card-4" style="background: #fff;">
+      <div class="w3-container" style="width:95%;margin:auto;min-height: 270px;">
+        <center>
+          <div id="DisplayGetPoint"></div>      
+        </center>
       </div>
     </div>
-    <div class="clr" style="height:40px;"></div>
+    <div class="clr" style="height:70px;"></div>
   </div>
--->
 
 </body>
-
 </html>

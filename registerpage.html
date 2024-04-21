@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>One Retail</title>
+  <title>One Retail Society</title>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -33,34 +33,38 @@
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
 </head>
 
-<body class="body">
+<body class="body4">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-6FZQ6JQL2P"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <div id="isLoggedIn" style="color:#fff;"></div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-      <h1 class="logo mr-auto"><a href="index.html"><span>One Retail</span> Academy</a></h1>
+    <div class="container align-items-center" onclick="window.location.href='index.html';">
+      <!--<span class="header1">One Retail</span> <span class="header2">Society</span>-->
+      <span class="header1">ลงทะเบียน</span> <span class="header2">เข้าใช้ระบบงาน</span>
     </div>
   </header>
 
   <main id="main">
-    <div class="container-font" style="margin-top:70px;">
+    <div class="container-font" style="margin-top:90px;">
       <center>
-        <div style="margin:15px auto 20px auto;"><b>ลงทะเบียนใช้งาน<br><b>One Retail</b></div>
-        <div id="MyProfile"></div>
+        <div><img src="img/one-logo.png" style="width:190px;"></div>
+        <div id="MyProfile" style="margin-top: 20px;"></div>
       </center>
       <div class="row-font" style="margin-top:20px;">
+
         <div class="header-font">ข้อมูลผู้ขอใช้ระบบงาน</div>
+
         <div class="input-group input-group-icon">
           <input type="number" id="txtEmpID" placeholder="รหัสพนักงาน"/>
           <div class="input-icon"><i class="fa fa-user-plus"></i></div>
         </div>
+
         <div class="input-group input-group-icon">
           <input type="text" id="txtEmpName" placeholder="ชื่อ-นามสกุล (ภาษาไทย)"/>
           <div class="input-icon"><i class="fa fa-user"></i></div>
         </div>
+
         <div class="input-group input-group-icon">
           <input type="text" id="txtEmpPhone" placeholder="โทรศัพท์"/>
           <div class="input-icon"><i class="fa fa-phone"></i></div>
@@ -68,7 +72,7 @@
       </div>
 
       <div class="row-font">
-        <div class="header-font">ข้อมูลที่อยู่สำหรับการจัดส่งของรางวัล (สาขา)</div>
+        <div class="header-font">ข้อมูลที่อยู่สำหรับการจัดส่งของรางวัล (สาขา)<br>พนักงานที่ปฏิบัติงาน ณ สนญ ระบุตึก/ชั้น ที่ปฏิบัติงาน</div>
         <div class="input-group">
           <textarea id="txtEmpAddress" rows="5" placeholder="ที่อยู่สำหรับการรับรางวัล ..."></textarea>
         </div>
@@ -101,7 +105,7 @@
     <div class="w3-modal-content w3-card-4" style="background: #f1d1d1;">
       <div class="w3-container" style="width:95%;margin:auto;min-height: 270px;">
         <center>
-          <div style="margin-top:25px;">ข้อความเตือน</div>    
+          <div class="textheader" style="margin-top:25px;">ข้อความเตือน</div>    
           <div style="margin:15px auto;"><img src="./img/warning.png" style="width:50%;"></div>            
           <div id="MessageShow"></div>
           <div class="clr"></div>
@@ -114,10 +118,11 @@
   </div>
 
   <div id="id02" class="w3-modal w3-animate-opacity" style="z-index: 20;">
-    <div class="w3-modal-content w3-card-4" style="background: #daecff;">
+    <div class="w3-modal-content w3-card-4" style="background: #fff;">
       <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
         <center>
-          <div class="btn-t8" style="color:#0056ff; margin-top:10px;">ยินดีต้อนรับสู่<br>One Retail</div>
+          <div class="textheader">ยินดีต้อนรับสู่</div>
+          <div><img src="img/one-logo.png" style="width:150px;"></div>
           <div><img src="./img/waitting.png" style="width:80%;margin:30px auto 20px auto;"></div>
           <div style="padding:10px;color:#000;font-size: 13px;line-height: 1.2; font-weight: 300;">ระบบได้ทำการบันทึกรายการสมัคร<br>เข้าใช้งานของคุณเรียบร้อยแล้ว<br>คลิกที่ด้านล่างเพื่อตรวจสอบการเข้าสู่ระบบงาน</div>
           <div class="btn-close" onclick="GotoHome()" style="margin-top:20px;">คลิกเพื่อตรวจสอบการเข้าใช้ระบบงาน</div>

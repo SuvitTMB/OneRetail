@@ -10,192 +10,113 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','G-6FZQ6JQL2P');</script>
-  <!-- Favicons -->
   <link href="assets/img/favicom.ico" rel="icon">
-  <!-- Google Fonts -->
-  <!--
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  -->
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-<!--  <link href="assets/css/button.css" rel="stylesheet">-->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/css.css" rel="stylesheet">
   <link href="assets/css/w3.css" rel="stylesheet">
   <link href="assets/css/button.css" rel="stylesheet">
-  <link href="assets/css/calendar.css" rel="stylesheet">
   <link href="assets/css/tap.css" rel="stylesheet">
-  <link href="assets/css/slider.css" rel="stylesheet">
+  <link href="assets/css/calendar.css" rel="stylesheet">
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.12.0/sdk.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js"></script>
   <script src="https://use.fontawesome.com/6f993f4769.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <style type="text/css">
-    .fa {
-        display: inline-block;
-        font: normal normal normal 12px / 1 FontAwesome;
-        font-size: inherit;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        width: 25px;
-        font-size: 16px;
-    }
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .fa { margin-right: 10px; cursor: pointer; }
+    .row { margin: 10px auto; }
   </style>
 </head>
 
 
-<body class="body">
+<body class="body4">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-6FZQ6JQL2P"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!--
-  <div class="navbar1">
-    <div class="nav-bg">
-      <div style="max-width: 400px; margin:auto; text-align: center;">
-      <center>
-        <div class="iconlink nav-select" onClick="window.location='home.html';">
-          <div><img src="./img/icons-academy.png" style="width:25px;"></div>
-          <div class="nav-text">Academy</div>
-        </div>
-        <div class="iconlink" onClick="window.location='clipvdo.html';">
-          <div><img src="./img/icons-youtube.png" style="width:25px;"></div>
-          <div class="nav-text">Upskill</div>
-        </div>
-        <div class="iconlink" onClick="window.location='successstory.html';">
-          <div><img src="./img/icons-appreciation.png" style="width:25px;"></div>
-          <div class="nav-text">Success Story</div>
-        </div>
-        <div class="iconlink" onClick="window.location='pulseresult.html';">
-          <div><img src="./img/icons-scale.png" style="width:25px;"></div>
-          <div class="nav-text">Pulse Survey</div>
-        </div>
-        <div class="iconlink" onClick="window.location='pulseresult.html';">
-          <div><img src="./img/icons-query.png" style="width:25px;"></div>
-          <div class="nav-text">Retail Club</div>
-        </div>
-      </center>
-      </div>   
-   </div>
-  </div>
--->
-
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-      <img src="img/logo-bar.png" style="height:26px;" onclick="window.location.href='home.html';">
-      <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
-        <i class="icofont-navigation-menu"></i>
-      </div>
+    <div onclick="history.back()" style="width:40px; text-align: center; float: left;"><i class="fa fa-arrow-left" style="color:#dee2e6; font-size: 22px;"></i></div>
+    <div class="container align-items-center" onclick="window.location.href='index.html';" style="margin-left:-40px;">
+      <!--<span class="header1">One Retail</span> <span class="header2">Society</span>-->
+      <span class="header1">ตาราง</span><span class="header2">อบรม</span>
+    </div>
+    <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
+      <i class="icofont-navigation-menu"></i>
     </div>
   </header>
-  <div class="container" style="margin-top:80px; width:100%; max-width: 450px;">
-      <div class="tabset" id="DisplayClip" style="display:block;">
-        <!-- Tab 1 -->
-        <input onclick="CheckTapMemo(1)" type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
-        <label for="tab1">ปฎิทินอบรม</label>
-        <!-- Tab 2 -->
-        <input onclick="CheckTapMemo(2)" type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
-        <label for="tab2">ผลิตภัณฑ์ธนาคาร</label>
-        <!-- Tab 3 -->
-        <input onclick="CheckTapMemo(3)" type="radio" name="tabset" id="tab3" aria-controls="dunkles">
-        <label for="tab3">เกมการแข่งขัน</label>
-        <div class="tab-panels">
-          <section id="marzen" class="tab-panel">
-            <center><div class="btn-memu" style="margin-top:0px;">ปฏิทินกำหนดการฝึกอบรม</div></center>
-            <div id="cal"></div>
-            <center><div class="btn-memu" style="margin-top:10px;">ตารางการฝึกอบรมประจำเดือน</div></center>
-            <div class="upcoming">
-              <p class="up-title">ตารางการอบรมประจำเดือนเมษายน 2567 (3)</p>
-              <ul class="up-plan">
-                <li><div class="roundhead"><i class="fa fa-trophy" aria-hidden="true"></i></div><b>20/04/2567 - 23/04/2567<br>Booth Camp รุ่นที่ 1</b><span class="secondo">Call Adrian at the right time</span></li>
-                <li><span class="roundhead"><i class="fa fa-trophy" aria-hidden="true"></i></span>Video calling with Boss<span class="secondo">I hate but have to talk with my ceo</span></li></li>
-                <li><span class="roundhead"><i class="fa fa-trophy" aria-hidden="true"></i></span>UEFA Champions League Final<span class="secondo">Real Madrid vs Juventus</span></li></li>
-              </ul>
-            </div>
-          </section>
-          <section id="rauchbier" class="tab-panel">
-            <div style="margin:25px auto;"><img src="./product/mainP-00.jpg" style="width:100%;border-radius: 10px;"></div>
-            <center><div class="btn-memu" style="margin-top:0px;">ผลิตภัณฑ์ธนาคาร</div></center>
-            <div class="clr" style="margin-top:15px;">
-              <div class="checkbox-product" style="background-image: url('./product/mainP-01.jpg');" onclick="GroupProduct(1)"></div>
-              <div class="checkbox-product" style="background-image: url('./product/mainP-02.jpg');" onclick="GroupProduct(2)"></div>
-              <div class="checkbox-product" style="background-image: url('./product/mainP-03.jpg');" onclick="GroupProduct(3)"></div>
-              <div class="checkbox-product" style="background-image: url('./product/mainP-04.jpg');" onclick="GroupProduct(4)"></div>
-              <div class="checkbox-product" style="background-image: url('./product/mainP-05.jpg');" onclick="GroupProduct(5)"></div>
-            </div> 
 
-          </section>
-          <section id="dunkles" class="tab-panel">
-            ตารางผู้นำ<br><br>กำหนดการแข่งขันตอบผลิตภัณฑ์
-          </section>
-        </div>
+  <div class="navbar1">
+    <div class="nav-bg">
+      <div class="iconlink1" onClick="window.location='home.html';">
+        <div><img src="./icon/icons-home.png" style="width:30px;"></div>
+        <div class="nav-text">Home</div>
       </div>
-
-<!--
-
-    <div>
-      <div class="box-menu" style="background-image: url('./pic/product01-00.jpg');"></div>
-      <div class="box-menu" style="background-image: url('./pic/product02-00.jpg');"></div>
-      <div class="box-menu">333</div>
+      <div class="iconlink" onClick="window.location='academy.html';">
+        <div><img src="./icon/icons-idea.png" style="width:30px;"></div>
+        <div class="nav-text">Academy</div>
+      </div>
+      <div class="iconlink" onClick="window.location='successstory.html';">
+        <div><img src="./icon/icons-picture.png" style="width:30px;"></div>
+        <div class="nav-text">Success Story</div>
+      </div>
+      <div class="iconlink" onClick="window.location='pulseresult.html';">
+        <div><img src="./icon/icons-puzzle.png" style="width:30px;"></div>
+        <div class="nav-text">Pulse Survey</div>
+      </div>
+      <div class="iconlink" onClick="window.location='retailclub.html';">
+        <div><img src="./icon/icons-services.png" style="width:30px;"></div>
+        <div class="nav-text">Retail Club</div>
+      </div>
     </div>
--->
-
-
-
   </div>
 
-  <footer id="footer" class="container" style="padding-left: 10px; padding-right: 10px;">
-    <div id="DisplayFooter"></div>
-  </footer>
-  <!--
-  <div class="clr" style="height: 70px;"></div>
-  <main id="main">
+
+  <div class="container" style="margin-top: 80px; background: #fff; color:#000; font-size: 14px; max-width: 450px;">
+    <ul class="nav nav-tabs">
+      <li><a data-toggle="tab" href="#home" onclick="TapMenu(0)">Home</a></li>
+      <li class="active"><a data-toggle="tab" href="#menu1" onclick="TapMenu(1)">ตารางอบรม</a></li>
+      <li><a data-toggle="tab" href="#menu2" onclick="TapMenu(2)">การแข่งขัน</a></li>
+      <li><a data-toggle="tab" href="#menu3" onclick="TapMenu(3)">รางวัล</a></li>
+    </ul>
+  </div>
+
+
+  <div style="max-width: 450px; margin:10px auto 5px auto;">
     <center>
-      <img src="./img/mom-rule.jpg" class="img-pic" style="width:100%;margin-top:50px;">
+      <!--<div class="btn-memu" style="margin-top:0px;">ปฏิทินกำหนดการฝึกอบรม</div>-->
+      <div id="cal"></div>
     </center>
-    <div class="clr"></div>
-  </main>
--->
-<!--
-  <main>
-    <div style="width:92%;margin:auto; background: #ffffff; height: 560px; margin-top:100px; border-top-left-radius: 15px; border-top-right-radius: 15px;padding:20px 10px;">
-      <div><br><br><br><br>หน้าแรก</div>
-      
-    </div>
-  </main>
-  <div class="clr" style="height: 50px;"></div>
--->
+  </div>
 
-<!--
+  <section style="max-width: 450px; margin: 0px auto 20px auto;">
+    <center>
+      <div class="btn-memu" style="margin-top:10px;">ตารางการฝึกอบรมประจำเดือน</div>
+      <div id="loading" style="margin-top:50px;">
+        <img src="img/one-logo.png" style="width:190px;"><br><br>
+        <img src="./img/loading1.gif" style="width:50px;">
+      </div>
+    </center>
+    <div id="DisplayCalendar"></div>
+  </section>
+
   <div id="id01" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4">
-      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
-
-        <center>
-          <div class="btn-t22a" style="margin:15px auto 10px auto;">ชวนเพื่อนเข้าร่วมกิจกรรม</div>
-          <div><img src="./img/QRCode-LINERetailSociety.png" style="width:250px;"></div>
-          <div style="margin:15px auto 10px auto;text-align: left;line-height: 1.3;">ง่าย ๆ กับ 4 ขั้นตอนในการชวนเพื่อน ๆ เข้าร่วมกิจกรรมของ <b>LINE Retail Society</b><br><br>
-            1. สแกนที่ QR Code เพื่อเข้าสู่ <b>LINE Retail Society</b><br>
-            2. คลิกเข้าสู่ <b>LINE Retail Society</b><br>
-            3. คลิกที่เมนูระบบงาน <br>
-            4. เลือกระบบงานที่ต้องการเข้าใช้งาน
-          </div>
-        </center>
-        <div onclick="CloseAll()" class="btn-t2">ปิดหน้าต่าง</div>
+    <div class="w3-modal-content w3-card-4" style="background: #fff; max-width: 450px;">
+      <div class="w3-container" style="min-height:270px;padding:10px;width:100%;margin:auto;">
+        <div id="DisplayToDay" style="font-size: 13px;"></div>
       </div>
     </div>
     <div class="clr" style="height: 70px;"></div>
   </div>
--->
-
 
   <div id="menu" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4 bg-menu">
@@ -206,9 +127,10 @@
     <div class="clr" style="height:40px;"></div>
   </div>
 
-  <!-- Vendor JS Files #dde7f0-->
-<!--
+  <div class="clr" style="height:80px;"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files #dde7f0-->
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
@@ -216,20 +138,17 @@
   <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="./assets/js/main.js"></script>
-<script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
-<script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
--->
+
   <!-- Template Main JS File -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
   <script src='https://momentjs.com/downloads/moment.min.js'></script>
 
 
+  <script src="./assets/js/main.js"></script>
   <script src="./js/connect.js"></script>
   <script src="./js/menu.js"></script>
   <script src="./js/calendar.js"></script>
-<!--
--->
+
 </body>
 </html>
