@@ -1,91 +1,21 @@
-/*
- CSS for the main interaction
-*/
-.tabset > input[type="radio"] {
-  font-family: Anuphan, sans-serif;
-  position: absolute;
-  left: -200vw;
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: #cce4fd !important;
+    border: 1px solid #ddd;
+    border-bottom: 5px solid #f68b1f !important;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    font-weight: 400;
 }
 
-.tabset .tab-panel {
-  display: none;
+.nav-tabs {
+    border-bottom: 1px solid #768da0;
 }
 
-.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
-.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
-.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
-  display: block;
-}
-
-
-.tabset > label {
-  font-family: Anuphan, sans-serif;
-  position: relative;
-  display: inline-block;
-  padding: 10px 15px 25px;
-  border: 2px solid transparent;
-  border-bottom: 0;
-  cursor: pointer;
-  font-weight: 600;
-  color: #050505;
-  border-radius: 5px;
-  color: #b4c4dd;
-  /* background: #0056ff; */
-}
-
-.tabset > label::after {
-  content: "";
-  position: absolute;
-  left: 15px;
-  bottom: 10px;
-  width: 22px;
-  height: 4px;
-  background: #8d8d8d;
-}
-
-input:focus-visible + label {
-  outline: 2px solid rgba(0,102,204,1);
-  border-radius: 3px;
-}
-
-.tabset > label:hover,
-.tabset > input:focus + label,
-.tabset > input:checked + label {
-  color: #f1f1f1;
-}
-
-.tabset > label:hover::after,
-.tabset > input:focus + label::after,
-.tabset > input:checked + label::after {
-  background: #ffff00;
-}
-
-.tabset > input:checked + label {
-  font-family: Anuphan, sans-serif;
-  border-color: #ccc;
-  border-bottom: 2px solid #fff;
-  /* margin-bottom: -1px; */
-  background: #0056ff;
-  /*background: #d30707;*/
-}
-
-.tab-panel {
-  padding: 30px 0;
-  border-top: 1px solid #ccc;
-}
-
-/*
- Demo purposes only
-*/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-.tabset {
-  max-width: 65em;
+a {
+    color: #666 !important;
+    text-decoration: none;
 }

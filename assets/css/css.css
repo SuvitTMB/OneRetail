@@ -474,7 +474,7 @@
   border:1px solid #f1f1f1; padding: 5px; border-radius: 8px; font-size: 13px; background-color: #99bbdc; text-align: left;
 }
 .chart-date {
-  font-size: 11px; color:#000;
+  font-size: 11px; color:#000; margin-top: 6px;
 }
 /*
 .chart-memo {
@@ -543,7 +543,13 @@
   width:56px; height: 95px; float: left; margin:5px; overflow: hidden;
   margin: 3px;
   /*background-color: #fff;*/
-}.menu-box-img {
+}
+.menu-box2 {
+  width:56px; height: 55px; float: left; margin:5px; overflow: hidden;
+  margin: 3px;
+  /*background-color: #fff;*/
+}
+.menu-box-img {
   border:2px solid #fff; background-color: #0056ff; border-radius: 50%; width:60px; height: 60px; margin:auto;
   text-align: center; padding:10px 5px 0px 5px;
 }
@@ -551,14 +557,21 @@
   background-color: #f68b1f; cursor: pointer;
 }
 .menu-box-img1 {
-  border:2px solid #fff; background-color: #0056ff; border-radius: 10%; width:55px; height: 55px; margin:auto;
-  text-align: center; padding:8px 5px 0px 5px;
+  /*border:1px solid #fff;*/ 
+  background-color: #0056ff; border-radius: 10%; width:55px; height: 55px; margin:auto;
+  text-align: center; padding:10px 5px 0px 5px; cursor: pointer;
+}
+.menu-box-img1:hover { 
+  background-color: #c05210;
 }
 .menu-box-text {
   font-size: 13px; padding-top:3px; font-weight: 600; color: #111111;
 }
 .menu-box-text1 {
   font-size: 12px; padding-top:6px; font-weight: 400; color: #fff; text-align: center;
+}
+.menu-box-text2 {
+  font-size: 12px; padding-top:6px; font-weight: 400; color: #002d63; text-align: center;
 }
 .menu-reward-img {
   border:2px solid #fff; background-color: #94a9b3; border-radius: 50%; width:60px; height: 60px; margin:auto;
@@ -612,14 +625,13 @@
 */
 .copyright {
   padding-top: 20px;
-  color:#fff;
+  color: #7d9ec7;
   font-size: 13px;
   letter-spacing: 2px;
   padding:20px auto 30px auto;
   /* margin:20px auto 10px auto; */
-  color:#f68b1f;
-  font-weight: 600;
-  border-top: 1px solid #ccc;
+  font-weight: 400;
+  border-top: 1px solid #214775;
   /* background: #495057; */
 }
 .font11 { 
@@ -637,6 +649,9 @@
 }
 .font14 {
   font-size: 14px; line-height: 1.2; color:#0056ff; font-weight: 600; margin:5px; padding-top:8px;
+}
+.font16b {
+  font-size: 15px; line-height: 1.2; color:#0056ff; font-weight: 600; margin:5px;
 }
 .webboard0 {
   margin:15px 5px 15px 5px; font-weight: 600; padding:15px 10px; background-color: #dfebff;
@@ -914,7 +929,7 @@ box-shadow: 0px 0px 6px 5px rgba(178,178,178,0.17); color:#111; height: 35px; wi
   font-size:13px;
 }
 .NameLine {
-  color:#ffff00;font-weight: 600;font-size: 13px; 
+  color:#f68b1f;font-weight: 600;font-size: 14px; 
   margin-top:13px; letter-spacing: 3px;
 }
 
@@ -1157,7 +1172,7 @@ box-shadow: 0px 0px 6px 5px rgba(178,178,178,0.17); color:#111; height: 35px; wi
 }
 
 .coin-number {
-  font-size: 18px; font-weight: 600; color: #0056ff; 
+  font-size: 15px; font-weight: 600; color: #0056ff; 
 }
 .coin-img {
   width:20px; height: 20px; margin-top:-4px;
@@ -1166,7 +1181,7 @@ box-shadow: 0px 0px 6px 5px rgba(178,178,178,0.17); color:#111; height: 35px; wi
   width:100px; height: 100px; border-radius: 50%; margin-top:10px;
 }
 .rewards-txt {
-  width:48%;float: left; padding:5px;line-height: 1.2; 
+  width:48%;float: left; padding:7px 5px;line-height: 1.2; 
   border-radius: 8px; margin-right: 4px; background-color: #e2e3e3;
 }
 .rewards-linkA {
@@ -1579,18 +1594,7 @@ box-shadow: 0px 0px 6px 5px rgba(178,178,178,0.17); color:#111; height: 35px; wi
 .box50-text {
   color:#000; font-size: 12px; font-weight: 600; margin-top:-15px; margin-bottom: 3px;
 }
-.iconlink {
-  padding-top:9px; padding-bottom: 9px; padding-left: 3px; padding-right: 3px;
-  color:#fff;float: left;width:20%; cursor: pointer;
-}
-.iconlink:hover {
-  background-color: #002d63;
-}
-.txt-form {
-  text-align: left;
-  margin-left: 4px; margin-top:8px; color:#888; font-weight: 400;
-  padding:6px 0; font-size: 13px;
-}
+
 .grid {
   position: relative;
   margin: 0 auto;
@@ -1670,4 +1674,10 @@ table.dataTable thead th, table.dataTable thead td {
   left: 8px;
   font-size: 13px; color:#fff; font-weight: 400; border:1px solid #fff; border-radius: 10px;
   background-color: #0056ff; padding:2px 8px;
+}
+
+.ScoreCard {
+  width:85px; text-align: center; color:#0056ff; float: left; background-color: #e7e7e7; 
+  height: 70px; padding:3px; border-radius: 8px; border-radius: 5px;
+  margin: 5px;
 }
