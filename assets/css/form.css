@@ -40,7 +40,6 @@ input[type=text], textarea {
   -o-transition: 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
   height: 70px;
-  text-align: left; width: 100%;
 }
 textarea:focus { 
   outline: none !important;
@@ -164,8 +163,7 @@ select option {
 }
 .input-group-icon input {
   padding-left: 4.4em; height: 38px;
-  width:100%; text-align: left;
-  margin-top: 5px;
+  width:100%;
 }
 .input-group-icon .input-icon {
   position: absolute;
@@ -204,7 +202,7 @@ select option {
   width:90%;
   padding: 1em;
   margin: 0em auto;
-  /*background-color: #de8123;*/
+  background-color: #de8123;
   font-size: 13px;
   color:#111;
   border-radius: 5px;
@@ -251,7 +249,7 @@ select option {
 }
 
 .header-font {
-  color:#bebebe; font-weight: 400; padding:10px 0; font-size: 13px;
+  color:#dddddd; font-weight: 400; padding:10px 0; font-size: 13px;
 }
 .DisableEmpID {
   background-color: #97a5b2 !important;

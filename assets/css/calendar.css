@@ -7,7 +7,6 @@
   display: flex;
   width: 100%;
   margin: auto;
-  color: #0056ff;
 }
 .calendar {
   /* text-align: center; */
@@ -45,7 +44,7 @@
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   background: #0056ff;
-  color: #fff; margin-left: 0px;
+  color: #fff;
 }
 .calendar header .month-label {
   flex: 1;
@@ -72,8 +71,6 @@
   cursor: default;
   font-size: 14px;
   padding-top:10px;
-  color: #002d63;
-  margin-top: -15px;
 }
 .calendar .day-names .day {
   cursor: default;
@@ -87,88 +84,34 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  height: 30px;
+  height: 45px;
   cursor: pointer;
   transition: all 0.2s;
-  background: #ebf1fe; margin: 1px;
-  margin-bottom: -8px;
   /* padding: 6px 8px; */
 }
 .calendar .day:hover {
-  width:14.40% !important;
-  display: flex;
-  flex: 1;
-  background: #ff0000;
-  justify-content: center;
-  align-items: center;
-  color:#fff; width: 30px; max-width: 30px; height: 30px;
-  border-radius: 50%;
-
-  /*
-  padding:6px 8px;
-  */
-  cursor: pointer;
-  transition: all 0.2s;
-/*
-  display: flex;
-  flex: 1;
-  width: 14%;
-  color:#fff; width: 45px; max-width: 45px; height: 45px;
-  background: #0056ff;
-  border-radius: 50%;
-*/
+  background: #EFEFEF;
 }
 .calendar .day:first-child {
   border-left: none;
 }
 .calendar .day.today {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  height: 30px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-radius: 10px;
   background: #7aafc4;
-  color:#fff; font-weight: 600;
-/*
-  background: #7aafc4;
-  border-radius: 10px;
-  width:14.40% !important;
-  width: 35px;
-  max-width: 35px;
-  height: 35px;
-*/
+  border-radius: 50%;
+  width: 45px;
+  max-width: 45px;
+  height: 45px;
 }
 .calendar .day.different-month {
   color: #8e8787;
-  background: #f1f1f1; margin: 1px;
-  margin-bottom: -8px;
 }
 .calendar .day.selected {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  height: 30px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-radius: 10px;
-  background: #f68b1f;
-  color:#fff; font-weight: 600;
-
-/*
-  width:14.40% !important;
   background: #f68b1f;
   color: #FFFFFF;
   border-radius: 50%;
-  width: 30px;
-  max-width: 30px;
-  height: 30px;
-  display: flex;
-*/
+  width: 45px;
+  max-width: 45px;
+  height: 45px;
 }
 
 .roundhead {
@@ -179,32 +122,15 @@
   list-style: none;
   margin: 0;
   padding: 5px 15px;
-  /*border-bottom: 1px solid #7fa2ca;*/
-  padding-bottom: 10px;
 }
 li .secondo {
-  padding-top:10px;
   display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 1);
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.2);
 }
 
-.textline { 
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: #000000;
-  padding-top: 3px;
-}
-.roundhead {
-  background: linear-gradient(#ff9900, #ff5050);
-  box-shadow: 0 2px 12px -3px #ff5050;
-  padding-top: 4px;
-  font-weight: 600;
-  text-align: center;
-  font-size: 13px;
-}
+
 
 .upcoming .up-plan {
   list-style: none;
@@ -224,64 +150,35 @@ li .secondo {
   position: relative;
   width: 100%;
   height: auto;
-  background: #ebf1fe;
+  background: #8bb9ef;
   border-radius: 5px;
   margin: auto;
   box-shadow: 0px 6px 10px 2px rgba(0, 0, 0, 0.03);
   padding:10px; margin-top:20px;
 }
-
-/*.upcoming .up-plan li:nth-child(1) .roundhead {*/
-.upcoming .up-plan li .roundhead {
+.upcoming .up-plan li:nth-child(1) .roundhead {
   background: linear-gradient(#ff9900, #ff5050);
   box-shadow: 0 2px 12px -3px #ff5050;
-  padding-top: 4px;
-  font-weight: 600;
-  text-align: center;
-  font-size: 13px;
 }
-/*.upcoming .up-plan li:nth-child(2) {*/
-.upcoming .up-plan li {
-  /*border-bottom: 1px solid rgba(0, 0, 0, 0.1);*/
-  padding-top:8px;
+.upcoming .up-plan li:nth-child(2) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-/*.upcoming .up-plan li:nth-child(2) .roundhead {*/
-.upcoming .up-plan li .roundhead {
-  background: linear-gradient(#f68b1f);
-/*
+.upcoming .up-plan li:nth-child(2) .roundhead {
   background: linear-gradient(#ff66cc, #ff6666);
   box-shadow: 0 2px 12px -3px #ff6666;
-*/
 }
-/*.upcoming .up-plan li:nth-child(3) .roundhead {*/
-.upcoming .up-plan li .roundhead {
-  background: linear-gradient(#f68b1f);
-/*
-
+.upcoming .up-plan li:nth-child(3) .roundhead {
   background: linear-gradient(#33ccff, #0066ff);
   box-shadow: 0 2px 12px -3px #0066ff;
-*/
 }
 .upcoming .up-plan li .secondo {
   display: block;
-  font-size: 13px;
-  font-weight: 400; 
-  color: rgba(0, 0, 0, 1);
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-
-.upcoming .up-plan li .textline {
-  display: block;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
-  color: #000000;
-  padding-bottom: 8px;
+  color: #666; padding-bottom: 10px;
 }
-
-/*.upcoming .up-plan li:nth-child(1) {*/
-.upcoming .up-plan li {
-  /*border-bottom: 1px solid rgba(0, 0, 0, 0.1);*/
+.upcoming .up-plan li:nth-child(1) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .upcoming .up-plan li .up-date {
   position: absolute;
@@ -300,29 +197,9 @@ li .secondo {
   font-size: 8px;
   color: rgba(0, 0, 0, 0.3);
 }
-/*.upcoming .up-plan li:nth-child(2) .roundhead {*/
-.upcoming .up-plan li .roundhead {
-  /*background: linear-gradient(#ff66cc, #ff6666);
+.upcoming .up-plan li:nth-child(2) .roundhead {
+  background: linear-gradient(#ff66cc, #ff6666);
   box-shadow: 0 2px 12px -3px #ff6666;
-
-  */
-  background: linear-gradient(#f68b1f);
-}
-
-
-.material-icons {
-  color: white;
-  line-height: 43px;
-  font-size: 17px;
-}
-.roundhead {
-  width: 25px;
-  height: 25px;
-  float: left;
-  border-radius: 50%;
-  margin-right: 10px;
-  z-index: 100;
-  text-align: center;
 }
 .material-icons {
   color: white;
@@ -338,15 +215,21 @@ li .secondo {
   z-index: 100;
   text-align: center;
 }
-.up-title {
-  text-align: center; padding:10px;
-  background: #fae7d3; min-height: 34px;
-  border-radius: 50px;
+.material-icons {
+  color: white;
+  line-height: 43px;
+  font-size: 17px;
 }
-.notraining {
-  border:1px solid #dee2e6; height: 80px; text-align: center; padding-top:30px;
-  margin-top:15px; font-weight: 600; border-radius: 10px; background: #fff;
+.roundhead {
+  width: 25px;
+  height: 25px;
+  float: left;
+  border-radius: 50%;
+  margin-right: 10px;
+  z-index: 100;
+  text-align: center;
 }
+
 
 
 

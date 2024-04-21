@@ -43,23 +43,13 @@
 }
 
 .body3 {
-    background: #f4f4f4;
+    background: #fff;
     font: 400 13px Anuphan, sans-serif;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;  
 }
-
-.body4 {
-    background: #ffffff;
-    font: 400 13px Anuphan, sans-serif;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;  
-}
-
 
 .clr {
   clear: both;
@@ -188,7 +178,7 @@ progress[value]::after {
     content: "";
     position: absolute;
     display: block;
-    background: #002d63;
+    background: #71a1d9;
     z-index: 2;
     width: calc(100% - 32px);
     height: calc(200% - 32px);
@@ -234,10 +224,10 @@ progress[value]::after {
   display: none;
   width: 40px;
   height: 40px;
-  border-radius: 6px;
+  border-radius: 3px;
   right: 15px;
-  bottom: 60px;
-  background: #bdc9d6;
+  bottom: 15px;
+  background: #438fff;
   color: #fff;
   transition: display 0.5s ease-in-out;
   z-index: 99999;
@@ -247,13 +237,12 @@ progress[value]::after {
   font-size: 24px;
   position: absolute;
   top: 8px;
-  left: 7px;
-  color:#ffffff; margin-top:0px;
+  left: 8px;
 }
 
 .back-to-top:hover {
   color: #fff;
-  background: #acbed1;
+  background: #af7ef3;
   transition: 0.3s ease-in-out;
 }
 
@@ -263,23 +252,10 @@ progress[value]::after {
   width:70%; float: left; height: 40px; padding-top: 6px;
 }
 
-.row-progress1 {
-  width: 100%;
-  /* float: left; */
-  height: 40px;
-  padding-top: 10px;
-  margin-left: 5px;
-}
-
-.row-progress-rewards {
-  width:90%; float: left; height: 40px; padding-top: 6px; margin-left: 5px; font-size: 11px;
-}
-
 .container-min {
-  min-height:300px;width:100%;text-align:center;padding:0px;margin-bottom: 20px;background-color: #fff;border-radius:15px;
+  min-height:300px;width:100%;text-align:center;padding:0px;margin-bottom: 20px;background-color: #c7d3e0;border-radius:15px;
 }
 
-/*
 .nav-bg {
   background: #ff0000; 
 }
@@ -292,19 +268,54 @@ progress[value]::after {
   font-size:11px; color:#ffffff; margin-top:3px;
 }
 
-*/
+.navbar1 {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  font-family: Anuphan, sans-serif;
+  font-size: 13px;
+  bottom: 0; 
+  position: fixed;
+  overflow: hidden;
+  background-color: #013eb6;
+  width: 100%;
+  height: 55px;
+  z-index: 1000;
+}
+
+.navbar1 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 6px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.navbar1 a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.navbar1 a.active {
+  background-color: #f68b1f;
+  color: white;
+}
+
+
 .btn-click {
   margin-top:10px;
   font-family: Anuphan, sans-serif;
   font-weight: 400;
   font-size: 13px;
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
+  border: 2px solid #ffffff;
   background: #0fbb07;
   text-align: center;
   color: #ffffff;
@@ -313,7 +324,7 @@ progress[value]::after {
 .btn-click:hover {
   color: #fff;
   background-color: #08aa00;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
@@ -325,12 +336,12 @@ progress[value]::after {
   font-weight: 400;
   font-size: 13px;
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
+  border: 2px solid #ffffff;
   background: #c95ae2;
   text-align: center;
   color: #ffffff;
@@ -339,7 +350,7 @@ progress[value]::after {
 .btn-start:hover {
   color: #fff;
   background-color: #a60fc8;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
@@ -351,12 +362,12 @@ progress[value]::after {
   font-weight: 400;
   font-size: 13px;
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
+  border: 2px solid #ffffff;
   background: #0fbb07;
   text-align: center;
   color: #ffffff;
@@ -365,7 +376,7 @@ progress[value]::after {
 .btn-confirm:hover {
   color: #fff;
   background-color: #08aa00;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
@@ -377,12 +388,12 @@ progress[value]::after {
   font-weight: 400;
   font-size: 13px;
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
+  border: 2px solid #ffffff;
   background: #8383cd;
   text-align: center;
   color: #ffffff;
@@ -391,7 +402,7 @@ progress[value]::after {
 .btn-close:hover {
   color: #fff;
   background-color: #6f6fb5;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
@@ -403,12 +414,12 @@ progress[value]::after {
   font-weight: 400;
   font-size: 13px;
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
+  border: 2px solid #ffffff;
   background: #d45656;
   text-align: center;
   color: #ffffff;
@@ -417,7 +428,7 @@ progress[value]::after {
 .btn-red:hover {
   color: #fff;
   background-color: #d30b0b;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
@@ -429,12 +440,12 @@ progress[value]::after {
   font-weight: 400;
   font-size: 13px;
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
+  border: 2px solid #ffffff;
   background: #538bfb;
   text-align: center;
   color: #ffffff;
@@ -443,7 +454,7 @@ progress[value]::after {
 .btn-blue:hover {
   color: #fff;
   background-color: #0056ff;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
@@ -456,12 +467,12 @@ progress[value]::after {
   font-weight: 400;
   font-size: 13px;
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 10px;
+  padding: 8px 16px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
+  border: 2px solid #ffffff;
   background: #919598;
   text-align: center;
   color: #ffffff;
@@ -470,45 +481,21 @@ progress[value]::after {
 .btn-grey:hover {
   color: #fff;
   background-color: #5d6062;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
-
-
-.btn-small {
-  /*
-  display: inline-block;
-  line-height: 1.5;
-  text-align: center;
-  */
-  margin-top:-20px;
-  margin-left: 15px;
-  font-family: Anuphan, sans-serif;
-  font-weight: 400;
-  font-size: 10px;
-  padding: 1px 10px;
-  border-radius: 5px;
-  transition: 0.5s;
-  animation-delay: 0.8s;
-  border: 1px solid #ffffff;
-  background: #f68b1f;
-  color: #ffffff;
-  position: absolute;
-
-}
-
 
 .text-everyday {
   padding:4px 20px; margin:auto; background: #6685c3; font-size: 9px; color:#d6deea; border-radius: 5px;
   width:100px; text-align: center; margin-bottom: 15px;
 }
 .text-header {
-  margin:10px auto; font-size: 15px; color:#ffffff; 
+  margin:10px auto; font-size: 15px; color:#ffffff; text-decoration: underline;
 }
 
 .text-Qsurvey {
-  margin:20px auto 5px auto; font-size: 15px; color:#0056ff; padding:0px 10% 10px 10%; font-weight: 600;
+  margin:20px auto 5px auto; font-size: 15px; color:#ffff00; padding:0px 10% 10px 10%; 
 }
 .text-detail {
   padding:10px auto; color:#ffffff; font-size: 10px; text-align: center; margin-top:20px;
@@ -547,11 +534,11 @@ progress[value]::after {
   font-size: 14px;
   display: inline-block;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
+  border: 2px solid #ffffff;
   background: #97e7a9;
   text-align: center;
   color: #000;
@@ -573,10 +560,11 @@ progress[value]::after {
   font-size: 14px;
   display: inline-block;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
+  border: 2px solid #ffffff;
   background: #f0dfb8;
   text-align: center;
   color: #000;
@@ -597,10 +585,11 @@ progress[value]::after {
   font-size: 14px;
   display: inline-block;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
+  border: 2px solid #ffffff;
   background: #f2c9ad;
   text-align: center;
   color: #000;
@@ -621,10 +610,11 @@ progress[value]::after {
   font-size: 14px;
   display: inline-block;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
+  border: 2px solid #ffffff;
   background: #f7b7b2;
   text-align: center;
   color: #000;
@@ -645,10 +635,11 @@ progress[value]::after {
   font-size: 14px;
   display: inline-block;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
+  border: 2px solid #ffffff;
   background: #ee8a94;
   text-align: center;
   color: #000;
@@ -682,13 +673,13 @@ progress[value]::after {
 .btn-memu {
   display: inline-block;
   text-align: center;
-  background: #bdc9d6;
-  color: #000;
+  background: #1f64b6;
+  color:#fff;
   /* border: 2px solid #dcdce4; */
-  padding: 8px 25px;
+  padding: 8px 15px;
   transition: 0.3s;
-  font-size: 13px;
-  border-radius: 20px;
+  font-size: 14px;
+  border-radius: 8px;
   font-weight: 400;
 }
 .txt-white {
@@ -697,7 +688,7 @@ progress[value]::after {
 
 
 .box-target {
-  width:31%;float: left;text-align: center;height:70px; border-radius: 10px; background: #e9ecef;
+  width:31%;float: left;text-align: center;height:75px;border-radius: 10px; background: #f2d7c0;
   margin-right: 2%; padding-top:8px; color:#000000; font-family: Anuphan, sans-serif; font-size: 12px;
 }
 .box-target-number {
@@ -724,8 +715,8 @@ progress[value]::after {
     direction: ltr;
     line-height: 1;
     -webkit-font-feature-settings: "liga";
-    -webkit-font-smoothing: antialiased;
-    margin: 2px; color:#1c62eb;
+    -webkit-font-smoothing: antialiased
+    margin: 2px 5px;
 }
 .entry-meta ul {
     display: flex;
@@ -735,28 +726,25 @@ progress[value]::after {
     margin: 0;
 }
 .entry-meta {
-    margin-top: 5px;
-    color: #afb3c3;
+    margin-top: 10px;
+    color: #ccd1e3;
 }
 .align-items-center {
     -ms-flex-align: center !important;
     align-items: center !important;
 }
 .d-flex {
-    font-size: 13px;
+    font-size: 12px;
     display: flex !important;
     margin-right: 10px;
 }
-
-
-
 .font13w {
   font-size: 13px; color:#fff; line-height: 1.2;
   text-align: left;
 }
 .font13b {
   font-size: 13px; color:#000; font-weight: 400;
-  text-align: left; line-height: 1.2; margin: 10px 0px;
+  text-align: left; line-height: 1.2;
 }
 .font13bb {
   font-size: 13px; color:#000; font-weight: 600;
@@ -766,7 +754,7 @@ progress[value]::after {
   margin-top:10px; padding:10px; border: 1px solid #225794; background: #2b69b2; border-radius: 8px;
 }
 .boxmemo1 {
-  margin-top:10px; padding:10px; border: 1px solid #b27240; background: #b6a395; border-radius: 8px;
+  margin-top:10px; padding:10px; border: 1px solid #b27240; background: #e19e69; border-radius: 8px;
 }
 .boxmemo-none {
   margin-top:10px;
@@ -822,36 +810,3 @@ progress[value]::after {
 }
 */
 
-.LoopRadio {
-  width:18%; height: 50px; border-radius: 5px; border: 1px solid #c1d2eb; 
-  margin:8px 2px; float: left;
-
-  font-size: 11px; background: #fff; padding-top: 5px; text-align: center; font-weight: 600; 
-/*
-  width:30px; height: 30px; border-radius: 50%; border: 1px solid #f1f1f1; margin:2px; float: left;
-  font-size: 11px; background: #e6c09a; padding-top: 5px; text-align: center; font-weight: 600; color:#c19a74;
-*/
-}
-.LoopRadio-Check {
-/*
-  width:30px; height: 30px; border-radius: 50%; border: 1px solid #ffffff; margin:2px; float: left;
-  font-size: 11px; background: #0056ff; padding-top: 5px; text-align: center; font-weight: 600; color:#ffffff;
-*/
-  width:18%; height: 50px; border-radius: 5px; border: 1px solid #c1d2eb; 
-  margin:8px 2px; float: left; background: #c1d2eb;
-  font-size: 11px; padding-top: 5px; text-align: center; font-weight: 600; 
-}
-.LoopTextNumber {
-  bottom: 0;
-  background: #c1d2eb; width:50%; border-radius: 8px; color:#fff; padding: 2px 4px; font-size: 10px; text-align: center;
-  margin:0px auto 5px auto;
-}
-.LoopTextNumberblue {
-  bottom: 0;
-  background: #f68b1f; width:50%; border-radius: 8px; color:#fff; padding: 2px 4px; font-size: 10px; text-align: center;
-  margin:0px auto 5px auto;
-}
-
-.font10b {
-  text-align: center; font-size: 10px; margin-top: -10px; color:#666;
-}
