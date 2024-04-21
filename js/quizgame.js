@@ -1,13 +1,14 @@
 
 
-
 $(document).ready(function () {
   if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
-  Connect_DB();
-  CheckUserSurvey();
+  document.getElementById('loading').style.display='none';
+  //Connect_DB();
+  //CheckUserSurvey();
 });
 
-
+/*
+loading
 var CalUserSurvey = 0;
 function CheckUserSurvey() {
   dbUserSurvey.where('PulseDate','==',thistoday)

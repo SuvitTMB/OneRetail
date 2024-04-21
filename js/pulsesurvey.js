@@ -5,11 +5,15 @@ var EidProfile = "";
 var EidPulseRefID = "";
 var QuesPulse = "";
 var MemoPulse = "";
+xHeaderNews = "Pulse Survey";
+xHeaderLog = "รับรางวัลจากการทำ Pulse Survey";
+xHeaderPoint = 1;
 
 $(document).ready(function () {
   if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
   Connect_DB();
   CheckSurvey()
+  //CheckDatePulse();
 });
 
 
@@ -33,6 +37,7 @@ function CheckSurvey() {
     $("#CheckStart").html(str);
   });
 }
+
 
 var aChoice1 = 0 ;
 var aChoice2 = 0 ;
@@ -82,11 +87,6 @@ function StartSurvey() {
         str += '<div style="margin:10px auto 10px auto;height: 180px; overflow:hidden;"><img src="./img/survey-2.png" style="width:320px;"></div>';
       }
       str += '<div class="text-Qsurvey">'+ doc.data().PulseQuestion +'</div>';
-      //str += '<div class="btn-choice5" value="'+ doc.data().Choice5 +'" onclick="SendSurvey(\''+ doc.data().Choice5 +'\')">'+ doc.data().PulseChice5 +'</div>';
-      //str += '<div class="btn-choice4" value="'+ doc.data().Choice4 +'" onclick="SendSurvey(\''+ doc.data().Choice4 +'\')">'+ doc.data().PulseChice4 +'</div>';
-      //str += '<div class="btn-choice3" value="'+ doc.data().Choice3 +'" onclick="SendSurvey(\''+ doc.data().Choice3 +'\')">'+ doc.data().PulseChice3 +'</div>';
-      //str += '<div class="btn-choice2" value="'+ doc.data().Choice2 +'" onclick="SendSurvey(\''+ doc.data().Choice2 +'\')">'+ doc.data().PulseChice2 +'</div>';
-      //str += '<div class="btn-choice1" value="'+ doc.data().Choice1 +'" onclick="SendSurvey(\''+ doc.data().Choice1 +'\')">'+ doc.data().PulseChice1 +'</div>';
       str += '<div class="btn-choice5" value="5" onclick="SendSurvey(5)">'+ doc.data().PulseChice5 +'</div>';
       str += '<div class="btn-choice4" value="4" onclick="SendSurvey(4)">'+ doc.data().PulseChice4 +'</div>';
       str += '<div class="btn-choice3" value="3" onclick="SendSurvey(3)">'+ doc.data().PulseChice3 +'</div>';
@@ -103,6 +103,7 @@ function StartSurvey() {
 
 var xSelectChoice = 0;
 function SendSurvey(x) {
+  document.getElementById('loading1').style.display='block';
   var str = "";
   xSelectChoice = x;
   if(x<=3) {
@@ -112,6 +113,7 @@ function SendSurvey(x) {
     document.getElementById('Q_PulseSurvey').style.display='none';
     document.getElementById('A_PulseSurvey').style.display='block';
   } else {
+    //console.log("Survey");
     SavePulseDate();
   }
 }
@@ -120,6 +122,28 @@ function SendSurvey(x) {
 var stxtGroupQ = "";
 var stxtEtxtStory = "";
 function SavePulseDate() {
+  document.getElementById('CheckLoading').style.display='block';
+
+/*
+  var str = "";
+  var xPointPulse = 1;
+  console.log("asdfasdf");
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(xPointPulse));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(xPointPulse));
+  dbProfile.doc(sessionStorage.getItem("EmpRefID_Academy")).update({
+    //LastUpdate : dateString,
+    XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
+    RP_Point : parseFloat(sessionStorage.getItem("RP_Point"))
+  });
+  str += '<div class="btn-t3"><b>คุณได้รับเหรียญรางวัล</b></div>';
+  str += '<div style="font-size:14px;line-height:1.1;"><img src="./point/coin-'+ xPointPulse +'.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br>จากกิจกรรม<br><br><b>สำรวจอุณหภูมิความสุข</b></div>';
+  str += '<div class="clr" style="height:15px;"></div>';
+  str += '<div class="btn-t2" onclick="CloseAll()" style="margin-top:15px;">ปิดหน้าต่างนี้</b></div>';
+  str += '<div class="clr" style="height:40px;"></div>';
+  $("#DisplayGetPoint").html(str);  
+  document.getElementById('id02').style.display='block';
+*/
+
   document.getElementById('A_PulseSurvey').style.display='none';
   document.getElementById('Q_PulseSurvey').style.display='none';
   //alert("dsfadsfs");
@@ -150,6 +174,7 @@ function SavePulseDate() {
     PulseRatio: parseFloat(aPulseRatio).toFixed(2)
   });    
   console.log("Save 1");
+  //console.log("Save 1111");
   SaveUserProfile();
 }  
 
@@ -338,7 +363,35 @@ function SaveUserSurvey() {
   });
   document.getElementById('Q_thankyou').style.display='block';
   console.log("Save 5");
+  AddUserLog();
+  GetPoint();
   //CheckTapMemo();
+}
+
+
+function GetPoint() {
+  var str = "";
+  var xPointPulse = 1;
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(xPointPulse));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(xPointPulse));
+  dbProfile.doc(sessionStorage.getItem("EmpRefID_Academy")).update({
+    //LastUpdate : dateString,
+    XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
+    RP_Point : parseFloat(sessionStorage.getItem("RP_Point"))
+  });
+  str += '<div class="textheader" style="margin: 30px auto;">คุณได้รับเหรียญรางวัล</div>';
+  str += '<div style="font-size:14px;line-height:1.1;margin-top:20px;"><img src="./point/coin-'+ xPointPulse +'.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br><br>จากกิจกรรม<br><b>แบบสำรวจอุณหภูมิความสุขในการทำงาน</b></div>';
+  str += '<div class="clr"></div>';
+  str += '<div class="btn-grey" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่างนี้</b></div>';
+  str += '<div class="clr" style="height:40px;"></div>';
+  $("#DisplayGetPoint").html(str);  
+  document.getElementById('CheckLoading').style.display='none';
+  document.getElementById('id02').style.display='block';  
+}
+
+
+function GotoHome() {
+  location.href = "home.html";
 }
 
 

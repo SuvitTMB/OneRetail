@@ -28,7 +28,8 @@ function GroupVDO(x) {
 
 
 function ReadVdo(x) {
-  console.log(x);
+  location.href = "displayclip.html?gid="+x;
+  //console.log("c:"+x);
 }
 
 

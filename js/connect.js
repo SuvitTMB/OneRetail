@@ -1,7 +1,9 @@
 var dateString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
 var datetoday = "";
 var thistoday = "";
-
+var xHeaderLog = "";
+var xHeaderNews = "";
+var xHeaderPoint = 0;
 
 function Connect_DB() {
   var firebaseConfig = {
@@ -16,9 +18,15 @@ function Connect_DB() {
   firebase.initializeApp(firebaseConfig);
   dbProfile = firebase.firestore().collection("UserProfile");
   dbCheckMember = firebase.firestore().collection("CheckProfile");
-  dbttblog = firebase.firestore().collection("ttblog");
   dbPulseDate = firebase.firestore().collection("PulseDate");
   dbPulseResult = firebase.firestore().collection("PulseResult");
+
+  dbLoginlog = firebase.firestore().collection("Loginlog");
+  dbUserlog = firebase.firestore().collection("Userlog");
+  dbRewards = firebase.firestore().collection("Rewards");
+  dbRedeem = firebase.firestore().collection("RewardsRedeem");
+
+  dbCalendar = firebase.firestore().collection("Calendar");
 
   dbGetAllMemo = firebase.firestore().collection("GetAllMemo");
   dbGetAllLike = firebase.firestore().collection("GetAllLike");
@@ -31,6 +39,41 @@ function Connect_DB() {
   NewDate();
 
 }
+
+
+function AddUserLog() {
+/*
+  NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
+  dbUserlog.add({
+    LineID : sessionStorage.getItem("LineID"),
+    LineName : sessionStorage.getItem("LineName"),
+    LinePicture : sessionStorage.getItem("LinePicture"),
+    EmpID : sessionStorage.getItem("EmpID_Academy"),
+    EmpName : sessionStorage.getItem("EmpName_Academy"),
+    RefID : sessionStorage.getItem("EmpRefID_Academy"),
+    HeadNews : xHeaderNews,
+    SubNews : xHeaderLog,
+    GetPoint : parseFloat(xHeaderPoint),
+    LastPoint : parseFloat(sessionStorage.getItem("XP_Point")),
+    LogDate : dateString,
+    LogTimeStamp : TimeStampDate
+  });
+  console.log("XP_Point="+parseFloat(sessionStorage.getItem("XP_Point")));
+  console.log("xHeaderPoint="+xHeaderPoint);
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point")) + parseFloat(xHeaderPoint));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point")) + parseFloat(xHeaderPoint));
+  dbProfile.doc(sessionStorage.getItem("EmpRefID_Academy")).update({
+    LastUpdate : dateString,
+    XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
+    RP_Point : parseFloat(sessionStorage.getItem("RP_Point"))
+  });    
+*/
+  console.log("Save Log");
+}
+
+
+
 
 
 function imgError(image) {

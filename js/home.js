@@ -1,40 +1,26 @@
-var dateString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear()+543;
-today = dd + '/' + mm + '/' + yyyy;
-var cleararray = "";
-var Eid = "";
-var ArrRewards = [];
-var NewRewards = "";
-var gcheck = 0;
-var Xgiftname = "";
-var XCheckRewards = 0;
-//var XSelect = 0;
-
-
-var arrMoonCake = Array(
-  [1, 'Halloween#1'],
-  [2, 'Halloween#2'],
-  [3, 'Halloween#3'],
-  [4, 'Halloween#4'],
-  [5, 'Halloween#5'],
-  [6, 'Halloween#6'],
-  [7, 'Halloween#7'],
-  [8, 'Halloween#8'],
-  [9, 'Halloween#9']
-);
-
 
 $(document).ready(function () {
-  if(sessionStorage.getItem("EmpID_Moon2023")==null) { location.href = "index.html"; }
-  Connect_DB();
-  dbGiftRewards = firebase.firestore().collection("Gift2023Rewards");
-  CountRewards();
-  CheckData();
+  if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
+  //Connect_DB();
 });
 
+
+/*
+function TapMenu(x) {
+  if(x==0) {
+    location.href = "home.html";
+  } if(x==1) { 
+    location.href = "calendar.html";
+  } if(x==2) { 
+    location.href = "quizgame.html";
+  } if(x==3) { 
+    location.href = "rewards.html";
+  }
+}
+*/
+
+
+/*
 
 function CheckData() {
   var str = "";
@@ -273,7 +259,7 @@ function CloseAll() {
   //document.getElementById('id02').style.display='none';
   //document.getElementById('id03').style.display='none';
 }
-
+*/
 
 /*
 function blinker()
