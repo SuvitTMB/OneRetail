@@ -1,7 +1,9 @@
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-    background-color: #cce4fd !important;
-    border: 1px solid #ddd;
+    /* background-color: #cce4fd !important; */
+    border: 0px solid #ddd !important;
     border-bottom: 5px solid #f68b1f !important;
+    color: #0056ff !important;
+    font-weight: 600;
 }
 .nav-tabs>li>a {
     margin-right: 2px;

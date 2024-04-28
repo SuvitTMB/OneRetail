@@ -76,7 +76,7 @@ progress[value] {
   max-width: 350px;
   height: 8px;
   border: 0;
-  --border-radius: 10px;
+  --border-radius: 100px;
   border-radius: var(--border-radius);
   counter-reset: progress var(--progress-value);
   --progress-value-string: counter(progress) "%";
@@ -178,7 +178,7 @@ progress[value]::after {
     width: 100%;
     height: 200%;
     border-radius: 50%;
-    background-image: conic-gradient(#d70418, #0aaf2f calc(var(--percentage, 0) / 2), #5f6c78 0);
+    background-image: conic-gradient(#d70418, #0aaf2f calc(var(--percentage, 0) / 2), #c4d0db 0);
     transition: transform .5s ease-in-out;
     z-index: 1;
     transform: rotate(270deg);
@@ -188,7 +188,7 @@ progress[value]::after {
     content: "";
     position: absolute;
     display: block;
-    background: #002d63;
+    background: #fff;
     z-index: 2;
     width: calc(100% - 32px);
     height: calc(200% - 32px);
@@ -201,8 +201,10 @@ progress[value]::after {
     color: #0056ff;
     z-index: 3;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
+    padding:40px;
     font-weight: 600;
+    margin-top: 35px;
 }
 .row-header {
   width: 27%;
@@ -236,7 +238,7 @@ progress[value]::after {
   height: 40px;
   border-radius: 6px;
   right: 15px;
-  bottom: 60px;
+  bottom: 70px;
   background: #bdc9d6;
   color: #fff;
   transition: display 0.5s ease-in-out;
@@ -300,7 +302,7 @@ progress[value]::after {
   font-size: 13px;
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
@@ -326,7 +328,7 @@ progress[value]::after {
   font-size: 13px;
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
@@ -352,7 +354,7 @@ progress[value]::after {
   font-size: 13px;
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
@@ -378,7 +380,7 @@ progress[value]::after {
   font-size: 13px;
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
@@ -404,7 +406,7 @@ progress[value]::after {
   font-size: 13px;
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
@@ -430,7 +432,7 @@ progress[value]::after {
   font-size: 13px;
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
@@ -457,7 +459,7 @@ progress[value]::after {
   font-size: 13px;
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 10px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
@@ -483,7 +485,7 @@ progress[value]::after {
   text-align: center;
   */
   margin-top:-20px;
-  margin-left: 15px;
+  margin-left: 20px;
   font-family: Anuphan, sans-serif;
   font-weight: 400;
   font-size: 10px;
@@ -546,25 +548,27 @@ progress[value]::after {
   font-weight: 600;
   font-size: 14px;
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 10px;
+  padding: 6px 16px;
+  border-radius: 100px;
   transition: 0.5s;
-  line-height: 1.5;
   animation-delay: 0.8s;
-  /*border: 2px solid #ffffff;*/
-  background: #97e7a9;
+  /*border: 2px solid #ffffff;
+  line-height: 1.5;
+
+  */
+  background: #58d3fe;
   text-align: center;
   color: #000;
   width:290px;
 }
-
+/*
 .btn-choice5:hover {
   color: #fff;
   background-color: #09d738;
   text-decoration: none;
   cursor: pointer;
 }
-
+*/
 
 .btn-choice4 {
   margin-top:8px;
@@ -572,95 +576,96 @@ progress[value]::after {
   font-weight: 600;
   font-size: 14px;
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 10px;
+  padding: 6px 16px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  background: #f0dfb8;
+  background: #b1ff54;
   text-align: center;
   color: #000;
   width:290px;
 }
-
+/*
 .btn-choice4:hover {
   color: #fff;
   background-color: #efb025;
   text-decoration: none;
   cursor: pointer;
 }
-
+*/
 .btn-choice3 {
   margin-top:8px;
   font-family: Anuphan, sans-serif;
   font-weight: 600;
   font-size: 14px;
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 10px;
+  padding: 6px 16px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  background: #f2c9ad;
+  background: #ecd184;
   text-align: center;
   color: #000;
   width:290px;
 }
-
+/*
 .btn-choice3:hover {
   color: #fff;
   background-color: #ef8035;
   text-decoration: none;
   cursor: pointer;
 }
-
+*/
 .btn-choice2 {
   margin-top:8px;
   font-family: Anuphan, sans-serif;
   font-weight: 600;
   font-size: 14px;
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 10px;
+  padding: 6px 16px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  background: #f7b7b2;
+  background: #eaad6a;
   text-align: center;
   color: #000;
   width:290px;
 }
-
+/*
 .btn-choice2:hover {
   color: #fff;
   background-color: #ef4b3f;
   text-decoration: none;
   cursor: pointer;
 }
-
+*/
 .btn-choice1 {
   margin-top:8px;
   font-family: Anuphan, sans-serif;
   font-weight: 600;
   font-size: 14px;
   display: inline-block;
-  padding: 8px 16px;
-  border-radius: 10px;
+  padding: 6px 16px;
+  border-radius: 100px;
   transition: 0.5s;
   line-height: 1.5;
   animation-delay: 0.8s;
-  background: #ee8a94;
+  background: #ec7c8e;
   text-align: center;
   color: #000;
   width:290px;
 }
-
+/*
 .btn-choice1:hover {
   color: #fff;
   background-color: #cc2334;
   text-decoration: none;
   cursor: pointer;
 }
+*/
 .btn-more {
   display: inline-block;
   text-align: center;
@@ -669,7 +674,7 @@ progress[value]::after {
   border: 2px solid #dcdce4;
   padding: 3px 12px;
   transition: 0.3s;
-  font-size: 13px;
+  font-size: 12px;
   border-radius: 6px;
   font-weight: 400;
 }
@@ -692,12 +697,12 @@ progress[value]::after {
   font-weight: 400;
 }
 .txt-white {
-  font-size:12px; color:#fff; margin:8px auto 5px auto;
+  font-size:12px; color:#0056ff; margin:8px auto 5px auto;
 }
 
 
 .box-target {
-  width:31%;float: left;text-align: center;height:70px; border-radius: 10px; background: #e9ecef;
+  width:31%;float: left;text-align: center;height:70px; border-radius: 100px; background: #e9ecef;
   margin-right: 2%; padding-top:8px; color:#000000; font-family: Anuphan, sans-serif; font-size: 12px;
 }
 .box-target-number {
@@ -743,9 +748,10 @@ progress[value]::after {
     align-items: center !important;
 }
 .d-flex {
-    font-size: 13px;
+    font-size: 11px;
     display: flex !important;
     margin-right: 10px;
+    margin-top:8px;
 }
 
 
@@ -763,7 +769,9 @@ progress[value]::after {
   text-align: left; line-height: 1.2;
 }
 .boxmemo {
-  margin-top:10px; padding:10px; border: 1px solid #225794; background: #2b69b2; border-radius: 8px;
+  margin-top:10px; background: #f7f7f9; border-radius: 20px;
+  /*box-shadow: 0px 6px 10px 2px rgba(0, 0, 0, 0.03); border: 1px solid #d5deeb;padding:7px;*/
+  text-align: left; height: 46px;
 }
 .boxmemo1 {
   margin-top:10px; padding:10px; border: 1px solid #b27240; background: #b6a395; border-radius: 8px;
@@ -777,8 +785,8 @@ progress[value]::after {
   font-size: 13px; height:90px; text-align:center; padding-top:35px; color:#7db4eb;
 }
 .memo-header {
-  width:70%; float: left; height: 35px; line-height: 1.1; font-weight: 600;
-  vertical-align: top; text-align: left;
+  width:100%; float: left; line-height: 1.1; font-weight: 600;
+  vertical-align: top; text-align: left; margin-bottom: 8px;
 }
 .memo-header1 {
   height: 22px;
@@ -793,21 +801,27 @@ progress[value]::after {
   border-radius: 15%;
 }
 .memo-text {
-  border:1px solid #ccc; background-color: #f1f1f1; border-radius: 10px;padding:20px;text-align: left;width:100%;
+  border:1px solid #ccc; background-color: #f8f9fa; border-radius: 100px;padding:20px;text-align: left;width:100%;
 }
 .chart-like {
-  width:35px; background-color:#0056ff; border-radius: 50%;padding:5px;
+  width:35px;
+  background-color:#0056ff;
+  border-radius: 50%;
+  padding:5px;
   position: absolute;
   /*top: 15px;
   bottom: 8px;*/
-  right: 20px;
+  right: 15px;
+  /* top: -10px; */
+  margin-top: 5px;
 }
 .chart-dislike {
   width:35px; background-color:#999; border-radius: 50%;padding:5px;
   position: absolute;
   /*top: 15px;
   bottom: 8px;*/
-  right: 20px;
+  right: 15px;
+  margin-top: 5px;
 }
 /*
 .chart-profilt {
@@ -855,3 +869,114 @@ progress[value]::after {
 .font10b {
   text-align: center; font-size: 10px; margin-top: -10px; color:#666;
 }
+
+.leader-1 {
+    border-radius: 50%;
+    background: #0056ff;
+    width: 25px;
+    height: 25px;
+    margin-top: -15px;
+    z-index: 100;
+    position: relative;
+    float: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 2px;
+    color: #fff;
+}
+.show-learderboard-1 {
+  border: 3px solid #2279da;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.leader-2 {
+    border-radius: 50%;
+    background: #f68b1f;
+    width: 25px;
+    height: 25px;
+    margin-top: -15px;
+    z-index: 100;
+    position: relative;
+    float: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 2px;
+    color: #fff;
+}
+.show-learderboard-2 {
+  border: 3px solid #f7ab5e;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.leader-3 {
+    border-radius: 50%;
+    background: #4f86c9;
+    width: 25px;
+    height: 25px;
+    margin-top: -15px;
+    z-index: 100;
+    position: relative;
+    float: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 2px;
+    color: #fff;
+}
+.show-learderboard-3 {
+  border: 3px solid #8da7c4;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.leader-member {
+  border: 3px solid #8da7c4;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.name-leaderboard {
+  font-size:12px; padding-top: 2px; color:#000; font-weight: 400;
+}
+.boxmemo-L1 {
+  height: 46px; width:14%; float:left; text-align: center; font-size: 15px; padding-top:11px; color:#000;
+  background: #fbcfa3; border-top-left-radius: 20px; border-bottom-left-radius: 20px;
+}
+.boxmemo-L2 {
+  height: 46px; width:18%; float:left; text-align: center; padding-top:7px; overflow: hidden;
+}
+.boxmemo-L3 {
+  height: 46px; width:44%; float:left; text-align: left; font-size: 12px; padding-top:6px;
+}
+.boxmemo-L4 {
+  height: 46px; width:24%; float:left; text-align: right; font-size: 13px; padding-top:6px; background: #d9e8ff;
+  border-top-right-radius: 20px; border-bottom-right-radius: 20px; padding-top:8px; padding-right: 15px;
+  font-weight: 600; color:#0056ff;
+}
+.boxmemo-L4t {
+  padding-top:-1px; font-size: 11px; margin-top: -2px;
+  font-weight: 400; color:#6c757d; text-align: right;
+}
+
+.TopScore {
+  margin-top:5px; font-size: 13px; font-weight: 600; color:#0056ff; 
+}
+.product-box {
+  border-radius: 20px;
+  max-width: 450px;
+  width: 100%;
+  height: 84px;
+  /*background: #0056ff;*/
+  padding: 10px;
+  color:#fff;
+  text-align: center;
+  font-weight: 600;
+  margin: auto;
+  vertical-align: baseline;
+  font-size: 16px;
+  padding-top: 30px;
+  cursor: pointer;
+}
+
+

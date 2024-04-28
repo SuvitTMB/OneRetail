@@ -461,7 +461,7 @@
   font-size: 14px; color:#438fff;
 }
 .no-message-box {
-  border:1px solid #ccc; background-color: #f1f1f1; border-radius: 10px;padding:20px;text-align: center;font-size:14px;
+  border:1px solid #ccc; background-color: #f8f9fa; border-radius: 10px;padding:20px;text-align: center;font-size:14px;
 }
 .chart-profilt {
   width: 40px; height: 40px; border-radius: 50%; margin-right: 3px;
@@ -471,7 +471,7 @@
 }
 .chart-text {
   width:86%; min-height: 35px; float: left; line-height: 1.3; margin-top:4px; color:#000; font-weight: 400;
-  border:1px solid #f1f1f1; padding: 5px; border-radius: 8px; font-size: 13px; background-color: #99bbdc; text-align: left;
+  border:1px solid #f1f1f1; padding: 5px; border-radius: 8px; font-size: 13px; background-color: #f8f9fa; text-align: left;
 }
 .chart-date {
   font-size: 11px; color:#000; margin-top: 6px;
@@ -638,7 +638,7 @@
   padding-top:5px;font-size:11px;color:#555; line-height: 1.2; font-weight: 600;
 }
 .font12 { 
-  font-size:12px;color:#111; line-height: 1.1; font-weight: 600; padding-top:5px;
+  font-size:12px;color:#111; line-height: 1.1; font-weight: 600; padding-top:3px;
 }
 .font12a { 
   padding:6px;font-size:12px;color:#555; line-height: 1.2; text-align: left;
@@ -935,21 +935,25 @@ box-shadow: 0px 0px 6px 5px rgba(178,178,178,0.17); color:#111; height: 35px; wi
 
 .popupmenu {
     position:fixed;
-    bottom:10px;
-    left:15px;
+    bottom: 50px;
+    left:13px;
     margin-bottom: 10px;
     cursor: pointer;
     z-index: 9999;
-    border:2px solid #ccc;
-    background-color: #ddd; min-width: 140px;
-    border-radius: 40px; 
+    border:2px solid #fff;
+    background-color: #002d63;
+    min-width: 140px;
+    border-radius: 10px;
+    font-size: 13px;
+    min-height: 35px;
 }
 .tooltipposition {
   position:absolute;left:70px;bottom:20px;border-radius: 3px;padding:5px 10px;
   width:150px;background:#002d63 !important;z-index: 3 !important; opacity: 0.8;
 }
+
 .showtimeread {
-  padding:6px 30px;color:#111; min-width: 13px; text-align: center; line-height: 1.0;
+  padding:6px 30px;color:#fff; min-width: 13px; text-align: center; line-height: 1.0;
   font-size: 12px; font-weight: 400; width: 100%;
 }
 
@@ -1184,18 +1188,42 @@ box-shadow: 0px 0px 6px 5px rgba(178,178,178,0.17); color:#111; height: 35px; wi
   width:48%;float: left; padding:7px 5px;line-height: 1.2; 
   border-radius: 8px; margin-right: 4px; background-color: #e2e3e3;
 }
+.rewards-txt1 {
+  width:48%;
+  float: left;
+  padding: 4px 5px;
+  line-height: 1.2;
+  border-radius: 100px;
+  margin: 5px 4px 0px 0px;
+  background-color: #e2e3e3;
+  text-align: center; font-size: 12px;
+}
 .rewards-linkA {
-  width:48%;float: left; padding:5px;line-height: 1.2; 
-  border-radius: 8px; margin-left: 4px; background-color: #57f27b; cursor: pointer;
+  width:48%;
+  float: left;
+  padding: 4px;
+  line-height: 1.2;
+  border-radius: 50px;
+  margin: 5px 4px 0px 0px;
+  background-color: #57f27b;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
 }
 .rewards-linkA:hover { 
   background-color: #30c552; color:#fff;
 }
 .rewards-linkB {
-  width:48%;float: left; padding:5px;line-height: 1.2; 
-  border-radius: 8px; margin-left: 4px; background-color: #c0cbc3; 
+  width:48%;
+  float: left;
+  padding:4px;
+  line-height: 1.2;
+  border-radius: 50px;
+  margin: 5px 4px 0px 0px;
+  background-color: #c0cbc3;
+  font-size: 12px;
+  text-align: center;
 }
-
 
 
 .boxvdo-border {
@@ -1677,7 +1705,17 @@ table.dataTable thead th, table.dataTable thead td {
 }
 
 .ScoreCard {
-  width:85px; text-align: center; color:#0056ff; float: left; background-color: #e7e7e7; 
-  height: 70px; padding:3px; border-radius: 8px; border-radius: 5px;
-  margin: 5px;
+  width:85px; text-align: center; color:#0056ff; float: left; background-color: #fff; 
+  height: 85px; padding:7px; border-radius: 8px; border: 2px solid #0056ff;
+  margin: 5px; cursor: pointer;
+  box-shadow: 0px 6px 10px 2px rgba(0, 0, 0, 0.03);
+}
+.ScoreCard:hover {
+  background-color: #e0eaf3;
+}
+.icon-box {
+  width:30px; padding-top: 7px; padding-bottom: 5px;
+}
+.icon-text {
+  font-size: 11px; color: #0056ff; text-align: center;
 }

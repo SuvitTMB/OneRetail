@@ -4,7 +4,7 @@
 
 }
 .box-top-user {
-  margin:50px 20px 20px 20px; border-radius: 10px; background: #f1f1f1; padding:10px; text-align: center; color:#002d63;
+  margin:70px 20px 30px 20px; border-radius: 10px; background: #f5f5f5; padding:10px; text-align: center; color:#002d63;
   height: 115px;
 }
 .box-user-rewards {
@@ -12,10 +12,19 @@
   margin-top:-40px;
 }
 .box-user-left {
-  width:50%; height: 40px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; color:#000; font-weight: 400;
-  background: #dae6ef; text-align: center; font-size: 13px; padding-top:10px; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); float: left;
-  cursor: pointer; 
+  width:50%;
+  height: 40px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color:#000;
+  font-weight: 400;
+  background: #dae6ef;
+  text-align: center;
+  font-size: 13px;
+  padding-top:10px;
+  /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+  float: left;
+  cursor: pointer;
 }
 .box-user-left:hover {
   background: #0056ff; color:#fff;
@@ -26,9 +35,18 @@
 }
 
 .box-user-right {
-  width:50%; height: 40px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; color:#7c7d99; font-weight: 400;
-  background: #dae6ef; text-align: center; font-size: 13px; padding-top:10px; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); float: left;
+  width:50%;
+  height: 40px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color:#7c7d99;
+  font-weight: 400;
+  background: #dae6ef;
+  text-align: center;
+  font-size: 13px;
+  padding-top:10px;
+  /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+  float: left;
   cursor: pointer;
 }
 .box-user-right:hover {
@@ -87,4 +105,7 @@
 .box-rewards-in {
   width:45%; margin:3px; border:1px solid #ccc; height: 50px; float: left; border-radius: 5px; background: #fff;
   font-size: 10px;
+}
+.title-rewards {
+  text-align:left; margin-left:10px; line-height:1.2; padding-top:7px; width: 100%;
 }

@@ -14,9 +14,10 @@
 {
     position: relative;
     top: 0px;
-    /*top: 60px;*/ 
-    width: 100vw;
+    /*top: 60px; 
+    width: 100vw;*/
     height: 400px
+    width: 360px;
 }
 
 #slider:before,
