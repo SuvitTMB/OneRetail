@@ -1,8 +1,87 @@
 
 $(document).ready(function () {
   if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
-  //Connect_DB();
+  Connect_DB();
+  //console.log(thistoday);
+  //console.log(sessionStorage.getItem("CheckDonePulse"));
+  CheckDatePulse();
+  LoadSlider();
 });
+
+
+function CheckDatePulse() {
+  var xCheckDate = 0;
+  dbPulseDate.where('PulseDate','==',thistoday)
+  .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      xCheckDate = 1;
+      CheckDoneSurvey();
+    });
+  });
+}
+
+function CheckDoneSurvey() {
+  var xCheckDone = 0;
+  dbUserSurvey.where('PulseDate','==',thistoday)
+  .where('LineID','==',sessionStorage.getItem("LineID"))
+  .limit(1)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      xCheckDone = 1;
+    });
+    if(xCheckDone==0) {
+      GotoSurvey();
+    }
+  });
+}
+
+function ViewClip(x) {
+  alert(x);
+  location.href = "displayclip.html?gid=ETwEgh2Pv1MVcgZNxLNn";
+}
+
+
+
+function GotoSurvey() {
+  location.href = "pulsesurvey.html";
+}
+
+
+function LoadSlider() {
+  var str = "";
+  str += '<div id="homepage-slider" class="st-slider" style="max-width: 450px;">';
+  str += '<input type="radio" class="cs_anchor radio" name="slider" id="slide1"/>';
+  str += '<input type="radio" class="cs_anchor radio" name="slider" id="slide2"/>';
+  str += '<input type="radio" class="cs_anchor radio" name="slider" id="slide3"/>';
+  str += '<input type="radio" class="cs_anchor radio" name="slider" id="play1" checked=""/>';
+
+  str += '<div class="images"><div class="images-inner">';
+
+  str += '<div class="image-slide" onclick="ViewClip(1)">';
+  str += '<div class="image bg-yellow"><img src="./clip/clip-01.jpg" style="width:100%;"></div></div>';
+  str += '<div class="image-slide" onclick="ViewClip(2)">';
+  str += '<div class="image bg-blue"><img src="./clip/clip-02.jpg" style="width:100%;"></div></div>';
+  str += '<div class="image-slide" onclick="ViewClip(3)">';
+  str += '<div class="image bg-red"><img src="./clip/clip-03.jpg" style="width:100%;"></div></div>';
+
+  str += '</div></div>';
+
+  str += '<div class="labels" style="margin-top:5px;">';
+  str += '<label for="slide1" class="label"></label>';
+  str += '<label for="slide2" class="label"></label>';
+  str += '<label for="slide3" class="label"></label>';
+
+  str += '<div class="fake-radio" style="text-align:center;">';
+  str += '<label for="slide1" class="radio-btn"></label>';
+  str += '<label for="slide2" class="radio-btn"></label>';
+  str += '<label for="slide3" class="radio-btn"></label>';
+  str += '</div></div></div>';
+  $("#DisplaySlider").html(str);
+
+}
+
+
 
 
 /*

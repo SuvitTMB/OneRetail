@@ -2,6 +2,7 @@ var xProfile = "";
 var gProfile = "";
 var xEmpID = "";
 var AA = 0;
+var xCountIN = 0;
 xHeaderNews = "30 Days Login";
 xHeaderLog = "รับรางวัลจากการเข้าร่วมกิจกรรม 30 วันแรก";
 xHeaderPoint = 1;
@@ -10,7 +11,6 @@ xHeaderPoint = 1;
 $(document).ready(function () {
   /*
   sessionStorage.clear(); 
-  //console.log("Point="+sessionStorage.getItem("XP_Point"));
   var str = "";
   var str1 = "";
   var sLineID = "Ua6b6bf745bd9bfd01a180de1a05c23b3";
@@ -28,12 +28,10 @@ $(document).ready(function () {
   $("#MyProfile-start").html(str1);  
   Connect_DB();
   CheckData();
-  //UpdatePorfile();
 */
 
   main();
 });
-
 
 
 async function main() {
@@ -84,11 +82,13 @@ function CheckData() {
       CheckFoundData = 1;
         EidProfile = doc.id;
         xEmpID = doc.data().EmpID;
+        xCountIN = doc.data().CountIN;
         CheckUserProfile(doc.data().EmpID);
         sessionStorage.setItem("EmpName_Academy", doc.data().EmpName);
         sessionStorage.setItem("EmpRefID_Academy", doc.id);
         sessionStorage.setItem("EmpPhone_Academy", doc.data().EmpPhone);
         sessionStorage.setItem("EmpAddress_Academy", doc.data().EmpAddress);
+        sessionStorage.setItem("CountIN", doc.data().CountIN);
         sessionStorage.setItem("JoinTime", doc.data().JoinTime);
         sessionStorage.setItem("Level_Point", doc.data().Level_Point);
         sessionStorage.setItem("XP_Point", doc.data().XP_Point);
@@ -102,13 +102,13 @@ function CheckData() {
         }
         xDateToDay = doc.data().DateToDay;
         if(doc.data().Level_Point==1 && doc.data().XP_Point >= 100) {
-          NextLevel(2);
+          NextLevelUP(2);
         } else if(doc.data().Level_Point==2 && doc.data().XP_Point >= 300) { 
-          NextLevel(3);
+          NextLevelUP(3);
         } else if(doc.data().Level_Point==3 && doc.data().XP_Point >= 600) { 
-          NextLevel(4);
+          NextLevelUP(4);
         } else if(doc.data().Level_Point==4 && doc.data().XP_Point >= 1000) { 
-          NextLevel(5);
+          NextLevelUP(5);
         }
         if(doc.data().JoinTime==0) {
           FirstTimeMember();
@@ -168,7 +168,7 @@ function CheckLoad() {
       xPulsetoday = 1;
       CheckLoadRound2();
     });
-    console.log("CheckLoad===="+xPulsetoday);
+    //console.log("CheckLoad===="+xPulsetoday);
   });
 }
 
@@ -183,13 +183,13 @@ function CheckLoadRound2() {
       xAAA = 1;
       //console.log("xAAA 111==="+xAAA);
       xPulsetoday = 0;
-      console.log("xAAA 111==="+xPulsetoday);
+      //console.log("xAAA 111==="+xPulsetoday);
     });
     xPulsetoday = 0;
     //console.log("xAAA 222==="+xAAA);
     //if(xAAA==0) { xPulsetoday = 1; }
     //xPulsetoday = 0;
-    console.log("CheckLoadRound2===="+xPulsetoday);
+    //console.log("CheckLoadRound2===="+xPulsetoday);
   });
 }
 
@@ -234,9 +234,14 @@ function CheckUserProfile(eid) {
       sessionStorage.setItem("xChief_th", doc.data().xChief_th);
       sessionStorage.setItem("xChief_eng", doc.data().xChief_eng);
       sessionStorage.setItem("xPosition", doc.data().xPosition);
-      dbProfile.doc(sessionStorage.getItem("EmpRefID_Academy")).update({
+
+
+      xCountIN = parseFloat(xCountIN) + 1;
+      dbProfile.doc(EidProfile).update({
         Linename : sessionStorage.getItem("LineName"),
         LinePicture : sessionStorage.getItem("LinePicture"),
+        CountIN : xCountIN,
+        EmpCheckIN : xCountIN,
         xTeamGroup : sessionStorage.getItem("xTeamGroup"),
         xBranch : sessionStorage.getItem("xBranch"),
         xDepartment : sessionStorage.getItem("xDepartment"),
@@ -245,13 +250,15 @@ function CheckUserProfile(eid) {
         xChief_eng : sessionStorage.getItem("xChief_eng"),
         xPosition : sessionStorage.getItem("xPosition")
       });
+  //alert("Update Profile = "+xCountIN+"==="+sessionStorage.getItem("EmpRefID_Academy")+"==="+sessionStorage.getItem("xDepartment"));
       UpdatePorfile();
-      console.log(thistoday+"==="+xDateToDay);
+
+      //console.log(thistoday+"==="+xDateToDay);
       if(thistoday!=xDateToDay) {
-        console.log("250");
+        //console.log("250");
         CheckDateIn();
       } else {
-        console.log("253");
+        //console.log("253");
         CheckPulseSurvey();
         //GotoHome();
         //MyPointMenu();
@@ -296,7 +303,7 @@ function CheckDateIn() {
           //AddUserLog();
           //CheckLoad();
           //CheckDatePulse();
-          console.log("เช็คจำนวนครั้ง");
+          //console.log("เช็คจำนวนครั้ง");
           Runloop();
           document.getElementById("id03").style.display = "block";
 
@@ -306,10 +313,9 @@ function CheckDateIn() {
           str1 += '<div class="btn-grey" onclick="ClosePage6()" style="margin-top:20px;">ปิดหน้าต่างนี้</b></div>';
           str1 += '<div class="clr" style="height:40px;"></div>';
           $("#DisplayGetPoint").html(str1);  
-          document.getElementById("id06").style.display = "block";
+          myInterval = setInterval(OpenPage6, 3000);
+          //document.getElementById("id06").style.display = "block";
         } else {
-          //console.log("")
-          //CheckLoad();
           if(sCountTimeJoin<=60) { sTarget = 60; sPoint = 15; }
           else if(sCountTimeJoin<=90) { sTarget = 90; sPoint = 20; }
           else if(sCountTimeJoin<=120) { sTarget = 120; sPoint = 30; }
@@ -345,7 +351,7 @@ function CheckDateIn() {
           str+='</div>';
           str += '<div class="btn-blue" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าหลัก</div>';
           $("#BoxTimeLine").html(str);    
-          console.log("293 Check Days=="+sCountTimeJoin);
+          //console.log("293 Check Days=="+sCountTimeJoin);
           //CheckDatePulse();
           document.getElementById("id01").style.display = "block";
         }
@@ -468,12 +474,15 @@ function WelcomePoint() {
 
 
 function UpdatePorfile() {
-  if(sessionStorage.getItem("EmpID_Academy")==null) { }
+  //alert("Update 476");
   NewDate();
   var TimeStampDate = Math.round(Date.now() / 1000);
+  //xMemGetMem = parseFloat(xMemGetMem) + 1;
+  //if(sessionStorage.getItem("EmpID_Academy")==null) { //}
   dbProfile.doc(EidProfile).update({
     EmpPicture : sessionStorage.getItem("LinePicture"),
     Linename : sessionStorage.getItem("LineName")
+    //MemGetMem : xMemGetMem
   })
   dbLoginlog.add({
     LineID : sessionStorage.getItem("LineID"),
@@ -484,13 +493,16 @@ function UpdatePorfile() {
     xTeamGroup : sessionStorage.getItem("xTeamGroup"),
     LogDate : dateString,
     LogTimeStamp : TimeStampDate
-  });
+  });  
+  
+
+  //alert("Update Profile = "+xMemGetMem);
 }
 
 
 
 function CheckPulseSurvey() {
-  console.log("L 493");
+  //console.log("L 493");
   dbPulseDate.where('PulseDate','==',thistoday)
   .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
   .limit(1)
@@ -501,7 +513,7 @@ function CheckPulseSurvey() {
       //console.log(360);
       CheckDoneSurvey();
     });
-    console.log("Not Found"+sessionStorage.getItem("xTeamGroup")+"==="+thistoday);
+    //console.log("Not Found"+sessionStorage.getItem("xTeamGroup")+"==="+thistoday);
     GotoHome();
   });
 }
@@ -518,7 +530,6 @@ function GetJoinPoint(d,x) {
   //console.log(xCheckDate+"==="+d+"==="+x);
   if(xCheckDate==1) {
     var xHeader = "ได้รับเหรียญ "+ sGetRewards +" เหรียญรางวัล";
-
     dbUserlog.add({
       LineID : sessionStorage.getItem("LineID"),
       LineName : sessionStorage.getItem("LineName"),
@@ -554,6 +565,53 @@ function GetJoinPoint(d,x) {
 }
 
 
+function NextLevelUP(x) {
+  //alert("NextLevelUP="+x);
+  str = "";
+  xLevel = x;
+  NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
+  console.log("Next Level = " +x);
+  var xPoint = 5;
+  var xHeader = "Level Up "+ x +"";
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(xPoint));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(xPoint));
+  dbProfile.doc(EidProfile).update({
+    XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
+    RP_Point : parseFloat(sessionStorage.getItem("RP_Point")),
+    Level_Point : x
+  });
+  sessionStorage.setItem("Level_Point", x);
+  dbUserlog.add({
+    LineID : sessionStorage.getItem("LineID"),
+    LineName : sessionStorage.getItem("LineName"),
+    LinePicture : sessionStorage.getItem("LinePicture"),
+    EmpID : xEmpID,
+    EmpName : sessionStorage.getItem("EmpName_Academy"),
+    RefID : EidProfile,
+    NewsGroup : 0,
+    HeadNews : "Level Up "+ x,
+    SubNews : "Level Up รับ "+ xPoint +" เหรียญรางวัล",
+    GetPoint : parseFloat(xPoint),
+    LastPoint : parseFloat(sessionStorage.getItem("XP_Point")),
+    LogDate : dateString,
+    LogTimeStamp : TimeStampDate
+  });
+  str += '<div class="btn-t3" style="margin-top:10px; min-width:220px; background:#fff;">คุณได้รับการปรับระดับผู้เล่น</div>';
+  str += '<div><img src="./img/levelup.gif" style="padding-top:8px;width:100%;"></div>';
+  str += '<div style="margin-top:15px;">';
+  str += '<div class="font13" style="padding-top:5px;text-align:center;">คุณได้รับเหรียญเพิ่ม '+ xPoint +' เหรียญรางวัล<br>จากการปรับระดับของผู้เล่นเป็น Level '+ x +'</div>';
+  str += '<div class="clr"></div>';
+  str += '<div class="btn-t2" onclick="GotoProfile()" style="margin-top:20px;">ดูคะแนนของคุณ</div>';
+  str += '<div class="btn-t2" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่าง</div>';
+  str += '<div style="height: 15px;"></div>';
+  MyPointMenu();
+  $("#UserLevelUp").html(str);      
+  document.getElementById('id07').style.display='block';
+}
+
+
+
 function GotoSurvey() {
   //OpenPluseSurvey
   location.href = "pulsesurvey.html";
@@ -577,7 +635,13 @@ function OneStory() {
 }
 
 function ClosePage6() {
+  clearInterval(myInterval);
   document.getElementById('id06').style.display='none';
+}
+
+function OpenPage6() {
+  document.getElementById("id06").style.display = "block";
+  //clearInterval(OpenPage6);
 }
 
 function CloseAll() {
@@ -586,4 +650,5 @@ function CloseAll() {
   document.getElementById('id03').style.display='none';
   document.getElementById('id04').style.display='none';
   document.getElementById('id05').style.display='none';
+  document.getElementById('id07').style.display='none';
 }

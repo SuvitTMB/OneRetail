@@ -10,7 +10,16 @@ xHeaderLog = "รับรางวัลจากการทำ Pulse Survey";
 xHeaderPoint = 1;
 
 $(document).ready(function () {
-  if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
+  var str = "";
+  var str1 = "";
+  var sLineID = "Ua6b6bf745bd9bfd01a180de1a05c23b3";
+  var sLineName = "Website";
+  var sLinePicture = "https://profile.line-scdn.net/0hoLlg-mNNMGNRHiaTpMdPNG1bPg4mMDYrKX8qVnIYOgYpe3QwbCp2AXVKaVN_fnMzOC16V3NMagF8";
+  sessionStorage.setItem("LineID", sLineID);
+  sessionStorage.setItem("LineName", sLineName);
+  sessionStorage.setItem("LinePicture", sLinePicture);
+
+  //if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
   Connect_DB();
   CheckSurvey()
   //CheckDatePulse();
@@ -48,12 +57,13 @@ var aPulseCount = 0;
 var aPulseScore = 0;
 var aPulseRatio = 0;
 function CheckQuestionPulse() {
+  //alert("Check");
   dbPulseDate.where('PulseDate','==',thistoday)
   .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
   .limit(1)
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
-      console.log("Found");
+      //console.log("Found");
       EidPulseDate = doc.id;
       EidPulseRefID = doc.data().PulseRefID;
       aPulseCount = doc.data().PulseCount;
@@ -86,13 +96,22 @@ function StartSurvey() {
       } else {
         str += '<div style="margin:10px auto 10px auto;height: 180px; overflow:hidden;"><img src="./img/survey-2.png" style="width:320px;"></div>';
       }
+      str += '<a href="#A">';
       str += '<div class="text-Qsurvey">'+ doc.data().PulseQuestion +'</div>';
-      str += '<div class="btn-choice5" value="5" onclick="SendSurvey(5)">'+ doc.data().PulseChice5 +'</div>';
+      str += '<div id="B5" class="btn-choice5" value="5" onclick="SendSurvey(5)"><span style="float: left;"><img src="./img/ratting-5.png" style=" width:32px;"></span><span style="line-height:2;margin-right: 20px;">'+ doc.data().PulseChice5 +'</span></div>';
+      str += '<div id="B4" class="btn-choice4" value="4" onclick="SendSurvey(4)"><span style="float: left;"><img src="./img/ratting-4.png" style=" width:32px;"></span><span style="line-height:2;margin-right: 20px;">'+ doc.data().PulseChice4 +'</span></div>';
+      str += '<div id="B3" class="btn-choice3" value="3" onclick="SendSurvey(3)"><span style="float: left;"><img src="./img/ratting-3.png" style=" width:32px;"></span><span style="line-height:2;margin-right: 20px;">'+ doc.data().PulseChice3 +'</span></div>';
+      str += '<div id="B2" class="btn-choice2" value="2" onclick="SendSurvey(2)"><span style="float: left;"><img src="./img/ratting-2.png" style=" width:32px;"></span><span style="line-height:2;margin-right: 20px;">'+ doc.data().PulseChice2 +'</span></div>';
+      str += '<div id="B1" class="btn-choice1" value="1" onclick="SendSurvey(1)"><span style="float: left;"><img src="./img/ratting-1.png" style=" width:32px;"></span><span style="line-height:2;margin-right: 20px;">'+ doc.data().PulseChice1 +'</span></div>';
+
+/*
       str += '<div class="btn-choice4" value="4" onclick="SendSurvey(4)">'+ doc.data().PulseChice4 +'</div>';
       str += '<div class="btn-choice3" value="3" onclick="SendSurvey(3)">'+ doc.data().PulseChice3 +'</div>';
       str += '<div class="btn-choice2" value="2" onclick="SendSurvey(2)">'+ doc.data().PulseChice2 +'</div>';
       str += '<div class="btn-choice1" value="1" onclick="SendSurvey(1)">'+ doc.data().PulseChice1 +'</div>';
+*/
       str += '<div class="text-detail">กรุณาเลือกตัวเลือกที่เป็นตัวตนของคุณ เพื่อการประเมินผลที่ถูกต้อง</div>';
+      str += '</a>'
     });
     $("#DisplaySurvey").html(str);
     document.getElementById('loading1').style.display='none';
@@ -103,19 +122,73 @@ function StartSurvey() {
 
 var xSelectChoice = 0;
 function SendSurvey(x) {
-  document.getElementById('loading1').style.display='block';
+  console.log(x);
+  document.getElementById("B1").className = "btn-choice1";  
+  document.getElementById("B2").className = "btn-choice2";  
+  document.getElementById("B3").className = "btn-choice3";  
+  document.getElementById("B4").className = "btn-choice4";  
+  document.getElementById("B5").className = "btn-choice5";  
+  if(x==1) {
+    var b = document.getElementById("B2");  
+    b.classList.add("color-grayscale");  
+    var c = document.getElementById("B3");  
+    c.classList.add("color-grayscale");  
+    var d = document.getElementById("B4");  
+    d.classList.add("color-grayscale");  
+    var e = document.getElementById("B5");  
+    e.classList.add("color-grayscale");  
+  } else if(x==2) {
+    var a = document.getElementById("B1");  
+    a.classList.add("color-grayscale");  
+    var c = document.getElementById("B3");  
+    c.classList.add("color-grayscale");  
+    var d = document.getElementById("B4");  
+    d.classList.add("color-grayscale");  
+    var e = document.getElementById("B5");  
+    e.classList.add("color-grayscale");  
+  } else if(x==3) {
+    var a = document.getElementById("B1");  
+    a.classList.add("color-grayscale");  
+    var b = document.getElementById("B2");  
+    b.classList.add("color-grayscale");  
+    var d = document.getElementById("B4");  
+    d.classList.add("color-grayscale");  
+    var e = document.getElementById("B5");  
+    e.classList.add("color-grayscale");  
+  } else if(x==4) {
+    var a = document.getElementById("B1");  
+    a.classList.add("color-grayscale");  
+    var b = document.getElementById("B2");  
+    b.classList.add("color-grayscale");  
+    var c = document.getElementById("B3");  
+    c.classList.add("color-grayscale");  
+    var e = document.getElementById("B5");  
+    e.classList.add("color-grayscale");  
+  } else if(x==5) {
+    var a = document.getElementById("B1");  
+    a.classList.add("color-grayscale");  
+    var b = document.getElementById("B2");  
+    b.classList.add("color-grayscale");  
+    var c = document.getElementById("B3");  
+    c.classList.add("color-grayscale");  
+    var d = document.getElementById("B4");  
+    d.classList.add("color-grayscale");  
+  }
+
+
+  //document.getElementById('loading1').style.display='block';
   var str = "";
   xSelectChoice = x;
-  if(x<=3) {
-    str += '<div style="margin:10px auto 10px auto;height: 170px; overflow:"><img src="./img/survey-3.png" style="width:320px;"></div>';
+  //if(x<=3) {
+    //str += '<div style="margin:10px auto 10px auto;height: 170px; overflow:"><img src="./img/survey-3.png" style="width:320px;"></div>';
     str += '<div class="text-Qsurvey">'+ Q_memo  +'</div>';
     $("#DisplayMemo").html(str);
-    document.getElementById('Q_PulseSurvey').style.display='none';
+    //document.getElementById('Q_PulseSurvey').style.display='none';
     document.getElementById('A_PulseSurvey').style.display='block';
-  } else {
+  //} else {
     //console.log("Survey");
-    SavePulseDate();
-  }
+    //SavePulseDate();
+  //}
 }
 
 
@@ -173,7 +246,7 @@ function SavePulseDate() {
     PulseScore: parseFloat(aPulseScore),
     PulseRatio: parseFloat(aPulseRatio).toFixed(2)
   });    
-  console.log("Save 1");
+  //console.log("Save 1");
   //console.log("Save 1111");
   SaveUserProfile();
 }  

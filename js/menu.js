@@ -1,5 +1,5 @@
-
-MenuFooter();
+xProfile = "";
+//MenuFooter();
 
 
 function MyPoint() {
@@ -31,7 +31,6 @@ function TapMenu(x) {
 function MyPointMenu() {
   //console.log("Menu");
   var xLine = "";
-
   var xValue1 = ((parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0)/5)*100);
   var xValue2 = 0;
   var xValue3 = 0;
@@ -49,7 +48,8 @@ function MyPointMenu() {
       }
 
     xLine += '<div class="clr" style="height:10px;"></div>';
-    xLine += '<div style="color:#fff;">'+ xProfile +'</div>';
+    //xLine += '<div><img src="" class="show-profile"></div>';
+    xLine += '<div>'+ xProfile +'</div>';
     xLine += '<div class="txt-white"><b>'+ sessionStorage.getItem("xTeamGroup") +'</b>';
     if(sessionStorage.getItem("xBranch")!="") {
       xLine += '<br>'+ sessionStorage.getItem("xBranch") +'';
@@ -59,7 +59,7 @@ function MyPointMenu() {
     }
     xLine += '<br>'+ sessionStorage.getItem("xGroup") +'';
     xLine += '<br>'+ sessionStorage.getItem("xChief_th") +' ('+ sessionStorage.getItem("xChief_eng") +')';
-    xLine += '<div class="half-arc" style="--percentage:'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2) +'%;"><span class="label" style="color:#ffffff; padding-top:30px;">'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2) +'%</span></div>';
+    xLine += '<div class="half-arc" style="--percentage:'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2) +'%;"><span class="label">'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2) +'%</span></div>';
     xLine += '<div class="txt-white">ภาพรวมอุณหภูมิความสุขในการทำงานของคุณ</div>';
     xLine += '<div class="clr" style="height:20px"></div>';
 
@@ -86,7 +86,84 @@ function MyPointMenu() {
 }
 
 
+function MyPulseSurvey() {
+  var xLine = "";
+  var xValue1 = ((parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0)/5)*100);
+  var xValue2 = 0;
+  var xValue3 = 0;
+  var xRatio = "100";
+  if(sessionStorage.getItem("LineID")!=null) {
+    var xxx = parseFloat(sessionStorage.getItem("XP_Point"));
+    //console.log("XP_Point="+(parseFloat(sessionStorage.getItem("XP_Point"))));
+    if(sessionStorage.getItem("XP_Point") >= 1000) {
+      xValue2 = xRatio;
+    } else if(xxx >= 600) {
+      xValue2 = ((parseFloat(xxx)/1000)*100);
+      console.log("XP_Point="+xValue2);
+    } else {
+      xValue2 = (parseFloat(sessionStorage.getItem("XP_Point")));
+    }
 
+    xLine += '<div class="clr" style="height:10px;"></div>';
+    xLine += '<div style="color:#fff;">'+ xProfile +'</div>';
+
+
+  xLine += '<div style="width:290px; margin:10px auto;">';
+  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div>';
+  xLine += '<div class="font12">Levels</div></div>';
+  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(0) +'</div>';
+  xLine += '<div class="font12">Point</div></div>';
+  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'<span><img src="./icon/coin.png" class="coin-img"></span></div>';
+  xLine += '<div class="font12">Coin</div></div>';
+
+
+  xLine += '<div class="clr" style="height:10px"></div>';
+  xLine += '<div class="btn-blue" onclick="GotoReeards()">แลกของรางวัล</div>';
+  xLine += '<div class="clr" style="height:20px"></div>';
+/*
+    xLine += '<div class="txt-white""><b>'+ sessionStorage.getItem("xTeamGroup") +'</b>';
+    if(sessionStorage.getItem("xBranch")!="") {
+      xLine += '<br>'+ sessionStorage.getItem("xBranch") +'';
+      xLine += '<br>'+ sessionStorage.getItem("xDepartment")+'';
+    } else {
+      xLine += '<br>'+ sessionStorage.getItem("xDepartment") +'';
+    }
+    xLine += '<br>'+ sessionStorage.getItem("xGroup") +'';
+    xLine += '<br>'+ sessionStorage.getItem("xChief_th") +' ('+ sessionStorage.getItem("xChief_eng") +')';
+*/
+
+
+    xLine += '<div class="half-arc" style="--percentage:'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2) +'%;"><span class="label">'+ parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2) +'%</span></div>';
+    xLine += '<div class="txt-white" style="color:#000;">ภาพรวมอุณหภูมิความสุขในการทำงานของคุณ</div>';
+    //xLine += '<div class="clr" style="height:20px"></div>';
+
+
+
+/*
+    xLine += '<div style="width:290px; margin:5px auto 10px auto;">';
+    xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div>';
+    xLine += '<div class="font12" style="padding:5px;">ระดับ<br>ประสบการณ์</div></div>';
+    xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(2) +'</div>';
+    xLine += '<div class="font12" style="padding:5px;">ประสบการณ์<br>การใช้งาน</div></div>';
+    xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(2) +'</div>';
+    xLine += '<div class="font12" style="padding:5px;">เหรียญ<br>แลกรางวัล</div></div>';
+    xLine += '</div>';
+*/
+    xLine += '</div>';
+/*
+    if(sessionStorage.getItem("CheckDonePulse")==0) {
+      xLine += '<div class="btn-click" onclick="GotoSurvey()" style="margin-top:25px;">ไปวัดอุณหภูมิความสุขของคุณ</div>';
+    } else {
+      xLine += '<div class="btn-blue" onclick="GotoPulse()" style="margin-top:25px; margin-right:5px;">ดูอุณหภูมิความสุข</div>';
+      xLine += '<div class="btn-click" onclick="GotoHome()" style="margin-top:25px;">เข้าสู่ระบบงาน</div>';
+    }    
+*/
+    xLine += '</div><div class="clr" style="height:30px;"></div>'
+    $("#DisplayPulseSurvey").html(xLine); 
+    document.getElementById('loading').style.display='none';
+    console.log(parseFloat(sessionStorage.getItem("PulseRatio")).toFixed(2));
+  }
+}
 
 
 
@@ -105,6 +182,7 @@ function OpenUserPoint() {
 
 
 function OpenPopMenu() {
+  //console.log("Open");
   var xLine = "";
   xLine += '<div style="height: 50px;">';
   xLine += '<div style="height: 55px;background-color: #0056ff; width:100%; padding-top:10px;border-top-left-radius:15px; border-top-right-radius:15px;">';
@@ -304,4 +382,8 @@ function GotoHome() {
 
 function GotoPulse() {
   location.href = "pulseresult.html";
+}
+
+function GotoReeards() {
+  location.href = "rewards.html";
 }

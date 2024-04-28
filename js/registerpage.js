@@ -128,6 +128,9 @@ function CheckUserProfile(x) {
         Choice4: 0,
         Choice5: 0,
         SumChoice: 0,
+        CountIN = 0,
+        //MemGetMem: "";
+        MemberLineOA = "",
         DateToDay: thistoday,
         LastUpdate: dateString,
         DateAccept: dateString,

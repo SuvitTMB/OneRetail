@@ -4,6 +4,8 @@ var thistoday = "";
 var xHeaderLog = "";
 var xHeaderNews = "";
 var xHeaderPoint = 0;
+var xProfile = "";
+NewDate();
 
 function Connect_DB() {
   var firebaseConfig = {
@@ -30,6 +32,10 @@ function Connect_DB() {
 
   dbGetAllMemo = firebase.firestore().collection("GetAllMemo");
   dbGetAllLike = firebase.firestore().collection("GetAllLike");
+  dbCheckAllRead = firebase.firestore().collection("CheckAllRead");
+
+  dbVDOGroup = firebase.firestore().collection("VDOGroup");
+  dbVDOTraining = firebase.firestore().collection("VDOTraining");
 
 
   dbPulseSurvey = firebase.firestore().collection("PulseSurvey");
@@ -38,6 +44,15 @@ function Connect_DB() {
   //dbttbMember = firebase.firestore().collection("ttbMember");
   NewDate();
 
+}
+
+function ImgProfile() {
+  var str = "";
+  str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="show-profile" width="100px">';
+  str += '<div class="box-level">'+ sessionStorage.getItem("Level_Point") +'<br>Level</div></div>';
+  str += '<div class="NameLine">'+ sessionStorage.getItem("EmpName_Academy")+'</div>';
+  xProfile = str;
+  //console.log(str);
 }
 
 
@@ -71,10 +86,6 @@ function AddUserLog() {
 */
   console.log("Save Log");
 }
-
-
-
-
 
 function imgError(image) {
     image.onerror = "";
