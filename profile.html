@@ -19,8 +19,7 @@
   <link href="assets/css/css.css" rel="stylesheet">
   <link href="assets/css/w3.css" rel="stylesheet">
   <link href="assets/css/button.css" rel="stylesheet">
-  <!--<link href="assets/css/tap.css" rel="stylesheet">-->
-  <link href="assets/css/rewards.css" rel="stylesheet">
+  <link href="assets/css/tap.css" rel="stylesheet">
 
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -29,11 +28,16 @@
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
   <script src="https://use.fontawesome.com/6f993f4769.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!--
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
--->
+
+  <style type="text/css">
+    ::-ms-input-placeholder { /* Edge 12 -18 */
+      color: red;
+    }  
+  </style>
+
 </head>
 
 
@@ -46,7 +50,7 @@
       <i class="fa fa-arrow-left" style="color:#dee2e6; font-size: 22px;"></i>
     </div>
     <div class="container align-items-center" onclick="window.location.href='home.html';" style="margin-left:-40px;">
-      <span class="header1">แลกของ</span><span class="header2">รางวัล</span>
+      <span class="header1">ข้อมูล</span><span class="header2">ของคุณ</span>
     </div>
     <!--
     <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
@@ -73,31 +77,58 @@
         <div><img src="./icon/icons-puzzle.png" style="width:30px;"></div>
         <div class="nav-text">Retail Club</div>
       </div>
-      <div class="iconlink" onClick="window.location='profile.html';">
+      <div class="iconlink1" onClick="window.location='profile.html';">
         <div><img src="./icon/icons-services.png" style="width:30px;"></div>
         <div class="nav-text">Profile</div>
       </div>
     </div>
   </div>
 
-  <div class="box-top-rewards">
-    <div id="DisplayScore"></div>
-    <div style="margin:auto; width: 80%;">
-      <div class="box-user-left" onclick="window.location.href='rewards.html';">แลกของรางวัล</div>
-      <div class="box-user-right box-user-select">รางวัลของคุณ</div>
-    </div>
-    <div class="clr" style="height: 20px;"></div>
-    <div class="container" style="max-width: 450px;">
-      <div id="DisplayRedeem"></div>
-    </div>
+<!--
+  <div class="container" style="margin-top: 80px; background: #fff; color:#000; font-size: 14px; max-width: 450px;">
+    <ul class="nav nav-tabs">
+      <li class="active"><a onClick="window.location='profile.html';">Profile</a></li>
+      <li><a onClick="window.location='learderboard.html';">Leaderboard</a></li>
+      <li><a onClick="window.location='rewards.html';">แลกของรางวัล</a></li>
+    </ul>
+  </div>
+-->
+  <div class="container" style="max-width: 450px; margin: 60px auto 20px auto;">
+    <center>
+      <div id="loading" style="margin-top:310px;">
+        <img src="img/one-logo.png" style="width:190px;"><br><br>
+        <img src="./img/loading1.gif" style="width:50px;">
+      </div>
+      <div id="DisplayPulseSurvey" style="margin-top:30px; margin-bottom: 5px;"></div>
+      <!--<div id="DisplayMyPoint" style="margin-top:30px; margin-bottom: 5px;"></div>-->
+<!--
+      <div style="margin-top:-10px; margin-bottom: 60px;">
+        <div><span class="font14b">บันทึกการเขียน</span> <span class="font14f">อุณหภูมิของคุณ</span>
+        <div id="DisplayMemo" style="margin-top:15px;"></div>
+      </div>
+-->
+    </center>
+    <div class="clr"></div>
   </div>
 
-
   <div id="id01" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4" style="background-color: #fff; padding:20px 13px;text-align: center;">
-        <div id="DisplayRewards"></div>
+    <div class="w3-modal-content w3-card-4 bg-menu">
+      <div class="w3-container container-min">
+        <div style="margin-top:20px;">อ่านรายละเอียดเพิ่มเติม<br><b>Pulse Survey</b></div>
+        <div class="btn-grey" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่าง</div>
+      </div>
     </div>
-    <div class="clr" style="height:80px;"></div>
+    <div class="clr" style="height:40px;"></div>
+  </div>
+  <div id="id02" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #fff;">
+      <div class="w3-container" style="width:95%;margin:auto;min-height: 270px;">
+        <center>
+          <div id="DisplayGetPoint"></div>      
+        </center>
+      </div>
+    </div>
+    <div class="clr" style="height:70px;"></div>
   </div>
 
   <div id="menu" class="w3-modal w3-animate-opacity">
@@ -110,7 +141,7 @@
   </div>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-  <div class="clr" style="height:150px;"></div>
+  <div class="clr" style="height:60px;"></div>
 
   <!-- Vendor JS Files #dde7f0-->
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -124,7 +155,7 @@
   <script src="./assets/js/main.js"></script>
   <script src="./js/connect.js"></script>
   <script src="./js/menu.js"></script>
-  <script src="./js/yourrewards.js"></script>
+  <script src="./js/profile.js"></script>
 
 </body>
 </html>

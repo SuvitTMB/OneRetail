@@ -105,8 +105,9 @@ https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee
         <div id="DisplaySurvey"></div>
       </div>
       <div id="A_PulseSurvey" style="display:none; text-align: center; color:#fff;">
+        <div id="A"></div>
         <div class="container" style="margin-top:20px;">
-          <div id="DisplayMemo" style="margin-top:80px;"></div>
+          <div id="DisplayMemo"></div>
           <div class="row-font">
             <div class="header-font">เลือกหัวช้อเรื่องราวของคุณ</div>
             <div class="input-group">
@@ -127,8 +128,8 @@ https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee
             </div>
           </div>
           <div>
-            <div class="btn-close" onclick="SavePulseDate()" style="margin-top:20px;">ไม่มีเรื่องราวจะเขียน</div>
-            <div class="btn-red" onclick="SavePulseDate()" style="margin-top:20px;">บันทึกเรื่องราวนี้</div>
+            <!--<div class="btn-close" onclick="SavePulseDate()" style="margin-top:20px;">ไม่มีเรื่องราวจะเขียน</div>-->
+            <div class="btn-red" onclick="SavePulseDate()" style="margin-top:20px;">ส่งแบบสำรวจความสุขในการทำงาน</div>
           </div>
         </div>
       </div>
@@ -148,8 +149,6 @@ https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee
     </div>    
     <div class="clr" style="height: 50px;"></div>
   </main>
-  <script src="js/connect.js"></script>
-  <script src="js/pulsesurvey.js"></script>
 
   <div id="id01" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4 bg-menu">
@@ -171,6 +170,9 @@ https://blog.happily.ai/th/25-effective-pulse-survey-questions-to-boost-employee
     </div>
     <div class="clr" style="height:70px;"></div>
   </div>
+
+  <script src="js/connect.js"></script>
+  <script src="js/pulsesurvey.js"></script>
 
 </body>
 </html>

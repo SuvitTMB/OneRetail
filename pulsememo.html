@@ -1,3 +1,7 @@
+<!--
+https://www.figma.com/proto/YgnokU5GAbJQlp4C4d6N2q/one-retail?page-id=0%3A1&type=design&node-id=203-2&viewport=-90%2C-345%2C0.36&t=lE5TzylYPIkCsDfm-1&scaling=scale-down&starting-point-node-id=203%3A2  
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +14,7 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','G-6FZQ6JQL2P');</script>
+  <!-- Favicons -->
   <link href="assets/img/favicom.ico" rel="icon">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -18,105 +23,77 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/css.css" rel="stylesheet">
   <link href="assets/css/w3.css" rel="stylesheet">
-  <link href="assets/css/tap.css" rel="stylesheet">
   <link href="assets/css/button.css" rel="stylesheet">
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-</head>
+  <script src="https://use.fontawesome.com/6f993f4769.js"></script>
 
-<!--<body style="background: url(./img/bg.jpg) fixed; background-size: cover;background-position: center;">#427eec-->
-<body class="body" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #fff;">
+<body class="body4">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-6FZQ6JQL2P"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-      <h1 class="logo mr-auto"><a href="home.html"><span>One Retail Society</span></a></h1>
-      <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
-        <i class="icofont-navigation-menu"></i>
-      </div>
+    <div onclick="history.back()" style="width:40px; text-align: center; float: left;margin-left:5px;">
+      <i class="fa fa-arrow-left" style="color:#dee2e6; font-size: 22px;"></i>
+    </div>
+    <div class="container align-items-center" onclick="window.location.href='home.html';" style="margin-left:-40px;">
+      <span class="header1">อุณหภูมิ</span><span class="header2">ของคุณ</span>
+    </div>
+    <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
+      <i class="icofont-navigation-menu"></i>
     </div>
   </header>
+
+  <div class="navbar1">
+    <div class="nav-bg">
+      <div style="width:80%; float: left;">
+        <textarea class="form-control memo-box" id="txtDetail" placeholder="เขียนข้อคิดเห็นของคุณที่นี่" required></textarea>
+      </div>
+      <div style="width:20%; float: right;">
+        <div style="width:90%; margin:13px 10px 0px auto;" class="btn-blue" onclick="CheckAllCount()" type="submit">Send</div>
+      </div>
+    </div>
+  </div>
+
+
 
   <main id="main">
     <div class="container" style="text-align: center; max-width: 450px;">
       <div id="loading" style="margin-top:300px;">
-        <img src="img/learning-logo.png" style="width:190px;"><br><br>
+        <img src="img/one-logo.png" style="width:190px;"><br><br>
         <img src="./img/loading1.gif" style="width:50px;">
       </div>
       <div class="clr"></div>
       <div id="DisplayMemo" style="display: none;">
         <div id="RefMember" style="margin-top:90px;"></div>
-
-
-        <div class="btn-t33"><i class="icofont-group-students"></i> คุณชอบข่าวสารนี้</div>
-        <div id="DisplayShowLike" style="text-align: left; margin-top:6px;"></div>
+        <div id="GetSocial"></div>
         <div class="clr"></div>
-
-
-        <div class="btn-t33"><i class="icofont-ui-chat"></i> ข้อคิดเห็นจากเพื่อนๆ</div>
-        <div id="DisplayAllMemo"></div>
+        <div class="font14f" style="position: absolute; margin: 30px 0px;">คุณชอบข่าวสารนี้</div>
+        <div class="clr" style="height: 30px;"></div>
+        <div id="DisplayShowLike" style="text-align: left; margin-top:25px;"></div>
         <div class="clr"></div>
-
-        <div class="btn-t33"><i class="icofont-ui-text-chat" ></i> เขียนข้อคิดเห็นของคุณ</div>
-        <div class="input_field" style="width:100% !important;"> 
-          <div>
-          <textarea class="form-control" id="txtDetail" style="font-size: 13px !important; color:#000;height:80px;vertical-align: text-top;padding:8px;margin-top:5px;padding:5px;background-color: #e8f2fc;font-size:13px; line-height: 1.2;" placeholder="เขียนข้อคิดเห็นของคุณที่นี่" required></textarea>
-          </div>
-          <center>
-            <div class="btn-blue" onclick="CheckAllCount()" type="submit" style="margin-top:20px;">ส่งความคิดเห็น</div>
-          </center>
-        </div>
-
-
-
-<!--
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 entries">
-            <article class="entry" style="box-shadow: none;" data-aos="fade-up">
-              <div id="DisplayIMG"></div>
-              <div class="btn-t33"><i class="icofont-read-book-alt"></i> บันทึกการอ่านข่าวสาร</div>
-              <div id="loading" style="margin:20px auto 20px 150px;"><img src="./img/loading1.gif" style="width:30px;"></div>
-              <div id="CountReadNews" style="color:#ff0000;line-height: 1.2;font-weight: 600;display: none;"></div>
-              <div class="clr"></div>
-
-              <div class="btn-t33"><i class="icofont-group-students"></i> คุณชอบข่าวสารนี้</div>
-              <div id="DisplayShowLike"></div>
-              <div class="clr"></div>
-
-              <div class="btn-t33"><i class="icofont-ui-chat"></i> ข้อคิดเห็นจากเพื่อนๆ</div>
-              <div id="DisplayQuestion"></div>
-              <div class="clr"></div>
-              <div class="btn-t33"><i class="icofont-ui-text-chat" ></i> เขียนข้อคิดเห็นของคุณ</div>
-              <div class="input_field" style="width:100% !important;"> 
-                <div>
-                <textarea class="form-control" id="txtDetail" style="font-size: 13px !important; color:#000;height:100px;vertical-align: text-top;padding:8px;margin-top:5px;padding:5px;background-color: #e8f2fc;font-size:13px;" placeholder="เขียนข้อคิดเห็นของคุณที่นี่" required></textarea>
-                </div>
-                <center>
-                  <div class="btn-t2" onclick="ClickSendQ()" type="submit" style="margin-top:20px;">ส่งความคิดเห็น</div>
-                </center>
-              </div>
-              <div class="clr"></div>
-            </article>
-          </div>
-        </div>
+        <div class="font14f" style="position: absolute; margin: 30px 0px;">ข้อคิดเห็นจากเพื่อนๆ</div>
+        <div class="clr" style="height: 30px;"></div>
+        <div id="DisplayAllMemo" style="margin-top:25px;"></div>
+        <div class="clr"></div>
       </div>
--->
-
-
-      </div>
-      <div class="clr" style="height: 50px;"></div>
     </div>
-
-
-
   </main>
+  <div class="clr" style="height: 120px;"></div>
 
-
+  <div id="id01" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #fff;">
+      <div class="w3-container" style="width:95%;margin:auto;min-height: 270px;">
+        <center>
+          <div id="DisplayGetPoint"></div>      
+        </center>
+      </div>
+    </div>
+    <div class="clr" style="height:20px;"></div>
+  </div>
 
   <div id="menu" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4 bg-menu">
@@ -124,59 +101,25 @@
         <div id="MenuSociety"></div>
       </div>
     </div>
-    <div class="clr" style="height:40px;"></div>
+    <div class="clr" style="height:60px;"></div>
   </div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
+  <!-- Vendor JS Files #dde7f0-->
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
 
-<!--
-  <div id="id01" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4" style="background: #0056ff;">
-      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
-        <div id="BoxTimeGetPoint"></div>
-      </div>
-    </div>
-    <div style="height:20px;"></div>
-  </div>
 
-  <div id="id02" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4" style="background: #0056ff;">
-      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
-        <div>เกี่ยวกับ One Retail Academy</div>
-        <div class="btn-grey" onclick="CloseAll()" style="margin-top:30px;">ปิดหน้าต่างนี้</div>
-      </div>
-    </div>
-    <div style="height:20px;"></div>
-  </div>
 
-  <div id="id03" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4" style="background: #f68b1f;">
-      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
-        <div class="text-header" style="margin-top:14px;">บันทึกการเข้าใช้งานของคุณ</div>
-        <div style="height: 240px;"></div>
-        <div id="BoxTimeLine"></div>
-        <div class="clr"></div>
-        <div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>
-      </div>
-    </div>
-    <div style="height:20px;"></div>
-  </div>
-
-  <div id="id04" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4" style="background: #7b95ac;">
-      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
-        <div class="text-header" style="margin-top:14px;">คุณได้รับเหรียญรางวัล</div>
-        <div id="BoxTimeNewPoint"></div>
-        <div class="clr"></div>
-        <div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>
-      </div>
-    </div>
-    <div style="height:20px;"></div>
-  </div>
--->
-
+  <script src="./assets/js/main.js"></script>
   <script src="js/connect.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/pulsememo.js"></script>
+
 </body>
 </html>

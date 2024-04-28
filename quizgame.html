@@ -50,10 +50,11 @@
 -->
 
   <header id="header" class="fixed-top">
-    <div onclick="history.go(-1)" style="width:40px; text-align: center; float: left;"><i class="fa fa-arrow-left" style="color:#dee2e6; font-size: 22px;"></i></div>
-    <div class="container align-items-center" onclick="window.location.href='index.html';" style="margin-left:-40px;">
-      <!--<span class="header1">One Retail</span> <span class="header2">Society</span>-->
-      <span class="header1">แข่งขันตอบ</span><span class="header2">คำถาม</span>
+    <div onclick="history.back()" style="width:40px; text-align: center; float: left;margin-left:5px;">
+      <i class="fa fa-arrow-left" style="color:#dee2e6; font-size: 22px;"></i>
+    </div>
+    <div class="container align-items-center" onclick="window.location.href='home.html';" style="margin-left:-40px;">
+      <span class="header1">Success</span> <span class="header2">Story</span>
     </div>
     <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
       <i class="icofont-navigation-menu"></i>
@@ -62,28 +63,29 @@
 
   <div class="navbar1">
     <div class="nav-bg">
-      <div class="iconlink1" onClick="window.location='home.html';">
-        <div><img src="./icon/icons-home.png" style="width:30px;"></div>
-        <div class="nav-text">Home</div>
-      </div>
-      <div class="iconlink" onClick="window.location='academy.html';">
+      <div class="iconlink" onClick="window.location='learning.html';">
         <div><img src="./icon/icons-idea.png" style="width:30px;"></div>
-        <div class="nav-text">Academy</div>
+        <div class="nav-text">Learning</div>
       </div>
       <div class="iconlink" onClick="window.location='successstory.html';">
         <div><img src="./icon/icons-picture.png" style="width:30px;"></div>
         <div class="nav-text">Success Story</div>
       </div>
-      <div class="iconlink" onClick="window.location='pulseresult.html';">
-        <div><img src="./icon/icons-puzzle.png" style="width:30px;"></div>
-        <div class="nav-text">Pulse Survey</div>
+      <div class="iconlink1" onClick="window.location='home.html';">
+        <div><img src="./icon/icons-home.png" style="width:30px;"></div>
+        <div class="nav-text">Home</div>
       </div>
       <div class="iconlink" onClick="window.location='retailclub.html';">
-        <div><img src="./icon/icons-services.png" style="width:30px;"></div>
+        <div><img src="./icon/icons-puzzle.png" style="width:30px;"></div>
         <div class="nav-text">Retail Club</div>
+      </div>
+      <div class="iconlink" onClick="window.location='profile.html';">
+        <div><img src="./icon/icons-services.png" style="width:30px;"></div>
+        <div class="nav-text">Profile</div>
       </div>
     </div>
   </div>
+
 
 <!--
   <div class="container" style="min-height: 300px; display: none;">
@@ -102,7 +104,6 @@
       <li><a data-toggle="tab" href="#home" onclick="TapMenu(0)">Home</a></li>
       <li><a data-toggle="tab" href="#menu1" onclick="TapMenu(1)">ตารางอบรม</a></li>
       <li class="active"><a data-toggle="tab" href="#menu2" onclick="TapMenu(2)">การแข่งขัน</a></li>
-      <li><a data-toggle="tab" href="#menu3" onclick="TapMenu(3)">รางวัล</a></li>
     </ul>
 
     <div class="tab-content">

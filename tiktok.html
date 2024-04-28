@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>One Retail Society</title>
+  <script async src='https://www.tiktok.com/embed.js'></script>
+
+</head>
+
+
+<body>
+<script type="text/javascript">
+
+function autolink($string)
+    {
+    // force http: on www.
+    $string = str_ireplace( "www.", "http://www.", $string );
+
+// eliminate duplicates after force
+
+$string = str_ireplace( "http://http://www.", "http://www.", $string );
+
+$string = str_ireplace( "https://http://www.", "https://www.", $string );
+ $string = str_replace( '&amp;nbsp;', ' ', $string);
+
+
+  ////////////////////////////////////////////////////////////////////
+            ///////////////emoticons///////////////////
+
+
+
+
+$string = str_ireplace(':)', '<img src="emoticons/ico.jpg" title=":)"/>', 
+ $string);
+    $string = str_ireplace(';)', '<img src="emoticons/ico2.png" title=";)"/>', 
+        $string);
+     ///////////////////////////////////////////////////////////////////////////
+//// The Regular Expression filter
+
+
+
+
+$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3} (\/\S*)?/";
+// Check if there is a url in the text
+
+    $m = preg_match_all($reg_exUrl, $string, $match); 
+
+         if ($m) { 
+              $links=$match[0]; 
+                for ($j=0;$j<$m;$j++) { 
+
+
+
+    if(substr($links[$j], 0, 18) == 'https://www.tiktok'||substr($links[$j], 0, 
+   17)== 'http://www.tiktok'||substr($links[$j], 0, 17) == 
+      'http://www.tiktok'||substr($links[$j], 0, 18) == 'https://www.tiktok'){
+           $string=str_replace($links[$j],'<a href="'.$links[$j].'" rel="nofollow" target="_blank"></a>',$string).'<br/><iframe title="YouTube video layer" align="left"  class="tiktok-embed"  width="auto" height="707" src="https://www.tiktok.com/embed/'.substr($links[$j], -20).'" frameborder="0" allowFullScreen></iframe><br/>';
+  
+            
+            
+            
+            
+            
+            
+}else if(substr($links[$j], 0, 19) == 'https://www.youtube'||substr($links[$j], 0, 18)== 'http://www.youtube'||substr($links[$j], 0, 16) == 'http://www.youtu'||substr($links[$j], 0, 17) == 'https://www.youtu'){
+
+$string=str_replace($links[$j],'<a href="'.$links[$j].'" rel="nofollow" target="_blank"></a>',$string).'<br/><iframe title="YouTube video player" class="youtube-player" type="text/html" width="260" height="175" src="http://www.youtube.com/embed/'.substr($links[$j], -11).'" frameborder="0"     allowFullScreen></iframe><br/>';
+
+
+}
+    else if(substr($links[$j], 0, 16) == 'http://www.youtu'||substr($links[$j], 
+     0, 18) == 'https://www.youtu'||substr($links[$j], 0, 13) == 
+  'https://youtu'||substr($links[$j], 0, 12) == 'http://youtu')
+     {
+
+         $string=str_replace($links[$j],'<a href="'.$links[$j].'" rel="nofollow" target="_blank"></a>',$string).'<br/><iframe title="YouTube video player"  class="youtube-player" type="text/html" width="260" height="175" src="http://www.youtube.com/embed/'.substr($links[$j], -11).'" frameborder="0" allowFullScreen></iframe><br/>';
+     }
+    else if(substr($links[$j], 0, 18) == 
+          'https://soundcloud'||substr($links[$j], 0, 17) == 
+          'http://soundcloud'||substr($links[$j], 0, 21) == 
+              'http://www.soundcloud'||substr($links[$j], 0, 22) == 
+       'https://www.soundcloud')
+       {
+            $string=str_replace($links[$j],'<a href="'.$links[$j].'" rel="nofollow" target="_blank">soundcloud</a>',$string).'<br/> <iframe width="70%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/url='.$links[$j].'&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true &amp;show_user=true&amp;show_reposts=false&amp;visual=true"    frameborder="0" allowFullScreen></iframe><br/>';
+
+
+
+   }
+
+else if(substr($links[$j], 0, 21) == 'https://www.reverbnat'||substr($links[$j], 
+  0, 20) == 'http://www.reverbnat')
+  {
+    $string=str_replace($links[$j],'<a href="'.$links[$j].'" rel="nofollow" target="_blank"></a>',$string).'<br/><iframe width="100%" height="200" 
+         scrolling="no" frameborder="no" src="'.$links[$j].'" style="width:0px;min-width:100%;max-width:100%;"></iframe>';
+       }  
+          else if(substr($links[$j], 0, 8) == 'https://'||substr($links[$j], 0, 
+           7) == 'http://')
+       {
+       $string=str_replace($links[$j],'<a href="'.$links[$j].'" rel="nofollow" target="_blank">'.$links[$j].'</a>',$string).'<br/>';}else{$string=str_replace($links[$j],'<a href="'.$links[$j].'" 
+       rel="nofollow" target="_blank">'.$links[$j].'</a>',$string);
+     } 
+
+ } 
+ } 
+
+
+
+
+           return ($string);
+    }
+
+
+
+
+
+       ?>
+
+
+</script>
+
+<style type="text/css">
+const iframe_container = {
+                left: 0,
+                          width: "100%",
+                          height: 500,
+                          position: "relative"
+                        }
+
+const iframe ={top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      position: "absolute",
+      border: 0}
+  
+</style>
+
+
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@zacksjerryrig/video/6828268207359413509" data-video-id="6828268207359413509" style="max-width: 605px; min-width: 325px;">
+       <iframe
+          name="__tt_embed__v6828268207359413509"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-top-navigation allow-same-origin"
+          src="https://www.tiktok.com/embed/v2/6828268207359413509?lang=en-US&amp;"
+          style="width: 100%; height: 707px; display: block; visibility: unset; max-height: 707px;"
+       ></iframe>   
+   </blockquote>
+   <script async src="https://www.tiktok.com/embed.js"></script>
+
+
+
+<!--
+
+<div className={iframe_container}>
+                <iframe
+                  src="https://www.tiktok.com/embed/7072819797184171310"
+                  className={iframe}
+                  allowfullscreen
+                  scrolling="no"
+                  allow="encrypted-media;"
+                ></iframe>
+              </div>
+<blockquote class="tiktok-embed" cite="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.tiktok.com%2F%40kai_janejira%2Fvideo%2F7361728308813270280&data=05%7C02%7Csuvit.cha%40ttbbank.com%7C4f85e82cad94433d1f2208dc6532aa03%7C771863e0ae6942c99bb840e48d597651%7C0%7C0%7C638496515545737262%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=yAdi6kMF2XSJudS358q11Zg1A%2Bu5jWsYozPpBJELT1g%3D&reserved=0" data-video-id="7361728308813270280" data-embed-from="embed_page" style="max-width:605px; min-width:325px;"> <section> <a target="_blank" title="@kai_janejira" href="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.tiktok.com%2F%40kai_janejira%3Frefer%3Dembed&data=05%7C02%7Csuvit.cha%40ttbbank.com%7C4f85e82cad94433d1f2208dc6532aa03%7C771863e0ae6942c99bb840e48d597651%7C0%7C0%7C638496515545745947%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=YQNuU2tDtJQoPam9qoijjEjHlMsjxVMgk7yOdtLrUZo%3D&reserved=0">@kai_janejira</a> <p>พายุฝนมาอีกแล้ว มาติดกัน2วันเลยจ้าว ⛈️💨🌪️ <a title="สวนน้อยๆหลังบ้าน" target="_blank" href="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.tiktok.com%2Ftag%2F%25E0%25B8%25AA%25E0%25B8%25A7%25E0%25B8%2599%25E0%25B8%2599%25E0%25B9%2589%25E0%25B8%25AD%25E0%25B8%25A2%25E0%25B9%2586%25E0%25B8%25AB%25E0%25B8%25A5%25E0%25B8%25B1%25E0%25B8%2587%25E0%25B8%259A%25E0%25B9%2589%25E0%25B8%25B2%25E0%25B8%2599%3Frefer%3Dembed&data=05%7C02%7Csuvit.cha%40ttbbank.com%7C4f85e82cad94433d1f2208dc6532aa03%7C771863e0ae6942c99bb840e48d597651%7C0%7C0%7C638496515545751701%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=0t52rmHerpZXSc5SG4OuFuj8sn4MB7QseBb6VGZjkEI%3D&reserved=0">#สวนน้อยๆหลังบ้าน</a> <a title="ไก่เจนจิราที่นี่เสริมนม" target="_blank" href="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.tiktok.com%2Ftag%2F%25E0%25B9%2584%25E0%25B8%2581%25E0%25B9%2588%25E0%25B9%2580%25E0%25B8%2588%25E0%25B8%2599%25E0%25B8%2588%25E0%25B8%25B4%25E0%25B8%25A3%25E0%25B8%25B2%25E0%25B8%2597%25E0%25B8%25B5%25E0%25B9%2588%25E0%25B8%2599%25E0%25B8%25B5%25E0%25B9%2588%25E0%25B9%2580%25E0%25B8%25AA%25E0%25B8%25A3%25E0%25B8%25B4%25E0%25B8%25A1%25E0%25B8%2599%25E0%25B8%25A1%3Frefer%3Dembed&data=05%7C02%7Csuvit.cha%40ttbbank.com%7C4f85e82cad94433d1f2208dc6532aa03%7C771863e0ae6942c99bb840e48d597651%7C0%7C0%7C638496515545756861%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=tmqUBxSZkyDBsKhZcwrr1y5Yu%2FcH1jFjGb1eYOp6Nb4%3D&reserved=0">#ไก่เจนจิราที่นี่เสริมนม</a> <a title="สาวเจียงฮาย" target="_blank" href="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.tiktok.com%2Ftag%2F%25E0%25B8%25AA%25E0%25B8%25B2%25E0%25B8%25A7%25E0%25B9%2580%25E0%25B8%2588%25E0%25B8%25B5%25E0%25B8%25A2%25E0%25B8%2587%25E0%25B8%25AE%25E0%25B8%25B2%25E0%25B8%25A2%3Frefer%3Dembed&data=05%7C02%7Csuvit.cha%40ttbbank.com%7C4f85e82cad94433d1f2208dc6532aa03%7C771863e0ae6942c99bb840e48d597651%7C0%7C0%7C638496515545762008%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=d9M5Ds9BB%2FHQdsGBQLDRgYylPQflhm3bjwQtyU6ojz4%3D&reserved=0">#สาวเจียงฮาย</a></p> <a target="_blank" title="♬ เสียงต้นฉบับ - ไก่ เจนจิรา❤️สาวเชียงราย - ไก่ เจนจิรา❤️สาวเชียงราย" href="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.tiktok.com%2Fmusic%2F%25E0%25B9%2580%25E0%25B8%25AA%25E0%25B8%25B5%25E0%25B8%25A2%25E0%25B8%2587%25E0%25B8%2595%25E0%25B9%2589%25E0%25B8%2599%25E0%25B8%2589%25E0%25B8%259A%25E0%25B8%25B1%25E0%25B8%259A-%25E0%25B9%2584%25E0%25B8%2581%25E0%25B9%2588-%25E0%25B9%2580%25E0%25B8%2588%25E0%25B8%2599%25E0%25B8%2588%25E0%25B8%25B4%25E0%25B8%25A3%25E0%25B8%25B2%25E2%259D%25A4&data=05%7C02%7Csuvit.cha%40ttbbank.com%7C4f85e82cad94433d1f2208dc6532aa03%7C771863e0ae6942c99bb840e48d597651%7C0%7C0%7C638496515545766662%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=yV%2BJbmMuYlZ7sKMcr5y2TCHxZJ%2F4jzOmy6q9GKa8gOE%3D&reserved=0️สาวเชียงราย-7361728351368989456?refer=embed">♬ เสียงต้นฉบับ - ไก่ เจนจิรา❤️สาวเชียงราย - ไก่ เจนจิรา❤️สาวเชียงราย</a> </section> </blockquote> <script async src="https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.tiktok.com%2Fembed.js&data=05%7C02%7Csuvit.cha%40ttbbank.com%7C4f85e82cad94433d1f2208dc6532aa03%7C771863e0ae6942c99bb840e48d597651%7C0%7C0%7C638496515545771769%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=3tpXY2cbaW%2FFY3GXSarRmlH3zsod1%2FvSktb11yzQUAU%3D&reserved=0"></script>
+-->
+</body>
+</html>
