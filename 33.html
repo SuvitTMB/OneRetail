@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+
+
+const iframe_container = {
+left: 0,
+          width: "100%",
+          height: 500px,
+          position: "relative"
+        }
+
+const iframe ={top: 0,
+      left: 0,
+      width: "100%",
+      height: "500px",
+      position: "absolute",
+      border: 0}    	
+
+    </style>
+
+<script type="text/javascript">
+ async function start() {
+
+    let url = "https://www.tiktok.com/@tiagogreis/video/6830059644233223429";
+    let contentlist = document.querySelector("#content");
+
+      let data = await loadDataFromURL(url);
+      contentlist.innerHTML = data.html;
+  }
+
+  async function loadDataFromURL(url) {
+
+    let oembed = `https://www.tiktok.com/oembed?url=${url}`;
+    console.log("the oembed link", oembed);
+
+    let dataFromOembed = await fetch(oembed);
+    let data = await dataFromOembed.json();
+    if (data === undefined) {
+      throw Error("No data received from oembed");
+    }
+
+    console.log("the data from oembed", data);
+
+    return data;
+  }
+
+  start(); 	
+</script>
+
+</head>
+<body>
+
+
+<div>
+                <iframe style="height: 500px; width: 100%;"
+                  src="https://www.tiktok.com/embed/7299676194964786433"
+                  className={iframe}
+                  allowfullscreen
+                  scrolling="yes"
+                  allow="encrypted-media;"
+                ></iframe>
+              </div>
+
+<!--
+     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@zacksjerryrig/video/6828268207359413509" data-video-id="6828268207359413509" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@zacksjerryrig" href="https://www.tiktok.com/@zacksjerryrig">@zacksjerryrig</a> <p>Buy a case for your iPad or else... @whatsinside  did the same test, go see how it turned out <a title="ipad" target="_blank" href="https://www.tiktok.com/tag/ipad">##ipad</a> <a title="teardown" target="_blank" href="https://www.tiktok.com/tag/teardown">##teardown</a> <a title="jerryrig" target="_blank" href="https://www.tiktok.com/tag/jerryrig">##jerryrig</a> <a title="jerryrigeverything" target="_blank" href="https://www.tiktok.com/tag/jerryrigeverything">##jerryrigeverything</a></p> <a target="_blank" title="♬ original sound - Zack" href="https://www.tiktok.com/music/original-sound-6828268206063405830">♬ original sound - Zack</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@artps06/video/7357216146866670856" data-video-id="7357216146866670856" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@artps06" href="https://www.tiktok.com/@artps06?refer=embed"></a></section> </blockquote> 
+-->
+
+
+
+	<script async src="https://www.tiktok.com/embed.js"></script>
+
+</body>
+</html>
