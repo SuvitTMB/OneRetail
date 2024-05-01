@@ -45,7 +45,7 @@ function ListRewards() {
     str += '</div>';
     str += '<div class="story-box-text"><div style="height: 50px;">';
     str += '<div class="story-box-text-head">'+ doc.data().RewardsName +'</div>';
-    str += '<div class="story-box-text-sub">'+ doc.data().RewardsDetail +'</div>';
+    str += '<div class="story-box-text-sub" style="height: 31px;">'+ doc.data().RewardsDetail +'</div>';
     str += '</div><div class="clr"></div>';
     if(sessionStorage.getItem("RP_Point")<doc.data().RewardsPrice) {
       if(parseFloat(doc.data().RewardsStock)>0) {
@@ -245,8 +245,10 @@ function UserScore() {
   //xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(2) +'</div>';
   //xLine += '<div class="font12">ประสบการณ์<br>การใช้งาน</div></div>';
   //xLine += '<div><img class="box-user-rewards" src="'+ sessionStorage.getItem("LinePicture") +'" onerror="javascript:imgError(this)" ></div>';
-  xLine += '<div class="ScoreCard" style="margin-right: 10px;"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div>';
-  xLine += '<div class="font12">Coin</div></div>';
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-coin.png" class="coin-img1"></div><div class="font12">COIN</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div></div>';
+
+  //xLine += '<div class="ScoreCard" style="margin-right: 10px;"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div>';
+  //xLine += '<div class="font12">Coin</div></div>';
   xLine += '<div class="title-rewards"><b>รายการแลกของรางวัล</b><br><br>ทุก ๆ การสะสมเหรียญรางวัลของคุณ สามารถนำมาแลกเป็นของรางวัลตามความต้องการของคุณ</div>';
   xLine += '</div>';
   $("#DisplayScore").html(xLine);

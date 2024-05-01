@@ -5,6 +5,7 @@ var EidProfile = "";
 var EidPulseRefID = "";
 var QuesPulse = "";
 var MemoPulse = "";
+var xPulsePoint = 0;
 xHeaderNews = "Pulse Survey";
 xHeaderLog = "รับรางวัลจากการทำ Pulse Survey";
 xHeaderPoint = 1;
@@ -35,14 +36,16 @@ function CheckSurvey() {
     snapshot.forEach(doc=> {
       gcheck = 1;
       EidUserSurvey = doc.id;
-      str += '<div><div class="btn-blue" onclick="GotoResult()" style="margin-top:20px; margin-right:5px;">ดูอุณหภูมิของคุณ</div>';
-      str += '<div class="btn-grey" onclick="GotoHome()" style="margin-top:20px;">กลับหน้าแรก</div></div>';
+      //str += '<div><div class="btn-blue" onclick="GotoResult()" style="margin-top:20px; margin-right:5px;">ดูอุณหภูมิของคุณ</div>';
+      //str += '<div class="btn-grey" onclick="GotoHome()" style="margin-top:20px;">กลับหน้าแรก</div></div>';
+      GotoHome();
     });
     if(gcheck==0) {
-      str += '<div><div class="btn-grey" onclick="ReadMore()" style="margin-top:20px;margin-right:5px;">อ่านรายละเอียด</div>';
-      str += '<div class="btn-click" onclick="CheckQuestionPulse()" style="margin-top:20px;">เริ่มวัดอุณหภูมิของคุณ</div></div>';
+      CheckQuestionPulse();
+      //str += '<div><div class="btn-grey" onclick="ReadMore()" style="margin-top:20px;margin-right:5px;">อ่านรายละเอียด</div>';
+      //str += '<div class="btn-click" onclick="CheckQuestionPulse()" style="margin-top:20px;">เริ่มวัดอุณหภูมิของคุณ</div></div>';
     }
-    document.getElementById('loading').style.display='none';
+    //document.getElementById('loading').style.display='none';
     $("#CheckStart").html(str);
   });
 }
@@ -57,6 +60,7 @@ var aPulseCount = 0;
 var aPulseScore = 0;
 var aPulseRatio = 0;
 function CheckQuestionPulse() {
+  //document.getElementById('loading').style.display='none';
   //alert("Check");
   dbPulseDate.where('PulseDate','==',thistoday)
   .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
@@ -66,6 +70,7 @@ function CheckQuestionPulse() {
       //console.log("Found");
       EidPulseDate = doc.id;
       EidPulseRefID = doc.data().PulseRefID;
+      xPulsePoint = doc.data().PulsePoint;
       aPulseCount = doc.data().PulseCount;
       aChoice1 = doc.data().Choice1;
       aChoice2 = doc.data().Choice2;
@@ -73,6 +78,7 @@ function CheckQuestionPulse() {
       aChoice4 = doc.data().Choice4;
       aChoice5 = doc.data().Choice5;
       StartSurvey(doc.data().PulseRefID);
+      console.log(xPulsePoint);
     });
   });
 }
@@ -114,7 +120,7 @@ function StartSurvey() {
       str += '</a>'
     });
     $("#DisplaySurvey").html(str);
-    document.getElementById('loading1').style.display='none';
+    document.getElementById('loading').style.display='none';
   });
   document.getElementById('SurveyPage').style.display='block';
 }
@@ -199,17 +205,17 @@ function SavePulseDate() {
 
 /*
   var str = "";
-  var xPointPulse = 1;
+  var PulsePoint = 1;
   console.log("asdfasdf");
-  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(xPointPulse));
-  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(xPointPulse));
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(PulsePoint));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(PulsePoint));
   dbProfile.doc(sessionStorage.getItem("EmpRefID_Academy")).update({
     //LastUpdate : dateString,
     XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
     RP_Point : parseFloat(sessionStorage.getItem("RP_Point"))
   });
   str += '<div class="btn-t3"><b>คุณได้รับเหรียญรางวัล</b></div>';
-  str += '<div style="font-size:14px;line-height:1.1;"><img src="./point/coin-'+ xPointPulse +'.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br>จากกิจกรรม<br><br><b>สำรวจอุณหภูมิความสุข</b></div>';
+  str += '<div style="font-size:14px;line-height:1.1;"><img src="./point/coin-'+ PulsePoint +'.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br>จากกิจกรรม<br><br><b>สำรวจอุณหภูมิความสุข</b></div>';
   str += '<div class="clr" style="height:15px;"></div>';
   str += '<div class="btn-t2" onclick="CloseAll()" style="margin-top:15px;">ปิดหน้าต่างนี้</b></div>';
   str += '<div class="clr" style="height:40px;"></div>';
@@ -435,7 +441,7 @@ function SaveUserSurvey() {
     DateSurvey: dateString
   });
   document.getElementById('Q_thankyou').style.display='block';
-  console.log("Save 5");
+  //console.log("Save 5");
   AddUserLog();
   GetPoint();
   //CheckTapMemo();
@@ -443,23 +449,27 @@ function SaveUserSurvey() {
 
 
 function GetPoint() {
+  console.log(xPulsePoint);
+  document.getElementById('loading').style.display='none';
   var str = "";
-  var xPointPulse = 1;
-  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(xPointPulse));
-  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(xPointPulse));
+  //var PulsePoint = 1;
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(xPulsePoint));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(xPulsePoint));
+
   dbProfile.doc(sessionStorage.getItem("EmpRefID_Academy")).update({
-    //LastUpdate : dateString,
     XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
     RP_Point : parseFloat(sessionStorage.getItem("RP_Point"))
   });
   str += '<div class="textheader" style="margin: 30px auto;">คุณได้รับเหรียญรางวัล</div>';
-  str += '<div style="font-size:14px;line-height:1.1;margin-top:20px;"><img src="./point/coin-'+ xPointPulse +'.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br><br>จากกิจกรรม<br><b>แบบสำรวจอุณหภูมิความสุขในการทำงาน</b></div>';
+  str += '<div style="font-size:14px;line-height:1.1;margin-top:20px;"><img src="./point/coin-'+ xPulsePoint +'.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br><br>จากกิจกรรม<br><b>แบบสำรวจอุณหภูมิความสุขในการทำงาน</b></div>';
   str += '<div class="clr"></div>';
   str += '<div class="btn-grey" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่างนี้</b></div>';
   str += '<div class="clr" style="height:40px;"></div>';
   $("#DisplayGetPoint").html(str);  
   document.getElementById('CheckLoading').style.display='none';
-  document.getElementById('id02').style.display='block';  
+  setInterval(GotoHome, 2000);
+  //document.getElementById('id02').style.display='block';  
+  //GotoHome();
 }
 
 

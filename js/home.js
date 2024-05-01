@@ -59,11 +59,11 @@ function LoadSlider() {
   str += '<div class="images"><div class="images-inner">';
 
   str += '<div class="image-slide" onclick="ViewClip(1)">';
-  str += '<div class="image bg-yellow"><img src="./clip/clip-01.jpg" style="width:100%;"></div></div>';
+  str += '<div class="image bg-yellow"><img src="./clip/CYB-03.jpg" style="width:100%;"></div></div>';
   str += '<div class="image-slide" onclick="ViewClip(2)">';
-  str += '<div class="image bg-blue"><img src="./clip/clip-02.jpg" style="width:100%;"></div></div>';
+  str += '<div class="image bg-blue"><img src="./clip/CYB-11.jpg" style="width:100%;"></div></div>';
   str += '<div class="image-slide" onclick="ViewClip(3)">';
-  str += '<div class="image bg-red"><img src="./clip/clip-03.jpg" style="width:100%;"></div></div>';
+  str += '<div class="image bg-red"><img src="./clip/CYB-12.jpg" style="width:100%;"></div></div>';
 
   str += '</div></div>';
 

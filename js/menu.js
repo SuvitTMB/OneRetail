@@ -1,4 +1,5 @@
-xProfile = "";
+var xProfile = "";
+var VDOtimeString = "";
 //MenuFooter();
 
 
@@ -109,12 +110,15 @@ function MyPulseSurvey() {
 
 
   xLine += '<div style="width:290px; margin:10px auto;">';
-  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div>';
-  xLine += '<div class="font12">Levels</div></div>';
-  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(0) +'</div>';
-  xLine += '<div class="font12">Point</div></div>';
-  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'<span><img src="./icon/coin.png" class="coin-img"></span></div>';
-  xLine += '<div class="font12">Coin</div></div>';
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-level.png" class="coin-img1"></div><div class="font12">LEVEL</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div></div>';
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-point.png" class="coin-img1"></div><div class="font12">POINT</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(0) +'</div></div>';
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-coin.png" class="coin-img1"></div><div class="font12">COIN</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div></div>';
+
+
+  //xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(0) +'</div>';
+  //xLine += '<div class="font12">Point</div></div>';
+  //xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'<span><img src="./icon/coin.png" class="coin-img"></span></div>';
+  //xLine += '<div class="font12">Coin</div></div>';
 
 
   xLine += '<div class="clr" style="height:10px"></div>';
@@ -386,4 +390,30 @@ function GotoPulse() {
 
 function GotoReeards() {
   location.href = "rewards.html";
+}
+
+function VDOTime(time) {
+  var date = new Date(0);
+  date.setSeconds(time); // specify value for SECONDS here
+  VDOtimeString = date.toISOString().substring(11, 19);
+  return;
+  //console.log(VDOtimeString)
+}
+
+function toHHMMSS(seconds) {
+    var h, m, s, result='';
+    // HOURs
+    h = Math.floor(seconds/3600);
+    seconds -= h*3600;
+    if(h){
+        result = h<10 ? '0'+h+':' : h+':';
+    }
+    // MINUTEs
+    m = Math.floor(seconds/60);
+    seconds -= m*60;
+    result += m<10 ? '0'+m+':' : m+':';
+    // SECONDs
+    s=seconds%60;
+    result += s<10 ? '0'+s : s;
+    return result;
 }

@@ -27,8 +27,11 @@ function UserScore() {
   var xLine = "";
   xLine += '<div class="box-top-user">';
   xLine += '<div style="width:290px; margin:0px auto;">';
-  xLine += '<div class="ScoreCard" style="margin-right: 10px;"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div>';
-  xLine += '<div class="font12">Coin</div></div>';
+
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-coin.png" class="coin-img1"></div><div class="font12">COIN</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div></div>';
+
+  //xLine += '<div class="ScoreCard" style="margin-right: 10px;"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div>';
+  //xLine += '<div class="font12">Coin</div></div>';
   xLine += '<div class="title-rewards"><b>รายการแลกของรางวัล</b><br><br>ทุก ๆ การสะสมเหรียญรางวัลของคุณ สามารถนำมาแลกเป็นของรางวัลตามความต้องการของคุณ</div>';
   xLine += '</div>';
   $("#DisplayScore").html(xLine);

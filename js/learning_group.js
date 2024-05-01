@@ -49,7 +49,7 @@ function LoadGroupVDO(MainGroupID) {
   .orderBy('VDOrank','desc')
   .get().then((snapshot)=> {
   snapshot.forEach(doc=> {
-      str += '<div class="story-box" onclick="ViewGroup(\''+ MainGroupID +'\',\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+      str += '<div class="story-box" onclick="ViewGroup(\''+ MainGroupID +'\',\''+ doc.data().VDOgroup +'\')" data-aos="zoom-in" data-aos-delay="100">';
       if(doc.data().VDOimg=="") {
         str += '<div class="learning-box-img"><div><img src="clipvdo.jpg" class="learning-box-box-img-in"></div></div>';
       } else {
@@ -66,5 +66,6 @@ function LoadGroupVDO(MainGroupID) {
 }
 
 function ViewGroup(gid, ref) {
-  console.log(gif+"==="+erf);
+  location.href = "learning_sub.html?gid="+gid+"&sid="+ref;
+  //console.log(gif+"==="+erf);
 }

@@ -1,12 +1,17 @@
 var MainGroupID = 6;
+var ReadMemberArr = [];
 var ReadVdoArr = [];
-
+var xVDOname1 = "";
+var xVDOname2 = "";
+var xVDOname3 = "";
+var xVDOimg1 = "";
+var xVDOimg2 = "";
+var xVDOimg3 = "";
 
 $(document).ready(function () {
   if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
   Connect_DB();
   GetAllVDO();
-  LoadSlider();
   //LoadLDP();
   LoadGroupVDO();
   //LoadTopContent();
@@ -19,17 +24,16 @@ function GetAllVDO() {
   ReadMemberArr = [];
   ReadVdoArr = [];
   dbVDOTraining.where('VDOmain','==',parseFloat(MainGroupID))
+  .where('VDOstatus','==',0)
   .orderBy('VDOrank','desc')
   .limit(3)
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
-      ReadVdoArr.push({ VDOname: doc.data().VDOname, VDOimg: doc.data().VDOimg, Q: i, ID: doc.id });
+      ReadMemberArr.push(i);
+      ReadVdoArr.push({ VDOname: doc.data().VDOname, VDOimg: doc.data().VDOimg, VDOShow: doc.data().VDOShow, Q: i, ID: doc.id });
       i++;
-    });    
-    //console.log(ReadVdoArr);
-    //console.log(ReadVdoArr[0].VDOname);
-    //console.log(ReadVdoArr[1].VDOname);
-    //console.log(ReadVdoArr[2].VDOname);
+    });   
+    LoadSlider(); 
   });
 }
 
@@ -91,15 +95,22 @@ function LoadLDP() {
 */
 
 function LoadSlider() {
+  //console.log(ReadVdoArr[0].VDOimg);
+  //console.log(ReadVdoArr[1].VDOimg);
+  //console.log(ReadVdoArr[2].VDOimg);
   var ii = 1;
   var xResults = "";
-    console.log(ReadVdoArr);
-
-      const results = ReadVdoArr.filter(obj => {return obj.Q === ii;});
-      if(results[0]!=undefined) { 
-        xResults = results[0].VDOname;
-      }
-      console.log(results[0]);
+  //console.log(xVDOname1+"==="+xVDOname2+"==="+xVDOname3);
+  //console.log(xVDOimg1+"==="+xVDOimg2+"==="+xVDOimg3);
+  //console.log(ReadMemberArr.lenght);
+    //console.log(ReadVdoArr);
+    //console.log(ReadVdoArr.lenght);
+      //console.log(ReadVdoArr[0,1]);
+      //const results = ReadVdoArr.filter(obj => {return obj.Q === ii;});
+      //if(results[0]!=undefined) { 
+      //  xResults = results[0].VDOname;
+      //}
+      //console.log(results[0]);
 
     //const results = ReadVdoArr.filter(obj => {return obj.Q === ii;});
     ///console.log(  results[0].Q );
@@ -114,23 +125,33 @@ function LoadSlider() {
   str += '<input type="radio" class="cs_anchor radio" name="slider" id="play1" checked=""/>';
 
   str += '<div class="images"><div class="images-inner">';
-
-  str += '<div class="image-slide" onclick="ViewClip(1)">';
-  str += '<div class="image bg-yellow"><img src="./clip/SecretSauce-02.jpg" style="width:100%;"></div></div>';
-  str += '<div class="image-slide" onclick="ViewClip(2)">';
-  str += '<div class="image bg-blue"><img src="./clip/SecretSauce-01-1.jpg" style="width:100%;"></div></div>';
-  str += '<div class="image-slide" onclick="ViewClip(3)">';
-  str += '<div class="image bg-red"><img src="./clip/SecretSauce-01-2.jpg" style="width:100%;"></div></div>';
-
+  str += '<div class="image-slide" onclick="ViewClip(\''+ ReadVdoArr[0].ID +'\')">';
+  if(ReadVdoArr[0].VDOimg !== '') {
+    str += '<div class="image bg-yellow"><img src="'+ ReadVdoArr[0].VDOimg +'" style="width:100%;"></div></div>';
+  } else {
+    str += '<div class="image bg-blue"><img src="./clip/SecretSauce-00.jpg" style="width:100%;"></div></div>';
+  }
+  str += '<div class="image-slide" onclick="ViewClip(\''+ ReadVdoArr[1].ID +'\')">';
+  if(ReadVdoArr[1].VDOimg!=="") {
+    str += '<div class="image bg-blue"><img src="'+ ReadVdoArr[1].VDOimg +'" style="width:100%;"></div></div>';
+  } else {
+    str += '<div class="image bg-blue"><img src="./clip/SecretSauce-00.jpg" style="width:100%;"></div></div>';
+  }
+  str += '<div class="image-slide" onclick="ViewClip(\''+ ReadVdoArr[2].ID +'\')">';
+  if(ReadVdoArr[2].VDOimg!=="") {
+    str += '<div class="image bg-red"><img src="'+ ReadVdoArr[2].VDOimg +'" style="width:100%;"></div></div>';
+  } else {
+    str += '<div class="image bg-blue"><img src="./clip/SecretSauce-00.jpg" style="width:100%;"></div></div>';
+  }
   str += '</div></div>';
 
   str += '<div class="labels" style="margin-top:5px;">';
   //str += '<label for="slide1" class="label">'+ ReadVdoArr[0].VDOname +'</label>';
   //str += '<label for="slide2" class="label">'+ ReadVdoArr[1].VDOname +'</label>';
   //str += '<label for="slide3" class="label">'+ ReadVdoArr[2].VDOname +'</label>';
-  str += '<label for="slide1" class="label">1</label>';
-  str += '<label for="slide2" class="label">2</label>';
-  str += '<label for="slide3" class="label">3</label>';
+  str += '<label for="slide1" class="label">'+ ReadVdoArr[0].VDOname +'</label>';
+  str += '<label for="slide2" class="label">'+ ReadVdoArr[1].VDOname +'</label>';
+  str += '<label for="slide3" class="label">'+ ReadVdoArr[2].VDOname +'</label>';
 
   str += '<div class="fake-radio" style="text-align:right;">';
   str += '<label for="slide1" class="radio-btn"></label>';
@@ -138,25 +159,24 @@ function LoadSlider() {
   str += '<label for="slide3" class="radio-btn"></label>';
   str += '</div></div></div>';
   $("#DisplaySlider").html(str);
-
 }
-
-
 
 
 function LoadGroupVDO() {
   var str = "";
   dbVDOTraining.where('VDOmain','==',parseFloat(MainGroupID))
+  .where('VDOstatus','==',0)
   .orderBy('VDOrank','desc')
   .get().then((snapshot)=> {
   snapshot.forEach(doc=> {
-      str += '<div class="story-box" onclick="ViewStory(\''+ MainGroupID +'\',\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+      //str += '<div class="story-box" onclick="ViewStory(\''+ MainGroupID +'\',\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+      str += '<div class="story-box" onclick="ViewStory(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
       if(doc.data().VDOimg=="") { 
         str += '<div class="story-box-img"><div><img src="./clip/SecretSauce-00.jpg" class="story-box-img-in"></div>';
       } else {
         str += '<div class="story-box-img"><div><img src="'+ doc.data().VDOimg +'" class="story-box-img-in"></div>';
       }
-      str += '<div class="btn-small">Click</div></div>';
+      str += '<div class="VDO-timer-clip">'+ toHHMMSS(doc.data().VDOtimer) +' นาที</div></div>';
       str += '<div class="story-box-text"><div style="height: 50px;">';
       str += '<div class="story-box-text-head">'+ doc.data().VDOname +'</div>';
       str += '<div class="story-box-text-sub">'+ doc.data().VDOdetail +'</div>';
@@ -171,6 +191,10 @@ function LoadGroupVDO() {
   });
 }
 
+function ViewStory(gid) {
+  location.href = "displayclip.html?gid="+gid;
+  //console.log(refid);
+}
 
 /*
 function LoadTopContent() {
