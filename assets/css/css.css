@@ -638,7 +638,7 @@
   padding-top:5px;font-size:11px;color:#555; line-height: 1.2; font-weight: 600;
 }
 .font12 { 
-  font-size:12px;color:#111; line-height: 1.1; font-weight: 600; padding-top:3px;
+  font-size:12px;color:#111; line-height: 1.1; font-weight: 600; 
 }
 .font12a { 
   padding:6px;font-size:12px;color:#555; line-height: 1.2; text-align: left;
@@ -651,7 +651,7 @@
   font-size: 14px; line-height: 1.2; color:#0056ff; font-weight: 600; margin:5px; padding-top:8px;
 }
 .font16b {
-  font-size: 15px; line-height: 1.2; color:#0056ff; font-weight: 600; margin:5px;
+  font-size: 18px; line-height: 1.2; color:#0056ff; font-weight: 600; margin:3px;
 }
 .webboard0 {
   margin:15px 5px 15px 5px; font-weight: 600; padding:15px 10px; background-color: #dfebff;
@@ -1181,6 +1181,9 @@ box-shadow: 0px 0px 6px 5px rgba(178,178,178,0.17); color:#111; height: 35px; wi
 .coin-img {
   width:20px; height: 20px; margin-top:-4px;
 }
+.coin-img1 {
+  width:35px; height: 35px; margin-top:-4px;
+}
 .icon-rewards {
   width:100px; height: 100px; border-radius: 50%; margin-top:10px;
 }
@@ -1706,7 +1709,7 @@ table.dataTable thead th, table.dataTable thead td {
 
 .ScoreCard {
   width:85px; text-align: center; color:#0056ff; float: left; background-color: #fff; 
-  height: 85px; padding:7px; border-radius: 8px; border: 2px solid #0056ff;
+  height: 85px; padding:7px; border-radius: 10px; border: 2px solid #0056ff;
   margin: 5px; cursor: pointer;
   box-shadow: 0px 6px 10px 2px rgba(0, 0, 0, 0.03);
 }

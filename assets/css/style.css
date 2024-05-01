@@ -2453,9 +2453,10 @@ section {
 .learning-box-box-img-in {
  height:85px;
  /* border-radius: 10px; */
- /* padding:5px; */
+ /* padding:5px; 
  border-top-left-radius: 10px;
- border-bottom-left-radius: 10px;
+ border-bottom-left-radius: 10px;*/
+ border-radius: 10px;
 }
 .story-box-img {
   width:25%; float: left; text-align: left;
@@ -2467,7 +2468,7 @@ section {
   width:75%; font-size: 13px; line-height: 1.2; padding: 3px; text-align: left;
 }
 .story-box-text-head {
-  font-weight: 600; color:#0056ff; padding-top: 4px;
+  font-weight: 600; color:#0056ff; padding-top: 4px; height: 18px; overflow: hidden;
 }
 .story-box-text-sub {
   font-weight: 400;
@@ -2475,9 +2476,9 @@ section {
   line-height: 1.1;
   padding-top:3px;
   font-size: 13px;
-  height: 31px;
+  height: 44px;
   overflow: hidden;
-  width: 98%;
+  width: 90%;
 }
 .font11w {
   font-weight: 400; margin: 10px auto 15px auto; color:#666; font-size: 11px;
