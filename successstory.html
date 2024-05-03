@@ -112,8 +112,8 @@
     <ul class="nav nav-tabs">
       <li class="active" id="M1"><a data-toggle="tab" href="#home">Secret Sauce</a></li>
       <li id="M2"><a data-toggle="tab" href="#menu2">TikTok</a></li>
-      <li id="M3"><a data-toggle="tab" href="#menu2">Shareing</a></li>
-      <li id="M4"><a data-toggle="tab" href="#menu3">ค้นหา</a></li>
+      <li id="M3"><a data-toggle="tab" href="#menu3">ค้นหา</a></li>
+      <!--<li id="M3"><a data-toggle="tab" href="#menu2">Shareing</a></li>-->
       <!--<li><a data-toggle="tab" href="#menu1">ความสำเร็จ</a></li>-->
     </ul>
 
@@ -121,39 +121,26 @@
 
 
     <div class="tab-content">
-      <div id="home" class="tab-pane fade in active">
-
+      <div id="loading" style="margin:220px auto;">
+        <center>
+          <img src="img/one-logo.png" style="width:190px;"><br><br>
+          <img src="./img/loading1.gif" style="width:50px;">
+        </center>
+      </div>
+      <div id="home" class="tab-pane fade in active" style="display: none;">
         <div id="DisplaySlider" style="margin-top:-35px;"></div>
-<!--
-        <Section id="slider" style="padding: 0; width:100%; overflow: hidden; margin-top:6px;">
-          <div class="slider-container">
-            <div id="DisplayLDP"></div>
-          </div>
-        </section>
--->
         <div class="font14b" style="margin:30px auto 15px auto;">เรื่องเล่า<font color="#f68b1f"> ความสำเร็จ</font></div>
         <div id="DisplayTopContent"></div>
         <div id="DisplayGroup"></div>
-        <!--
-        <center>
-          <a data-toggle="tab" href="#menu1"><div class="btn-blue" style="margin-top:30px;">ดูรายละเอียดทั้งหมด</div></a>
-        </center>
-        -->
-      </div>
-
-      <div id="menu1" class="tab-pane fade">
-        <h4>ความสำเร็จ</h4>
-        <p>
-          
-          Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.
-
-        </p>
       </div>
       <div id="menu2" class="tab-pane fade">
-        <h4>แจ้งเรื่องราว</h4>
-        <p>Some content in menu 2.</p>
+        <div>ความสำเร็จ</div>
       </div>
-
+      <!--
+      <div id="menu2" class="tab-pane fade">
+        <div>แจ้งเรื่องราว</div>
+      </div>
+      -->
       <div id="menu3" class="tab-pane fade">
         <div class="input-group input-group-icon" style="margin: 20px auto 30px auto; text-align: center;">
           <div><input type="text" id="txtEmpPhone" placeholder="ค้นหาความสำเร็จของเพื่อนๆ" style="box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); background: #cce4fd; border: 1px solid #91aac4;"/></div>
