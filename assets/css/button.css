@@ -417,6 +417,7 @@ progress[value]::after {
 }
 
 .btn-red:hover {
+  
   color: #fff;
   background-color: #d30b0b;
   font-weight: 400;
@@ -979,21 +980,39 @@ progress[value]::after {
   cursor: pointer;
 }
 .VDO-timer {
-  margin-top: -18px;
+  /* margin-top: -18px; */
   background: #002d63;
-  position: absolute;
+  /* position: absolute; */
   color: #fff;
-  font-size: 11px;
+  font-size: 10px;
   padding: 2px 5px;
-  border-radius: 5px;  
+  border-radius: 5px;
+  margin: -20px 3px 0px auto;
+  flex: auto;
+  width: 65px;
+  text-align: center;
+  position: relative;
+  /* right: 0px; */
 }
 .VDO-timer-clip {
-    margin-top: -24px;
+    margin: -25px auto 0px auto;
     background: #002d63;
-    position: absolute;
+    /* position: absolute; */
     color: #fff;
-    font-size: 11px;
+    font-size: 10px;
     padding: 2px 5px;
     border-radius: 5px;
-    margin-left: 12px;
+    /* margin-left: 12px; */
+    position: relative;
+    width: 65px;
+    text-align: center;
+}
+.grayscale {
+  /*
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);  
+  filter: opacity(70%);  */
+
+  /*-webkit-filter: sepia(100%) hue-rotate(180deg) saturate(300%);*/
+  background: #dfebf9;
 }
