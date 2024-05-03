@@ -26,13 +26,10 @@ function GetAllRewards() {
 function UserScore() {
   var xLine = "";
   xLine += '<div class="box-top-user">';
-  xLine += '<div style="width:290px; margin:0px auto;">';
-
-  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-coin.png" class="coin-img1"></div><div class="font12">COIN</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div></div>';
-
-  //xLine += '<div class="ScoreCard" style="margin-right: 10px;"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div>';
-  //xLine += '<div class="font12">Coin</div></div>';
-  xLine += '<div class="title-rewards"><b>รายการแลกของรางวัล</b><br><br>ทุก ๆ การสะสมเหรียญรางวัลของคุณ สามารถนำมาแลกเป็นของรางวัลตามความต้องการของคุณ</div>';
+  xLine += '<div style="width:300px; margin:0px auto;">';
+  xLine += '<div class="ScoreCard" style="background:#dae6ef;"><div><img src="./icon/icon-bag.png" class="coin-img1"></div><div class="font12">POINT</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div></div>';
+  xLine += '<div style="float:left;width: 110px;"><div class="btn-red" onclick="ChengeCOIN()" style="border-radius:50%; width: 80px; height: 80px; padding:0px; padding-top: 9px;">เปลี่ยน<br>POINT<br>เป็น COIN</div></div>';
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-coin.png" class="coin-img1"></div><div class="font12">COIN</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("COIN_Point")).toFixed(0) +'</div></div>';
   xLine += '</div>';
   $("#DisplayScore").html(xLine);
 } 
@@ -71,7 +68,7 @@ function RedeemRewards() {
         str += '<div class="story-box-img"><div><img src="./rewards/'+ results[0].RewardsCode +'" class="story-box-img-in"></div></div>';
         str += '<div class="story-box-text"><div style="height: 50px;">';
         str += '<div class="story-box-text-head">'+ doc.data().SubNews +'</div>';
-        str += '<div class="story-box-text-sub">แลกเมื่อ : '+ doc.data().LogDate +'<br>สถานะ : '+ xStatus +'</div>';
+        str += '<div class="story-box-text-sub" style="height:31px;">คุณใช้ : '+ parseFloat(doc.data().GetPoint*-1) +' COIN | '+ xStatus +'<br>แลกเมื่อ : '+ doc.data().LogDate +'</div>';
         str += '<div class="rewards-linkA" onclick="OpenLink(\''+ doc.data().RefID +'\',\''+ parseFloat(doc.data().RewardsPrice) +'\',\''+ i +'\')">ดูรายละเอียด</div></div>';
         str += '</div><div class="clr"></div>';
 

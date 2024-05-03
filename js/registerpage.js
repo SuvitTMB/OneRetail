@@ -119,6 +119,7 @@ function CheckUserProfile(x) {
         XP_Point: 0,
         RP_Point: 0,
         QS_Point: 0,
+        COIN_Point: 0,
         PulseRatio: 0,
         PulseScore: 0,
         PulseCount: 0,

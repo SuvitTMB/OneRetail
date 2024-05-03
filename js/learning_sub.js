@@ -10,6 +10,7 @@ $(document).ready(function () {
   console.log(MainGroupID+"==="+SubGroupID);
   Connect_DB();
   GetMainGroup();
+  GetAllRead();
     //alert(MainGroupID);
   LoadGroupVDO();
   //document.getElementByID("M1").remove("active");
@@ -26,6 +27,22 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+
+function GetAllRead() {
+  var i = 0;
+  var str = "";
+  ReadMemberArr = [];
+  ReadUserArr = [];
+  dbCheckAllRead.where('LineID','==',sessionStorage.getItem("LineID"))
+  //.where('RefID','==',EidVDOID)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      ReadUserArr.push({ RefID: doc.data().RefID, ReadDate: doc.data().ReadDate, ID: doc.id });
+    });    
+  });
+}
+
 
 
 function GetMainGroup() {
@@ -48,36 +65,23 @@ function GetMainGroup() {
 
 
 function LoadGroupVDO() {
-/*
-  if(parseFloat(MainGroupID)==1) {
-    $('#M1').addClass("active");
-    $('#M2').removeClass();
-    $('#M3').removeClass();
-    $('#M4').removeClass();
-  } else if(parseFloat(MainGroupID)==4) {
-    $('#M1').removeClass();
-    $('#M2').addClass("active");
-    $('#M3').removeClass();
-    $('#M4').removeClass();
-  } else if(parseFloat(MainGroupID)==3) {
-    $('#M1').removeClass();
-    $('#M2').removeClass();
-    $('#M3').addClass("active");
-    $('#M4').removeClass();
-  } else if(parseFloat(MainGroupID)==2) {
-    $('#M1').removeClass();
-    $('#M2').removeClass();
-    $('#M3').removeClass();
-    $('#M4').addClass("active");
-  }
-  */
   var str = "";
   dbVDOTraining.where('VDOmain','==',parseFloat(MainGroupID))
   .where('VDOgroup','==',parseFloat(SubGroupID))
   .orderBy('VDOrank','desc')
   .get().then((snapshot)=> {
   snapshot.forEach(doc=> {
-      str += '<div class="story-box" onclick="ViewGroup(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+      const results = ReadUserArr.filter(obj => {return obj.RefID === doc.id;});
+      if(results[0]!=undefined) { 
+        xResults = results[0].RefID;
+        str += '<div class="story-box" onclick="ViewGroup(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+        //str += '<div class="story-box" onclick="ViewStory(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+      } else {
+        //console.log("---");
+        str += '<div class="story-box grayscale" onclick="ViewGroup(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+        //str += '<div class="story-box grayscale" onclick="ViewStory(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+      }
+
       if(doc.data().VDOimg=="") {
         str += '<div class="learning-box-img"><div><img src="clipvdo.jpg" class="learning-box-box-img-in"></div>';
         str += '<div>เวลา 02:40 นาที</div></div>';

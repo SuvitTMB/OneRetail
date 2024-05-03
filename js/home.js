@@ -3,7 +3,7 @@ $(document).ready(function () {
   if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
   Connect_DB();
   //console.log(thistoday);
-  //console.log(sessionStorage.getItem("CheckDonePulse"));
+  console.log(sessionStorage.getItem("COIN_Point"));
   CheckDatePulse();
   LoadSlider();
 });

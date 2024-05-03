@@ -1,15 +1,34 @@
-var MainGroupID = 6;
+var MainGroupID = 1;
+var SubGroupID = 0;
 var ReadMemberArr = [];
 var ReadVdoArr = [];
+//$("#DisplayGroup").html(str);
 
 
 $(document).ready(function () {
-  if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
+  if(sessionStorage.getItem("LineID")==null || sessionStorage.getItem("LineID")==null) { location.href = "vdo.html"; }
+  //MainGroupID = getParameterByName('gid');
+  SubGroupID = getParameterByName('sid');
   Connect_DB();
   GetAllVDO();
   GetAllRead();
+
+  //LoadSlider();
+  GetMainGroup();
   LoadGroupVDO();
 });
+
+
+function getParameterByName(name, url) {
+  str = '';
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
 
 function GetAllVDO() {
@@ -44,6 +63,27 @@ function GetAllRead() {
     snapshot.forEach(doc=> {
       ReadUserArr.push({ RefID: doc.data().RefID, ReadDate: doc.data().ReadDate, ID: doc.id });
     });    
+  });
+}
+
+
+
+function GetMainGroup() {
+  var str = "";
+  dbVDOGroup
+  .where('VDOmain','==',parseFloat(MainGroupID))
+  .where('VDOgroup','==',parseFloat(SubGroupID))
+  .limit(1)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      str += '<div class="story-box-text-head">'+ doc.data().VDOname +'</div>';
+      str += '<div class="story-box-text-sub" style="height: auto;margin-top:6px;">'+ doc.data().VDOdetail +'</div>';
+      str += '<div class="entry-meta" style="margin-top:6px;"><ul>';
+      str += '<li class="d-flex align-items-center"><i class="icofont-alarm"></i>'+ parseFloat(doc.data().VDOitem) +' Clip</li>';
+      //str += '<li class="d-flex align-items-center"><i class="icofont-like"></i>'+ parseFloat(doc.data().VVDOclick) +' Read</li>';
+      str += '</ul></div>';
+    });
+    $("#DisplayMainGroup").html(str);
   });
 }
 
@@ -95,48 +135,51 @@ function LoadSlider() {
   $("#DisplaySlider").html(str);
 }
 
-
 function LoadGroupVDO() {
   var str = "";
-  dbVDOTraining.where('VDOmain','==',parseFloat(MainGroupID))
+  dbVDOTraining
+  .where('VDOmain','==',parseFloat(MainGroupID))
   .where('VDOstatus','==',0)
+  //.where('VDOgroup','==',parseFloat(SubGroupID))
   .orderBy('VDOrank','desc')
   .get().then((snapshot)=> {
   snapshot.forEach(doc=> {
       const results = ReadUserArr.filter(obj => {return obj.RefID === doc.id;});
       if(results[0]!=undefined) { 
         xResults = results[0].RefID;
-        //console.log(xResults);
-        str += '<div class="story-box" onclick="ViewStory(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+        str += '<div class="story-box" onclick="ViewGroup(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+        //str += '<div class="story-box" onclick="ViewStory(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
       } else {
         //console.log("---");
-        str += '<div class="story-box grayscale" onclick="ViewStory(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+        str += '<div class="story-box grayscale" onclick="ViewGroup(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
+        //str += '<div class="story-box grayscale" onclick="ViewStory(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
       }
 
-      //str += '<div class="story-box" onclick="ViewStory(\''+ MainGroupID +'\',\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
-      if(doc.data().VDOimg=="") { 
-        str += '<div class="story-box-img"><div><img src="./clip/SecretSauce-00.jpg" class="story-box-img-in"></div>';
+      if(doc.data().VDOimg=="") {
+        str += '<div class="learning-box-img"><div><img src="clipvdo.jpg" class="learning-box-box-img-in"></div>';
+        str += '<div>เวลา 02:40 นาที</div></div>';
       } else {
-        str += '<div class="story-box-img"><div><img src="'+ doc.data().VDOimg +'" class="story-box-img-in"></div>';
+        str += '<div class="learning-box-img"><div><img src="'+ doc.data().VDOimg +'" class="learning-box-box-img-in"></div>';
+        str += '<div class="VDO-timer">'+ toHHMMSS(doc.data().VDOtimer) +' นาที</div></div>';
       }
-      str += '<div class="VDO-timer-clip">'+ toHHMMSS(doc.data().VDOtimer) +' นาที</div></div>';
-      str += '<div class="story-box-text"><div style="height: 50px;">';
-      str += '<div class="story-box-text-head">'+ doc.data().VDOname +'</div>';
-      str += '<div class="story-box-text-sub">'+ doc.data().VDOdetail +'</div>';
-      str += '</div><div class="entry-meta">';
-      str += '<ul><li class="d-flex align-items-center"><i class="icofont-alarm"></i>'+ doc.data().VDOread +' Read</li>';
-      str += '<li class="d-flex align-items-center"><i class="icofont-like"></i>'+ doc.data().VDOlike +' Like</li>';
-      str += '<li class="d-flex align-items-center"><i class="icofont-comment"></i>'+ doc.data().VDOcomment +' Comment</li>';
-      str += '</ul></div></div></div>';
+      str += '<div class="learning-box-text"><div style="height: 50px;">';
+      str += '<div class="story-box-text-head">'+ doc.data().VDOname +'</div><div class="story-box-text-sub">'+ doc.data().VDOdetail +'</div></div>';
+      str += '<div class="entry-meta" style="padding-top:3px;"><ul><li class="d-flex align-items-center"><i class="icofont-alarm"></i>'+ doc.data().VDOread +' Read</li>';
+      str += '<li class="d-flex align-items-center"><i class="icofont-comment"></i>'+ doc.data().VDOcomment +' Comment</li></ul>';
+      str += '</div></div></div>';
     });
+    //document.getElementById('loading').style.display='none';
     $("#DisplayGroup").html(str);
-    document.getElementById('loading').style.display='none';
-    document.getElementById('home').style.display='block';
   });
 }
 
-function ViewStory(gid) {
-  location.href = "displayclip.html?gid="+gid;
+function ViewGroup(gid) {
+  location.href = "showclip.html?gid="+gid;
+  //console.log(gid);
+}
+
+function ViewClip(refid) {
   //console.log(refid);
+  location.href = "showclip.html?gid="+refid;
 }
 

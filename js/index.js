@@ -1,1 +1,676 @@
-var _0x4e25c1=_0x4f75;(function(_0x488a69,_0x2e6bb2){var _0x1e70de=_0x4f75,_0x5539e6=_0x488a69();while(!![]){try{var _0x1fd59d=parseInt(_0x1e70de(0x1fd))/0x1+parseInt(_0x1e70de(0x24d))/0x2+parseInt(_0x1e70de(0x23d))/0x3+parseInt(_0x1e70de(0x1f1))/0x4*(parseInt(_0x1e70de(0x1f6))/0x5)+-parseInt(_0x1e70de(0x1c8))/0x6+parseInt(_0x1e70de(0x24a))/0x7+parseInt(_0x1e70de(0x20e))/0x8*(-parseInt(_0x1e70de(0x215))/0x9);if(_0x1fd59d===_0x2e6bb2)break;else _0x5539e6['push'](_0x5539e6['shift']());}catch(_0x39e6e8){_0x5539e6['push'](_0x5539e6['shift']());}}}(_0x224d,0xa9de9));var xProfile='',gProfile='',xEmpID='',AA=0x0,xCountIN=0x0;xHeaderNews=_0x4e25c1(0x248),xHeaderLog='รับรางวัลจากการเข้าร่วมกิจกรรม\x2030\x20วันแรก',xHeaderPoint=0x1,$(document)[_0x4e25c1(0x1fa)](function(){main();});async function main(){var _0x57ef61=_0x4e25c1;await liff['init']({'liffId':_0x57ef61(0x1dc)}),document['getElementById'](_0x57ef61(0x242))[_0x57ef61(0x1ef)](liff[_0x57ef61(0x242)]()),liff[_0x57ef61(0x242)]()?getUserProfile():liff['login']();}async function getUserProfile(){var _0x5242e6=_0x4e25c1,_0x1ed378='',_0x5ba817='';const _0x4c8795=await liff['getProfile']();sessionStorage[_0x5242e6(0x1db)](_0x5242e6(0x249),_0x4c8795[_0x5242e6(0x1f2)]),sessionStorage['setItem'](_0x5242e6(0x210),_0x4c8795[_0x5242e6(0x219)]),sessionStorage[_0x5242e6(0x1db)](_0x5242e6(0x245),_0x4c8795[_0x5242e6(0x1f3)]),_0x1ed378+='<div><img\x20src=\x22'+sessionStorage[_0x5242e6(0x1fb)]('LinePicture')+_0x5242e6(0x212),_0x1ed378+=_0x5242e6(0x1e2)+sessionStorage[_0x5242e6(0x1fb)](_0x5242e6(0x210))+_0x5242e6(0x1d8),_0x5ba817+=_0x5242e6(0x24e)+sessionStorage[_0x5242e6(0x1fb)]('LineName')+'</div>',xProfile=_0x1ed378,gProfile=_0x4c8795[_0x5242e6(0x1f3)],$(_0x5242e6(0x22c))[_0x5242e6(0x1df)](_0x1ed378),$(_0x5242e6(0x241))[_0x5242e6(0x1df)](_0x5ba817),Connect_DB(),CheckData();}function openWindow(){var _0x386476=_0x4e25c1;liff[_0x386476(0x20b)]({'url':_0x386476(0x1f9),'external':!![]});}var CheckFoundData=0x0,NewJointoDay=0x0,xDateToDay='';function CheckData(){var _0x1227fc=_0x4e25c1;dbProfile[_0x1227fc(0x1da)]('LineID','==',sessionStorage[_0x1227fc(0x1fb)]('LineID'))[_0x1227fc(0x1c7)]()[_0x1227fc(0x21d)](_0x5c53b9=>{var _0x21aa49=_0x1227fc;_0x5c53b9[_0x21aa49(0x244)](_0x1af2cf=>{var _0x1b37d5=_0x21aa49;CheckFoundData=0x1,EidProfile=_0x1af2cf['id'],xEmpID=_0x1af2cf['data']()[_0x1b37d5(0x21c)],xCountIN=_0x1af2cf[_0x1b37d5(0x1d4)]()['CountIN'],CheckUserProfile(_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x21c)]),sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x1cb),_0x1af2cf[_0x1b37d5(0x1d4)]()['EmpName']),sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x217),_0x1af2cf['id']),sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x23b),_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x230)]),sessionStorage['setItem'](_0x1b37d5(0x218),_0x1af2cf[_0x1b37d5(0x1d4)]()['EmpAddress']),sessionStorage['setItem'](_0x1b37d5(0x235),_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x235)]),sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x22b),_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x22b)]),sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x21f),_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x21f)]),sessionStorage['setItem'](_0x1b37d5(0x238),_0x1af2cf[_0x1b37d5(0x1d4)]()['XP_Point']),sessionStorage[_0x1b37d5(0x1db)]('RP_Point',_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x22d)]),sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x1d3),_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x1d3)]),sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x1d6),_0x1af2cf['data']()['PulseCount']),sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x237),_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x1eb)]),sessionStorage[_0x1b37d5(0x1db)]('PulseRatio',_0x1af2cf['data']()['PulseRatio']);_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x1c4)]==0x1&&sessionStorage[_0x1b37d5(0x1db)](_0x1b37d5(0x1c4),_0x1af2cf['id']);xDateToDay=_0x1af2cf['data']()[_0x1b37d5(0x246)];if(_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x21f)]==0x1&&_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x238)]>=0x64)NextLevelUP(0x2);else{if(_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x21f)]==0x2&&_0x1af2cf[_0x1b37d5(0x1d4)]()[_0x1b37d5(0x238)]>=0x12c)NextLevelUP(0x3);else{if(_0x1af2cf['data']()[_0x1b37d5(0x21f)]==0x3&&_0x1af2cf[_0x1b37d5(0x1d4)]()['XP_Point']>=0x258)NextLevelUP(0x4);else _0x1af2cf['data']()[_0x1b37d5(0x21f)]==0x4&&_0x1af2cf['data']()[_0x1b37d5(0x238)]>=0x3e8&&NextLevelUP(0x5);}}_0x1af2cf[_0x1b37d5(0x1d4)]()['JoinTime']==0x0&&FirstTimeMember();}),CheckFoundData==0x0?(document[_0x21aa49(0x23f)](_0x21aa49(0x1ee))[_0x21aa49(0x213)]['display']='none',document[_0x21aa49(0x23f)](_0x21aa49(0x1ce))['style']['display']=_0x21aa49(0x1e0),document[_0x21aa49(0x23f)](_0x21aa49(0x1c5))['style'][_0x21aa49(0x1ff)]=_0x21aa49(0x205)):CheckDatePulse();});}function _0x4f75(_0xd59685,_0x5f0c95){var _0x224ddd=_0x224d();return _0x4f75=function(_0x4f7532,_0x6263ee){_0x4f7532=_0x4f7532-0x1c4;var _0x460651=_0x224ddd[_0x4f7532];return _0x460651;},_0x4f75(_0xd59685,_0x5f0c95);}function CheckDatePulse(){var _0x1d2ee5=_0x4e25c1,_0x49a99b='',_0x3d218d=0x0;dbPulseDate[_0x1d2ee5(0x1da)](_0x1d2ee5(0x229),'==',thistoday)[_0x1d2ee5(0x1da)](_0x1d2ee5(0x234),'==',sessionStorage[_0x1d2ee5(0x1fb)]('xTeamGroup'))[_0x1d2ee5(0x1c7)]()[_0x1d2ee5(0x21d)](_0x10c98d=>{var _0x1dba24=_0x1d2ee5;_0x10c98d[_0x1dba24(0x244)](_0xbf1490=>{_0x3d218d=0x1,CheckDoneSurvey();}),_0x3d218d==0x0&&(sCountTimeJoin>0x1e&&setInterval(GotoHome,0x7d0));});}var xPulsetoday=0x0;function CheckLoad(){var _0x200f66=_0x4e25c1;dbPulseDate[_0x200f66(0x1da)](_0x200f66(0x229),'==',thistoday)['where'](_0x200f66(0x234),'==',sessionStorage[_0x200f66(0x1fb)]('xTeamGroup'))['get']()[_0x200f66(0x21d)](_0x511e46=>{var _0x316ca5=_0x200f66;_0x511e46[_0x316ca5(0x244)](_0x35f51c=>{xPulsetoday=0x1,CheckLoadRound2();});});}function CheckLoadRound2(){var _0x438c34=_0x4e25c1,_0x345659=0x0;dbUserSurvey['where'](_0x438c34(0x229),'==',thistoday)[_0x438c34(0x1da)](_0x438c34(0x249),'==',sessionStorage[_0x438c34(0x1fb)]('LineID'))[_0x438c34(0x1ea)](0x1)['get']()[_0x438c34(0x21d)](_0x49680e=>{var _0x197d8f=_0x438c34;_0x49680e[_0x197d8f(0x244)](_0x5c69f8=>{_0x345659=0x1,xPulsetoday=0x0;}),xPulsetoday=0x0;});}function CheckDoneSurvey(){var _0x166de4=_0x4e25c1,_0x2c73c9='',_0xeed875=0x0;sessionStorage[_0x166de4(0x1db)](_0x166de4(0x226),0x0),dbUserSurvey['where']('PulseDate','==',thistoday)[_0x166de4(0x1da)](_0x166de4(0x249),'==',sessionStorage[_0x166de4(0x1fb)](_0x166de4(0x249)))[_0x166de4(0x1ea)](0x1)[_0x166de4(0x1c7)]()[_0x166de4(0x21d)](_0x54e150=>{var _0x3ccc9b=_0x166de4;_0x54e150[_0x3ccc9b(0x244)](_0x164d46=>{var _0x11cc77=_0x3ccc9b;_0xeed875=0x1,sessionStorage[_0x11cc77(0x1db)]('CheckDonePulse',0x1),GotoHome();}),_0xeed875==0x0&&GotoSurvey();});}var xCheckOut=0x0;function CheckUserProfile(_0x34e51b){var _0x1f6d57=_0x4e25c1;dbCheckMember[_0x1f6d57(0x1da)](_0x1f6d57(0x1fc),'==',parseFloat(_0x34e51b))[_0x1f6d57(0x1da)](_0x1f6d57(0x227),'in',[_0x1f6d57(0x201),_0x1f6d57(0x1e5),_0x1f6d57(0x1c9),_0x1f6d57(0x209),'CALO'])[_0x1f6d57(0x1c7)]()['then'](_0x5c708d=>{var _0x1438a6=_0x1f6d57;_0x5c708d[_0x1438a6(0x244)](_0x2cd542=>{var _0x5ec01c=_0x1438a6;xCheckOut=0x1,sessionStorage[_0x5ec01c(0x1db)](_0x5ec01c(0x23c),_0x34e51b),_0x2cd542[_0x5ec01c(0x1d4)]()[_0x5ec01c(0x227)]==_0x5ec01c(0x202)?sessionStorage[_0x5ec01c(0x1db)](_0x5ec01c(0x234),_0x5ec01c(0x1ed)):sessionStorage[_0x5ec01c(0x1db)](_0x5ec01c(0x234),_0x5ec01c(0x1cd)),sessionStorage[_0x5ec01c(0x1db)](_0x5ec01c(0x1f7),_0x2cd542['data']()['xBranch']),sessionStorage[_0x5ec01c(0x1db)](_0x5ec01c(0x21b),_0x2cd542[_0x5ec01c(0x1d4)]()[_0x5ec01c(0x21b)]),sessionStorage[_0x5ec01c(0x1db)](_0x5ec01c(0x225),_0x2cd542[_0x5ec01c(0x1d4)]()[_0x5ec01c(0x225)]),sessionStorage[_0x5ec01c(0x1db)]('xChief_th',_0x2cd542[_0x5ec01c(0x1d4)]()[_0x5ec01c(0x1e8)]),sessionStorage['setItem']('xChief_eng',_0x2cd542[_0x5ec01c(0x1d4)]()['xChief_eng']),sessionStorage['setItem'](_0x5ec01c(0x1ca),_0x2cd542['data']()[_0x5ec01c(0x1ca)]),xCountIN=parseFloat(xCountIN)+0x1,dbProfile[_0x5ec01c(0x1d9)](EidProfile)[_0x5ec01c(0x1e3)]({'Linename':sessionStorage[_0x5ec01c(0x1fb)](_0x5ec01c(0x210)),'LinePicture':sessionStorage[_0x5ec01c(0x1fb)](_0x5ec01c(0x245)),'CountIN':xCountIN,'EmpCheckIN':xCountIN,'xTeamGroup':sessionStorage[_0x5ec01c(0x1fb)]('xTeamGroup'),'xBranch':sessionStorage[_0x5ec01c(0x1fb)](_0x5ec01c(0x1f7)),'xDepartment':sessionStorage[_0x5ec01c(0x1fb)](_0x5ec01c(0x21b)),'xGroup':sessionStorage['getItem']('xGroup'),'xChief_th':sessionStorage[_0x5ec01c(0x1fb)]('xChief_th'),'xChief_eng':sessionStorage[_0x5ec01c(0x1fb)](_0x5ec01c(0x227)),'xPosition':sessionStorage['getItem'](_0x5ec01c(0x1ca))}),UpdatePorfile(),thistoday!=xDateToDay?CheckDateIn():CheckPulseSurvey();}),xCheckOut==0x0&&(document[_0x1438a6(0x23f)](_0x1438a6(0x1ee))[_0x1438a6(0x213)][_0x1438a6(0x1ff)]='none',document[_0x1438a6(0x23f)](_0x1438a6(0x1ce))[_0x1438a6(0x213)][_0x1438a6(0x1ff)]=_0x1438a6(0x205));});}var sCountTimeJoin=0x0,sGetRewards=0x0,xCheckDate=0x0;function CheckDateIn(){var _0x53c608=_0x4e25c1;CheckLoad();var _0x57c0a8='',_0x24e0f9='';dbProfile['where'](_0x53c608(0x21c),'==',sessionStorage[_0x53c608(0x1fb)](_0x53c608(0x23c)))[_0x53c608(0x1ea)](0x1)[_0x53c608(0x1c7)]()[_0x53c608(0x21d)](_0x1b1858=>{var _0x193a49=_0x53c608;_0x1b1858[_0x193a49(0x244)](_0xf83c75=>{var _0x119ade=_0x193a49;sessionStorage['setItem']('XP_Point',_0xf83c75[_0x119ade(0x1d4)]()[_0x119ade(0x238)]),sessionStorage[_0x119ade(0x1db)](_0x119ade(0x22d),_0xf83c75['data']()['RP_Point']);if(thistoday!=_0xf83c75[_0x119ade(0x1d4)]()[_0x119ade(0x246)]){xCheckDate=0x1,sCountTimeJoin=parseFloat(_0xf83c75[_0x119ade(0x1d4)]()[_0x119ade(0x22b)])+0x1,dbProfile[_0x119ade(0x1d9)](EidProfile)[_0x119ade(0x1e3)]({'DateToDay':thistoday,'JoinTime':sCountTimeJoin,'LastCheckIN':dateString});if(sCountTimeJoin<0x1f)xHeaderNews=_0x119ade(0x248),xHeaderLog=_0x119ade(0x231),xHeaderPoint=0x1,Runloop(),document[_0x119ade(0x23f)](_0x119ade(0x1f0))[_0x119ade(0x213)][_0x119ade(0x1ff)]='block',sCountTimeJoin==0x1e&&(_0x24e0f9+=_0x119ade(0x203),_0x24e0f9+='<div><img\x20src=\x22img/register.png\x22\x20style=\x22width:250px;padding-top:4px;\x20padding-bottom:\x2015px;\x22></div>',_0x24e0f9+='<div\x20style=\x22font-size:14px;line-height:1.1;margin-top:20px;\x22>ยินดีด้วยคุณทำภารกิจสำเร็จ<br><b>ภารกิจเข้าร่วมกิจกรรมครบ\x2030\x20วัน</b><br>กดยืนยันการรับของรางวัลของคุณ</div>',_0x24e0f9+=_0x119ade(0x1dd),_0x24e0f9+=_0x119ade(0x204),_0x24e0f9+=_0x119ade(0x24f),$(_0x119ade(0x207))[_0x119ade(0x1df)](_0x24e0f9),document[_0x119ade(0x23f)](_0x119ade(0x1d7))[_0x119ade(0x213)][_0x119ade(0x1ff)]=_0x119ade(0x205));else{if(sCountTimeJoin<=0x3c)sTarget=0x3c,sPoint=0xf;else{if(sCountTimeJoin<=0x5a)sTarget=0x5a,sPoint=0x14;else{if(sCountTimeJoin<=0x78)sTarget=0x78,sPoint=0x1e;else{if(sCountTimeJoin<=0x96)sTarget=0x96,sPoint=0x28;else{if(sCountTimeJoin<=0xb4)sTarget=0xb4,sPoint=0x32;else sCountTimeJoin<=0x168&&(sTarget=0x168,sPoint=0x64);}}}}if(sCountTimeJoin==0x3c)sGetRewards=0xf,GetJoinPoint(0x3c,0xf);else{if(sCountTimeJoin==0x5a)sGetRewards=0x14,GetJoinPoint(0x5a,0x14);else{if(sCountTimeJoin==0x78)sGetRewards=0x1e,GetJoinPoint(0x78,0x1e);else{if(sCountTimeJoin==0x96)sGetRewards=0x28,GetJoinPoint(0x96,0x28);else{if(sCountTimeJoin==0xb4)sGetRewards=0x32,GetJoinPoint(0xb4,0x32);else sCountTimeJoin==0x168&&(sGetRewards=0x64,GetJoinPoint(0x168,0x64));}}}}_0x57c0a8+=_0x119ade(0x20a),_0x57c0a8+=_0x119ade(0x223),_0x57c0a8+=_0x119ade(0x22e),_0x57c0a8+=_0x119ade(0x224),_0x57c0a8+=_0x119ade(0x243)+sCountTimeJoin+'</div>วัน</div>',_0x57c0a8+=_0x119ade(0x1de)+(sTarget-sCountTimeJoin)+'</div>วัน</div>',_0x57c0a8+='<div\x20class=\x22box-target\x22>เพื่อรับ<div\x20class=\x22box-target-number\x22>'+sPoint+_0x119ade(0x22f),_0x57c0a8+=_0x119ade(0x1d8),_0x57c0a8+=_0x119ade(0x1e6),$(_0x119ade(0x222))['html'](_0x57c0a8),document[_0x119ade(0x23f)](_0x119ade(0x1fe))[_0x119ade(0x213)][_0x119ade(0x1ff)]=_0x119ade(0x205);}}});});}function Runloop(){var _0x3d949d=_0x4e25c1;NewDate();var _0x262277=Math['round'](Date[_0x3d949d(0x20c)]()/0x3e8),_0x1a8ac6=0x1,_0x14b2b5='',_0x3d5680=0x1e,_0x2b8cdc=sCountTimeJoin*0x64/_0x3d5680;_0x14b2b5+='<div\x20class=\x22text-header\x22\x20style=\x22margin-top:14px;\x20font-size:15px;\x20color:#002d63;\x20font-weight:\x20600;\x22><span\x20class=\x22header1\x22>Mission</span>\x20<span\x20class=\x22header2\x22>Reward</span><br><span>ภารกิจเข้าร่วมกิจกรรมครบ\x2030\x20วัน</span></div>',_0x14b2b5+='<div\x20class=\x22font10b\x22>ผู้เข้าร่วมกิจกรรมครบ\x2030\x20วันรับของรางวัลพิเศษ\x20(จำนวน\x20300\x20รางวัล)</div>',_0x14b2b5+=_0x3d949d(0x211)+parseFloat(_0x2b8cdc)[_0x3d949d(0x1e1)](0x0)+_0x3d949d(0x1d1)+parseFloat(_0x2b8cdc)['toFixed'](0x0)+_0x3d949d(0x1d5),_0x14b2b5+=_0x3d949d(0x1cc),AddUserLog(),sessionStorage[_0x3d949d(0x1db)](_0x3d949d(0x238),parseFloat(sessionStorage[_0x3d949d(0x1fb)]('XP_Point'))+parseFloat(_0x1a8ac6)),sessionStorage['setItem'](_0x3d949d(0x22d),parseFloat(sessionStorage['getItem']('RP_Point'))+parseFloat(_0x1a8ac6)),dbProfile[_0x3d949d(0x1d9)](EidProfile)['update']({'LastUpdate':dateString,'XP_Point':parseFloat(sessionStorage[_0x3d949d(0x1fb)](_0x3d949d(0x238))),'RP_Point':parseFloat(sessionStorage[_0x3d949d(0x1fb)](_0x3d949d(0x22d)))});for(let _0x1a7b33=0x0;_0x1a7b33<_0x3d5680;_0x1a7b33++){sCountTimeJoin>=_0x1a7b33+0x1?_0x14b2b5+='<div\x20id='+(_0x1a7b33+0x1)+_0x3d949d(0x233)+(_0x1a7b33+0x1)+_0x3d949d(0x239):_0x14b2b5+='<div\x20id='+(_0x1a7b33+0x1)+_0x3d949d(0x228)+(_0x1a7b33+0x1)+_0x3d949d(0x239);}xPulsetoday==0x1?_0x14b2b5+=_0x3d949d(0x216):_0x14b2b5+='<div\x20class=\x22btn-blue\x22\x20onclick=\x22GotoHome()\x22\x20style=\x22margin-top:20px;\x22>ไปหน้าหลัก</div>',$('#LoopDay')[_0x3d949d(0x1df)](_0x14b2b5);}function FirstTimeMember(){var _0x486d1a=_0x4e25c1;NewDate();var _0x26a7b9=Math[_0x486d1a(0x22a)](Date[_0x486d1a(0x20c)]()/0x3e8),_0x40f6fc=[0x5,0x6,0x7,0x8,0x9,0xa,0xb,0xc,0xd,0xe,0xf],_0x43bed6=random_item(_0x40f6fc);dbProfile['doc'](EidProfile)['update']({'Level_Point':0x1,'JoinTime':0x1,'XP_Point':parseFloat(_0x43bed6),'RP_Point':parseFloat(_0x43bed6),'QS_Point':0x0,'LogDateTime':dateString,'LastUpdate':dateString,'DateToDay':datetoday,'LogTimeStamp':_0x26a7b9}),sessionStorage[_0x486d1a(0x1db)](_0x486d1a(0x21f),0x1),sessionStorage['setItem'](_0x486d1a(0x238),parseFloat(_0x43bed6)),sessionStorage[_0x486d1a(0x1db)](_0x486d1a(0x22d),parseFloat(_0x43bed6)),sessionStorage[_0x486d1a(0x1db)](_0x486d1a(0x1d3),0x0),WelcomePoint(),dbLoginlog['add']({'LineID':sessionStorage[_0x486d1a(0x1fb)]('LineID'),'LineName':sessionStorage['getItem']('LineName'),'LinePicture':sessionStorage[_0x486d1a(0x1fb)]('LinePicture'),'EmpID':xEmpID,'EmpName':sessionStorage[_0x486d1a(0x1fb)](_0x486d1a(0x1cb)),'LogDate':dateString,'LogTimeStamp':_0x26a7b9});var _0x2877df=_0x486d1a(0x1cf);dbUserlog[_0x486d1a(0x247)]({'LineID':sessionStorage['getItem'](_0x486d1a(0x249)),'LineName':sessionStorage['getItem'](_0x486d1a(0x210)),'LinePicture':sessionStorage[_0x486d1a(0x1fb)]('LinePicture'),'EmpID':xEmpID,'EmpName':sessionStorage['getItem'](_0x486d1a(0x1cb)),'RefID':EidProfile,'NewsGroup':0x0,'HeadNews':_0x486d1a(0x1f4),'SubNews':_0x2877df,'GetPoint':parseFloat(_0x43bed6),'LastPoint':parseFloat(sessionStorage[_0x486d1a(0x1fb)](_0x486d1a(0x238))),'LogDate':dateString,'LogTimeStamp':_0x26a7b9});}function WelcomePoint(){var _0x3d7eb5=_0x4e25c1;document[_0x3d7eb5(0x23f)](_0x3d7eb5(0x23e))[_0x3d7eb5(0x213)][_0x3d7eb5(0x1ff)]=_0x3d7eb5(0x205);var _0x472b5d='';_0x472b5d+='<div\x20class=\x22textheader\x22\x20style=\x22margin-top:14px;\x22>Welcome\x20Point</div>',_0x472b5d+=_0x3d7eb5(0x20d),_0x472b5d+='<div\x20class=\x22clr\x22></div>',_0x472b5d+='<div><img\x20src=\x22./point/coin-'+sessionStorage[_0x3d7eb5(0x1fb)]('XP_Point')+_0x3d7eb5(0x23a),_0x472b5d+=_0x3d7eb5(0x1c6),$(_0x3d7eb5(0x240))['html'](_0x472b5d);}function UpdatePorfile(){var _0x51c324=_0x4e25c1;NewDate();var _0x4bbb21=Math[_0x51c324(0x22a)](Date['now']()/0x3e8);dbProfile['doc'](EidProfile)[_0x51c324(0x1e3)]({'EmpPicture':sessionStorage['getItem'](_0x51c324(0x245)),'Linename':sessionStorage[_0x51c324(0x1fb)](_0x51c324(0x210))}),dbLoginlog[_0x51c324(0x247)]({'LineID':sessionStorage['getItem'](_0x51c324(0x249)),'LineName':sessionStorage[_0x51c324(0x1fb)](_0x51c324(0x210)),'LinePicture':sessionStorage[_0x51c324(0x1fb)](_0x51c324(0x245)),'EmpID':sessionStorage[_0x51c324(0x1fb)](_0x51c324(0x23c)),'EmpName':sessionStorage[_0x51c324(0x1fb)](_0x51c324(0x1cb)),'xTeamGroup':sessionStorage[_0x51c324(0x1fb)](_0x51c324(0x234)),'LogDate':dateString,'LogTimeStamp':_0x4bbb21});}function CheckPulseSurvey(){var _0x3496de=_0x4e25c1;dbPulseDate[_0x3496de(0x1da)](_0x3496de(0x229),'==',thistoday)[_0x3496de(0x1da)](_0x3496de(0x234),'==',sessionStorage[_0x3496de(0x1fb)]('xTeamGroup'))['limit'](0x1)['get']()[_0x3496de(0x21d)](_0x571934=>{var _0x3d9d79=_0x3496de;_0x571934[_0x3d9d79(0x244)](_0x312c89=>{CheckDoneSurvey();}),GotoHome();});}function GetJoinPoint(_0x221de1,_0x206b3b){var _0x4579d6=_0x4e25c1,_0x5e1d10='';NewDate();var _0x42776f=Math[_0x4579d6(0x22a)](Date[_0x4579d6(0x20c)]()/0x3e8);sessionStorage[_0x4579d6(0x1db)](_0x4579d6(0x238),parseFloat(sessionStorage[_0x4579d6(0x1fb)](_0x4579d6(0x238)))+parseFloat(sGetRewards)),sessionStorage[_0x4579d6(0x1db)](_0x4579d6(0x22d),parseFloat(sessionStorage[_0x4579d6(0x1fb)](_0x4579d6(0x22d)))+parseFloat(sGetRewards));if(xCheckDate==0x1){var _0x1d7840=_0x4579d6(0x20f)+sGetRewards+_0x4579d6(0x1d0);dbUserlog[_0x4579d6(0x247)]({'LineID':sessionStorage[_0x4579d6(0x1fb)]('LineID'),'LineName':sessionStorage['getItem'](_0x4579d6(0x210)),'LinePicture':sessionStorage['getItem'](_0x4579d6(0x245)),'EmpID':sessionStorage[_0x4579d6(0x1fb)]('EmpID_Academy'),'EmpName':sessionStorage[_0x4579d6(0x1fb)](_0x4579d6(0x1cb)),'RefID':sessionStorage[_0x4579d6(0x1fb)](_0x4579d6(0x217)),'NewsGroup':0x0,'HeadNews':_0x4579d6(0x1f4),'SubNews':_0x1d7840,'GetPoint':parseFloat(sGetRewards),'LastPoint':parseFloat(sessionStorage[_0x4579d6(0x1fb)]('XP_Point')),'LogDate':dateString,'LogTimeStamp':_0x42776f}),dbProfile['doc'](EidProfile)[_0x4579d6(0x1e3)]({'XP_Point':parseFloat(sessionStorage[_0x4579d6(0x1fb)](_0x4579d6(0x238))),'RP_Point':parseFloat(sessionStorage[_0x4579d6(0x1fb)]('RP_Point')),'DateToDay':thistoday,'JoinTime':sCountTimeJoin});}_0x5e1d10+=_0x4579d6(0x220),_0x5e1d10+=_0x4579d6(0x24b),_0x5e1d10+=_0x4579d6(0x1f5)+_0x206b3b+_0x4579d6(0x21e),_0x5e1d10+='<div\x20style=\x22text-align:center;\x20padding:5px;\x22>จากการเข้าชมเว็บไซต์มาแล้ว\x20<b>'+_0x221de1+_0x4579d6(0x24c),_0x5e1d10+='</div>',$(_0x4579d6(0x1f8))[_0x4579d6(0x1df)](_0x5e1d10),document[_0x4579d6(0x23f)]('id04')[_0x4579d6(0x213)][_0x4579d6(0x1ff)]=_0x4579d6(0x205);}function NextLevelUP(_0x307a9f){var _0x4d3da1=_0x4e25c1;str='',xLevel=_0x307a9f,NewDate();var _0x29dd78=Math['round'](Date['now']()/0x3e8);console['log'](_0x4d3da1(0x236)+_0x307a9f);var _0xe919d9=0x5,_0x114738=_0x4d3da1(0x221)+_0x307a9f+'';sessionStorage['setItem'](_0x4d3da1(0x238),parseFloat(sessionStorage[_0x4d3da1(0x1fb)](_0x4d3da1(0x238)))+parseFloat(_0xe919d9)),sessionStorage[_0x4d3da1(0x1db)](_0x4d3da1(0x22d),parseFloat(sessionStorage['getItem'](_0x4d3da1(0x22d)))+parseFloat(_0xe919d9)),dbProfile[_0x4d3da1(0x1d9)](EidProfile)[_0x4d3da1(0x1e3)]({'XP_Point':parseFloat(sessionStorage[_0x4d3da1(0x1fb)]('XP_Point')),'RP_Point':parseFloat(sessionStorage['getItem']('RP_Point')),'Level_Point':_0x307a9f}),sessionStorage[_0x4d3da1(0x1db)]('Level_Point',_0x307a9f),dbUserlog[_0x4d3da1(0x247)]({'LineID':sessionStorage[_0x4d3da1(0x1fb)](_0x4d3da1(0x249)),'LineName':sessionStorage['getItem'](_0x4d3da1(0x210)),'LinePicture':sessionStorage[_0x4d3da1(0x1fb)]('LinePicture'),'EmpID':xEmpID,'EmpName':sessionStorage[_0x4d3da1(0x1fb)]('EmpName_Academy'),'RefID':EidProfile,'NewsGroup':0x0,'HeadNews':'Level\x20Up\x20'+_0x307a9f,'SubNews':_0x4d3da1(0x232)+_0xe919d9+_0x4d3da1(0x1e9),'GetPoint':parseFloat(_0xe919d9),'LastPoint':parseFloat(sessionStorage['getItem'](_0x4d3da1(0x238))),'LogDate':dateString,'LogTimeStamp':_0x29dd78}),str+=_0x4d3da1(0x1d2),str+=_0x4d3da1(0x206),str+=_0x4d3da1(0x20a),str+='<div\x20class=\x22font13\x22\x20style=\x22padding-top:5px;text-align:center;\x22>คุณได้รับเพิ่ม\x20'+_0xe919d9+_0x4d3da1(0x1e4)+_0x307a9f+_0x4d3da1(0x1d8),str+='<div\x20class=\x22clr\x22></div>',str+='<div\x20class=\x22btn-t2\x22\x20onclick=\x22GotoProfile()\x22\x20style=\x22margin-top:20px;\x22>ดูคะแนนของคุณ</div>',str+='<div\x20class=\x22btn-t2\x22\x20onclick=\x22CloseAll()\x22\x20style=\x22margin-top:20px;\x22>ปิดหน้าต่าง</div>',str+=_0x4d3da1(0x1c6),MyPointMenu(),$('#UserLevelUp')[_0x4d3da1(0x1df)](str),document[_0x4d3da1(0x23f)](_0x4d3da1(0x1ec))['style']['display']=_0x4d3da1(0x205);}function GetReward(){var _0xb4d17e=_0x4e25c1;alert(_0xb4d17e(0x200)),document['getElementById'](_0xb4d17e(0x1d7))[_0xb4d17e(0x213)][_0xb4d17e(0x1ff)]='none';}function GotoSurvey(){location['href']='pulsesurvey.html';}function GotoHome(){var _0x2154af=_0x4e25c1;location[_0x2154af(0x208)]=_0x2154af(0x214);}function GotoReload(){var _0x56b1b6=_0x4e25c1;location[_0x56b1b6(0x208)]='index.html';}function random_item(_0x4d6987){return _0x4d6987[Math['floor'](Math['random']()*_0x4d6987['length'])];}function OneStory(){var _0x1faac0=_0x4e25c1;document[_0x1faac0(0x23f)](_0x1faac0(0x21a))['style'][_0x1faac0(0x1ff)]=_0x1faac0(0x205);}function ClosePage6(){clearInterval(myInterval);}function OpenPage6(){}function _0x224d(){var _0x566b85=['NewMember','<div\x20style=\x22height:\x2015px;\x22></div>','get','7284390ReGstD','CRLG','xPosition','EmpName_Academy','<div\x20class=\x22clr\x22\x20style=\x22height:\x2010px;\x22></div>','Retail\x20Group','NoService','เข้าร่วมกิจกรรมครั้งแรก','\x20COIN','\x22\x20max=\x22100\x22\x20style=\x22--value:\x20','<div\x20class=\x22btn-t3\x22\x20style=\x22margin-top:10px;\x20min-width:220px;\x20background:#fff;\x22>คุณได้รับการปรับระดับผู้เล่น</div>','QS_Point','data',';\x20--max:\x20100;\x22></progress></div>','PulseCount','id06','</div>','doc','where','setItem','1657509542-4Mwmplqj','<div\x20class=\x22clr\x22></div>','<div\x20class=\x22box-target\x22>เหลืออีก<div\x20class=\x22box-target-number\x22>','html','none','toFixed','<div\x20class=\x22NameLine\x22>','update','\x20Coin<br>จากการปรับระดับของผู้เล่นเป็น\x20Level\x20','CRDG','<div\x20class=\x22btn-blue\x22\x20onclick=\x22GotoHome()\x22\x20style=\x22margin-top:20px;\x22>ไปหน้าหลัก</div>','id04','xChief_th','\x20Coin','limit','LogDateTime','id07','AL\x20Group','loading','append','id03','184PchLAm','userId','pictureUrl','Join\x20Website','<div\x20style=\x22text-align:center;\x20font-weight:\x20600;\x20color:#0056ff;\x22>','78665quYCxR','xBranch','#BoxTimeNewPoint','https://line.me','ready','getItem','xEmpID','1345174EsWQfz','id01','display','ยินยันการรับรางวัลเรียบร้อยแล้ว','CRSG','CALO','<div\x20class=\x22textheader\x22\x20style=\x22margin:\x2030px\x20auto;\x22>คุณทำภารกิจสำเร็จ</div>','<div\x20class=\x22btn-blue\x22\x20onclick=\x22GetReward()\x22>ยืนยันการรับของรางวัล</div>','block','<div><img\x20src=\x22./img/levelup.gif\x22\x20style=\x22padding-top:8px;width:100%;\x22></div>','#DisplayGetPoint','href','CTWPG','<div\x20style=\x22margin-top:15px;\x22>','openWindow','now','<div\x20class=\x22font13\x22\x20style=\x22margin-top:10px;\x20text-align:center;\x20padding:5px;\x20color:#0056ff;\x22>ยินดีด้วยคุณได้รับ\x20Coin\x20ครั้งแรก<br>จากการเข้าร่วมกิจกรรม\x20One\x20Retail\x20Society</div>','20129096GDoFQp','ได้รับ\x20','LineName','<div\x20class=\x22row-progress1\x22><progress\x20value=\x22','\x22\x20class=\x22show-profile\x22\x20width=\x22100px\x22></div>','style','home.html','9ERBeLn','<div\x20class=\x22btn-click\x22\x20onclick=\x22GotoSurvey()\x22\x20style=\x22margin-top:20px;\x22>ไปวัดอุณหภูมิความสุขกันเถอะ</div>','EmpRefID_Academy','EmpAddress_Academy','displayName','id02','xDepartment','EmpID','then','\x20Coin</div>','Level_Point','<div\x20style=\x22margin-top:25px;\x22>','Level\x20Up\x20','#BoxTimeLine','<div\x20class=\x22textheader\x22>การเดินทางของคุณ</div>','<div><img\x20src=\x22./img/waitting.png\x22\x20style=\x22width:80%;margin:30px\x20auto\x2020px\x20auto;\x22></div>','xGroup','CheckDonePulse','xChief_eng','\x20class=\x22LoopRadio\x22><img\x20src=\x22./icon/icons-diamond.png\x22\x20style=\x22width:34px;\x22><div\x20class=\x22LoopTextNumber\x22>','PulseDate','round','JoinTime','#MyProfile','RP_Point','<div><img\x20src=\x22img/one-logo.png\x22\x20style=\x22width:150px;\x22></div>','</div>POINT</div>','EmpPhone','รับรางวัลจากการเข้าร่วมกิจกรรม\x2030\x20วันแรก','Level\x20Up\x20รับ\x20','\x20class=\x22LoopRadio-Check\x22><img\x20src=\x22./icon/icons-diamondblue.png\x22\x20style=\x22width:34px;\x22><div\x20class=\x22LoopTextNumberblue\x22>','xTeamGroup','CountIN','Next\x20Level\x20=\x20','LastUpdate','XP_Point','</div></div>','.png\x22\x20style=\x22margin-top:10px;width:100%;border-radius:\x2015px;\x20background:#ffffff;\x22></div>','EmpPhone_Academy','EmpID_Academy','2496870UaiuxS','id05','getElementById','#BoxTimeGetPoint','#MyProfile-start','isLoggedIn','<div\x20class=\x22box-target\x22>เข้าเว็บแล้ว<div\x20class=\x22box-target-number\x22>','forEach','LinePicture','DateToDay','add','30\x20Days\x20Login','LineID','4764543jLRcHS','<div\x20style=\x22text-align:center;\x20padding:5px;\x22>ยินดีด้วยคุณได้รับ\x20COIN</div>','</b>\x20วัน</div>','1688312azImxV','<div\x20style=\x22color:#fff;\x20font-size:\x2013px;\x22>เริ่มต้นการเรียนรู้ของ</div><div\x20class=\x22NameLine\x22\x20style=\x22margin-top:5px;\x22>','<div\x20class=\x22clr\x22\x20style=\x22height:40px;\x22></div>','Admin_Web'];_0x224d=function(){return _0x566b85;};return _0x224d();}function CloseAll(){var _0x51abc2=_0x4e25c1;document[_0x51abc2(0x23f)](_0x51abc2(0x1fe))[_0x51abc2(0x213)][_0x51abc2(0x1ff)]=_0x51abc2(0x1e0),document['getElementById'](_0x51abc2(0x21a))[_0x51abc2(0x213)][_0x51abc2(0x1ff)]=_0x51abc2(0x1e0),document[_0x51abc2(0x23f)](_0x51abc2(0x1f0))['style'][_0x51abc2(0x1ff)]=_0x51abc2(0x1e0),document['getElementById'](_0x51abc2(0x1e7))[_0x51abc2(0x213)][_0x51abc2(0x1ff)]='none',document[_0x51abc2(0x23f)](_0x51abc2(0x23e))[_0x51abc2(0x213)][_0x51abc2(0x1ff)]=_0x51abc2(0x1e0),document[_0x51abc2(0x23f)]('id07')[_0x51abc2(0x213)][_0x51abc2(0x1ff)]=_0x51abc2(0x1e0);}
+var xProfile = "";
+var gProfile = "";
+var xEmpID = "";
+var AA = 0;
+var xCountIN = 0;
+xHeaderNews = "30 Days Login";
+xHeaderLog = "รับรางวัลจากการเข้าร่วมกิจกรรม 30 วันแรก";
+xHeaderPoint = 1;
+
+
+$(document).ready(function () {
+  
+  sessionStorage.clear(); 
+  var str = "";
+  var str1 = "";
+  var sLineID = "Ua6b6bf745bd9bfd01a180de1a05c23b3";
+  var sLineName = "Website";
+  var sLinePicture = "https://profile.line-scdn.net/0hoLlg-mNNMGNRHiaTpMdPNG1bPg4mMDYrKX8qVnIYOgYpe3QwbCp2AXVKaVN_fnMzOC16V3NMagF8";
+  sessionStorage.setItem("LineID", sLineID);
+  sessionStorage.setItem("LineName", sLineName);
+  sessionStorage.setItem("LinePicture", sLinePicture);
+  str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="show-profile" width="100px"></div>';
+  str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
+  str1 += '<div class="textheader">เริ่มต้นการเรียนรู้</div><div class="NameLine" style="margin-top:5px;">'+ sessionStorage.getItem("LineName")+'</div>';
+  xProfile = str;
+  gProfile = sLinePicture;
+  $("#MyProfile").html(str);  
+  $("#MyProfile-start").html(str1);  
+  Connect_DB();
+  CheckData();
+
+
+  //main();
+});
+
+
+async function main() {
+  await liff.init({ liffId: "1657509542-4Mwmplqj" });
+  document.getElementById("isLoggedIn").append(liff.isLoggedIn());
+  if(liff.isLoggedIn()) {
+    getUserProfile();
+  } else {
+    liff.login();
+  }
+}
+
+
+async function getUserProfile() {
+  var str = "";
+  var str1 = "";
+  const profile = await liff.getProfile();
+  sessionStorage.setItem("LineID", profile.userId);
+  sessionStorage.setItem("LineName", profile.displayName);
+  sessionStorage.setItem("LinePicture", profile.pictureUrl);
+  str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="show-profile" width="100px"></div>';
+  str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
+  str1 += '<div style="color:#fff; font-size: 13px;">เริ่มต้นการเรียนรู้ของ</div><div class="NameLine" style="margin-top:5px;">'+ sessionStorage.getItem("LineName")+'</div>';
+  xProfile = str;
+  gProfile = profile.pictureUrl;
+  $("#MyProfile").html(str);  
+  $("#MyProfile-start").html(str1);  
+  Connect_DB();
+  CheckData();
+}
+
+
+function openWindow() {
+  liff.openWindow({
+    url: "https://line.me",
+    external: true     
+  })
+}
+
+
+var CheckFoundData = 0;
+var NewJointoDay = 0;
+var xDateToDay = "";
+function CheckData() {
+  dbProfile.where('LineID','==',sessionStorage.getItem("LineID"))
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      CheckFoundData = 1;
+        EidProfile = doc.id;
+        xEmpID = doc.data().EmpID;
+        xCountIN = doc.data().CountIN;
+        CheckUserProfile(doc.data().EmpID);
+        sessionStorage.setItem("EmpName_Academy", doc.data().EmpName);
+        sessionStorage.setItem("EmpRefID_Academy", doc.id);
+        sessionStorage.setItem("EmpPhone_Academy", doc.data().EmpPhone);
+        sessionStorage.setItem("EmpAddress_Academy", doc.data().EmpAddress);
+        sessionStorage.setItem("CountIN", doc.data().CountIN);
+        sessionStorage.setItem("JoinTime", doc.data().JoinTime);
+        sessionStorage.setItem("Level_Point", doc.data().Level_Point);
+        sessionStorage.setItem("XP_Point", doc.data().XP_Point);
+        sessionStorage.setItem("RP_Point", doc.data().RP_Point);
+        sessionStorage.setItem("QS_Point", doc.data().QS_Point);
+        sessionStorage.setItem("COIN_Point", doc.data().COIN_Point);
+        sessionStorage.setItem("PulseCount", doc.data().PulseCount);
+        sessionStorage.setItem("LastUpdate", doc.data().LogDateTime);
+        sessionStorage.setItem("PulseRatio", doc.data().PulseRatio);
+        if(doc.data().Admin_Web==1) { 
+          sessionStorage.setItem("Admin_Web", doc.id);
+        }
+        xDateToDay = doc.data().DateToDay;
+        if(doc.data().Level_Point==1 && doc.data().XP_Point >= 100) {
+          NextLevelUP(2);
+        } else if(doc.data().Level_Point==2 && doc.data().XP_Point >= 300) { 
+          NextLevelUP(3);
+        } else if(doc.data().Level_Point==3 && doc.data().XP_Point >= 600) { 
+          NextLevelUP(4);
+        } else if(doc.data().Level_Point==4 && doc.data().XP_Point >= 1000) { 
+          NextLevelUP(5);
+        }
+        if(doc.data().JoinTime==0) {
+          FirstTimeMember();
+        }
+        //console.log("107="+sessionStorage.getItem("EmpID_Academy")+"==="+sessionStorage.getItem("xTeamGroup"));
+    });
+    if(CheckFoundData==0) {
+      document.getElementById('loading').style.display='none';
+      document.getElementById('NoService').style.display='none';
+      document.getElementById('NewMember').style.display='block';
+    } else {
+      CheckDatePulse();
+    }
+  });
+}
+
+
+function CheckDatePulse() {
+  var str = "";
+  var xCheckDate = 0;
+  dbPulseDate.where('PulseDate','==',thistoday)
+  .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      xCheckDate = 1;
+      //xPulsetoday = 1;
+      //console.log("Found ---> 111==="+thistoday+"==="+sessionStorage.getItem("xTeamGroup"));
+      //str += '<div class="btn-grey" onclick="GotoHome()" style="margin-top:20px;">ปิดหน้าต่าง</div>';
+      //$("#B_id03").html(str);      //str += '<div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>';
+      CheckDoneSurvey();
+    });
+
+  //console.log("xPulsetoday1===="+xPulsetoday+"==="+sessionStorage.getItem("xTeamGroup"));
+
+    if(xCheckDate==0) {
+      //console.log("NotFound ---> 222==="+thistoday+"==="+sessionStorage.getItem("xTeamGroup"));
+      //str += '<div class="btn-grey" onclick="GotoHome()" style="margin-top:20px;">ปิดหน้าต่าง</div>';
+      //$("#B_id03").html(str);      //str += '<div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>';
+
+      if(sCountTimeJoin>30) { setInterval(GotoHome, 2000);  }
+//console.log("Line 151");
+
+
+      //setInterval(GotoHome, 2000); 
+      //GotoHome();
+    }
+  });
+}
+
+
+var xPulsetoday = 0;
+function CheckLoad() {
+  dbPulseDate.where('PulseDate','==',thistoday)
+  .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      xPulsetoday = 1;
+      CheckLoadRound2();
+    });
+    //console.log("CheckLoad===="+xPulsetoday);
+  });
+}
+
+
+function CheckLoadRound2() {
+  var xAAA = 0;
+  dbUserSurvey.where('PulseDate','==',thistoday)
+  .where('LineID','==',sessionStorage.getItem("LineID"))
+  .limit(1)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      xAAA = 1;
+      //console.log("xAAA 111==="+xAAA);
+      xPulsetoday = 0;
+      //console.log("xAAA 111==="+xPulsetoday);
+    });
+    xPulsetoday = 0;
+    //console.log("xAAA 222==="+xAAA);
+    //if(xAAA==0) { xPulsetoday = 1; }
+    //xPulsetoday = 0;
+    //console.log("CheckLoadRound2===="+xPulsetoday);
+  });
+}
+
+
+function CheckDoneSurvey() {
+  var str = "";
+  var xCheckDone = 0;
+  sessionStorage.setItem("CheckDonePulse", 0);
+  dbUserSurvey.where('PulseDate','==',thistoday)
+  .where('LineID','==',sessionStorage.getItem("LineID"))
+  .limit(1)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      xCheckDone = 1;
+      sessionStorage.setItem("CheckDonePulse", 1);
+      GotoHome();
+    });
+    if(xCheckDone==0) {
+      GotoSurvey();
+    }
+  });
+}
+
+
+var xCheckOut = 0;
+function CheckUserProfile(eid) {
+  //console.log("Check User Profile Done");
+  dbCheckMember.where('xEmpID','==',parseFloat(eid))
+  .where('xChief_eng','in',['CRSG','CRDG','CRLG','CTWPG','CALO'])
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      xCheckOut = 1;
+      sessionStorage.setItem("EmpID_Academy", eid);
+      if(doc.data().xChief_eng=="CALO") {
+        sessionStorage.setItem("xTeamGroup", "AL Group");        
+      } else {
+        sessionStorage.setItem("xTeamGroup", "Retail Group");        
+      }
+      sessionStorage.setItem("xBranch", doc.data().xBranch);
+      sessionStorage.setItem("xDepartment", doc.data().xDepartment);
+      sessionStorage.setItem("xGroup", doc.data().xGroup);
+      sessionStorage.setItem("xChief_th", doc.data().xChief_th);
+      sessionStorage.setItem("xChief_eng", doc.data().xChief_eng);
+      sessionStorage.setItem("xPosition", doc.data().xPosition);
+
+
+      xCountIN = parseFloat(xCountIN) + 1;
+      dbProfile.doc(EidProfile).update({
+        Linename : sessionStorage.getItem("LineName"),
+        LinePicture : sessionStorage.getItem("LinePicture"),
+        CountIN : xCountIN,
+        EmpCheckIN : xCountIN,
+        xTeamGroup : sessionStorage.getItem("xTeamGroup"),
+        xBranch : sessionStorage.getItem("xBranch"),
+        xDepartment : sessionStorage.getItem("xDepartment"),
+        xGroup : sessionStorage.getItem("xGroup"),
+        xChief_th : sessionStorage.getItem("xChief_th"),
+        xChief_eng : sessionStorage.getItem("xChief_eng"),
+        xPosition : sessionStorage.getItem("xPosition")
+      });
+  //alert("Update Profile = "+xCountIN+"==="+sessionStorage.getItem("EmpRefID_Academy")+"==="+sessionStorage.getItem("xDepartment"));
+      UpdatePorfile();
+
+      //console.log(thistoday+"==="+xDateToDay);
+      if(thistoday!=xDateToDay) {
+        //console.log("250");
+        CheckDateIn();
+      } else {
+        //console.log("253");
+        CheckPulseSurvey();
+        //GotoHome();
+        //MyPointMenu();
+      }
+    });
+    if(xCheckOut==0) {
+      document.getElementById('loading').style.display='none';
+      document.getElementById('NoService').style.display='block';
+    }
+  });
+}
+
+
+
+var sCountTimeJoin = 0;
+var sGetRewards = 0;
+var xCheckDate = 0;
+function CheckDateIn() {
+  CheckLoad();
+  var str = "";
+  var str1 = "";
+  dbProfile.where('EmpID','==',sessionStorage.getItem("EmpID_Academy"))
+  .limit(1)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      sessionStorage.setItem("XP_Point", doc.data().XP_Point);
+      sessionStorage.setItem("RP_Point", doc.data().RP_Point);
+      if(thistoday!=doc.data().DateToDay) {
+        xCheckDate = 1;
+        sCountTimeJoin = parseFloat(doc.data().JoinTime)+1;
+
+        dbProfile.doc(EidProfile).update({
+          DateToDay : thistoday,
+          JoinTime : sCountTimeJoin,
+          LastCheckIN : dateString
+        });
+
+        if(sCountTimeJoin<31) {
+          xHeaderNews = "30 Days Login";
+          xHeaderLog = "รับรางวัลจากการเข้าร่วมกิจกรรม 30 วันแรก";
+          xHeaderPoint = 1;
+          Runloop();
+          document.getElementById("id03").style.display = "block";
+          if(sCountTimeJoin==30) {
+            str1 += '<div class="textheader" style="margin: 30px auto;">คุณทำภารกิจสำเร็จ</div>';
+            str1 += '<div><img src="img/register.png" style="width:250px;padding-top:4px; padding-bottom: 15px;"></div>';
+            str1 += '<div style="font-size:14px;line-height:1.1;margin-top:20px;">ยินดีด้วยคุณทำภารกิจสำเร็จ<br><b>ภารกิจเข้าร่วมกิจกรรมครบ 30 วัน</b><br>กดยืนยันการรับของรางวัลของคุณ</div>';
+            str1 += '<div class="clr"></div>';
+            str1 += '<div class="btn-blue" onclick="GetReward()">ยืนยันการรับของรางวัล</div>'
+            str1 += '<div class="clr" style="height:40px;"></div>';
+            $("#DisplayGetPoint").html(str1);    
+            document.getElementById("id06").style.display = "block";            
+          }
+          //str1 += '<div class="textheader" style="margin: 30px auto;">คุณได้รับ Coin</div>';
+          //str1 += '<div style="font-size:14px;line-height:1.1;margin-top:20px;"><img src="./point/coin-1.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br><br>จากการเข้าร่วมกิจกรรม<br><b>เป็นวันที่ '+ sCountTimeJoin +' จาก 30 วัน</b></div>';
+          //str1 += '<div class="clr"></div>';
+          //str1 += '<div class="btn-grey" onclick="ClosePage6()" style="margin-top:20px;">ปิดหน้าต่างนี้</b></div>';
+          //str1 += '<div class="clr" style="height:40px;"></div>';
+          //$("#DisplayGetPoint").html(str1);  
+          //myInterval = setInterval(OpenPage6, 3000);
+          //document.getElementById("id06").style.display = "block";
+        } else {
+          if(sCountTimeJoin<=60) { sTarget = 60; sPoint = 15; }
+          else if(sCountTimeJoin<=90) { sTarget = 90; sPoint = 20; }
+          else if(sCountTimeJoin<=120) { sTarget = 120; sPoint = 30; }
+          else if(sCountTimeJoin<=150) { sTarget = 150; sPoint = 40; }
+          else if(sCountTimeJoin<=180) { sTarget = 180; sPoint = 50; }
+          else if(sCountTimeJoin<=360) { sTarget = 360; sPoint = 100; }
+/*
+          if(sCountTimeJoin==30) {
+            str1 += '<div class="textheader" style="margin: 30px auto;">คุณทำภารกิจสำเร็จ</div>';
+            str1 += '<div><img src="img/register.png" style="width:250px;padding-top:4px; padding-bottom: 15px;"></div>';
+            str1 += '<div style="font-size:14px;line-height:1.1;margin-top:20px;">ยินดีด้วยคุณทำภารกิจสำเร็จ<br>กดยืนยันการรับของรางวัลของคุณ</div>';
+            str1 += '<div class="clr"></div>';
+            str1 += '<div class="btn-blue" onclick="GetReward()">ยืนยันการรับของรางวัล</div>'
+            str1 += '<div class="clr" style="height:40px;"></div>';
+            $("#DisplayGetPoint").html(str1);    
+            document.getElementById("id06").style.display = "block";
+          } if(sCountTimeJoin==60) {
+*/
+          if(sCountTimeJoin==60) {
+            sGetRewards = 15;
+            GetJoinPoint(60,15);
+          } else if(sCountTimeJoin==90) {
+            sGetRewards = 20;
+            GetJoinPoint(90,20);
+          } else if(sCountTimeJoin==120) {
+            sGetRewards = 30;
+            GetJoinPoint(120,30);
+          } else if(sCountTimeJoin==150) {
+            sGetRewards = 40;
+            GetJoinPoint(150,40);
+          } else if(sCountTimeJoin==180) {
+            sGetRewards = 50;
+            GetJoinPoint(180,50);
+          } else if(sCountTimeJoin==360) {
+            sGetRewards = 100;
+            GetJoinPoint(360,100);
+          } 
+          str+='<div style="margin-top:15px;">';
+          str+='<div class="textheader">การเดินทางของคุณ</div>';
+          str+='<div><img src="img/one-logo.png" style="width:150px;"></div>';
+          str+='<div><img src="./img/waitting.png" style="width:80%;margin:30px auto 20px auto;"></div>';
+          str+='<div class="box-target">เข้าเว็บแล้ว<div class="box-target-number">'+ sCountTimeJoin +'</div>วัน</div>';
+          str+='<div class="box-target">เหลืออีก<div class="box-target-number">'+(sTarget-sCountTimeJoin)+'</div>วัน</div>';
+          str+='<div class="box-target">เพื่อรับ<div class="box-target-number">'+sPoint+'</div>POINT</div>';
+          str+='</div>';
+          str+= '<div class="btn-blue" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าหลัก</div>';
+          $("#BoxTimeLine").html(str);    
+          //console.log("293 Check Days=="+sCountTimeJoin);
+          //CheckDatePulse();
+          document.getElementById("id01").style.display = "block";
+        }
+      }
+    });
+  });
+}
+
+
+function Runloop() {
+  NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
+  var PointOfTheDay = 1;
+  //console.log("Point="+sessionStorage.getItem("XP_Point"));
+  //console.log(sCountTimeJoin+"===== Point = "+sPoint);
+  var str = "";
+  var xloop = 30;
+  var CalRatio = (sCountTimeJoin*100)/xloop;
+  //str += '<div class="text-header" style="margin-top:14px; font-size:15px; color:#002d63; font-weight: 600;"><span class="header1">Login</span> <span class="header2">Reward</span><br><span>ภารกิจ--> Days '+ sCountTimeJoin +'/30</span></div>';
+  str += '<div class="text-header" style="margin-top:14px; font-size:15px; color:#002d63; font-weight: 600;"><span class="header1">Mission</span> <span class="header2">Reward</span><br><span>ภารกิจเข้าร่วมกิจกรรมครบ 30 วัน</span></div>';
+  str += '<div class="font10b">ผู้เข้าร่วมกิจกรรมครบ 30 วันรับของรางวัลพิเศษ (จำนวน 300 รางวัล)</div>';
+  str += '<div class="row-progress1"><progress value="'+ parseFloat(CalRatio).toFixed(0) +'" max="100" style="--value: '+ parseFloat(CalRatio).toFixed(0) +'; --max: 100;"></progress></div>';
+  str += '<div class="clr" style="height: 10px;"></div>';
+  //str += '<div style="margin:10px auto 15px auto;"><img src="./point/coin-1.png" style="width:100%;border-radius: 15px; background:#fff;"></div>';
+  AddUserLog();
+
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point")) + parseFloat(PointOfTheDay));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point")) + parseFloat(PointOfTheDay));
+  dbProfile.doc(EidProfile).update({
+    LastUpdate : dateString,
+    XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
+    RP_Point : parseFloat(sessionStorage.getItem("RP_Point"))
+  });    
+
+  for (let i = 0; i < xloop; i++) {
+    if(sCountTimeJoin >= (i+1)) {
+      str += '<div id='+ (i+1) +' class="LoopRadio-Check"><img src="./icon/icons-diamondblue.png" style="width:34px;"><div class="LoopTextNumberblue">'+ (i+1) +'</div></div>';      
+    } else {
+      str += '<div id='+ (i+1) +' class="LoopRadio"><img src="./icon/icons-diamond.png" style="width:34px;"><div class="LoopTextNumber">'+ (i+1) +'</div></div>';      
+    }
+  } 
+  //console.log("xPulsetoday2===="+xPulsetoday);
+  if(xPulsetoday==1) {
+    str += '<div class="btn-click" onclick="GotoSurvey()" style="margin-top:20px;">ไปวัดอุณหภูมิความสุขกันเถอะ</div>';
+  } else {
+    str += '<div class="btn-blue" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าหลัก</div>';
+  }
+  $("#LoopDay").html(str);    
+}
+
+
+
+function FirstTimeMember() {
+  NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
+  var newPoint = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 42, 44, 45, 46, 47, 48, 49, 50];
+  var NewScore = random_item(newPoint);
+  dbProfile.doc(EidProfile).update({
+    Level_Point : 1,
+    JoinTime : 1,
+    XP_Point : parseFloat(NewScore),
+    RP_Point : parseFloat(NewScore),
+    //QS_Point : parseFloat(NewScore),
+    QS_Point : 0,
+    LogDateTime : dateString,
+    LastUpdate : dateString,
+    DateToDay : datetoday,
+    LogTimeStamp : TimeStampDate
+  });
+  sessionStorage.setItem("Level_Point", 1);
+  sessionStorage.setItem("XP_Point", parseFloat(NewScore));
+  sessionStorage.setItem("RP_Point", parseFloat(NewScore));
+  sessionStorage.setItem("QS_Point", 0);
+  WelcomePoint();
+  dbLoginlog.add({
+    LineID : sessionStorage.getItem("LineID"),
+    LineName : sessionStorage.getItem("LineName"),
+    LinePicture : sessionStorage.getItem("LinePicture"),
+    //EmpID : sessionStorage.getItem("EmpID_Academy"),
+    EmpID : xEmpID,
+    EmpName : sessionStorage.getItem("EmpName_Academy"),
+    LogDate : dateString,
+    LogTimeStamp : TimeStampDate
+  });
+
+  var xHeader = "เข้าร่วมกิจกรรมครั้งแรก";
+  //if(sessionStorage.getItem("EmpID_Academy")==null) { }xEmpID
+  dbUserlog.add({
+    LineID : sessionStorage.getItem("LineID"),
+    LineName : sessionStorage.getItem("LineName"),
+    LinePicture : sessionStorage.getItem("LinePicture"),
+    //EmpID : sessionStorage.getItem("EmpID_Academy")
+    EmpID : xEmpID,
+    EmpName : sessionStorage.getItem("EmpName_Academy"),
+    RefID : EidProfile,
+    NewsGroup : 0,
+    HeadNews : "Join Website",
+    SubNews : xHeader,
+    GetPoint : parseFloat(NewScore),
+    LastPoint : parseFloat(sessionStorage.getItem("XP_Point")),
+    LogDate : dateString,
+    LogTimeStamp : TimeStampDate
+  });
+}
+
+
+function WelcomePoint() {
+  document.getElementById('id05').style.display='block';
+  var str = "";
+  str += '<div class="textheader" style="margin-top:14px;">Welcome Point</div>';
+  str += '<div class="font13" style="margin-top:10px; text-align:center; padding:5px; color:#0056ff;">ยินดีด้วยคุณได้รับ Coin ครั้งแรก<br>จากการเข้าร่วมกิจกรรม One Retail Society</div>';
+  str += '<div class="clr"></div>';
+  str += '<div><img src="./point/coin-'+ sessionStorage.getItem("XP_Point") +'.png" style="margin-top:10px;width:100%;border-radius: 15px; background:#ffffff;"></div>';
+  //str += '<div class="btn-start" onclick="GotoHome()" style="margin-top:30px;">คลิกเพื่อเริ่มต้นการใช้งาน</div>';
+  //str += '<div class="btn-start" onclick="CloseAll()" style="margin-top:30px;">คลิกเพื่อเริ่มต้นการใช้งาน</div>';
+  str += '<div style="height: 15px;"></div>';
+  $("#BoxTimeGetPoint").html(str);      
+}
+
+
+function UpdatePorfile() {
+  //alert("Update 476");
+  NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
+  //xMemGetMem = parseFloat(xMemGetMem) + 1;
+  //if(sessionStorage.getItem("EmpID_Academy")==null) { //}
+  dbProfile.doc(EidProfile).update({
+    EmpPicture : sessionStorage.getItem("LinePicture"),
+    Linename : sessionStorage.getItem("LineName")
+    //MemGetMem : xMemGetMem
+  })
+  dbLoginlog.add({
+    LineID : sessionStorage.getItem("LineID"),
+    LineName : sessionStorage.getItem("LineName"),
+    LinePicture : sessionStorage.getItem("LinePicture"),
+    EmpID : sessionStorage.getItem("EmpID_Academy"),
+    EmpName : sessionStorage.getItem("EmpName_Academy"),
+    xTeamGroup : sessionStorage.getItem("xTeamGroup"),
+    LogDate : dateString,
+    LogTimeStamp : TimeStampDate
+  });  
+  
+
+  //alert("Update Profile = "+xMemGetMem);
+}
+
+
+
+function CheckPulseSurvey() {
+  //console.log("L 493");
+  dbPulseDate.where('PulseDate','==',thistoday)
+  .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
+  .limit(1)
+  .get().then((snapshot)=> {
+    snapshot.forEach(doc=> {
+      //alert("Found");
+      //alert("Found"+sessionStorage.getItem("xTeamGroup")+"==="+thistoday);
+      //console.log(360);
+      CheckDoneSurvey();
+    });
+    //console.log("Not Found"+sessionStorage.getItem("xTeamGroup")+"==="+thistoday);
+    GotoHome();
+  });
+}
+
+
+
+function GetJoinPoint(d,x) {
+  //alert("447 - Get Join Point");
+  var str = "";
+  NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(sGetRewards));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(sGetRewards));
+  //console.log(xCheckDate+"==="+d+"==="+x);
+  if(xCheckDate==1) {
+    var xHeader = "ได้รับ "+ sGetRewards +" COIN";
+    dbUserlog.add({
+      LineID : sessionStorage.getItem("LineID"),
+      LineName : sessionStorage.getItem("LineName"),
+      LinePicture : sessionStorage.getItem("LinePicture"),
+      EmpID : sessionStorage.getItem("EmpID_Academy"),
+      EmpName : sessionStorage.getItem("EmpName_Academy"),
+      RefID : sessionStorage.getItem("EmpRefID_Academy"),
+      NewsGroup : 0,
+      HeadNews : "Join Website",
+      SubNews : xHeader,
+      GetPoint : parseFloat(sGetRewards),
+      LastPoint : parseFloat(sessionStorage.getItem("XP_Point")),
+      LogDate : dateString,
+      LogTimeStamp : TimeStampDate
+    });
+
+    dbProfile.doc(EidProfile).update({
+      XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
+      RP_Point : parseFloat(sessionStorage.getItem("RP_Point")),
+      DateToDay : thistoday,
+      JoinTime : sCountTimeJoin
+    });
+    //console.log("New Point");
+    //OpenPopMenu(); 
+  }         
+  str+='<div style="margin-top:25px;">';
+  str+='<div style="text-align:center; padding:5px;">ยินดีด้วยคุณได้รับ COIN</div>';
+  str+='<div style="text-align:center; font-weight: 600; color:#0056ff;">'+ x +' Coin</div>';
+  str+='<div style="text-align:center; padding:5px;">จากการเข้าชมเว็บไซต์มาแล้ว <b>'+ d +'</b> วัน</div>';
+  str+='</div>';
+  $("#BoxTimeNewPoint").html(str);      
+  document.getElementById("id04").style.display = "block";
+}
+
+
+function NextLevelUP(x) {
+  //alert("NextLevelUP="+x);
+  str = "";
+  xLevel = x;
+  NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
+  console.log("Next Level = " +x);
+  var xPoint = 5;
+  var xHeader = "Level Up "+ x +"";
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(xPoint));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(xPoint));
+  dbProfile.doc(EidProfile).update({
+    XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
+    RP_Point : parseFloat(sessionStorage.getItem("RP_Point")),
+    Level_Point : x
+  });
+  sessionStorage.setItem("Level_Point", x);
+  dbUserlog.add({
+    LineID : sessionStorage.getItem("LineID"),
+    LineName : sessionStorage.getItem("LineName"),
+    LinePicture : sessionStorage.getItem("LinePicture"),
+    EmpID : xEmpID,
+    EmpName : sessionStorage.getItem("EmpName_Academy"),
+    RefID : EidProfile,
+    NewsGroup : 0,
+    HeadNews : "Level Up "+ x,
+    SubNews : "Level Up รับ "+ xPoint +" Coin",
+    GetPoint : parseFloat(xPoint),
+    LastPoint : parseFloat(sessionStorage.getItem("XP_Point")),
+    LogDate : dateString,
+    LogTimeStamp : TimeStampDate
+  });
+  str += '<div class="btn-t3" style="margin-top:10px; min-width:220px; background:#fff;">คุณได้รับการปรับระดับผู้เล่น</div>';
+  str += '<div><img src="./img/levelup.gif" style="padding-top:8px;width:100%;"></div>';
+  str += '<div style="margin-top:15px;">';
+  str += '<div class="font13" style="padding-top:5px;text-align:center;">คุณได้รับเพิ่ม '+ xPoint +' Coin<br>จากการปรับระดับของผู้เล่นเป็น Level '+ x +'</div>';
+  str += '<div class="clr"></div>';
+  str += '<div class="btn-t2" onclick="GotoProfile()" style="margin-top:20px;">ดูคะแนนของคุณ</div>';
+  str += '<div class="btn-t2" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่าง</div>';
+  str += '<div style="height: 15px;"></div>';
+  MyPointMenu();
+  $("#UserLevelUp").html(str);      
+  document.getElementById('id07').style.display='block';
+}
+
+
+function GetReward() {
+  alert("ยินยันการรับรางวัลเรียบร้อยแล้ว");
+  document.getElementById('id06').style.display='none';
+  // body...
+}
+
+function GotoSurvey() {
+  //OpenPluseSurvey
+  location.href = "pulsesurvey.html";
+}
+
+function GotoHome() {
+  location.href = "home.html";
+}
+
+function GotoReload() {
+  location.href = "index.html";
+}
+
+function random_item(items) {
+  return items[Math.floor(Math.random()*items.length)];   
+}
+
+
+function OneStory() {
+  document.getElementById('id02').style.display='block';
+}
+
+function ClosePage6() {
+  clearInterval(myInterval);
+  //document.getElementById('id06').style.display='none';
+}
+
+function OpenPage6() {
+  //document.getElementById("id06").style.display = "block";
+  //clearInterval(OpenPage6);
+}
+
+function CloseAll() {
+  document.getElementById('id01').style.display='none';
+  document.getElementById('id02').style.display='none';
+  document.getElementById('id03').style.display='none';
+  document.getElementById('id04').style.display='none';
+  document.getElementById('id05').style.display='none';
+  document.getElementById('id07').style.display='none';
+}

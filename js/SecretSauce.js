@@ -4,7 +4,7 @@ var ReadVdoArr = [];
 
 
 $(document).ready(function () {
-  if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
+  if(sessionStorage.getItem("LineID")==null || sessionStorage.getItem("LineID")==null) { location.href = "vdo.html"; }
   Connect_DB();
   GetAllVDO();
   GetAllRead();
@@ -59,19 +59,19 @@ function LoadSlider() {
   str += '<input type="radio" class="cs_anchor radio" name="slider" id="play1" checked=""/>';
 
   str += '<div class="images"><div class="images-inner">';
-  str += '<div class="image-slide" onclick="ViewClip(\''+ ReadVdoArr[0].ID +'\')">';
+  str += '<div class="image-slide" onclick="ViewStory(\''+ ReadVdoArr[0].ID +'\')">';
   if(ReadVdoArr[0].VDOimg !== '') {
     str += '<div class="image bg-yellow"><img src="'+ ReadVdoArr[0].VDOimg +'" style="width:100%;"></div></div>';
   } else {
     str += '<div class="image bg-blue"><img src="./clip/SecretSauce-00.jpg" style="width:100%;"></div></div>';
   }
-  str += '<div class="image-slide" onclick="ViewClip(\''+ ReadVdoArr[1].ID +'\')">';
+  str += '<div class="image-slide" onclick="ViewStory(\''+ ReadVdoArr[1].ID +'\')">';
   if(ReadVdoArr[1].VDOimg!=="") {
     str += '<div class="image bg-blue"><img src="'+ ReadVdoArr[1].VDOimg +'" style="width:100%;"></div></div>';
   } else {
     str += '<div class="image bg-blue"><img src="./clip/SecretSauce-00.jpg" style="width:100%;"></div></div>';
   }
-  str += '<div class="image-slide" onclick="ViewClip(\''+ ReadVdoArr[2].ID +'\')">';
+  str += '<div class="image-slide" onclick="ViewStory(\''+ ReadVdoArr[2].ID +'\')">';
   if(ReadVdoArr[2].VDOimg!=="") {
     str += '<div class="image bg-red"><img src="'+ ReadVdoArr[2].VDOimg +'" style="width:100%;"></div></div>';
   } else {
@@ -136,7 +136,7 @@ function LoadGroupVDO() {
 }
 
 function ViewStory(gid) {
-  location.href = "displayclip.html?gid="+gid;
+  location.href = "showclip.html?gid="+gid;
   //console.log(refid);
 }
 

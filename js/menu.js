@@ -110,8 +110,8 @@ function MyPulseSurvey() {
 
 
   xLine += '<div style="width:290px; margin:10px auto;">';
-  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-level.png" class="coin-img1"></div><div class="font12">LEVEL</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div></div>';
-  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-point.png" class="coin-img1"></div><div class="font12">POINT</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(0) +'</div></div>';
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-levelup.png" class="coin-img1"></div><div class="font12">LEVEL</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div></div>';
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-bag.png" class="coin-img1"></div><div class="font12">POINT</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(0) +'</div></div>';
   xLine += '<div class="ScoreCard"><div><img src="./icon/icon-coin.png" class="coin-img1"></div><div class="font12">COIN</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div></div>';
 
 

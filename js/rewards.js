@@ -47,20 +47,20 @@ function ListRewards() {
     str += '<div class="story-box-text-head">'+ doc.data().RewardsName +'</div>';
     str += '<div class="story-box-text-sub" style="height: 31px;">'+ doc.data().RewardsDetail +'</div>';
     str += '</div><div class="clr"></div>';
-    if(sessionStorage.getItem("RP_Point")<doc.data().RewardsPrice) {
+    if(sessionStorage.getItem("COIN_Point")<doc.data().RewardsPrice) {
       if(parseFloat(doc.data().RewardsStock)>0) {
         str += '<div><div class="rewards-txt1">เหลือ '+ parseFloat(doc.data().RewardsStock) +' รายการ</div>';
       } else {
         str += '<div><div class="rewards-linkB">รางวัลหมดแล้ว</div>';
       }
-      str += '<div class="rewards-linkB">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' เหรียญ</div></div>';
+      str += '<div class="rewards-linkB">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' COIN</div></div>';
     } else {
       if(parseFloat(doc.data().RewardsStock)>0) {
         str += '<div><div class="rewards-txt1">เหลือ '+ parseFloat(doc.data().RewardsStock) +' รายการ</div>';
-        str += '<div class="rewards-linkA" onclick="OpenLink(\''+ doc.id +'\',\''+ parseFloat(doc.data().RewardsPrice) +'\',\''+ i +'\')">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' เหรียญ</div></div>';
+        str += '<div class="rewards-linkA" onclick="OpenLink(\''+ doc.id +'\',\''+ parseFloat(doc.data().RewardsPrice) +'\',\''+ i +'\')">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' COIN</div></div>';
       } else {
         str += '<div><div class="rewards-txt1">รางวัลหมดแล้ว</div>';
-        str += '<div class="rewards-linkB">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' เหรียญ</div></div>';
+        str += '<div class="rewards-linkB">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' COIN</div></div>';
       }
     }
     //str += '<div><div class="rewards-txt1">เหลือ '+ parseFloat(doc.data().RewardsStock) +' รายการ</div>';
@@ -87,7 +87,7 @@ function OpenLink(x,price,i) {
   var str = "";
   var xCheck = 0;
   var xRPPoint = 0;
-  str += '<div class="btn-memu" style="cursor: default;margin-top:10px;">ยืนยันการแลกของรางวัล</div>';
+  str += '<div><span class="header1">ยืนยันการแลก</span> <span class="header2">ของรางวัล</span></div>';
   dbProfile.where('EmpID','==',sessionStorage.getItem("EmpID_Academy"))
   .limit(1)
   .get().then((snapshot)=> {
@@ -96,7 +96,8 @@ function OpenLink(x,price,i) {
       EidMember = doc.id;
       sessionStorage.setItem("XP_Point", doc.data().XP_Point);
       sessionStorage.setItem("RP_Point", doc.data().RP_Point);
-      xRPPoint = doc.data().RP_Point;
+      sessionStorage.setItem("COIN_Point", doc.data().COIN_Point);
+      xRPPoint = doc.data().COIN_Point;
       xHeader = results[0].RewardsName;
       xRewardsCode = results[0].RewardsCode;
       xRewardsName = results[0].RewardsName;
@@ -110,11 +111,12 @@ function OpenLink(x,price,i) {
       str += '<div class="font13" style="overflow: visible; max-height:80px;text-align: center;">'+ results[0].RewardsDetail +'</div>';
       str += '<div style="height: 40px; border-radius: 10px; margin-top:8px; width:52%; margin:10px auto;">';
       str += '<div class="rewards-linkA" style="width:100%;">';
-      str += '<div class="coin-number">'+ parseFloat(results[0].RewardsPrice) +'<img src="./icon/coin.png" class="coin-img"></div>';
-      str += '<div class="font11" style="margin-top:-3px;">เหรียญรางวัล</div>';
+      str += '<div class="coin-number">'+ parseFloat(results[0].RewardsPrice) +' COIN</div>';
+      //str += '<div class="coin-number">'+ parseFloat(results[0].RewardsPrice) +' <img src="./icon/icon-coin.png" class="coin-img"></div>';
+      //str += '<div class="font11" style="margin-top:-3px;">COIN</div>';
       str += '</div></div><div class="clr"></div></div></div>';
-      if(doc.data().RP_Point>=price) {
-        str += '<div class="font12black" style="margin-top:6px;color:#ff0000;font-weight:600;">ระบบจะทำการหักเหรียญรางวัลของคุณ ตามราคาของรางวัลชิ้นนั้นๆ หลังจากที่คุณได้ทำการกดยืนยันการแลกรางวัลแล้ว</div>';
+      if(doc.data().COIN_Point>=price) {
+        str += '<div class="font12black" style="margin-top:6px;color:#ff0000;font-weight:600;">ระบบจะทำการหัก COIN ของคุณ ตามราคาของรางวัลชิ้นนั้นๆ หลังจากที่คุณได้ทำการกดยืนยันการแลกรางวัลแล้ว</div>';
       } else {
         str += '<div>คะแนนของคุณไม่พอแลกของรางัลแล้วนะ</div>';
       }
@@ -169,10 +171,10 @@ function RedeemPoint(x,price,i,xRP) {
     if(xRewardsStock!=0) {
       dbProfile.doc(EidMember).update({
         LastUpdate : dateString,
-        RP_Point : parseFloat(sessionStorage.getItem("RP_Point"))-parseFloat(price)
+        COIN_Point : parseFloat(sessionStorage.getItem("COIN_Point"))-parseFloat(price)
       });
       //console.log("ยอดแลก="+parseFloat(price));
-      sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))-parseFloat(price));
+      sessionStorage.setItem("COIN_Point", parseFloat(sessionStorage.getItem("COIN_Point"))-parseFloat(price));
 
       xRewardsStock = parseFloat(xRewardsStock) - 1;
       if(xRewardsStock==0) {
@@ -198,7 +200,7 @@ function RedeemPoint(x,price,i,xRP) {
         HeadNews : "Redeem Point",
         SubNews : xHeader,
         GetPoint : parseFloat(price) * (-1),
-        LastPoint : parseFloat(sessionStorage.getItem("RP_Point")),
+        LastPoint : parseFloat(sessionStorage.getItem("COIN_Point")),
         LogDate : dateString,
         Status_Start : 0,
         Status_Send : 0,
@@ -229,7 +231,7 @@ function RedeemPoint(x,price,i,xRP) {
       alert("แลกไม่ได้ เนื่องจากของรางวัลหมดแล้ว");
     }
   } else {
-    alert("เหรียญที่คูณจะใช้แลกมีไม่พอกับของรางวัลที่คุณจะแลก");
+    alert("COIN ที่คุณจะใช้มีไม่พอ");
   }
 }
 
@@ -239,39 +241,23 @@ function RedeemPoint(x,price,i,xRP) {
 function UserScore() {
   var xLine = "";
   xLine += '<div class="box-top-user">';
-  xLine += '<div style="width:290px; margin:0px auto;">';
+  xLine += '<div style="width:300px; margin:0px auto;">';
   //xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div>';
   //xLine += '<div class="font12">ระดับ<br>ประสบการณ์</div></div>';
   //xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(2) +'</div>';
   //xLine += '<div class="font12">ประสบการณ์<br>การใช้งาน</div></div>';
   //xLine += '<div><img class="box-user-rewards" src="'+ sessionStorage.getItem("LinePicture") +'" onerror="javascript:imgError(this)" ></div>';
-  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-coin.png" class="coin-img1"></div><div class="font12">COIN</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div></div>';
+  xLine += '<div class="ScoreCard" style="background:#dae6ef;"><div><img src="./icon/icon-bag.png" class="coin-img1"></div><div class="font12">POINT</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div></div>';
+  xLine += '<div style="float:left;width: 110px;"><div class="btn-red" onclick="ChengeCOIN()" style="border-radius:50%; width: 80px; height: 80px; padding:0px; padding-top: 9px;">เปลี่ยน<br>POINT<br>เป็น COIN</div></div>';
+  xLine += '<div class="ScoreCard"><div><img src="./icon/icon-coin.png" class="coin-img1"></div><div class="font12">COIN</div><div class="font16b">'+ parseFloat(sessionStorage.getItem("COIN_Point")).toFixed(0) +'</div></div>';
 
   //xLine += '<div class="ScoreCard" style="margin-right: 10px;"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(0) +'</div>';
   //xLine += '<div class="font12">Coin</div></div>';
-  xLine += '<div class="title-rewards"><b>รายการแลกของรางวัล</b><br><br>ทุก ๆ การสะสมเหรียญรางวัลของคุณ สามารถนำมาแลกเป็นของรางวัลตามความต้องการของคุณ</div>';
+  //xLine += '<div class="title-rewards"><b>รายการแลกของรางวัล</b><br><br>ทุก ๆ การสะสม COIN ของคุณ สามารถนำมาแลกเป็นของรางวัลตามความต้องการของคุณ</div>';
   xLine += '</div>';
   $("#DisplayScore").html(xLine);
 } 
 
-/*
-function UserScore() {
-  var xLine = "";
-  xLine += '<div class="box-top-user">';
-  xLine += '<div><img class="box-user-rewards" src="'+ sessionStorage.getItem("LinePicture") +'" onerror="javascript:imgError(this)" ></div>';
-  xLine += '';
-  xLine += '';
-  xLine += '<div style="width:290px; margin:0px auto;">';
-  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("Level_Point")).toFixed(0) +'</div>';
-  xLine += '<div class="font12">ระดับ<br>ประสบการณ์</div></div>';
-  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("XP_Point")).toFixed(2) +'</div>';
-  xLine += '<div class="font12">ประสบการณ์<br>การใช้งาน</div></div>';
-  xLine += '<div class="ScoreCard"><div class="font16b">'+ parseFloat(sessionStorage.getItem("RP_Point")).toFixed(2) +'</div>';
-  xLine += '<div class="font12">เหรียญ<br>แลกรางวัล</div></div>';
-  xLine += '</div>';
-  $("#DisplayScore").html(xLine);
-} 
-*/
 
 function ShowItem(i) {
   var str = "";
@@ -282,7 +268,7 @@ function ShowItem(i) {
     str += '<center><div class="iconbox-blue"><img src="./rewards/'+ xRewardsCode +'" style="width:200px;margin-top:10px;"><div class="clr"></div>';
     str += '<div class="font13black" style="color:#0056ff;font-weight: 600;margin-top:15px;">'+ xRewardsName +'</div><div class="clr"></div>';
     str += '<div class="font12black" style="color:#f68b1f;margin:8px auto;text-align:center;">ทำรายการ : '+ dateString +'</div>';
-    str += '<div class="font12black" style="color:#777;margin:8px auto;text-align:center;">ระบบได้ทำการตัดเหรียญรางวัลของคุณไปเรียบร้อยแล้ว ขอให้กดปุ่มด้านล่างเพื่อไปหมุนวงล้อกัน หากไม่กดปุ่มและออกจากหน้านี้จะหมดสิทธิ์ในการหมุนวงล้อมหาสนุกนะ</div>';
+    str += '<div class="font12black" style="color:#777;margin:8px auto;text-align:center;">ระบบได้ทำการตัด COIN ของคุณไปเรียบร้อยแล้ว ขอให้กดปุ่มด้านล่างเพื่อไปหมุนวงล้อกัน หากไม่กดปุ่มและออกจากหน้านี้จะหมดสิทธิ์ในการหมุนวงล้อมหาสนุกนะ</div>';
     str += '</div></div></center><div class="clr"></div>';
     str += '<div class="btn-blue" onclick="LinkToRandom()" style="margin-top:15px;">เข้าไปหมุนวงล้อ</div>';
     $("#DisplayRewards").html(str);
@@ -311,16 +297,14 @@ function ShowItem(i) {
 }
 
 
-function LinkGift() {
-  location.href = "yourrewards.html";
+function ChengeCOIN() {
+    alert("คุณต้องการจะทำการแลกเปลี่ยน POINT เป็น COIN ใช่หรือไม่");
 }
 
 
-
-
-
-
-
+function LinkGift() {
+  location.href = "yourrewards.html";
+}
 
 
 function CloseAll() {
