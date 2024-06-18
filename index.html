@@ -4,80 +4,89 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>One Retail Society</title>
+  <title>ONE Retail Socitey</title>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','G-6FZQ6JQL2P');</script>
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
   <meta content="" name="description">
   <meta content="" name="keywords">
+
   <link href="assets/img/favicom.ico" rel="icon">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/css.css" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+   Vendor CSS Files -->
   <link href="assets/css/w3.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
   <link href="assets/css/button.css" rel="stylesheet">
+  <link href="assets/css/one-style.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/css.css" rel="stylesheet">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.12.0/sdk.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <style>
+    .mb-5 { margin-bottom: 1.0rem!important; }
+  </style>
 </head>
 
-<!--<body style="background: url(./img/bg.jpg) fixed; background-size: cover;background-position: center;">#427eec-->
-<body class="body4" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #fff;">
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-6FZQ6JQL2P"
+
+<body class="body1" style="background: #f2f6fb;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="isLoggedIn" style="color:#fff;"></div>
-<!--
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-      <img src="img/logo-bar.png" style="height:26px;" onclick="window.location.href='index.html';">
+  <header id="header" class="d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between" style="margin:auto;">
+      <img src="./img/logo-oneretail.png" style="height: 30px;">
     </div>
   </header>
--->
 
   <main id="main">
     <div class="container" style="text-align: center; max-width: 450px;">
       <div id="loading" style="margin-top:300px;">
-        <img src="img/one-logo.png" style="width:190px;"><br><br>
-        <img src="./img/loading1.gif" style="width:50px;">
+        <div><img src="./img/logo.png" style="height: 50px;"></div>
+        <div style="margin-top:20px;"><img src="./img/loading.gif" style="width:40px;"></div>
       </div>
-      <div class="clr"></div>
-      <div id="DisplayMyPoint" style="margin-top:90px; margin-bottom: 5px;"></div>
 
       <div id="PleaseWait" style="display: none; margin-top:130px;">
         <div><img src="img/waitting.png" style="width:230px;"></div>
         <div class="btn-t8" style="color:#0056ff; margin-top:20px;">ความปลอดภัยเป็นสิ่งที่เรา<br>ต้องให้ความสำคัญเป็นอันดับแรก
           <br><br>เรากำลังตรวจสอบข้อมูลของคุณ<br>โปรดรอคอยการอนุมัติ</div>
-        <div class="btn-grey" onclick="OneStory()" style="margin-top:30px;">เกี่ยวกับระบบงาน</div>
-        <div class="btn-red" onclick="window.location.href='mailto:suvit.cha@ttbbank.com';" style="margin-top:30px;">จำเป็นเร่งด่วน คลิก</div>
+        <div class="btn btn-a1 grey" onclick="OneStory()" style="margin-top:30px;">เกี่ยวกับระบบงาน</div>
+        <div class="btn btn-a1 red" onclick="window.location.href='mailto:suvit.cha@ttbbank.com';" style="margin-top:30px;">จำเป็นเร่งด่วน คลิก</div>
       </div>
 
       <div id="NoService" style="display: none; margin-top:130px;">
-        <div><img src="img/one-logo.png" style="width:190px;"></div>
-        <div style="margin-top: 25px;"><img src="img/stop.png" style="width:230px;"></div>
-        <div class="btn-t8" style="color:#0056ff; margin-top:30px;">คุณไม่ได้รับสิทธิ์ในการเข้าถึงข้อมูลนี้<br>กรุณาบอกเราว่าคุณมีความจำเป็นอย่างไร<br>
-        <div class="btn-red" onclick="window.location.href='mailto:suvit.cha@ttbbank.com';" style="margin-top:30px;">แจ้งเหตุผลเข้าใช้ระบบงาน</div>
+        <div style="margin: 25px auto;"><img src="img/stop.png" style="width:230px;"></div>
+        <div><img src="img/logo.png" style="height:50px;"></div>
+        <div class="btn-t8" style="color:#777; margin-top:10px;">คุณไม่ได้รับสิทธิ์ในการเข้าถึงข้อมูลนี้<br>กรุณาบอกเราว่าคุณมีความจำเป็นอย่างไร<br>
+        <div class="btn btn-a1 red" onclick="window.location.href='mailto:suvit.cha@ttbbank.com';" style="margin-top:30px;">แจ้งเหตุผลเข้าใช้ระบบงาน</div>
         </div>
       </div>
 
-      <div id="NewMember" style="display: none; margin-top:90px;">
-        <div><img src="img/one-logo.png" style="width:190px; margin-bottom: 20px;"></div>
-        <div id="MyProfile-start"></div>
-        <div style="margin-top:10px;">
-          <img src="img/register.png" style="width:250px;padding-top:4px; padding-bottom: 15px;">
-        </div>
-        <div class="btn-t8" style="color:#0056ff;">เราเชื่อว่าการเรียนรู้ของเราทุก ๆ คน<br>จะเริ่มต้นในทุก ๆ วัน<br><br><b>One Retail Society</b><br>
-        ขอร่วมเป็นส่วนหนึ่งในการเรียนรู้ของคุณ</div>
-        <div class="btn-grey" onclick="OneStory()" style="margin-top:30px;">เกี่ยวกับระบบงาน</div>
-        <div class="btn-click" onclick="window.location.href='registerpage.html';" style="margin-top:30px;">ลงทะเบียนเข้าใช้งาน</div>
+      <div id="NewMember" style="display: none; margin-top:110px;">
+        <div class="section-title">
+          <h2>ยินดีต้อนรับ</h2>
+        </div>        
+        <div id="MyProfile"></div>
+        <div style="margin:5px auto 20px auto;"><img src="./img/logo.png" style="height: 50px;"></div>
+        <div class="txt-intro">เชื่อว่าการเรียนรู้ของเราทุกคนจะเริ่มต้นในทุก ๆ วัน<br>เราจะช่วยกันพัฒนาทักษะ ความรู้ และนำเทคโนโลยี<br>มาเพิ่มประสิทธิภาพ เพื่อให้พวกเราเก่งขึ้น</div>
+        <div class="home-txt" style="color:#ff0000; margin-bottom:20px;">คุณยังไม่ได้เป็นสมาชิก<br>กรุณาสมัครสมาชิกก่อนเข้าใช้ระบบงาน</div>
+        <div class="btn btn-a1 blue" onclick="window.location.href='newmember.html';">สมัครสมาชิก</div>
       </div>
     </div>
   </main>
+
+
 
   <div id="id01" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4" style="background: #ffffff; max-width: 450px;">
@@ -94,8 +103,10 @@
   <div id="id02" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4" style="background: #e9ecef; max-width: 450px;">
       <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
-        <div class="textheader">เกี่ยวกับ One Retail Society</div>
-        <div class="btn-grey" onclick="CloseAll()" style="margin-top:30px;">ปิดหน้าต่างนี้</div>
+        <div class="section-title">
+          <h2>One Retail Society</h2>
+        </div> 
+        <div class="btn btn-a1 grey" onclick="CloseAll()" style="margin-top:30px;">ปิดหน้าต่างนี้</div>
       </div>
     </div>
     <div style="height:20px;"></div>
@@ -123,7 +134,7 @@
         <!--<div><img src="./img/coin.gif" style="padding-top:8px;width:100%;border-radius: 15px;"></div>-->
         <div id="BoxTimeNewPoint"></div>
         <div class="clr"></div>
-        <div class="btn-grey" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าหลัก</div>
+        <div class="btn btn-a1 grey" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าหลัก</div>
         <div id="B_id03"></div>
         <!--<div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>-->
       </div>
@@ -134,13 +145,11 @@
   <div id="id05" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4" style="background: #fff; max-width: 450px;">
       <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
-        <!--<div class="text-header" style="margin-top:14px;">คุณได้รับเหรียญรางวัล</div>-->
-        <!--<div><img src="./img/coin.gif" style="padding-top:8px;width:100%;border-radius: 15px;"></div>-->
         <div id="BoxTimeGetPoint"></div>
         <div class="clr"></div>
-        <div class="btn-grey" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าหลัก</div>
+        <!--<div class="btn btn-a1 grey" onclick="GotoHome1()" style="margin-top:20px;">ไปหน้าหลัก</div>
         <div id="B_id03"></div>
-        <!--<div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>-->
+        <div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>-->
       </div>
     </div>
     <div style="height:20px;"></div>
@@ -165,27 +174,20 @@
     </div>
     <div style="height:20px;"></div>
   </div>
-<!--
-  <div id="id01" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4">
-      <div class="w3-container modal-background" style="width:100%;margin:auto;min-height: 350px;">
-        <center>
-          <div class="btn-t33" style="margin-top:20px;font-size: 14px;font-weight: 600;">กิจกรรมวันฮาโลวีน</div>
-          <div><img src="./img/gift-99.png" style="width:100%; max-width: 180px;margin:70px auto 25px auto;"></div>
-          <div style="font-size: 14px;color:#fff;">LINE Retail Society<br>ชวนคุณค้นหาความลับของ <b>วันฮาโลวีน</b><br><br>
-          พร้อมลุ้นของรางวัล บัตรกำนัลโลตัส, บัตรกำนัล Pizza, กระเป๋ากระสอบใหญ่ และ กระเป๋าผ้าดิบส้มฟ้า 1 คน 1 สิทธิ์<br><br></div>
-          <div class="clr"></div>
-          <div id="overlay" class="btn-t22" onclick="CloseAll()" style="margin-top:10px; width:120px;">ปิดหน้าต่างนี้</div>
-          <div class="clr" style="height:20px;"></div>
-        </center>
-      </div>
-    </div>
-    <div class="clr" style="height:50px;"></div>
-  </div>
--->
+
+
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
 
   <script src="js/connect.js"></script>
-  <script src="js/menu.js"></script>
   <script src="js/index.js"></script>
 </body>
+
 </html>

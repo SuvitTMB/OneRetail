@@ -21,6 +21,8 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <link href="assets/css/one-style.css" rel="stylesheet">
+  <link href="assets/css/hand.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/css.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -37,33 +39,6 @@
     <div class="container d-flex align-items-center justify-content-between">
       <a href="home.html"><img src="./img/logo.png" style="height: 40px;"></a>
       <nav id="navbar" class="navbar">
-      <!--
-        <ul>
-        <i onclick="OpenMenu1()" class="bi bi-list mobile-nav-toggle"></i>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">กิจกรรม</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-        </ul>
-      -->
         <div onclick="OpenPopMenu()" class="bi bi-list mobile-nav-toggle"></div>
       </nav>
     </div>
@@ -71,7 +46,7 @@
 
   <div class="navbar1">
     <div class="nav-bg">
-      <div class="iconlink" onClick="window.location='learning_group.html?gid=1';">
+      <div class="iconlink" onClick="window.location='learning_group.html';">
         <div><img src="./icon/icons-idea.png" style="width:30px;"></div>
         <div class="nav-text">Learning</div>
       </div>
@@ -79,11 +54,11 @@
         <div><img src="./icon/icons-picture.png" style="width:30px;"></div>
         <div class="nav-text">Success Story</div>
       </div>
-      <div class="iconlink" onClick="window.location='home.html';">
+      <div class="iconlink1" onClick="window.location='home.html';">
         <div><img src="./icon/icons-home.png" style="width:30px;"></div>
         <div class="nav-text">Home</div>
       </div>
-      <div class="iconlink1" onClick="window.location='oneretailclub.html';">
+      <div class="iconlink" onClick="window.location='oneretailclub.html';">
         <div><img src="./icon/icons-puzzle.png" style="width:30px;"></div>
         <div class="nav-text">One Retail</div>
       </div>
@@ -98,20 +73,81 @@
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <span class="header1">ONE</span> <span class="header2">Retail</span> <span><b>Club</b></span>
+          <span class="header1">Game</span> <span class="header2">Zone</span>
           <ol>
             <li><a href="home.html">Home</a></li>
-            <li>คลิปสำหรับผู้ที่ทำผลงานได้ดีที่สุด</li>
+            <li><a href="gamezone.html">เกมส์โซน</a></li>
+            <li>เกมส์คำถามประจำวัน</li>
           </ol>
         </div>
       </div>
     </section>
-    <section class="inner-page" style="padding-top:20px;">
-      <div class="container">
-        <p>
-          Coming Soon
-        </p>
+
+
+    <section class="inner-page">
+      <div class="section-title" style="margin-top:-10px;">
+        <h2>เกมส์คำถามประจำวัน</h2>
+        <div class="NameLine" id="ToDayDate" style="margin-top:10px;"></div>
       </div>
+
+
+      <div class="container" style="max-width:450px;" data-aos="fade-up">
+        <div style="width:90%; margin:15px auto 20px auto;">
+          <div class="ScoreGame4">
+            <div id="Loading1" style="display:block;"><img src="./img/loading.gif" style="padding-top:15px;width:20px;"></div>
+            <div id="Show1" style="display:none;"><div id="ShowUserSumTime1"></div></div>
+          </div>
+          <div class="ScoreGame4">
+            <div id="Loading2" style="display:block;"><img src="./img/loading.gif" style="padding-top:15px;width:20px;"></div>
+            <div id="Show2" style="display:none;"><div id="ShowUserSumTime2" style="font-size:13px;">0<div class="ScoreGame4-text">%การตอบ<br>คำถามถูก</div></div></div>
+          </div>
+          <div class="ScoreGame4">
+            <div id="Loading3" style="display:block;"><img src="./img/loading.gif" style="padding-top:15px;width:20px;"></div>
+            <div id="Show3" style="display:none;"><div id="ShowUserSumTime3" style="font-size:13px;">0<div class="ScoreGame4-text">%การตอบ<br>คำถามผิด</div></div></div>
+          </div>
+          <div class="ScoreGame4">
+            <div id="Loading4" style="display:block;"><img src="./img/loading.gif" style="padding-top:15px;width:20px;"></div>
+            <div id="Show4" style="display:none;"><div id="ShowUserSumTime4" style="font-size:13px;">0<div class="ScoreGame4-text">คะแนนสะสม<br>ล่าสุด</div></div></div>
+          </div>
+          <div class="clr"></div>
+          <!--
+          <div id="Bar0" style="margin:6px;"></div>
+        -->
+
+        <div style="margin-top:25px;">
+          <center>
+            <div><img src='./icon/icon-quiz.png' style="height:160px"></div>
+
+
+            <div id="Loading" style="display:block;">
+              <img src="./img/loading.gif" style="margin:30px auto;width:30px;"></div> 
+              <div id="NoQuiz" style="display:none;">
+                <div style="margin:30px 10px 10px 10px;">
+                  <div class="btn-t1" style="border-radius: 8px;">
+                    <div id="PointToday"></div>
+                  </div>
+                  <div class="clr" style="height: 30px;"></div>
+                </div>
+              </div>
+              <div id="LoadQuiz" style="display:none;">
+                <div style="margin:30px 10px 10px 10px;">
+                  <div class="btn btn-a1 green" onclick="window.location.href='game-3.html';" style="border-radius: 8px;min-width:170px;padding:10px 35px;">คลิกเพื่อเข้าสู่ เกมส์คำถามประจำวัน</div>
+                </div>
+              </div>
+
+            <!--<div class="btn btn-a1 green" onclick="GotoHome()" style="margin:5px 10px 30px 10px;">เข้าสู่การแข่งขัน</div>-->
+          </center>
+          <div class="clr" style="height: 20px;"></div>
+          <div class="font13" style="text-align: left;">ผู้เข้าร่วมกิจกรรสามารถเข้า <b>ตอบคำถามประจำวัน</b>  ได้วันละ 1 ครั้ง เพื่อทำการเก็บสะสมเหรียญรางวัล โดยแนวคำถามจะเป็นคำถามความรู้ทั่วไป ทั้งมีสาระและไม่มีสาระ ตอบถูกรับเหรียญรางวัลไปเลย ถ้าตอบผิดพรุ่งนี้เข้ามาแก้มือได้น้า</div>
+        </div>
+
+        </div>
+        <div class="clr"></div>
+
+
+
+      </div>
+      <div class="clr" style="height:50px;"></div>
     </section>
   </main>
 
@@ -130,6 +166,7 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -142,6 +179,7 @@
   <script src="assets/js/main.js"></script>
   <script src="./js/connect.js"></script>
   <script src="./js/menu.js"></script>
+  <script src="js/intro-game3.js"></script>
 </body>
 
 </html>

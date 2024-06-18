@@ -21,6 +21,8 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
+  <link href="assets/css/gamezone.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/css.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,36 +38,9 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
       <a href="home.html"><img src="./img/logo.png" style="height: 40px;"></a>
-      <nav id="navbar" class="navbar">
-      <!--
-        <ul>
-        <i onclick="OpenMenu1()" class="bi bi-list mobile-nav-toggle"></i>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">กิจกรรม</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-        </ul>
-      -->
+      <!--<nav id="navbar" class="navbar">-->
         <div onclick="OpenPopMenu()" class="bi bi-list mobile-nav-toggle"></div>
-      </nav>
+      <!--</nav>-->
     </div>
   </header>
 
@@ -83,7 +58,7 @@
         <div><img src="./icon/icons-home.png" style="width:30px;"></div>
         <div class="nav-text">Home</div>
       </div>
-      <div class="iconlink1" onClick="window.location='oneretailclub.html';">
+      <div class="iconlink" onClick="window.location='oneretailclub.html';">
         <div><img src="./icon/icons-puzzle.png" style="width:30px;"></div>
         <div class="nav-text">One Retail</div>
       </div>
@@ -98,20 +73,36 @@
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <span class="header1">ONE</span> <span class="header2">Retail</span> <span><b>Club</b></span>
+          <span class="header1">Game</span> <span class="header2">Zone</span>
           <ol>
             <li><a href="home.html">Home</a></li>
-            <li>คลิปสำหรับผู้ที่ทำผลงานได้ดีที่สุด</li>
+            <li>กิจกรรมเก็บสะสมคะแนน</li>
           </ol>
         </div>
       </div>
     </section>
-    <section class="inner-page" style="padding-top:20px;">
-      <div class="container">
-        <p>
-          Coming Soon
-        </p>
-      </div>
+    <section id="NewsUpdate" class="blog" style="padding-top:35px; ">
+      <div class="container" data-aos="fade-up" style="margin-bottom: 30px;">
+        <div id="QuizGame"></div>
+          <center>
+            <div class="section-title">
+              <h2>Game Zone</h2>
+            </div>        
+            <div class="section-title" style="margin:10px;font-weight: 400;"><p>อีกหนึ่งกิจกรรมสำหรับชาว ONE Retail Society<br> ที่สามารถเข้ามาร่วมสนุกกับการเก็บ POINT ได้ในทุก ๆ วัน<br>ทั้งหมดขึ้นอยู่กับความรู้และดวงของคุณ</p></div>
+            <div style="width:330px; margin:10px auto; height: 200px;">
+              <div class="box-menu-game" onclick="GotoGame(1)"><img src="./icon/icon-game.png" style="width:60px;"><div class="text-team1">เกมส์วัดดวง</div><div id="RatioGame1"></div></div>
+              <div class="box-menu-game" onclick="GotoGame(5)"><img src="./icon/icon-rock.png" style="width:60px;"><div class="text-team1">เกมส์ เปา ยิง ชุบ</div><div id="RatioGame5"></div></div>
+              <div class="box-menu-game" onclick="GotoGame(2)"><img src="./icon/icon-images.png" style="width:60px;"><div class="text-team1">เกมส์เปิดภาพลุ้นเหรียญ</div><div id="RatioGame4"></div></div>
+              <div class="box-menu-game" onclick="GotoGame(3)"><img src="./icon/icon-quiz.png" style="width:60px;"><div class="text-team1">คำถามประจำวัน</div><div id="RatioGame3"></div></div>
+<!--
+              <div class="box-menu-game" onclick="GotoGame(6)"><img src="./icon/icon-match.png" style="width:70px;margin-top:-9px;"><div class="text-team1">เกมส์จับคู่</div><div id="RatioGame6"></div></div>
+              <div class="box-menu-game" onclick="GotoGame(4)"><img src="./icon/icon-auction.png" style="width:60px;margin-top:5px;"><div class="text-team1">ประมูลสินค้า</div></div>
+-->
+            </div>
+            <div class="clr"></div>
+            <div class="text-team" style="margin-top:8px;font-size:12px;">คลิกเลือกรายการที่ต้องการเข้าร่วมกิจกรรม</div>
+          </center>
+        </div>
     </section>
   </main>
 
@@ -142,6 +133,7 @@
   <script src="assets/js/main.js"></script>
   <script src="./js/connect.js"></script>
   <script src="./js/menu.js"></script>
+  <script src="./js/gamezone.js"></script>
 </body>
 
 </html>

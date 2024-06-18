@@ -54,8 +54,8 @@
     <div class="container" id="StartPage">
       <center>
         <div id="loading" style="margin-top:250px;">
-          <img src="./img/logo.png" style="height:50px;"><br><br>
-          <img src="./img/loading.gif" style="width:40px;">
+          <img src="./img/logo.png" style="height:60px;"><br><br><br>
+          <img src="./img/loading.gif" style="width:50px;">
         </div>
       </center>
     </div>
@@ -67,8 +67,23 @@
         <div id="A"></div>
         <div class="container" style="margin-top:20px;">
           <div id="DisplayMemo"></div>
+          <!--
           <div class="row-font">
-            <div class="header-font">เขียนเรื่องราวของคุณที่นี่ (ไม่บังคับให้เขียน)</div>
+            <div class="header-font">เลือกหัวช้อเรื่องราวของคุณ</div>
+            <div class="input-group">
+              <select id="txtGroupQ" style="background: #c8d4eb; color:#000" required/>
+                <option></option>
+                <option value="Group-01">การประเมินผล KPI</option>
+                <option value="Group-02">ค่าตอบแทน</option>
+                <option value="Group-03">ค่าใช้จ่าย</option>
+                <option value="Group-04">ค่ารถยนต์</option>
+                <option value="Group-99">อื่น ๆ</option>
+              </select>
+            </div>
+          </div>          
+        -->
+          <div class="row-font">
+            <div class="header-font">เขียนเรื่องราวของคุณที่นี่</div>
             <div class="input-group">
               <textarea id="txtStory" rows="10" placeholder="" style="text-align:left; width: 100%; height: 120px; background: #c8d4eb; color:#000;"></textarea>
             </div>
@@ -85,12 +100,14 @@
           และพร้อมที่จะช่วยคุณในการแก้ไขปัญหา
         </div>
         <div>
-          <div class="btn btn-a1 grey" onclick="window.location.href='home.html';" style="margin-top:20px;">คลิกเพื่อเข้าสู่ ONE Retail Society</div>
+          <div class="btn btn-a1 grey" onclick="window.location.href='home.html';" style="margin-top:20px;">ไปหน้าแรก</div>
         </div>
       </div>
     </div>    
     <div class="clr" style="height: 50px;"></div>
   </main>
+
+
 
   <div id="id01" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4 bg-menu">
@@ -112,6 +129,7 @@
     </div>
     <div class="clr" style="height:70px;"></div>
   </div>
+
 
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>ONE Retail Socitey</title>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="assets/img/favicom.ico" rel="icon">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/w3.css" rel="stylesheet">
+
+  <link href="assets/css/one-style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/css.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <header id="header" class="d-flex align-items-center" style="background: #0056ff;">
+    <div class="d-flex align-items-center justify-content-between" style="margin:auto;">
+      <span class="header1" style="color:#c1d8f5;">เกมส์คำถามประจำวัน</span>
+    </div>
+  </header>
+
+  <main id="main" data-aos="fade-up">
+
+
+    <section id="StartPage" class="inner-page">
+      <div class="container" style="max-width: 450px;">
+        <div class="row" data-aos="fade-up">
+          <article class="entry" style="box-shadow: none;width:100%; margin:15px auto; text-align: center;">
+            <div class="clr"></div>
+            <div id="QuizZone">
+              <div style="padding:0px 0 10px 0;"><img src="./img/mascot.png" width="170px;"></div>
+              <center>
+                <div style="color:#f68b1f;margin-top:10px;">. . . . L o a d i n g . . . .<br>
+                  <progress value="0" max="5" id="progressBar"></progress></div>
+                <div class="font13" style="line-height:1.2;color:#0056ff;margin-top:20px; text-align: center;"><b>คำเตือน</b><br>หากคุณออกจากหน้านี้ก่อนการแข่งขันจะสิ้นสุด<br>คุณจะไม่สามารถตอบคำถามในวันนี้ได้อีก</div>
+              </center>
+            </div>
+<!--
+            <div class="clr"></div>
+            <div id="ShowQuiz" style="display: none;">
+              <center>
+                <div style="margin-top:10px;background:#f68b1f;padding:20px;border-radius: 10px;">
+                  <div id="DisplayTimer"></div>
+                </div>
+                <div class="clr"></div>
+                <div id="DisplayChoice" style="color:#fff;margin-top:0px;"></div>
+                <div id="MessageEnd" style="display:none;"> 
+                  <div class="font12" style="color:#ffffff;margin-top:20px;">วันนี้คุณได้ทำการแข่งขันเกมส์นี้ไปแล้ว</div>
+                  <div class="clr"></div>
+                  <center><div class="btn btn-a1 blue" style="margin-top:10px;border:1px #ffffff solid;" onclick="location.href='intro-game3.html'">ดูผลการแข่งขันของคุณ</div></center>
+                </div>
+              </center>
+            </div>
+-->
+            <div id="MessageEnd" style="display:none;"> 
+              <div class="font12" style="color:#ffffff;margin-top:20px;">วันนี้คุณได้ทำการแข่งขันเกมส์นี้ไปแล้ว</div>
+              <div class="clr"></div>
+              <center><div class="btn btn-a1 blue" style="margin-top:10px;border:1px #ffffff solid;" onclick="location.href='intro-game3.html'">ดูผลการแข่งขันของคุณ</div></center>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div id="DisplayQuiz" style="display: none; ">
+      <div style="position: relative; height: 170px;background: #ffc107; ">
+        <div style="padding:15px 20px; font-size: 15px; text-align: center;">
+          <div id="DisplayQuestion"></div>
+        </div>
+      </div>
+      <div class="clr"></div>
+
+      <div id="ShowQuiz" style="height:100%; min-height: 500px; background: #e9ecef; display: none;">
+        <div class="QuizBoard">
+          <div id="progressBar1">
+            <div class="bar"></div>
+          </div>
+          <div class="clr"></div>
+          <div id="DisplayChoice"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <div id="id01" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <center>
+          <div id="DisplayLastScore" class="TextLastScore"></div>
+          <div class="btn btn-a1 grey" onclick="CloseAll()" style="margin-top:15px; width:130px;">ปิดหน้าต่าง</div>
+        </center>
+      </div>
+    </div>
+  </div>
+
+  <div id="id02" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background-color: #ffffff;">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <center>
+          <div id="DisplayEndScore" class="TextLastScore"></div>
+          <div style="margin-top:15px;width:130px;" class="btn btn-a1 grey" onclick="CloseAll()">ปิดหน้าต่าง</div>
+        </center>
+      </div>
+    </div>
+  </div>
+
+  <div id="id03" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <center>
+          <div id="DisplayExtraPoint" class="TextLastScore"></div>
+          <div class="btn btn-a1 grey" onclick="CloseAll()" style="margin-top:15px;width:130px;">ปิดหน้าต่าง</div>
+        </center>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="menu" class="w3-modal w3-animate-opacity" style="margin-top:-50px;z-index: 99999;">
+    <div class="w3-modal-content w3-card-4 bg-menu">
+      <div class="w3-container container-min">
+        <div id="MenuSociety"></div>
+      </div>
+    </div>
+    <div class="clr" style="height:45px;"></div>
+  </div>
+
+<!--
+  <div class="clr"></div>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+-->
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="assets/js/main.js"></script>
+  <script src="./js/connect.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="js/game-3.js"></script>
+</body>
+
+</html>

@@ -4,60 +4,88 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>One Retail Society</title>
+  <title>ONE Retail Socitey</title>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','G-6FZQ6JQL2P');</script>
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
   <link href="assets/img/favicom.ico" rel="icon">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/css/w3.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/css.css" rel="stylesheet">
-  <link href="assets/css/w3.css" rel="stylesheet">
-  <link href="assets/css/button.css" rel="stylesheet">
-<!--
-  <link href="assets/css/tap.css" rel="stylesheet">
--->
-  <link href="assets/css/calendar.css" rel="stylesheet">
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
-  <script src="https://use.fontawesome.com/6f993f4769.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style type="text/css">
+.cropped-ofp {
+width: 250px; 
+height: 140px; 
+object-fit: cover;
+object-position: 25% 25%; 
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+/*    position: relative; 
+    padding-top: calc(100% * (100 / 300));*/
+}    
 
-  <style>
-    .fa { margin-right: 10px; cursor: pointer; }
-    .row { margin: 10px auto; }
+.cropped-ofp1 {width: 250px;height: 140px;object-fit: cover;
+  padding-top: calc(10% * (40 / 300));
+}    
+
+
   </style>
+
+
 </head>
 
-
-<body class="body4">
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-6FZQ6JQL2P"
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <header id="header" class="fixed-top">
-    <div onclick="history.back()" style="width:40px; text-align: center; float: left;margin-left:10px;">
-      <i class="fa fa-arrow-left" style="color:#dee2e6; font-size: 22px;"></i>
+  <section id="topbar" class="d-flex align-items-center" style="height: 1px; background: transparent;"></section>
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="home.html"><img src="./img/logo.png" style="height: 40px;"></a>
+      <nav id="navbar" class="navbar">
+      <!--
+        <ul>
+        <i onclick="OpenMenu1()" class="bi bi-list mobile-nav-toggle"></i>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">กิจกรรม</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+        </ul>
+      -->
+        <div onclick="OpenPopMenu()" class="bi bi-list mobile-nav-toggle"></div>
+      </nav>
     </div>
-    <div class="container align-items-center" onclick="window.location.href='home.html';" style="margin-left:-40px;">
-      <span class="header1">ตาราง</span><span class="header2">อบรม</span>
-    </div>
-    <!--
-    <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
-      <i class="icofont-navigation-menu"></i>
-    </div>
-    -->
   </header>
 
   <div class="navbar1">
@@ -70,11 +98,11 @@
         <div><img src="./icon/icons-picture.png" style="width:30px;"></div>
         <div class="nav-text">Success Story</div>
       </div>
-      <div class="iconlink1" onClick="window.location='home.html';">
+      <div class="iconlink" onClick="window.location='home.html';">
         <div><img src="./icon/icons-home.png" style="width:30px;"></div>
         <div class="nav-text">Home</div>
       </div>
-      <div class="iconlink" onClick="window.location='retailclub.html';">
+      <div class="iconlink" onClick="window.location='oneretailclub.html';">
         <div><img src="./icon/icons-puzzle.png" style="width:30px;"></div>
         <div class="nav-text">One Retail</div>
       </div>
@@ -85,74 +113,141 @@
     </div>
   </div>
 
+  <main id="main" data-aos="fade-up">
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="header1">Calendar</span>
+          <ol>
+            <li><a href="home.html">Home</a></li>
+            <li>ตารางการฝึกอบรม</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="inner-page" style="padding-top:20px;">
+      <div class="container">
+        <p>
+          Coming Soon
+          <div><img src="http://img.youtube.com/vi/2xiTqt9SCCw/hqdefault.jpg" class="cropped-ofp"></div>
+          <div class="clr"></div>
+          <div><br><br><img src="http://img.youtube.com/vi/2xiTqt9SCCw/hqdefault.jpg" class="cropped-ofp1"></div>
+          <div class="clr"></div>
+        </p>
+
+        <p>
+          Coming Soon
+          <div><img src="http://img.youtube.com/vi/xl8rUkOtsD96aUQ1/hqdefault.jpg" class="cropped-ofp"></div>
+          <div class="clr"></div>
+          <div><br><br><img src="http://img.youtube.com/vi/eBg97-grrAA/hqdefault.jpg" class="cropped-ofp1"></div>
+          <div class="clr"></div>
+        </p>
+
+
+<iframe id="existing-iframe-example"
+        width="100%" height="240"
+        src="https://www.youtube.com/embed/eBg97-grrAA?enablejsapi=1"
+        frameborder="0"
+        style="border: solid 4px #37474F"
+></iframe>
+
+https://youtu.be/eBg97-grrAA?si=fxMLD0YrIYlTSAVh
+      </div>
+    </section>
+
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@zacksjerryrig/video/6828268207359413509" data-video-id="6828268207359413509" style="max-width: 605px; min-width: 325px;">
+       <iframe name="__tt_embed__v6828268207359413509"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-top-navigation allow-same-origin"
+          src="https://www.tiktok.com/embed/v2/6828268207359413509?lang=en-US&amp;"
+          style="width: 100%; height: 600px; display: block; visibility: unset; max-height: 700px;"
+       ></iframe>   
+   </blockquote>
+
+
+   <div class="clr" style="height:45px;"></div>
+   <script async src="https://www.tiktok.com/embed.js"></script>
+
+
+  </main>
 <!--
-  <div class="container" style="margin-top: 80px; background: #fff; color:#000; font-size: 14px; max-width: 450px;">
-    <ul class="nav nav-tabs">
-      <li><a data-toggle="tab" href="#home" onclick="TapMenu(0)">Home</a></li>
-      <li class="active"><a data-toggle="tab" href="#menu1" onclick="TapMenu(1)">ตารางอบรม</a></li>
-      <li><a data-toggle="tab" href="#menu2" onclick="TapMenu(2)">การแข่งขัน</a></li>
-    </ul>
-  </div>
--->
+http://img.youtube.com/vi/I-tBhNwVa7w/maxresdefault.jpg  (maximum resolution ).
+http://img.youtube.com/vi/I-tBhNwVa7w/sddefault.jpg (standard default).
+http://img.youtube.com/vi/I-tBhNwVa7w/mqdefault.jpg (medium quality).
+http://img.youtube.com/vi/I-tBhNwVa7w/hqdefault.jpg  (high quality).
+http://img.youtube.com/vi/I-tBhNwVa7w/default.jpg (default).
+-->  
 
-  <div style="max-width: 450px; margin:60px auto 5px auto;">
-    <center>
-      <!--<div class="btn-memu" style="margin-top:0px;">ปฏิทินกำหนดการฝึกอบรม</div>-->
-      <div id="cal"></div>
-    </center>
-  </div>
 
-  <section style="max-width: 450px; margin: 0px auto 20px auto;">
-    <center>
-      <div style="margin-top:10px;"><span class="font14b">ตาราง</span><span class="font14f">การอบรม</span></div>
-      <div id="loading" style="margin-top:50px;">
-        <img src="img/one-logo.png" style="width:190px;"><br><br>
-        <img src="./img/loading1.gif" style="width:50px;">
-      </div>
-    </center>
-    <div id="DisplayCalendar"></div>
-  </section>
 
-  <div id="id01" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content w3-card-4" style="background: #fff; max-width: 450px;">
-      <div class="w3-container" style="min-height:270px;padding:10px;width:100%;margin:auto;">
-        <div id="DisplayToDay" style="font-size: 13px;"></div>
-      </div>
-    </div>
-    <div class="clr" style="height: 70px;"></div>
-  </div>
 
-  <div id="menu" class="w3-modal w3-animate-opacity">
+  <div id="menu" class="w3-modal w3-animate-opacity" style="margin-top:-50px;z-index: 99999;">
     <div class="w3-modal-content w3-card-4 bg-menu">
       <div class="w3-container container-min">
         <div id="MenuSociety"></div>
       </div>
     </div>
-    <div class="clr" style="height:40px;"></div>
+    <div class="clr" style="height:45px;"></div>
   </div>
 
-  <div class="clr" style="height:80px;"></div>
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  <!-- Vendor JS Files #dde7f0-->
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <div class="clr" style="height: 30px;"></div>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
-  <script src='https://momentjs.com/downloads/moment.min.js'></script>
-
-
-  <script src="./assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="./js/connect.js"></script>
   <script src="./js/menu.js"></script>
-  <script src="./js/calendar.js"></script>
+<!--
+<script type="text/javascript">
+      var tag = document.createElement('script');
 
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      function onPlayerStateChange(event) {
+        console.log(player.getCurrentTime());
+      }
+
+function minTommss(minutes){
+ var sign = minutes < 0 ? "-" : "";
+ var min = Math.floor(Math.abs(minutes));
+ var sec = Math.floor((Math.abs(minutes) * 60) % 60);
+ return sign + (min < 10 ? "0" : "") + min + ":" + (sec < 10 ? "0" : "") + sec;
+}
+
+function formatMinutes(mins){
+  return moment().startOf('day').add(mins, 'minutes').format('m:ss');
+}
+
+</script>
+-->
 </body>
+
 </html>
