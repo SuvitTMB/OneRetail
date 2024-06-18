@@ -1,79 +1,13 @@
 
+
+
 $(document).ready(function () {
   if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
   Connect_DB();
-  ImgProfile();
-  //CheckSurvey();
-  MyPulseSurvey();
-  //CheckTapMemo();
-  //MyPointMenu();
+  console.log(sessionStorage.getItem("xTeamGroup"));
+  CheckUserSurvey();
 });
 
-
-
-function CheckTapMemo() {
-  //document.getElementById('DisplayHeader').style.display='block';
-  var str = "";
-  var xMemo = 0;
-  var xFollowCase = 0;
-
-  dbUserSurvey.where('LineID','==',sessionStorage.getItem("LineID"))
-  //.where('PulseStory','in',[''])
-  //.where('PulseStatus','==',0)
-  //.where('FollowCase','==',0)
-  .orderBy('TimeStamp','desc')
-  .limit(15)
-  .get().then((snapshot)=> {
-    snapshot.forEach(doc=> {
-      if(doc.data().PulseStory!="") {
-        xMemo = 1;
-        str += '<div class="boxmemo" data-aos="zoom-in" data-aos-delay="100" onclick="GotoShowMemo(\''+ doc.id +'\')">';
-        str += '<div style="width:100%; margin-top:0px;height:28px;">';
-        str += '<div style="width:68%; float:left; padding-top: 3px;"><img src="./img/img-ratting-'+ doc.data().PulseChoice +'.png" style="height:18px;"></div>';
-        str += '<div style="width:28%; float:left; position: absolute;; right: 0px;"><div class="btn-more">ดูรายละเอียด</div></div>';
-        str += '</div><div class="clr"></div>';
-        str += '<div style="margin-top:2px;"><div class="memo-header">'+ doc.data().PulseMemo +'</div>';
-        str += '<div class="clr"></div>'+ doc.data().PulseStory +'</div>';
-        str += '<div class="entry-meta"><ul>';
-        str += '<li class="d-flex align-items-center"><i class="icofont-wall-clock"></i>'+ doc.data().PulseDate +'</li>';
-        str += '</ul></div></div>';        
-      }
-    });
-    if(xMemo==0) {
-      str += '<div class="boxmemo-none">*** ไม่มีข้อมูล ***</div>';
-    }
-    //document.getElementById('DisplayMemo').style.display='block';
-    $("#DisplayMemo").html(str);
-  });   
-}
-
-
-function GotoShowMemo(x) {
-  location.href = "pulsememo.html?gid="+x;
-  //console.log(x);
-}
-
-/*
-function CheckSurvey() {
-  console.log(datetoday);
-  var str = "";
-  dbUserSurvey.where('PulseDate','==',datetoday)
-  .where('EmpID','==',sessionStorage.getItem("EmpID_Academy"))
-  .get().then((snapshot)=> {
-    snapshot.forEach(doc=> {
-      gcheck = 1;
-      EidUserSurvey = doc.id;
-      str += '<div><div class="btn-blue" onclick="GotoResult()" style="margin-top:20px; margin-right:5px;">ดูอุณหภูมิของคุณ</div>';
-      str += '<div class="btn-grey" onclick="GotoHome()" style="margin-top:20px;">กลับหน้าแรก</div></div>';
-    });
-    if(gcheck==0) {
-      str += '<div><div class="btn-grey" onclick="ReadMore()" style="margin-top:20px;margin-right:5px;">อ่านรายละเอียด</div>';
-      str += '<div class="btn-click" onclick="CheckQuestionPulse()" style="margin-top:20px;">เริ่มวัดอุณหภูมิของคุณ</div></div>';
-    }
-    document.getElementById('loading').style.display='none';
-    $("#CheckStart").html(str);
-  });
-}
 
 var CalUserSurvey = 0;
 function CheckUserSurvey() {
@@ -146,25 +80,25 @@ function CheckPulseSurvey() {
 function CheckSurvey() {
   var xRatio = "100";
   var str = "";
-  str += '<div class="clr" style="height:0px;"></div>';
-  str += '<div class="btn-memu">ข้อมูลความสุขในการทำงานของคุณ</div>';
+  str += '<div class="clr"></div>';
+  //str += '<div class="btn-memu">ข้อมูลความสุขในการทำงานของคุณ</div>';
   str += '<div style="margin-top:25px;"><img src="'+ sessionStorage.getItem("LinePicture") +'" class="show-profile" width="100px"></div>';
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
-  str += '<div class="half-arc" style="--percentage:'+ parseFloat(CalUserProfile).toFixed(2) +'%;"><span class="label" style="color:#ffffff; padding-top:30px;">'+ parseFloat(CalUserProfile).toFixed(2) +'%</span></div>';
+  str += '<div class="half-arc" style="--percentage:'+ parseFloat(CalUserProfile).toFixed(2) +'%;"><span class="label" style="padding-top:30px;">'+ parseFloat(CalUserProfile).toFixed(2) +'%</span></div>';
   str += '<div class="txt-white">ภาพรวมอุณหภูมิความสุขในการทำงานของคุณ</div>';
   str += '<div class="clr" style="height:25px"></div>';
   str += '<div class="row-header">อุณหภูมิ<br>ของคุณวันนี้</div>';
   str += '<div class="row-progress"><progress value="'+ parseFloat(CalUserSurvey).toFixed(0) +'" max="'+ xRatio +'" style="--value: '+ parseFloat(CalUserSurvey).toFixed(0) +'; --max: '+ xRatio +';"></progress></div>';
-  str += '<div class="row-header">อุณหภูมิรวม<br>ของทุกคนวันนี้</div>';
-  str += '<div class="row-progress"><progress value="'+ parseFloat(CalPulseDate).toFixed(0) +'" max="'+ xRatio +'" style="--value: '+ parseFloat(CalPulseDate).toFixed(0) +'; --max: '+ xRatio +';"></progress></div>';
   str += '<div class="row-header">อุณหภูมิรวม<br>ของตัวคุณ</div>';
   str += '<div class="row-progress"><progress value="'+ parseFloat(CalUserProfile).toFixed(0) +'" max="'+ xRatio +'" style="--value: '+ parseFloat(CalUserProfile).toFixed(0) +'; --max: '+ xRatio +';"></progress></div>';
+  str += '<div class="row-header">อุณหภูมิรวม<br>ของทุกคนวันนี้</div>';
+  str += '<div class="row-progress"><progress value="'+ parseFloat(CalPulseDate).toFixed(0) +'" max="'+ xRatio +'" style="--value: '+ parseFloat(CalPulseDate).toFixed(0) +'; --max: '+ xRatio +';"></progress></div>';
   str += '<div class="row-header">อุณหภูมิรวม<br>ของทุกคน</div>';
   str += '<div class="row-progress"><progress value="'+ parseFloat(CalPulseResult).toFixed(0) +'" max="'+ xRatio +'" style="--value: '+ parseFloat(CalPulseResult).toFixed(0) +'; --max: '+ xRatio +';"></progress></div>';
   str += '</div>';
   $("#DisplayMyPoint").html(str); 
   document.getElementById('loading').style.display='none';
-  CheckTapMemo();
+  //CheckTapMemo();
 }
 
 
@@ -341,9 +275,9 @@ function CheckTapAdmin(x) {
   //document.getElementById('DisplayAdmin').style.display='block';
   $("#Tap-"+x).html(str);
 }
+*/
 
 
 function GotoShowMemo(x) {
   location.href = "pulsememo.html?gid="+x;
 }
-*/

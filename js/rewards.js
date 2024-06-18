@@ -37,44 +37,33 @@ function ListRewards() {
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
       xRewardsCode = doc.data().RewardsCode;
-      //(alert(doc.data().WheelRandom);
-
-    str += '<div class="story-box" data-aos="zoom-in" data-aos-delay="100">';
-    str += '<div class="story-box-img"><div><img src="./rewards/'+ doc.data().RewardsCode +'" class="story-box-img-in"></div>';
-    //str += '<div class="btn-small">Click</div>';
-    str += '</div>';
-    str += '<div class="story-box-text"><div style="height: 50px;">';
-    str += '<div class="story-box-text-head">'+ doc.data().RewardsName +'</div>';
-    str += '<div class="story-box-text-sub" style="height: 31px;">'+ doc.data().RewardsDetail +'</div>';
-    str += '</div><div class="clr"></div>';
-    if(sessionStorage.getItem("COIN_Point")<doc.data().RewardsPrice) {
-      if(parseFloat(doc.data().RewardsStock)>0) {
-        str += '<div><div class="rewards-txt1">เหลือ '+ parseFloat(doc.data().RewardsStock) +' รายการ</div>';
-      } else {
-        str += '<div><div class="rewards-linkB">รางวัลหมดแล้ว</div>';
-      }
-      str += '<div class="rewards-linkB">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' COIN</div></div>';
-    } else {
-      if(parseFloat(doc.data().RewardsStock)>0) {
-        str += '<div><div class="rewards-txt1">เหลือ '+ parseFloat(doc.data().RewardsStock) +' รายการ</div>';
-        str += '<div class="rewards-linkA" onclick="OpenLink(\''+ doc.id +'\',\''+ parseFloat(doc.data().RewardsPrice) +'\',\''+ i +'\')">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' COIN</div></div>';
-      } else {
-        str += '<div><div class="rewards-txt1">รางวัลหมดแล้ว</div>';
+      str += '<div class="story-box" data-aos="zoom-in" data-aos-delay="100">';
+      str += '<div class="story-box-img"><div><img src="./rewards/'+ doc.data().RewardsCode +'" class="story-box-img-in"></div>';
+      //str += '<div class="btn-small">Click</div>';
+      str += '</div>';
+      str += '<div class="story-box-text"><div style="height: 63px;">';
+      str += '<div class="story-box-text-head">'+ doc.data().RewardsName +'</div>';
+      str += '<div class="story-box-text-sub" style="height: 45px;">'+ doc.data().RewardsDetail +'</div>';
+      str += '</div><div class="clr"></div>';
+      if(sessionStorage.getItem("COIN_Point")<doc.data().RewardsPrice) {
+        if(parseFloat(doc.data().RewardsStock)>0) {
+          str += '<div><div class="rewards-txt1">เหลือ '+ parseFloat(doc.data().RewardsStock) +' รายการ</div>';
+        } else {
+          str += '<div><div class="rewards-linkB">รางวัลหมดแล้ว</div>';
+        }
         str += '<div class="rewards-linkB">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' COIN</div></div>';
+      } else {
+        if(parseFloat(doc.data().RewardsStock)>0) {
+          str += '<div><div class="rewards-txt1">เหลือ '+ parseFloat(doc.data().RewardsStock) +' รายการ</div>';
+          str += '<div class="rewards-linkA" onclick="OpenLink(\''+ doc.id +'\',\''+ parseFloat(doc.data().RewardsPrice) +'\',\''+ i +'\')">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' COIN</div></div>';
+        } else {
+          str += '<div><div class="rewards-txt1">รางวัลหมดแล้ว</div>';
+          str += '<div class="rewards-linkB">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' COIN</div></div>';
+        }
       }
-    }
-    //str += '<div><div class="rewards-txt1">เหลือ '+ parseFloat(doc.data().RewardsStock) +' รายการ</div>';
-    //str += '<div class="rewards-txt1">ใช้ '+ parseFloat(doc.data().RewardsPrice) +' เหรียญ</div></div>';
-    //str += '<div class="entry-meta">';
-    //str += '<ul><li class="d-flex align-items-center"><i class="icofont-alarm"></i>4 Read</li>';
-    //str += '<li class="d-flex align-items-center"><i class="icofont-like"></i>5 Like</li>';
-    //str += '<li class="d-flex align-items-center"><i class="icofont-comment"></i>6 Comment</li>';
-    //str += '</ul></div>';
-    str += '</div></div>';
-    i++;
+      str += '</div></div>';
+      i++;
     });
-
-
     $("#DisplayList").html(str);
   });
 }

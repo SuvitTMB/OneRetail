@@ -9,7 +9,7 @@ xHeaderPoint = 1;
 
 
 $(document).ready(function () {
-  
+  /*
   sessionStorage.clear(); 
   var str = "";
   var str1 = "";
@@ -19,7 +19,7 @@ $(document).ready(function () {
   sessionStorage.setItem("LineID", sLineID);
   sessionStorage.setItem("LineName", sLineName);
   sessionStorage.setItem("LinePicture", sLinePicture);
-  str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="show-profile" width="100px"></div>';
+  str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="user-profile"></div>';
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
   str1 += '<div class="textheader">เริ่มต้นการเรียนรู้</div><div class="NameLine" style="margin-top:5px;">'+ sessionStorage.getItem("LineName")+'</div>';
   xProfile = str;
@@ -28,9 +28,8 @@ $(document).ready(function () {
   $("#MyProfile-start").html(str1);  
   Connect_DB();
   CheckData();
-
-
-  //main();
+  */
+  main();
 });
 
 
@@ -93,6 +92,7 @@ function CheckData() {
         sessionStorage.setItem("Level_Point", doc.data().Level_Point);
         sessionStorage.setItem("XP_Point", doc.data().XP_Point);
         sessionStorage.setItem("RP_Point", doc.data().RP_Point);
+        sessionStorage.setItem("RP_Coin", doc.data().RP_Coin);
         sessionStorage.setItem("QS_Point", doc.data().QS_Point);
         sessionStorage.setItem("COIN_Point", doc.data().COIN_Point);
         sessionStorage.setItem("PulseCount", doc.data().PulseCount);
@@ -114,7 +114,6 @@ function CheckData() {
         if(doc.data().JoinTime==0) {
           FirstTimeMember();
         }
-        //console.log("107="+sessionStorage.getItem("EmpID_Academy")+"==="+sessionStorage.getItem("xTeamGroup"));
     });
     if(CheckFoundData==0) {
       document.getElementById('loading').style.display='none';
@@ -148,13 +147,8 @@ function CheckDatePulse() {
       //console.log("NotFound ---> 222==="+thistoday+"==="+sessionStorage.getItem("xTeamGroup"));
       //str += '<div class="btn-grey" onclick="GotoHome()" style="margin-top:20px;">ปิดหน้าต่าง</div>';
       //$("#B_id03").html(str);      //str += '<div class="btn-grey" onclick="GotoMyPoint()" style="margin-top:20px;">ปิดหน้าต่าง</div>';
-
-      if(sCountTimeJoin>30) { setInterval(GotoHome, 2000);  }
-//console.log("Line 151");
-
-
-      //setInterval(GotoHome, 2000); 
-      //GotoHome();
+      //alert("Check");
+      if(sCountTimeJoin>30) { setInterval(GotoHome, 3000);  }
     }
   });
 }
@@ -206,6 +200,7 @@ function CheckDoneSurvey() {
     snapshot.forEach(doc=> {
       xCheckDone = 1;
       sessionStorage.setItem("CheckDonePulse", 1);
+      //alert("202");
       GotoHome();
     });
     if(xCheckDone==0) {
@@ -219,25 +214,26 @@ var xCheckOut = 0;
 function CheckUserProfile(eid) {
   //console.log("Check User Profile Done");
   dbCheckMember.where('xEmpID','==',parseFloat(eid))
-  .where('xChief_eng','in',['CRSG','CRDG','CRLG','CTWPG','CALO'])
+  //.where('xChief_eng','in',['CRSG','CRDG','CRLG','CTWPG','CALO'])
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
       xCheckOut = 1;
-      sessionStorage.setItem("EmpID_Academy", eid);
+      /*
       if(doc.data().xChief_eng=="CALO") {
         sessionStorage.setItem("xTeamGroup", "AL Group");        
       } else {
         sessionStorage.setItem("xTeamGroup", "Retail Group");        
       }
+      */
+      xCountIN = parseFloat(xCountIN) + 1;
+      sessionStorage.setItem("EmpID_Academy", eid);
       sessionStorage.setItem("xBranch", doc.data().xBranch);
       sessionStorage.setItem("xDepartment", doc.data().xDepartment);
       sessionStorage.setItem("xGroup", doc.data().xGroup);
       sessionStorage.setItem("xChief_th", doc.data().xChief_th);
       sessionStorage.setItem("xChief_eng", doc.data().xChief_eng);
       sessionStorage.setItem("xPosition", doc.data().xPosition);
-
-
-      xCountIN = parseFloat(xCountIN) + 1;
+      sessionStorage.setItem("xTeamGroup", doc.data().xTeamGroup);        
       dbProfile.doc(EidProfile).update({
         Linename : sessionStorage.getItem("LineName"),
         LinePicture : sessionStorage.getItem("LinePicture"),
@@ -304,15 +300,18 @@ function CheckDateIn() {
           Runloop();
           document.getElementById("id03").style.display = "block";
           if(sCountTimeJoin==30) {
-            str1 += '<div class="textheader" style="margin: 30px auto;">คุณทำภารกิจสำเร็จ</div>';
-            str1 += '<div><img src="img/register.png" style="width:250px;padding-top:4px; padding-bottom: 15px;"></div>';
+            str1 += '<div class="section-title" style="margin: 30px auto;"><h2>คุณทำภารกิจสำเร็จ</h2></div>';
+            str1 += '<div><img src="img/mission-complease.png" style="width:250px;padding-top:4px; padding-bottom: 15px;"></div>';
             str1 += '<div style="font-size:14px;line-height:1.1;margin-top:20px;">ยินดีด้วยคุณทำภารกิจสำเร็จ<br><b>ภารกิจเข้าร่วมกิจกรรมครบ 30 วัน</b><br>กดยืนยันการรับของรางวัลของคุณ</div>';
-            str1 += '<div class="clr"></div>';
-            str1 += '<div class="btn-blue" onclick="GetReward()">ยืนยันการรับของรางวัล</div>'
+            str1 += '<div class="clr" style="margin-top:25px;"></div>';
+            str1 += '<div class="btn btn-a1 green" onclick="GetReward()">ยืนยันการรับของรางวัล</div>'
             str1 += '<div class="clr" style="height:40px;"></div>';
             $("#DisplayGetPoint").html(str1);    
             document.getElementById("id06").style.display = "block";            
           }
+
+ 
+
           //str1 += '<div class="textheader" style="margin: 30px auto;">คุณได้รับ Coin</div>';
           //str1 += '<div style="font-size:14px;line-height:1.1;margin-top:20px;"><img src="./point/coin-1.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br><br>จากการเข้าร่วมกิจกรรม<br><b>เป็นวันที่ '+ sCountTimeJoin +' จาก 30 วัน</b></div>';
           //str1 += '<div class="clr"></div>';
@@ -360,14 +359,14 @@ function CheckDateIn() {
             GetJoinPoint(360,100);
           } 
           str+='<div style="margin-top:15px;">';
-          str+='<div class="textheader">การเดินทางของคุณ</div>';
-          str+='<div><img src="img/one-logo.png" style="width:150px;"></div>';
-          str+='<div><img src="./img/waitting.png" style="width:80%;margin:30px auto 20px auto;"></div>';
+          str+='<div class="section-title"><h2>การเดินทางของคุณ</h2></div>  ';
+          str+='<div><img src="./img/waitting.png" style="width:80%;margin:10px auto;"></div>';
+          str+='<div><img src="img/logo.png" style="height:40px; margin-bottom:20px;"></div>';
           str+='<div class="box-target">เข้าเว็บแล้ว<div class="box-target-number">'+ sCountTimeJoin +'</div>วัน</div>';
           str+='<div class="box-target">เหลืออีก<div class="box-target-number">'+(sTarget-sCountTimeJoin)+'</div>วัน</div>';
           str+='<div class="box-target">เพื่อรับ<div class="box-target-number">'+sPoint+'</div>POINT</div>';
           str+='</div>';
-          str+= '<div class="btn-blue" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าหลัก</div>';
+          str+= '<div class="btn btn-a1 blue" onclick="GotoHome()" style="margin-top:25px;">ไปหน้าหลัก</div>';
           $("#BoxTimeLine").html(str);    
           //console.log("293 Check Days=="+sCountTimeJoin);
           //CheckDatePulse();
@@ -389,7 +388,7 @@ function Runloop() {
   var xloop = 30;
   var CalRatio = (sCountTimeJoin*100)/xloop;
   //str += '<div class="text-header" style="margin-top:14px; font-size:15px; color:#002d63; font-weight: 600;"><span class="header1">Login</span> <span class="header2">Reward</span><br><span>ภารกิจ--> Days '+ sCountTimeJoin +'/30</span></div>';
-  str += '<div class="text-header" style="margin-top:14px; font-size:15px; color:#002d63; font-weight: 600;"><span class="header1">Mission</span> <span class="header2">Reward</span><br><span>ภารกิจเข้าร่วมกิจกรรมครบ 30 วัน</span></div>';
+  str += '<div class="text-header" style="margin-top:14px; font-size:15px; color:#002d63;"><span class="header1">Mission</span> <span class="header2">Reward</span><br><span>ภารกิจเข้าร่วมกิจกรรมครบ 30 วัน</span></div>';
   str += '<div class="font10b">ผู้เข้าร่วมกิจกรรมครบ 30 วันรับของรางวัลพิเศษ (จำนวน 300 รางวัล)</div>';
   str += '<div class="row-progress1"><progress value="'+ parseFloat(CalRatio).toFixed(0) +'" max="100" style="--value: '+ parseFloat(CalRatio).toFixed(0) +'; --max: 100;"></progress></div>';
   str += '<div class="clr" style="height: 10px;"></div>';
@@ -413,9 +412,9 @@ function Runloop() {
   } 
   //console.log("xPulsetoday2===="+xPulsetoday);
   if(xPulsetoday==1) {
-    str += '<div class="btn-click" onclick="GotoSurvey()" style="margin-top:20px;">ไปวัดอุณหภูมิความสุขกันเถอะ</div>';
+    str += '<div class="btn btn-a1 green" onclick="GotoSurvey()" style="margin-top:20px;">ไปวัดอุณหภูมิความสุขกันเถอะ</div>';
   } else {
-    str += '<div class="btn-blue" onclick="GotoHome()" style="margin-top:20px;">ไปหน้าหลัก</div>';
+    str += '<div class="btn btn-a1 blue" onclick="GotoHome()" style="margin-top:20px;">คลิกเพื่อเข้าสู่ ONE Retail Society</div>';
   }
   $("#LoopDay").html(str);    
 }
@@ -443,12 +442,11 @@ function FirstTimeMember() {
   sessionStorage.setItem("XP_Point", parseFloat(NewScore));
   sessionStorage.setItem("RP_Point", parseFloat(NewScore));
   sessionStorage.setItem("QS_Point", 0);
-  WelcomePoint();
+  //WelcomePoint();
   dbLoginlog.add({
     LineID : sessionStorage.getItem("LineID"),
     LineName : sessionStorage.getItem("LineName"),
     LinePicture : sessionStorage.getItem("LinePicture"),
-    //EmpID : sessionStorage.getItem("EmpID_Academy"),
     EmpID : xEmpID,
     EmpName : sessionStorage.getItem("EmpName_Academy"),
     LogDate : dateString,
@@ -456,12 +454,10 @@ function FirstTimeMember() {
   });
 
   var xHeader = "เข้าร่วมกิจกรรมครั้งแรก";
-  //if(sessionStorage.getItem("EmpID_Academy")==null) { }xEmpID
   dbUserlog.add({
     LineID : sessionStorage.getItem("LineID"),
     LineName : sessionStorage.getItem("LineName"),
     LinePicture : sessionStorage.getItem("LinePicture"),
-    //EmpID : sessionStorage.getItem("EmpID_Academy")
     EmpID : xEmpID,
     EmpName : sessionStorage.getItem("EmpName_Academy"),
     RefID : EidProfile,
@@ -473,33 +469,34 @@ function FirstTimeMember() {
     LogDate : dateString,
     LogTimeStamp : TimeStampDate
   });
+  WelcomePoint();
 }
 
 
 function WelcomePoint() {
   document.getElementById('id05').style.display='block';
   var str = "";
-  str += '<div class="textheader" style="margin-top:14px;">Welcome Point</div>';
-  str += '<div class="font13" style="margin-top:10px; text-align:center; padding:5px; color:#0056ff;">ยินดีด้วยคุณได้รับ Coin ครั้งแรก<br>จากการเข้าร่วมกิจกรรม One Retail Society</div>';
+  str += '<div class="section-title" style="margin-top:15px;"><h2>รับรางวัลครั้งแรกของคุณ</h2></div>';
+  str += '<div class="font13" style="margin-top:10px; text-align:center; padding:5px; color:#0056ff;">ยินดีด้วยคุณได้รับ POINT ครั้งแรก<br>จากการเข้าร่วมกิจกรรม One Retail Society</div>';
   str += '<div class="clr"></div>';
-  str += '<div><img src="./point/coin-'+ sessionStorage.getItem("XP_Point") +'.png" style="margin-top:10px;width:100%;border-radius: 15px; background:#ffffff;"></div>';
-  //str += '<div class="btn-start" onclick="GotoHome()" style="margin-top:30px;">คลิกเพื่อเริ่มต้นการใช้งาน</div>';
-  //str += '<div class="btn-start" onclick="CloseAll()" style="margin-top:30px;">คลิกเพื่อเริ่มต้นการใช้งาน</div>';
+  str += '<div><img src="./icon/icon-bag.png" style="width:120px;"></div>';
+  str += '<div style="font-size:50px; font-weight:600;">'+ sessionStorage.getItem("XP_Point") +'</div><div>POINTs</div>';
+  //str += '<div><img src="./point/coin-'+ sessionStorage.getItem("XP_Point") +'.png" style="margin-top:10px;width:100%;border-radius: 15px; background:#ffffff;"></div>';
+  //str += '<div class="btn btn-a1 grey" onclick="window.location.href=\'home.html\';" style="margin-top:30px;">คลิกเพื่อเริ่มต้นการใช้งาน</div>';
+  str += '<div class="btn btn-a1 blue" onclick="GotoHome()" style="margin-top:30px;">คลิกเพื่อเริ่มต้นการใช้งาน</div>';
   str += '<div style="height: 15px;"></div>';
-  $("#BoxTimeGetPoint").html(str);      
+  $("#BoxTimeGetPoint").html(str); 
+  //alert("point");
 }
 
 
 function UpdatePorfile() {
-  //alert("Update 476");
   NewDate();
   var TimeStampDate = Math.round(Date.now() / 1000);
-  //xMemGetMem = parseFloat(xMemGetMem) + 1;
-  //if(sessionStorage.getItem("EmpID_Academy")==null) { //}
   dbProfile.doc(EidProfile).update({
     EmpPicture : sessionStorage.getItem("LinePicture"),
+    //xTeamGroup : sessionStorage.getItem("xTeamGroup"),
     Linename : sessionStorage.getItem("LineName")
-    //MemGetMem : xMemGetMem
   })
   dbLoginlog.add({
     LineID : sessionStorage.getItem("LineID"),
@@ -511,15 +508,11 @@ function UpdatePorfile() {
     LogDate : dateString,
     LogTimeStamp : TimeStampDate
   });  
-  
-
-  //alert("Update Profile = "+xMemGetMem);
 }
 
 
 
 function CheckPulseSurvey() {
-  //console.log("L 493");
   dbPulseDate.where('PulseDate','==',thistoday)
   .where('xTeamGroup','==',sessionStorage.getItem("xTeamGroup"))
   .limit(1)
@@ -538,15 +531,13 @@ function CheckPulseSurvey() {
 
 
 function GetJoinPoint(d,x) {
-  //alert("447 - Get Join Point");
   var str = "";
   NewDate();
   var TimeStampDate = Math.round(Date.now() / 1000);
   sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point"))+parseFloat(sGetRewards));
   sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point"))+parseFloat(sGetRewards));
-  //console.log(xCheckDate+"==="+d+"==="+x);
   if(xCheckDate==1) {
-    var xHeader = "ได้รับ "+ sGetRewards +" COIN";
+    var xHeader = "ได้รับ "+ sGetRewards +" POINT";
     dbUserlog.add({
       LineID : sessionStorage.getItem("LineID"),
       LineName : sessionStorage.getItem("LineName"),
@@ -562,19 +553,16 @@ function GetJoinPoint(d,x) {
       LogDate : dateString,
       LogTimeStamp : TimeStampDate
     });
-
     dbProfile.doc(EidProfile).update({
       XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
       RP_Point : parseFloat(sessionStorage.getItem("RP_Point")),
       DateToDay : thistoday,
       JoinTime : sCountTimeJoin
     });
-    //console.log("New Point");
-    //OpenPopMenu(); 
   }         
   str+='<div style="margin-top:25px;">';
-  str+='<div style="text-align:center; padding:5px;">ยินดีด้วยคุณได้รับ COIN</div>';
-  str+='<div style="text-align:center; font-weight: 600; color:#0056ff;">'+ x +' Coin</div>';
+  str+='<div style="text-align:center; padding:5px;">ยินดีด้วยคุณได้รับ POINT</div>';
+  str+='<div style="text-align:center; font-weight: 600; color:#0056ff;">'+ x +' POINT</div>';
   str+='<div style="text-align:center; padding:5px;">จากการเข้าชมเว็บไซต์มาแล้ว <b>'+ d +'</b> วัน</div>';
   str+='</div>';
   $("#BoxTimeNewPoint").html(str);      
@@ -630,7 +618,9 @@ function NextLevelUP(x) {
 
 function GetReward() {
   alert("ยินยันการรับรางวัลเรียบร้อยแล้ว");
-  document.getElementById('id06').style.display='none';
+  CloseAll();
+  //GotoHome();
+  //document.getElementById('id06').style.display='none';
   // body...
 }
 
@@ -672,5 +662,6 @@ function CloseAll() {
   document.getElementById('id03').style.display='none';
   document.getElementById('id04').style.display='none';
   document.getElementById('id05').style.display='none';
+  document.getElementById('id06').style.display='none';
   document.getElementById('id07').style.display='none';
 }

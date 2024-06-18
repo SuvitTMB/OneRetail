@@ -1,1 +1,161 @@
-var _0x5952c8=_0x33b8;(function(_0x2e80df,_0x46f17c){var _0xf24e2b=_0x33b8,_0x2e2adf=_0x2e80df();while(!![]){try{var _0xedd553=-parseInt(_0xf24e2b(0x1b6))/0x1+parseInt(_0xf24e2b(0x1a2))/0x2*(parseInt(_0xf24e2b(0x198))/0x3)+parseInt(_0xf24e2b(0x1a6))/0x4*(parseInt(_0xf24e2b(0x196))/0x5)+parseInt(_0xf24e2b(0x1a7))/0x6*(-parseInt(_0xf24e2b(0x1a1))/0x7)+parseInt(_0xf24e2b(0x190))/0x8*(parseInt(_0xf24e2b(0x1bb))/0x9)+parseInt(_0xf24e2b(0x19b))/0xa+-parseInt(_0xf24e2b(0x1b7))/0xb*(parseInt(_0xf24e2b(0x1c1))/0xc);if(_0xedd553===_0x46f17c)break;else _0x2e2adf['push'](_0x2e2adf['shift']());}catch(_0x5065d7){_0x2e2adf['push'](_0x2e2adf['shift']());}}}(_0x52f8,0x884e1));var dateString=new Date()[_0x5952c8(0x1b0)](_0x5952c8(0x1c3),{'timeZone':_0x5952c8(0x1b3)}),datetoday='',thistoday='',xHeaderLog='',xHeaderNews='',xHeaderPoint=0x0,xProfile='';NewDate();function Connect_DB(){var _0x131dc4=_0x5952c8,_0x222f5d={'apiKey':_0x131dc4(0x1b9),'authDomain':_0x131dc4(0x1b5),'projectId':_0x131dc4(0x1ab),'storageBucket':'retail-academy-a40e1.appspot.com','messagingSenderId':'333936342264','appId':_0x131dc4(0x1a4),'measurementId':'G-Y0RJCH8RY5'};firebase[_0x131dc4(0x18d)](_0x222f5d),dbProfile=firebase[_0x131dc4(0x1c0)]()[_0x131dc4(0x1a3)]('UserProfile'),dbCheckMember=firebase[_0x131dc4(0x1c0)]()[_0x131dc4(0x1a3)](_0x131dc4(0x18e)),dbPulseDate=firebase[_0x131dc4(0x1c0)]()[_0x131dc4(0x1a3)](_0x131dc4(0x1a8)),dbPulseResult=firebase[_0x131dc4(0x1c0)]()['collection'](_0x131dc4(0x193)),dbLoginlog=firebase[_0x131dc4(0x1c0)]()[_0x131dc4(0x1a3)]('Loginlog'),dbUserlog=firebase[_0x131dc4(0x1c0)]()['collection'](_0x131dc4(0x1b8)),dbRewards=firebase[_0x131dc4(0x1c0)]()['collection'](_0x131dc4(0x18c)),dbRedeem=firebase['firestore']()[_0x131dc4(0x1a3)](_0x131dc4(0x192)),dbCalendar=firebase[_0x131dc4(0x1c0)]()[_0x131dc4(0x1a3)](_0x131dc4(0x18a)),dbGetAllMemo=firebase[_0x131dc4(0x1c0)]()[_0x131dc4(0x1a3)](_0x131dc4(0x195)),dbGetAllLike=firebase[_0x131dc4(0x1c0)]()['collection'](_0x131dc4(0x19d)),dbCheckAllRead=firebase['firestore']()['collection'](_0x131dc4(0x1b2)),dbVDOGroup=firebase['firestore']()['collection']('VDOGroup'),dbVDOTraining=firebase[_0x131dc4(0x1c0)]()['collection'](_0x131dc4(0x1b4)),dbPulseSurvey=firebase[_0x131dc4(0x1c0)]()['collection'](_0x131dc4(0x18f)),dbUserSurvey=firebase[_0x131dc4(0x1c0)]()['collection'](_0x131dc4(0x1bd)),dbQuizTheDay=firebase[_0x131dc4(0x1c0)]()[_0x131dc4(0x1a3)]('Quizoftheday'),NewDate();}function ImgProfile(){var _0x203641=_0x5952c8,_0x187688='';_0x187688+=_0x203641(0x1bc)+sessionStorage[_0x203641(0x1bf)]('LinePicture')+_0x203641(0x1be),_0x187688+='<div\x20class=\x22box-level\x22>'+sessionStorage[_0x203641(0x1bf)](_0x203641(0x19c))+_0x203641(0x194),_0x187688+=_0x203641(0x1a0)+sessionStorage[_0x203641(0x1bf)](_0x203641(0x1af))+'</div>',xProfile=_0x187688;}function AddUserLog(){var _0x28841a=_0x5952c8;console['log'](_0x28841a(0x1a5));}function _0x33b8(_0x1f08ad,_0x11b484){var _0x52f8e6=_0x52f8();return _0x33b8=function(_0x33b8e9,_0x4d4e9c){_0x33b8e9=_0x33b8e9-0x18a;var _0x3fba53=_0x52f8e6[_0x33b8e9];return _0x3fba53;},_0x33b8(_0x1f08ad,_0x11b484);}function imgError(_0x9d8ad3){var _0x361715=_0x5952c8;return _0x9d8ad3[_0x361715(0x1ae)]='',_0x9d8ad3['src']='./img/box.jpg',!![];}function _0x52f8(){var _0x51a7e9=['Asia/Jakarta','VDOTraining','retail-academy-a40e1.firebaseapp.com','1068255YTYVAG','8541907hveQkU','Userlog','AIzaSyApN5jhPMBkU2YHF2LOcRT1Ce3iFS7PfoQ','length','198LgJnlP','<div><img\x20src=\x22','UserSurvey','\x22\x20class=\x22show-profile\x22\x20width=\x22100px\x22>','getItem','firestore','12tuwQjy','April','en-US','Calendar','June','Rewards','initializeApp','CheckProfile','PulseSurvey','315760FHlIer','getMinutes','RewardsRedeem','PulseResult','<br>Level</div></div>','GetAllMemo','5fDnIfT','getMonth','13341jHWaoo','February','getFullYear','9502620qOjBMU','Level_Point','GetAllLike','getHours','December','<div\x20class=\x22NameLine\x22>','322PVJVfw','374LEzzHH','collection','1:333936342264:web:17a1cfef44b11d228eb70d','Save\x20Log','986312EZFqwJ','64392WiceBz','PulseDate','September','November','retail-academy-a40e1','getDate','August','onerror','EmpName_Academy','toLocaleString','July','CheckAllRead'];_0x52f8=function(){return _0x51a7e9;};return _0x52f8();}function NewDate(){var _0x1937a4=_0x5952c8,_0x18507b=new Array(0xc);_0x18507b[0x0]='January',_0x18507b[0x1]=_0x1937a4(0x199),_0x18507b[0x2]='March',_0x18507b[0x3]=_0x1937a4(0x1c2),_0x18507b[0x4]='May',_0x18507b[0x5]=_0x1937a4(0x18b),_0x18507b[0x6]=_0x1937a4(0x1b1),_0x18507b[0x7]=_0x1937a4(0x1ad),_0x18507b[0x8]=_0x1937a4(0x1a9),_0x18507b[0x9]='October',_0x18507b[0xa]=_0x1937a4(0x1aa),_0x18507b[0xb]=_0x1937a4(0x19f);var _0x1eac88=new Date(),_0x5d43c3=_0x1eac88[_0x1937a4(0x1ac)]()+'',_0x8dd412=_0x1eac88[_0x1937a4(0x197)]()+'',_0x165574=_0x1eac88[_0x1937a4(0x197)]()+0x1+'',_0x1108b9=_0x1eac88[_0x1937a4(0x19a)]()+'',_0x5e9055=_0x1eac88[_0x1937a4(0x19e)]()+'',_0x1d879a=_0x1eac88[_0x1937a4(0x191)]()+'',_0x486a10=_0x1eac88['getSeconds']()+'',_0x17b3fb=_0x5e9055>=0xc?'PM':'AM';_0x5d43c3=checkZero(_0x5d43c3),_0x165574=checkZero(_0x165574),_0x1108b9=checkZero(_0x1108b9),_0x5e9055=checkZero(_0x5e9055),_0x1d879a=checkZero(_0x1d879a),_0x486a10=checkZero(_0x486a10),dateString=_0x5d43c3+'/'+_0x165574+'/'+_0x1108b9+'\x20'+_0x5e9055+':'+_0x1d879a+':'+_0x486a10+'\x20'+_0x17b3fb,xdateCheck=_0x18507b[_0x8dd412]+'\x20'+_0x5d43c3+',\x20'+_0x1108b9+'\x20'+_0x5e9055+':'+_0x1d879a+':'+_0x486a10,datetoday=_0x5d43c3+'/'+_0x165574+'/'+_0x1108b9,thistoday=_0x5d43c3+'/'+_0x165574+'/'+_0x1108b9;}function checkZero(_0x1a9ea4){var _0x5cf491=_0x5952c8;return _0x1a9ea4[_0x5cf491(0x1ba)]==0x1&&(_0x1a9ea4='0'+_0x1a9ea4),_0x1a9ea4;}
+var dateString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
+var datetoday = "";
+var thistoday = "";
+var thistoday_th = "";
+var xHeaderLog = "";
+var xHeaderNews = "";
+var xHeaderPoint = 0;
+var xProfile = "";
+NewDate();
+
+function Connect_DB() {
+  var firebaseConfig = {
+    apiKey: "AIzaSyApN5jhPMBkU2YHF2LOcRT1Ce3iFS7PfoQ",
+    authDomain: "retail-academy-a40e1.firebaseapp.com",
+    projectId: "retail-academy-a40e1",
+    storageBucket: "retail-academy-a40e1.appspot.com",
+    messagingSenderId: "333936342264",
+    appId: "1:333936342264:web:17a1cfef44b11d228eb70d",
+    measurementId: "G-Y0RJCH8RY5"
+  };
+  firebase.initializeApp(firebaseConfig);
+  dbProfile = firebase.firestore().collection("UserProfile");
+  dbCheckMember = firebase.firestore().collection("CheckProfile");
+  dbPulseDate = firebase.firestore().collection("PulseDate");
+  dbPulseResult = firebase.firestore().collection("PulseResult");
+
+  dbLoginlog = firebase.firestore().collection("Loginlog");
+  dbUserlog = firebase.firestore().collection("Userlog");
+  dbRewards = firebase.firestore().collection("Rewards");
+  dbRedeem = firebase.firestore().collection("RewardsRedeem");
+
+  dbCalendar = firebase.firestore().collection("Calendar");
+
+  dbGetAllMemo = firebase.firestore().collection("GetAllMemo");
+  dbGetAllLike = firebase.firestore().collection("GetAllLike");
+  dbCheckAllRead = firebase.firestore().collection("CheckAllRead");
+
+  dbVDOGroup = firebase.firestore().collection("VDOGroup");
+  dbVDOTraining = firebase.firestore().collection("VDOTraining");
+
+
+  dbPulseSurvey = firebase.firestore().collection("PulseSurvey");
+  dbUserSurvey = firebase.firestore().collection("UserSurvey");
+  dbQuizTheDay = firebase.firestore().collection("Quizoftheday");
+  //dbttbMember = firebase.firestore().collection("ttbMember");
+
+  dbttbGameRock = firebase.firestore().collection("ttbGameRock");
+  dbttbGameLucky = firebase.firestore().collection("ttbGameLucky");
+  dbttbGameQuestion = firebase.firestore().collection("ttbGameQuestion");
+  dbttbGamePicture = firebase.firestore().collection("ttbGameImage");
+
+  
+  dbLandingPage = firebase.firestore().collection("LandingPage");
+
+  NewDate();
+
+}
+
+function ImgProfile() {
+  var str = "";
+  str += '<div><img src="'+ sessionStorage.getItem("LinePicture") +'" class="show-profile" width="100px">';
+  str += '<div class="box-level">'+ sessionStorage.getItem("Level_Point") +'<br>Level</div></div>';
+  str += '<div class="NameLine">'+ sessionStorage.getItem("EmpName_Academy")+'</div>';
+  xProfile = str;
+}
+
+
+function AddUserLog() {
+/*
+  NewDate();
+  var TimeStampDate = Math.round(Date.now() / 1000);
+  dbUserlog.add({
+    LineID : sessionStorage.getItem("LineID"),
+    LineName : sessionStorage.getItem("LineName"),
+    LinePicture : sessionStorage.getItem("LinePicture"),
+    EmpID : sessionStorage.getItem("EmpID_Academy"),
+    EmpName : sessionStorage.getItem("EmpName_Academy"),
+    RefID : sessionStorage.getItem("EmpRefID_Academy"),
+    HeadNews : xHeaderNews,
+    SubNews : xHeaderLog,
+    GetPoint : parseFloat(xHeaderPoint),
+    LastPoint : parseFloat(sessionStorage.getItem("XP_Point")),
+    LogDate : dateString,
+    LogTimeStamp : TimeStampDate
+  });
+  console.log("XP_Point="+parseFloat(sessionStorage.getItem("XP_Point")));
+  console.log("xHeaderPoint="+xHeaderPoint);
+  sessionStorage.setItem("XP_Point", parseFloat(sessionStorage.getItem("XP_Point")) + parseFloat(xHeaderPoint));
+  sessionStorage.setItem("RP_Point", parseFloat(sessionStorage.getItem("RP_Point")) + parseFloat(xHeaderPoint));
+  dbProfile.doc(sessionStorage.getItem("EmpRefID_Academy")).update({
+    LastUpdate : dateString,
+    XP_Point : parseFloat(sessionStorage.getItem("XP_Point")),
+    RP_Point : parseFloat(sessionStorage.getItem("RP_Point"))
+  });    
+*/
+  console.log("Save Log");
+}
+
+function imgError(image) {
+    image.onerror = "";
+    image.src = "./img/box.jpg";
+    return true;
+}
+
+function imgErrorLearning(image) {
+    image.onerror = "";
+    image.src = "./clip/vdo.jpg";
+    return true;
+}
+
+function imgErrorStory(image) {
+    image.onerror = "";
+    image.src = "./clip/story.jpg";
+    return true;
+}
+
+
+function NewDate() {
+  var months = new Array(12);
+  months[0] = "January";
+  months[1] = "February";
+  months[2] = "March";
+  months[3] = "April";
+  months[4] = "May";
+  months[5] = "June";
+  months[6] = "July";
+  months[7] = "August";
+  months[8] = "September";
+  months[9] = "October";
+  months[10] = "November";
+  months[11] = "December";
+  var today = new Date();
+  var day = today.getDate() + "";
+  var monthEN = (today.getMonth()) + "";
+  var month = (today.getMonth() + 1) + "";
+  var year = today.getFullYear() + "";
+  var hour = today.getHours() + "";
+  var minutes = today.getMinutes() + "";
+  var seconds = today.getSeconds() + "";
+  var ampm = hour >= 12 ? 'PM' : 'AM';
+  day = checkZero(day);
+  month = checkZero(month);
+  year = checkZero(year);
+  year_th = parseFloat(checkZero(year))+543;
+  hour = checkZero(hour);
+  minutes = checkZero(minutes);
+  seconds = checkZero(seconds);
+  dateString = day + "/" + month + "/" + year + " " + hour + ":" + minutes + ":" + seconds +" "+ ampm;
+  xdateCheck = months[monthEN] + " " + day + ", " + year + " " + hour + ":" + minutes + ":" + seconds ;
+  datetoday = day + "/" + month + "/" + year;
+  thistoday = day + "/" + month + "/" + year;
+  thistoday_th = day + "/" + month + "/" + year_th;
+}
+
+
+function checkZero(data){
+  if(data.length == 1){
+    data = "0" + data;
+  }
+  return data;
+}

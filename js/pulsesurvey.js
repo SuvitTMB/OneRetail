@@ -59,6 +59,8 @@ var aChoice5 = 0 ;
 var aPulseCount = 0;
 var aPulseScore = 0;
 var aPulseRatio = 0;
+var aSumPoint = 0;
+var aSumCoin = 0;
 function CheckQuestionPulse() {
   //document.getElementById('loading').style.display='none';
   //alert("Check");
@@ -71,12 +73,15 @@ function CheckQuestionPulse() {
       EidPulseDate = doc.id;
       EidPulseRefID = doc.data().PulseRefID;
       xPulsePoint = doc.data().PulsePoint;
+      xPulseCoin = doc.data().PulseCoin;
       aPulseCount = doc.data().PulseCount;
       aChoice1 = doc.data().Choice1;
       aChoice2 = doc.data().Choice2;
       aChoice3 = doc.data().Choice3;
       aChoice4 = doc.data().Choice4;
       aChoice5 = doc.data().Choice5;
+      aSumPoint = doc.data().SumPoint;
+      aSumCoin = doc.data().SumCoin;
       StartSurvey(doc.data().PulseRefID);
       console.log(xPulsePoint);
     });
@@ -198,7 +203,7 @@ function SendSurvey(x) {
 }
 
 
-var stxtGroupQ = "";
+//var stxtGroupQ = "";
 var stxtEtxtStory = "";
 function SavePulseDate() {
   document.getElementById('CheckLoading').style.display='block';
@@ -226,7 +231,7 @@ function SavePulseDate() {
   document.getElementById('A_PulseSurvey').style.display='none';
   document.getElementById('Q_PulseSurvey').style.display='none';
   //alert("dsfadsfs");
-  stxtGroupQ = document.getElementById("txtGroupQ").value;
+  //stxtGroupQ = document.getElementById("txtGroupQ").value;
   stxtStory = document.getElementById("txtStory").value;
   aPulseCount = parseFloat(aPulseCount) + 1;
   if(xSelectChoice==1) { 
@@ -240,6 +245,8 @@ function SavePulseDate() {
   } else if(xSelectChoice==5) { 
     aChoice5 = parseFloat(aChoice5) + 1;
   }
+  aSumPoint = parseFloat(aSumPoint)+parseFloat(xPulsePoint);
+  aSumCoin = parseFloat(aSumCoin)+parseFloat(xPulseCoin);
   aPulseScore = (aChoice1*1) + (aChoice2*2) + (aChoice3*3) + (aChoice4*4) + (aChoice5*5);
   aPulseRatio = aPulseScore / (aPulseCount * 5) * 100;
   dbPulseDate.doc(EidPulseDate).update({
@@ -249,6 +256,8 @@ function SavePulseDate() {
     Choice3: parseFloat(aChoice3),
     Choice4: parseFloat(aChoice4),
     Choice5: parseFloat(aChoice5),
+    SumPoint: parseFloat(aSumPoint),
+    SumCoin: parseFloat(aSumCoin),
     PulseScore: parseFloat(aPulseScore),
     PulseRatio: parseFloat(aPulseRatio).toFixed(2)
   });    
@@ -356,6 +365,7 @@ function SavePulseSurvey() {
       PulseRatio: parseFloat(cPulseRatio).toFixed(2)
     });    
     console.log("Save 3");
+    console.log(sessionStorage.getItem("xTeamGroup"));
     SavePulseResult();
   });    
 }
@@ -417,7 +427,7 @@ function SaveUserSurvey() {
   NewDate();
   var TimeStampDate = Math.round(Date.now() / 1000);
   var zCalPoint = (parseFloat(xSelectChoice)/5) * 100;
-  stxtGroupQ = document.getElementById("txtGroupQ").value;
+  //stxtGroupQ = document.getElementById("txtGroupQ").value;
   stxtStory = document.getElementById("txtStory").value;
   dbUserSurvey.add({
     LineID: sessionStorage.getItem("LineID"),
@@ -428,7 +438,7 @@ function SaveUserSurvey() {
     FollowCase: 0,
     PulseChoice: parseFloat(xSelectChoice),
     PulseDate: thistoday,
-    PulseGroup: stxtGroupQ,
+    //PulseGroup: stxtGroupQ,
     PulseRatio: parseFloat(zCalPoint).toFixed(2),
     RefID: EidPulseRefID,
     PulseQus: QuesPulse,
@@ -438,6 +448,7 @@ function SaveUserSurvey() {
     PulseLike: 0,
     PulseComment: 0,
     TimeStamp: TimeStampDate,
+    xTeamGroup: sessionStorage.getItem("xTeamGroup"),
     DateSurvey: dateString
   });
   document.getElementById('Q_thankyou').style.display='block';

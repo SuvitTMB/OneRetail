@@ -1,4 +1,4 @@
-var MainGroupID = 0;
+var MainGroupID = 6;
 var SubGroupID = 0;
 //$("#DisplayGroup").html(str);
 
@@ -77,23 +77,22 @@ function LoadGroupVDO() {
       //console.log(i+"xxx="+results[0]+"==="+doc.data().RefID);
       str += '<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" onclick="ViewGroup(\''+ doc.id +'\')" data-aos="zoom-in" data-aos-delay="100">';
       str += '<div class="icon-box box-cursor" data-aos="fade-up" data-aos-delay="200" style="padding:0px;">';
-      str += '<div style="width:50%;float: left;"><div style="position: relative;"><img src="http://img.youtube.com/vi/'+ doc.data().VDOurl +'/hqdefault.jpg" class="cropped-ofp1">';
-
-      str += '<div class="VDO-Point">'+ doc.data().VDOpointview +'<img src="./icon/icon-coin.png" style="width:17px; margin-top: -2px; padding-left:1px;"></div>';
-      str += '<div class="VDO-timer">'+ toHHMMSS(doc.data().VDOtimer) +' นาที</div>';
-      str += '<div style="position: absolute; bottom:0px; left: 3px;"><i class="icofont-ui-video-play icon-img"></i></div>';
-
-      //str += '<div class="VDO-timer">'+ toHHMMSS(doc.data().VDOtimer) +' นาที</div></div>';
-      str += '</div></div>';
+      //if(doc.data().VDOimg=="") {
+      //  str += '<div style="width:35%;float: left;"><div><img src="./imgclip/clipvdo.jpg" style="width:100%;"></div><div class="VDO-timer">'+ toHHMMSS(doc.data().VDOtimer) +' นาที</div></div>';
+      //} else {
+      str += '<div style="width:35%;float: left; position: relative;"><div><img src="'+ doc.data().VDOimg +'" style="width:100%;" onerror="javascript:imgErrorStory(this)"></div>';
+      str += '<div class="VDO-Pointvdo">'+ doc.data().VDOpointview +'<img src="./icon/icon-coin.png" style="width:17px;margin-top: -2px; padding-left:1px;"></div>';
+      str += '<div class="VDO-timer">'+ toHHMMSS(doc.data().VDOtimer) +' นาที</div></div>';
+      //}
       if(results[0]!=undefined) { 
         xResults = results[0].RefID;
-        console.log("one==="+xResults);
-        str += '<div style="width:50%; float: left; padding:5px 10px;"><div class="story-box-text-head">'+ doc.data().VDOname +'</div>';
+        //console.log("one==="+xResults);
+        str += '<div style="width:65%; float: left; padding:7px 10px;"><div class="story-box-text-head">'+ doc.data().VDOname +'</div>';
       } else {
-        console.log("two");
-        str += '<div class="grayscale" style="width:50%; float: left; padding:5px 10px;"><div class="story-box-text-head">'+ doc.data().VDOname +'</div>';
+        //console.log("two");
+        str += '<div class="grayscale" style="width:65%; float: left; padding:7px 10px;"><div class="story-box-text-head">'+ doc.data().VDOname +'</div>';
       }
-      str += '<div class="story-box-text-sub" style="height:46px;">'+ doc.data().VDOdetail +'</div>';
+      str += '<div class="story-box-text-sub" style="height:65px; padding-top: 5px;">'+ doc.data().VDOdetail +'</div>';
       str += '<div class="entry-meta"><ul style="padding-left:0px;"><li class="d-flex align-items-center"><i class="icofont-eye-open"></i>'+ doc.data().VDOread +' View </li>';
       str += '<li class="d-flex align-items-center"> <i class="icofont-comment" style="padding-left:5px;"></i>'+ doc.data().VDOcomment +' Comment</li></ul></div>';
       str += '</div></div></div>';

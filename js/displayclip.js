@@ -9,6 +9,8 @@ var xVDOViewDone = 0;
 var xHeadNews = "";
 var xNewsGroup = 0;
 var xResults = "";
+var xPOINT = 0;
+var xCOIN = 0;
 //var VDOTime = 0;
 
 var timeLeft = 0;
@@ -21,6 +23,35 @@ var timerId = "";
 xHeaderNews = "VDO Clip";
 xHeaderLog = "เข้าชม VDO Clip";
 //xHeaderPoint = 1;
+
+/*
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: '2xiTqt9SCCw',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      function onPlayerStateChange(event) {
+        console.log(player.getCurrentTime());
+      }
+*/
 
 $(document).ready(function () {
   if(sessionStorage.getItem("EmpID_Academy")==null || sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
@@ -75,9 +106,12 @@ function LoadVDOclip() {
       ClickMemo = parseFloat(doc.data().VDOcomment);
       ClickView = doc.data().VDOViewDone;
       timeLeft = parseFloat(doc.data().VDOtimer);
+      xPOINT = parseFloat(doc.data().POINT);
+      xCOIN = parseFloat(doc.data().COIN);
       xVDOread = parseFloat(doc.data().VDOread);
       //console.log(doc.data().VDOpointview);
-      xVDOpointview = parseFloat(doc.data().VDOpointview);
+      //xVDOpointview = parseFloat(doc.data().VDOpointview);
+      xVDOpointview = parseFloat(doc.data().POINT);
       xVDOpointLike = parseFloat(doc.data().VDOpointLike);
       xVDOViewDone = parseFloat(doc.data().VDOViewDone);
       VDOtimeString = toHHMMSS(timeLeft);
@@ -105,7 +139,12 @@ function LoadVDOclip() {
           str += '<video width="100%" height="auto" controls autoplay><source src="'+ doc.data().VDOurl +'" type="video/mp4"></video> ';
         //}
       } else if(doc.data().VDOType==1 && doc.data().VDOurl!=="") {
-        str += '<iframe width="100%" height="200px" src="'+ doc.data().VDOurl +'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+
+        str += '<iframe id="existing-iframe-example" width="100%" height="220px;" src="https://www.youtube.com/embed/'+ doc.data().VDOurl +'?enablejsapi=1" frameborder="0" style="border: solid 4px #fff" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+        //str += '<iframe id="player" type="text/html" width="100%" height="auto" src="http://www.youtube.com/embed/'+ doc.data().VDOurl +'?enablejsapi=1&origin=http://example.com" <frameborder="0"></iframe>';
+        //str += '<iframe width="100%" height="200px" src="'+ doc.data().VDOurl +'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
       } else if(doc.data().VDOType==2 && doc.data().VDOurl!=="") {
         str += '<iframe width="100%" height="200px" src="'+ doc.data().VDOurl +'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
       //} else if(doc.data().VDOurl==="") {
@@ -120,8 +159,8 @@ function LoadVDOclip() {
       //str += '<source src="'+ doc.data().VDOyoutube +'" type="video/mp4">';
       //str += '</video>';
       str += '<div class="container" style="text-align: center; max-width: 450px; text-align: left; color:#fff; padding-top:15px; ">';
-      str += '<div style="font-size:14px; font-weight: 600; color:#0056ff;">'+ doc.data().VDOname +'</div><hr>';
-      str += '<div class="font13" style="color:#555;min-height: 30px;">'+ doc.data().VDOdetail +'</div>';
+      str += '<div class="clip-header">'+ doc.data().VDOname +'</div><hr>';
+      str += '<div class="font14" style="color:#555;min-height: 30px;">'+ doc.data().VDOdetail +'</div>';
       str += '<div id="ShowClickLike"></div>';
       dbVDOTraining.doc(doc.id).update({
         VDOread : ClickRead
@@ -145,11 +184,11 @@ function GetSocial() {
   dbVDOTraining.where(firebase.firestore.FieldPath.documentId(), "==", EidVDOclip)
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
-      str += '<div class="entry-meta"><ul>';
-      str += '<li class="d-flex align-items-center"><i class="icofont-wall-clock"></i>'+ doc.data().VDOdate +'</li>';
-      str += '<li class="d-flex align-items-center"><i class="icofont-alarm"></i>'+ parseFloat(doc.data().VDOread) +' View</li>';
-      str += '<li class="d-flex align-items-center"><i class="icofont-like"></i>'+ parseFloat(doc.data().VDOlike) +' Like</li>';
-      str += '<li class="d-flex align-items-center"><i class="icofont-comment"></i>'+ parseFloat(doc.data().VDOcomment) +' Comment</li>';
+      str += '<div class="entry-meta"><ul style="padding-left:0px; padding-top:8px;">';
+      str += '<li class="d-flex align-items-center padding-r"><i class="icofont-ui-calendar"></i>'+ doc.data().VDOdate +'</li>';
+      str += '<li class="d-flex align-items-center padding-r"><i class="icofont-eye-open"></i>'+ parseFloat(doc.data().VDOread) +' View</li>';
+      str += '<li class="d-flex align-items-center padding-r"><i class="icofont-like"></i>'+ parseFloat(doc.data().VDOlike) +' Like</li>';
+      str += '<li class="d-flex align-items-center padding-r"><i class="icofont-speech-comments"></i>'+ parseFloat(doc.data().VDOcomment) +' Comment</li>';
       str += '</ul></div>';
       //str += '<div id="ShowClickLike"></div>';
     });
@@ -265,7 +304,7 @@ function SaveClickLike() {
     str += '<div style="margin:30px auto 20px auto;"><span class="header1">คุณได้รับ</span> <span class="header2">POINT</div>';
     str += '<div style="font-size:14px;line-height:1.1;"><img src="./point/coin-'+ xVDOpointLike +'.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br><br>จากการกด Like VDO<br><b>'+xHeadNews+'</b></div>';
     str += '<div class="clr"></div>';
-    str += '<div class="btn-grey" onclick="CloseAll()" style="margin-top:15px;">ปิดหน้าต่างนี้</b></div>';
+    str += '<div class="btn btn-a1 grey" onclick="CloseAll()" style="margin-top:15px;">ปิดหน้าต่างนี้</b></div>';
     str += '<div class="clr" style="height:30px;"></div>';
     $("#DisplayGetPoint").html(str);    
     document.getElementById('id01').style.display='block';
@@ -398,7 +437,7 @@ function RecordNews() {
     str += '<div style="margin:30px auto 20px auto;"><span class="header1">คุณได้รับ</span> <span class="header2">POINT</div>';
     str += '<div style="font-size:14px;line-height:1.1;"><img src="./point/coin-'+ xVDOpointview +'.png" style="width:100%; max-width: 250px;background:#e9eef3; border-radius:15px;"><br><br><br>จากการอ่านดู VDO<br><b>'+xHeadNews+'</b></div>';
     str += '<div class="clr"></div>';
-    str += '<div class="btn-grey" onclick="CloseAll()" style="margin-top:15px;">ปิดหน้าต่างนี้</b></div>';
+    str += '<div class="btn btn-a1 grey" onclick="CloseAll()" style="margin-top:15px;">ปิดหน้าต่างนี้</b></div>';
     str += '<div class="clr" style="height:30px;"></div>';
     $("#DisplayGetPoint").html(str);  
     document.getElementById('id01').style.display='block';
