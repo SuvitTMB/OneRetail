@@ -76,6 +76,7 @@ progress[value] {
   max-width: 350px;
   height: 8px;
   border: 0;
+  text-align: left;
   --border-radius: 100px;
   border-radius: var(--border-radius);
   counter-reset: progress var(--progress-value);
@@ -514,7 +515,7 @@ progress[value]::after {
   margin:20px auto 5px auto; font-size: 15px; color:#0056ff; padding:0px 10% 10px 10%; font-weight: 600;
 }
 .text-detail {
-  padding:10px auto; color:#ffffff; font-size: 10px; text-align: center; margin-top:20px;
+  padding:10px auto; color:#7777777; font-size: 10px; text-align: center; margin-top:20px;
 }
 
 .btn-choice {
@@ -748,13 +749,6 @@ progress[value]::after {
     -ms-flex-align: center !important;
     align-items: center !important;
 }
-.d-flex {
-    font-size: 11px;
-    display: flex !important;
-    margin-right: 10px;
-    margin-top:8px;
-}
-
 
 
 .font13w {
@@ -942,22 +936,22 @@ progress[value]::after {
 }
 .boxmemo-L1 {
   height: 46px; width:14%; float:left; text-align: center; font-size: 15px; padding-top:11px; color:#000;
-  background: #dee2e6; border-top-left-radius: 20px; border-bottom-left-radius: 20px;
+  background: #dee2e6; border-top-left-radius: 10px; border-bottom-left-radius: 10px;
 }
 .boxmemo-L2 {
-  height: 46px; width:18%; float:left; text-align: center; padding-top:7px; overflow: hidden;
+  height: 46px; width:16%; float:left; text-align: center; padding-top:7px; overflow: hidden;
 }
 .boxmemo-L3 {
-  height: 46px; width:44%; float:left; text-align: left; font-size: 12px; padding-top:6px;
+  height: 46px; width:44%; float:left; text-align: left; font-size: 12px; padding-top:8px; line-height: 1.2;
 }
 .boxmemo-L4 {
-  height: 46px; width:24%; float:left; text-align: right; font-size: 13px; padding-top:6px; background: #dee2e6;
-  border-top-right-radius: 20px; border-bottom-right-radius: 20px; padding-top:8px; padding-right: 15px;
+  height: 46px; width:26%; float:left; text-align: right; font-size: 14px; padding-top:3px; background: #dee2e6;
+  border-top-right-radius: 10px; border-bottom-right-radius: 10px; padding-top:8px; 
   font-weight: 600; color:#0056ff;
 }
 .boxmemo-L4t {
   padding-top:-1px; font-size: 11px; margin-top: -2px;
-  font-weight: 400; color:#6c757d; text-align: right;
+  font-weight: 400; color:#6c757d; text-align: center;
 }
 
 .TopScore {
@@ -1015,4 +1009,11 @@ progress[value]::after {
 
   /*-webkit-filter: sepia(100%) hue-rotate(180deg) saturate(300%);*/
   background: #dfebf9;
+}
+.color-grayscale {
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);  
+}
+.header-font {
+  color:#777777; font-weight: 400; padding:10px 0; font-size: 13px;
 }

@@ -14,10 +14,9 @@
 {
     position: relative;
     top: 0px;
-    /*top: 60px; 
-    width: 100vw;*/
+    /*top: 60px;*/ 
+    width: 100vw;
     height: 400px
-    width: 360px;
 }
 
 #slider:before,
@@ -51,7 +50,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 400px;
+    height: 350px;
     overflow: hidden  
 }
 
@@ -85,7 +84,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;    
-    border-radius: 10px;
+}
 }
 
 #slider #slides .slide .caption
@@ -196,13 +195,11 @@
     height: 100px;
     top: auto;
     bottom: 0;
-    padding: 10px 8%;
-    margin-top: 300px;
+    padding: 20px 8%;
+    margin-top: 250px;
     background: #0056ff;
     opacity: 0.8;
-    color: #fff; font-size: 13px;
-    font-weight: 400 !important;
-    overflow: hidden;
+    color: #fff;
   }
   
   #slider #slides .slide .caption p{
@@ -264,20 +261,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 46%;
-  border-radius: 5px;
+  width: 47%;
+  border-radius: 8px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: 0.15s ease;
   cursor: pointer;
   position: relative;
   margin: 5px;
   float: left;
-  height: 230px;
+  height: 200px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;    
+    max-width: 185px;
+
+background-repeat:no-repeat;
+/*background-size:contain;*/
+background-position:center;
+
 }
 
 .checkbox-product {
@@ -403,15 +406,18 @@
 }
 .text-pic {
   color: #fff;
-  margin-top: 170px;
-  background: #0056ff;
+  margin-top: 140px;
+  background: #f68b1f;
   height: 60px;
-  padding:5px 0;
+  padding: 5px;
   opacity: .8;
   font-weight: 400;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   width: 100%;
+  font-size: 13px;
+  line-height: 1.2;
+  text-align: center;
 } 
 .img-vdo {
     position: relative;

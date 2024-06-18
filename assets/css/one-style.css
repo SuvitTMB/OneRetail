@@ -1,0 +1,296 @@
+.header1 {
+  font-size: 16px;
+  color:#0056ff;
+  font-weight: 600;
+}
+.header2 {
+  font-size: 16px;
+  color:#f68b1f;
+  font-weight: 600;
+}
+
+.ScoreGame2 {
+  width:31%; text-align: center; font-size: 15px; font-weight: 600; color:#0056ff; margin-left: 5px; float: left;
+  height: 70px; background-color: #e1e5ea; padding:8px 10px 6px 10px; border-radius: 8px;
+}
+
+.ScoreGame4 {
+  width:23%; text-align: center; font-size: 15px; font-weight: 600; color:#0056ff; margin-left: 5px; float: left;
+  height: 70px; background-color: #e1e5ea; padding:7px 10px 6px 10px; border-radius: 8px;
+}
+.ScoreGame5 {
+  width:22%; text-align: center; font-size: 11px !important ; font-weight: 400; color:#f68b1f; margin-left: 5px; float: left;
+  height: 120px; background-color: #f1f1f1; padding:10px 10px 6px 10px; border-radius: 8px;
+}
+.ScoreGame5:hover { 
+  cursor: pointer; background:#fee4b5;
+}
+.ScoreGame6 {
+  width:85px; text-align: center; color:#0056ff; float: left; background-color: #f4f4f4; border:1px solid #f1f1f1; 
+  height: 84px; padding:7px 5px 6px 5px; border-radius: 8px; border-radius: 5px;
+}
+
+.ScoreGame4-text {
+  font-size: 12px; color:#888; border-top:2px solid #bccbd9; padding-top:4px; line-height: 1.1;
+}
+.bar {
+  position:relative;
+  float:left;
+  min-width:1%;
+  height:4px !important;
+  background:#13d200;
+}
+.bar1 {
+  position:relative;
+  float:left;
+  min-width:1%;
+  height:4px !important;
+  background:#0056ff;
+}
+.progress { 
+  height:4px !important;
+}
+.quiz-choice {
+  list-style-type: none;
+  text-align: left;
+  background-color: transparent;
+  margin: 8px;
+  padding: 14px 20px;
+  border: 1px solid #dee2e6;
+  font-weight: normal;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #fbf7f3;  
+  color:#000000;
+  max-width: 350px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.quiz-choice:hover {
+  color:#ffffff;
+  background: #0056ff;
+}
+.quiz-choiceEND {
+  list-style-type: none;
+  text-align: left;
+  background-color: transparent;
+  margin: 8px;
+  padding: 14px 20px;
+  border: 1px solid #fff;
+  font-weight: normal;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #cdd4dc;
+  color: #96a4b7;
+  max-width: 350px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.quiz-choiceGreen {
+  list-style-type: none;
+  text-align: left;
+  background-color: transparent;
+  margin: 8px;
+  padding: 14px 20px;
+  border: 1px solid #fff;
+  font-weight: normal;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #08c308;
+  color: #fff;
+  max-width: 350px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.quiz-choiceRed {
+  list-style-type: none;
+  text-align: left;
+  background-color: transparent;
+  margin: 8px;
+  padding: 14px 20px;
+  border: 1px solid #fff;
+  font-weight: normal;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ff0000;
+  color: #fff;
+  max-width: 350px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.SelectQ {
+  color:#ffffff;
+  background: #0056ff;
+  border: 1px solid #ffffff;
+}
+.QuizQ {
+  margin:15px 0 25px 0;
+  color:#ffff00;
+  font-size:14px;
+}
+.timer {
+  width:230px;
+  margin-top:-35px;
+  margin-bottom: 13px;
+  padding:5px 10px;
+  border: 2px solid #ff0000;
+  background: #ff0000; font-size: 13px;
+  color:#fff; border-radius: 8px;
+}
+.NewQuestion {
+  margin:20px 10px; color:#ffff00;
+  padding:10px; text-align: center; font-size:14px;
+}
+.txt-qq {
+  color:#000; font-weight: 400; font-size: 15px; text-align: center; font-weight: 600;
+  margin:auto;padding:10px 20px; line-height: 1.2; width: 100%;
+  margin: auto !important;
+}
+/*
+.txt-qq { 
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 15px; font-weight: 600; width: 100%; max-width: 370px;
+  height: 130px; background-color: #ffff00;
+}
+*/
+.SelectA {
+  font-weight: 600;
+  /*color:#ffffff;
+  background: #0056ff !important; border: 2px solid #ffffff !important;*/
+}
+
+input[type="radio"] {
+  position: absolute;
+  top: -1000in;
+  left: -1000in;
+}
+
+
+.btn-t0 {
+  display: inline-block;
+  /*background: #dee3eb;*/
+  background-color: #bdc1c6;
+  color:#333;
+  border: 2px solid #a2a9b2;
+  padding: 7px 20px;
+  transition: 0.3s;
+  font-size: 13px; font-weight: 600;
+  border-radius: 4px;
+  margin:3px; line-height: 1.2;
+}
+.btn-t0:hover {
+  cursor: pointer;
+  color:#fff;
+  background: #0156d4;
+}
+.btn-t2 {
+  display: inline-block;
+  /*background: #dee3eb;*/
+  background-color: #dfeaf8;
+  color:#333;
+  border: 2px solid #a6b4c8;
+  padding: 7px 14px;
+  transition: 0.3s;
+  font-size: 13px; font-weight: 600;
+  border-radius: 4px;
+  margin:3px; line-height: 1.2;
+}
+.btn-t2:hover {
+  cursor: pointer;
+  color:#fff;
+  background: #0156d4;
+}
+
+.btn-t2-ok {
+  display: inline-block;
+  background-color: #f2d8bd;
+  color:#333;
+  border: 2px solid #e1c1a1;
+  padding: 7px 20px;
+  transition: 0.3s;
+  font-size: 13px; font-weight: 600;
+  border-radius: 4px;
+  margin:3px; line-height: 1.2;
+}
+.btn-t2-ok:hover {
+  cursor: pointer;
+  color:#fff;
+  background: #f68b1f;
+}
+
+.btn-t2-no {
+  display: inline-block;
+  background-color: #abe4b8;
+  color:#333;
+  border: 2px solid #7dc78e;
+  padding: 7px 20px;
+  transition: 0.3s;
+  font-size: 13px; font-weight: 600;
+  border-radius: 4px;
+  margin:3px; line-height: 1.2;
+}
+.btn-t2-ok:hover {
+  cursor: pointer;
+  color:#fff;
+  background: #f68b1f;
+}
+
+.btn-t2-red {
+  display: inline-block;
+  background-color: #ce1123;
+  color:#fff;
+  border: 2px solid #b70f1f;
+  padding: 7px 20px;
+  transition: 0.3s;
+  font-size: 12px; font-weight: 600;
+  border-radius: 4px;
+  width:210px;
+  margin:3px; line-height: 1.2;
+}
+
+#progressBar1 {
+  width: 100%;
+  margin: 10px auto;
+  height: 18px;
+  background-color: #cfd6d9;
+  border-radius: 50px; font-size: 10px;
+  margin-top:-5px;
+}
+
+#progressBar1 div {
+  font-family: "Anuphan", sans-serif;
+  border-radius: 50px; font-size: 10px; color:#fff;
+  height: 100%; width: 100%;
+  height: 18px !important;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 20px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: #ff0000;
+  box-sizing: border-box; 
+}
+.QuizBoard {
+  position: absolute; width:100%;
+  background: #e9ecef; min-height: 420px;  border-top-left-radius: 25px; 
+  border-top-right-radius: 25px; margin-top:-20px; padding: 20px;
+}
+.grayscale {
+  /*
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);  
+  */
+  filter: grayscale(100%);
+
+  transition: filter 0.5s; /* Adding transition for smooth effect */
+}
